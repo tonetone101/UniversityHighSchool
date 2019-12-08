@@ -21,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI, {
  const facultyRoutes = require('./routes/faculty');
  const authRoutes = require('./routes/auth');
  const imageRoutes = require('./routes/images');
+ const carouselRoutes = require('./routes/carousel');
 
  // middlewares
 app.use(bodyParser.json())
@@ -32,6 +33,7 @@ app.use(expressValidator())
 app.use('/', imageRoutes)
 app.use('/', facultyRoutes)
 app.use('/', authRoutes)
+app.use('/', carouselRoutes)
 app.get('/', (req, res) => {
     res.send('homepage')
 })

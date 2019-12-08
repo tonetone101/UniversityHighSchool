@@ -16,7 +16,7 @@ exports.getCarousel = (req, res, next) => {
       
 };
 
-exports.imageById = (req, res, next, id) => {
+exports.carouselById = (req, res, next, id) => {
     Carousel.findById(id)
         .populate('postedBy', '_id name role')
         .select("_id caption1 photo1 caption2 photo2 caption3 photo3 created")
@@ -86,7 +86,7 @@ exports.updateCarousel = (req, res, next) => {
 };
 
 exports.deleteCarousel = (req, res) => {
-    let carousel = req.carousels;
+    let carousel = req.carousel;
     carousel.remove((err, carousel) => {
         if (err) {
             return res.status(400).json({
@@ -99,11 +99,28 @@ exports.deleteCarousel = (req, res) => {
     });
 };
 
+exports.isAdmin = (req, res, next) => {
+    let sameUser = req.carousel && req.auth && req.carousel.postedBy._id == req.auth._id;
+    let adminUser = req.carousel && req.auth && req.auth.role === 'admin';
+
+    console.log("req.carousel ", req.carousel, " req.auth ", req.auth);
+    console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
+
+    let isAdmin = sameUser || adminUser;
+
+    if (!isAdmin) {
+        return res.status(403).json({
+            error: 'User is not authorized'
+        });
+    }
+    next();
+};
+
 exports.photo = (req, res, next) => {
     res.set('Content-Type', req.carousel.photo.contentType);
     return res.send(req.carousel.photo.data);
 };
 
 exports.singleCarousel = (req, res) => {
-    return res.json(req.Carousel);
+    return res.json(req.carousel);
 };

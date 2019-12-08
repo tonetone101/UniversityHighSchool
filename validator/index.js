@@ -44,6 +44,33 @@ exports.createImageValidator = (req, res, next) => {
     next()
 }
 
+exports.createCarouselValidator = (req, res, next) => {
+    // caption
+    req.check('caption1', "Please write the caption for image").notEmpty()
+    req.check('caption1', "caption must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    req.check('caption2', "Please write the caption for image").notEmpty()
+    req.check('caption2', "caption must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    req.check('caption3', "Please write the caption for image").notEmpty()
+    req.check('caption3', "caption must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
 exports.userSignupValidator = (req, res, next) => {
     // name is not null and between 4-10 characters
     req.check('name', 'Name is required').notEmpty();
