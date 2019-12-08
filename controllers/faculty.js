@@ -85,6 +85,20 @@ exports.updateFaculty = (req, res, next) => {
     });
 };
 
+exports.deleteFaculty = (req, res) => {
+    let faculty = req.faculty;
+    faculty.remove((err, faculty) => {
+        if (err) {
+            return res.status(400).json({
+                error: err
+            });
+        }
+        res.json({
+            message: 'Faculty member deleted successfully'
+        });
+    });
+};
+
 exports.photo = (req, res, next) => {
     res.set('Content-Type', req.faculty.photo.contentType);
     return res.send(req.faculty.photo.data);
@@ -94,16 +108,16 @@ exports.singleFaculty = (req, res) => {
     return res.json(req.faculty);
 };
 
-exports.isPoster = (req, res, next) => {
-    let sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id;
-    let adminUser = req.post && req.auth && req.auth.role === 'admin';
+exports.isAdmin = (req, res, next) => {
+    let sameUser = req.faculty && req.auth && req.faculty.postedBy._id == req.auth._id;
+    let adminUser = req.faculty && req.auth && req.auth.role === 'admin';
 
-    console.log("req.post ", req.post, " req.auth ", req.auth);
+    console.log("req.faculty ", req.faculty, " req.auth ", req.auth);
     console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
 
-    let isPoster = sameUser || adminUser;
+    let isAdmin = sameUser || adminUser;
 
-    if (!isPoster) {
+    if (!isAdmin) {
         return res.status(403).json({
             error: 'User is not authorized'
         });

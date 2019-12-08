@@ -27,6 +27,23 @@ exports.createFacultyValidator = (req, res, next) => {
     next()
 }
 
+exports.createImageValidator = (req, res, next) => {
+    // caption
+    req.check('caption', "Please write the caption for image").notEmpty()
+    req.check('caption', "caption must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
 exports.userSignupValidator = (req, res, next) => {
     // name is not null and between 4-10 characters
     req.check('name', 'Name is required').notEmpty();
@@ -102,3 +119,4 @@ exports.passwordResetValidator = (req, res, next) => {
     // proceed to next middleware or ...
     next();
 };
+

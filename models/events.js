@@ -1,4 +1,5 @@
 // for admin to add events for parents and other visitors to view
+// it will have event info such as when, where, event name and a brief discription
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 

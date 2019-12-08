@@ -1,4 +1,6 @@
-// to update images of the school and students
+// to update images of the carousel
+// carousel will be on the landing page
+// user will be able to update each image with a caption
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 

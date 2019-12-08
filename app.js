@@ -17,15 +17,19 @@ mongoose.connect(process.env.MONGO_URI, {
      console.log(`DB connection error: ${err.message}`)
  })
 
-
+// bringing in my routes
  const facultyRoutes = require('./routes/faculty');
  const authRoutes = require('./routes/auth');
+ const imageRoutes = require('./routes/images');
 
+ // middlewares
 app.use(bodyParser.json())
 app.use(cors())
 app.use(morgan('dev'))
 app.use(expressValidator())
 
+// routes
+app.use('/', imageRoutes)
 app.use('/', facultyRoutes)
 app.use('/', authRoutes)
 app.get('/', (req, res) => {
