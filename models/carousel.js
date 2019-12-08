@@ -1,21 +1,26 @@
-// to show all faculty members
+// to update images of the school and students
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const facultySchema = new mongoose.Schema({
-    title: {
+const carouselSchema = new mongoose.Schema({
+    caption1: {
         type: String,
-        required: true,
     },
-    name: {
+    photo1: {
+        data: Buffer,
+        contentType: String
+    },
+    caption2: {
         type: String,
-        required: true,
     },
-    about: {
+    photo2: {
+        data: Buffer,
+        contentType: String
+    },
+    caption3: {
         type: String,
-        required: true,
     },
-    photo: {
+    photo3: {
         data: Buffer,
         contentType: String
     },
@@ -30,4 +35,4 @@ const facultySchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model("Carousel", carouselSchema);

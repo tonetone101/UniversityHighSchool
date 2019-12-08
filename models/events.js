@@ -1,17 +1,21 @@
-// to show all faculty members
+// for admin to add events for parents and other visitors to view
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const facultySchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
     },
-    name: {
+    when: {
         type: String,
         required: true,
     },
-    about: {
+    where: {
+        type: String,
+        required: true,
+    },
+    body: {
         type: String,
         required: true,
     },
@@ -30,4 +34,4 @@ const facultySchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model("Event", eventSchema);

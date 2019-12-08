@@ -41,12 +41,12 @@ exports.createFaculty = (req, res, next) => {
             });
         };
         let faculty = new Faculty(fields);
-
-        req.profile.hashed_password = undefined;
-        req.profile.salt = undefined;
+    
+        // req.profile.hashed_password = undefined;
+        // req.profile.salt = undefined;
         faculty.postedBy = req.profile;
         if (files.photo) {
-            faculty.photo.data = fs.readFileSync(files.photo.path, 'utf8');
+            faculty.photo.data = fs.readFileSync(files.photo.path);
             faculty.photo.contentType = files.photo.type;
         }
         faculty.save((err, result) => {
@@ -55,10 +55,58 @@ exports.createFaculty = (req, res, next) => {
     });
 };
 
-// exports.createFaculty = (req, res) => {
-//     const faculty = new Faculty(req.body)
-//     console.log('creating faculty member:', faculty)
-//     faculty.save((err, result) => {
-//         res.status(200).json(result)
-//     })
-// }
+exports.updateFaculty = (req, res, next) => {
+    let form = new formidable.IncomingForm();
+    form.keepExtensions = true;
+    form.parse(req, (err, fields, files) => {
+        if (err) {
+            return res.status(400).json({
+                error: 'Photo could not be uploaded'
+            });
+        }
+        // save post
+        let faculty = req.faculty;
+        faculty = _.extend(faculty, fields);
+        faculty.updated = Date.now();
+
+        if (files.photo) {
+            faculty.photo.data = fs.readFileSync(files.photo.path);
+            faculty.photo.contentType = files.photo.type;
+        }
+
+        faculty.save((err, result) => {
+            if (err) {
+                return res.status(400).json({
+                    error: err
+                });
+            }
+            res.json(faculty);
+        });
+    });
+};
+
+exports.photo = (req, res, next) => {
+    res.set('Content-Type', req.faculty.photo.contentType);
+    return res.send(req.faculty.photo.data);
+};
+
+exports.singleFaculty = (req, res) => {
+    return res.json(req.faculty);
+};
+
+exports.isPoster = (req, res, next) => {
+    let sameUser = req.post && req.auth && req.post.postedBy._id == req.auth._id;
+    let adminUser = req.post && req.auth && req.auth.role === 'admin';
+
+    console.log("req.post ", req.post, " req.auth ", req.auth);
+    console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
+
+    let isPoster = sameUser || adminUser;
+
+    if (!isPoster) {
+        return res.status(403).json({
+            error: 'User is not authorized'
+        });
+    }
+    next();
+};

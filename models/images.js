@@ -1,19 +1,10 @@
-// to show all faculty members
+// to show all images of school
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const facultySchema = new mongoose.Schema({
-    title: {
+const imagesSchema = new mongoose.Schema({
+    caption: {
         type: String,
-        required: true,
-    },
-    name: {
-        type: String,
-        required: true,
-    },
-    about: {
-        type: String,
-        required: true,
     },
     photo: {
         data: Buffer,
@@ -30,4 +21,4 @@ const facultySchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model("Images", imagesSchema);

@@ -1,0 +1,1 @@
+// student section that consist of resources and policies for students as content

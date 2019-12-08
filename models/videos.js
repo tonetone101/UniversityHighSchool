@@ -1,21 +1,12 @@
-// to show all faculty members
+// to show all videos of school
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const facultySchema = new mongoose.Schema({
-    title: {
+const videosSchema = new mongoose.Schema({
+    caption: {
         type: String,
-        required: true,
     },
-    name: {
-        type: String,
-        required: true,
-    },
-    about: {
-        type: String,
-        required: true,
-    },
-    photo: {
+    video: {
         data: Buffer,
         contentType: String
     },
@@ -30,4 +21,4 @@ const facultySchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("Faculty", facultySchema);
+module.exports = mongoose.model("Videos", videosSchema);
