@@ -20,13 +20,13 @@ exports.imageById = (req, res, next, id) => {
     Images.findById(id)
         .populate('postedBy', '_id name role')
         .select("_id caption photo created")
-        .exec((err, faculty) => {
-            if (err || !faculty) {
+        .exec((err, image) => {
+            if (err || !image) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            req.faculty = faculty;
+            req.images = image;
             next();
         });
 };
@@ -65,22 +65,22 @@ exports.updateImages = (req, res, next) => {
             });
         }
         // save post
-        let images = req.images;
-        images = _.extend(images, fields);
-        images.updated = Date.now();
+        let image = req.images;
+        image = _.extend(image, fields);
+        image.updated = Date.now();
 
         if (files.photo) {
-            images.photo.data = fs.readFileSync(files.photo.path);
-            images.photo.contentType = files.photo.type;
+            image.photo.data = fs.readFileSync(files.photo.path);
+            image.photo.contentType = files.photo.type;
         }
 
-        images.save((err, result) => {
+        image.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(images);
+            res.json(image);
         });
     });
 };

@@ -8,7 +8,7 @@ router = express.Router()
 router.get('/image', getImages)
 router.get('/image/:imageId', singleImage)
 router.post('/image/new', requireSignin, createImages, createImageValidator)
-router.put('/image/edit/:imageId', requireSignin, isAdmin, updateImages)
+router.put('/image/edit/:imageId', requireSignin,  updateImages)
 router.delete('/image/delete/:imageId', requireSignin, isAdmin, deleteImage);
 
 router.param('imageId', imageById);
