@@ -27,6 +27,35 @@ exports.createFacultyValidator = (req, res, next) => {
     next()
 }
 
+exports.createEventValidator = (req, res, next) => {
+    // title
+    req.check('title', "Please write the title of event").notEmpty()
+    req.check('title', "title must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    // name
+    req.check('when', "Please write when the event will take place").notEmpty()
+    req.check('when', "when must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    // about
+    req.check('where', "Please write a location").notEmpty()
+    req.check('where', "location must be 4 to 2000 characters").isLength({
+        min: 4,
+        max: 2000
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
 exports.createImageValidator = (req, res, next) => {
     // caption
     req.check('caption', "Please write the caption for image").notEmpty()
