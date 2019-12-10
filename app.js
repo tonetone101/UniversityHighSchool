@@ -23,6 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
  const imageRoutes = require('./routes/images');
  const carouselRoutes = require('./routes/carousel');
  const eventRoutes = require('./routes/event');
+ const registerRoutes = require('./routes/register');
+
 
 
  // middlewares
@@ -37,6 +39,7 @@ app.use('/', facultyRoutes)
 app.use('/', authRoutes)
 app.use('/', carouselRoutes)
 app.use('/', eventRoutes)
+app.use('/', registerRoutes )
 app.get('/', (req, res) => {
     res.send('homepage')
 })
