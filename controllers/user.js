@@ -41,8 +41,8 @@ exports.allUsers = (req, res) => {
                 error: err
             });
         }
-        res.json(users);
-    }).select('name email about photo created');
+        res.json(users)
+    }).select('name email about role photo created');
 };
 
 exports.getUser = (req, res) => {

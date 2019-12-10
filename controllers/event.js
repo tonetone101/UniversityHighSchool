@@ -47,7 +47,6 @@ exports.createEvent = (req, res, next) => {
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;
         event.postedBy = req.profile;
-        console.log(post)
         if (files.photo) {
             event.photo.data = fs.readFileSync(files.photo.path, 'utf8');
             event.photo.contentType = files.photo.type;

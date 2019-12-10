@@ -12,8 +12,8 @@ router.get('/user/:userId', requireSignin, getUser) // to see single user
 router.put('/user/:userId', requireSignin, hasAuthorization, updateUser) // to update
 router.delete('/user/:userId', requireSignin, hasAuthorization, deleteUser) // to deletes
 
-// suggested followers
-router.get('/user/findpeople/:userId', requireSignin, findPeople)
+//photo
+router.get('/user/photo/:userId', userPhoto)
 
 router.param('userId', userById)
 

@@ -24,6 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {
  const carouselRoutes = require('./routes/carousel');
  const eventRoutes = require('./routes/event');
  const registerRoutes = require('./routes/register');
+ const userRoutes = require('./routes/user')
 
 
 
@@ -37,6 +38,7 @@ app.use(expressValidator())
 app.use('/', imageRoutes)
 app.use('/', facultyRoutes)
 app.use('/', authRoutes)
+app.use('/', userRoutes)
 app.use('/', carouselRoutes)
 app.use('/', eventRoutes)
 app.use('/', registerRoutes )
