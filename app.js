@@ -23,7 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
  const imageRoutes = require('./routes/images');
  const carouselRoutes = require('./routes/carousel');
  const eventRoutes = require('./routes/event');
- const registerRoutes = require('./routes/register');
+ const studentRoutes = require('./routes/student')
+
  const userRoutes = require('./routes/user')
 
 
@@ -41,7 +42,7 @@ app.use('/', authRoutes)
 app.use('/', userRoutes)
 app.use('/', carouselRoutes)
 app.use('/', eventRoutes)
-app.use('/', registerRoutes )
+app.use('/', studentRoutes)
 app.get('/', (req, res) => {
     res.send('homepage')
 })

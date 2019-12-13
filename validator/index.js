@@ -178,19 +178,19 @@ exports.passwordResetValidator = (req, res, next) => {
 
 exports.createRegisterValidator = (req, res, next) => {
     // parentName
-    req.check('parentName', "Please write your name ").notEmpty()
-    req.check('parentName', "parentName must be at least 4 characters long").isLength({
+    req.check('parent', "Please write your name ").notEmpty()
+    req.check('parent', "parentName must be at least 4 characters long").isLength({
         min: 4,
         max: 150
     })
     // name
-    req.check('studentName', "Please write the student's Name").notEmpty()
-    req.check('studentName', "student name must be at least 6 characters").isLength({
+    req.check('student', "Please write the student's Name").notEmpty()
+    req.check('student', "student name must be at least 6 characters").isLength({
         min: 6,
         max: 150
     })
-    req.check('studentBirthday', "Please write the student's birthday").notEmpty()
-    req.check('studentBirthday', "student birthday must be at least 6 characters").isLength({
+    req.check('birthday', "Please write the student's birthday").notEmpty()
+    req.check('birthday', "student birthday must be at least 6 characters").isLength({
         min: 6,
         max: 150
     })
@@ -208,4 +208,39 @@ exports.createRegisterValidator = (req, res, next) => {
     }
     next()
 }
+
+exports.createStudentValidator = (req, res, next) => {
+    // parentName
+    req.check('parent', "Please write your name ").notEmpty()
+    req.check('parent', "parentName must be at least 4 characters long").isLength({
+        min: 4,
+        max: 150
+    })
+    // name
+    req.check('student', "Please write the student's Name").notEmpty()
+    req.check('student', "student name must be at least 6 characters").isLength({
+        min: 6,
+        max: 150
+    })
+    req.check('birthday', "Please write the student's birthday").notEmpty()
+    req.check('birthday', "student birthday must be at least 6 characters").isLength({
+        min: 6,
+        max: 150
+    })
+    req.check('contact', "Please add your contact information, via phone number or email").notEmpty()
+    req.check('contact', "contact must be at least 7 characters").isLength({
+        min: 7,
+        max: 150
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
+
 

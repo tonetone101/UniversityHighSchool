@@ -6,8 +6,8 @@ const _ = require('lodash');
 exports.getCarousel = (req, res, next) => {
    
     const carousel = Carousel.find()
-        // .populate("postedBy", "_id name photo role ")
-        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 created")
+        .populate("postedBy", "_id name photo role ")
+        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 missionStatement created")
         .sort({ created: -1 })
         .then(carousel => {
            res.json(carousel)
@@ -19,7 +19,7 @@ exports.getCarousel = (req, res, next) => {
 exports.carouselById = (req, res, next, id) => {
     Carousel.findById(id)
         .populate('postedBy', '_id name role')
-        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 created")
+        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 missionStatement created")
         .exec((err, carousel) => {
             if (err || !carousel) {
                 return res.status(400).json({
@@ -116,9 +116,19 @@ exports.isAdmin = (req, res, next) => {
     next();
 };
 
-exports.photo = (req, res, next) => {
-    res.set('Content-Type', req.carousel.photo.contentType);
-    return res.send(req.carousel.photo.data);
+exports.photo1 = (req, res, next) => {
+    res.set('Content-Type', req.carousel.photo1.contentType);
+    return res.send(req.carousel.photo1.data);
+};
+
+exports.photo2 = (req, res, next) => {
+    res.set('Content-Type', req.carousel.photo2.contentType);
+    return res.send(req.carousel.photo1.data);
+};
+
+exports.photo3 = (req, res, next) => {
+    res.set('Content-Type', req.carousel.photo3.contentType);
+    return res.send(req.carousel.photo3.data);
 };
 
 exports.singleCarousel = (req, res) => {

@@ -7,7 +7,7 @@ exports.getFaculty = (req, res, next) => {
    
     const faculty = Faculty.find()
         // .populate("postedBy", "_id name photo role ")
-        .select("_id title name about created")
+        .select("_id title name about photo created")
         .sort({ created: -1 })
         .then(faculty => {
            res.json(faculty)

@@ -30,6 +30,9 @@ const carouselSchema = new mongoose.Schema({
         type: ObjectId,
         ref: "User"
     },
+    missionStatement: {
+        type: String
+    },
     created: {
         type: Date,
         default: Date.now
