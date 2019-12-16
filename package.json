@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "NODE JS api for UHS",
   "main": "app.js",
+  "engines": {
+    "node": "8.1.1",
+    "npm": "5.0.3"
+  },
   "scripts": {
     "start": "nodemon app.js"
   },

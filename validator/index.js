@@ -75,18 +75,8 @@ exports.createImageValidator = (req, res, next) => {
 
 exports.createCarouselValidator = (req, res, next) => {
     // caption
-    req.check('caption1', "Please write the caption for image").notEmpty()
-    req.check('caption1', "caption must be 4 to 150 characters").isLength({
-        min: 4,
-        max: 150
-    })
-    req.check('caption2', "Please write the caption for image").notEmpty()
-    req.check('caption2', "caption must be 4 to 150 characters").isLength({
-        min: 4,
-        max: 150
-    })
-    req.check('caption3', "Please write the caption for image").notEmpty()
-    req.check('caption3', "caption must be 4 to 150 characters").isLength({
+    req.check('missionStatement', "Please write the caption for image").notEmpty()
+    req.check('missionStatement', "caption must be 4 to 150 characters").isLength({
         min: 4,
         max: 150
     })

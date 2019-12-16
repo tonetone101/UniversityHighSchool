@@ -8,7 +8,7 @@ router = express.Router()
 
 router.get('/student', getStudents)
 router.get('/student/:studentId', singleStudent)
-router.post('/student/new/:userId', requireSignin, createStudent, createStudentValidator)
+router.post('/student/new/:userId', createStudent, createStudentValidator)
 router.put('/student/edit/:studentId', requireSignin, updateStudent)
 router.delete('/student/delete/:studentId', requireSignin, deleteStudent);
 
