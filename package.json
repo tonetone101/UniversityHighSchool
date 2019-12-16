@@ -4,7 +4,7 @@
   "description": "NODE JS api for UHS",
   "main": "app.js",
   "engines": {
-    "node": "8.9.1",
+    "node": "12.13.0",
     "npm": "6.9.0"
   },
   "scripts": {
