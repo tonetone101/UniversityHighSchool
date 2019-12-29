@@ -17,17 +17,49 @@ mongoose.connect(process.env.MONGO_URI, {
      console.log(`DB connection error: ${err.message}`)
  })
 
-// bringing in my routes
- const facultyRoutes = require('./routes/faculty');
- const authRoutes = require('./routes/auth');
- const imageRoutes = require('./routes/images');
- const carouselRoutes = require('./routes/carousel');
- const eventRoutes = require('./routes/event');
- const studentRoutes = require('./routes/student')
+// bringing in my english routes
+ const facultyRoutes = require('./english/routes/faculty');
+ const imageRoutes = require('./english/routes/images');
+ const carouselRoutes = require('./english/routes/carousel');
+ const eventRoutes = require('./english/routes/event');
+ const studentRoutes = require('./english/routes/student')
+ const linkRoutes = require('./english/routes/link');
 
- const userRoutes = require('./routes/user')
+ // bringing in my spanish routes
+ const spanishfacultyRoutes = require('./spanish/routes/faculty');
+ const spanishimageRoutes = require('./spanish/routes/images');
+ const spanishcarouselRoutes = require('./spanish/routes/carousel');
+ const spanisheventRoutes = require('./spanish/routes/event');
+ const spanishstudentRoutes = require('./spanish/routes/student')
+ const spanishlinkRoutes = require('./spanish/routes/link');
 
+// bringing in my khmer routes
+const khmerfacultyRoutes = require('./khmer/routes/faculty');
+const khmerimageRoutes = require('./khmer/routes/images');
+const khmercarouselRoutes = require('./khmer/routes/carousel');
+const khmereventRoutes = require('./khmer/routes/event');
+const khmerstudentRoutes = require('./khmer/routes/student')
+const khmerlinkRoutes = require('./khmer/routes/link');
 
+// bringing in my hmong routes
+const hmongfacultyRoutes = require('./hmong/routes/faculty');
+const hmongimageRoutes = require('./hmong/routes/images');
+const hmongcarouselRoutes = require('./hmong/routes/carousel');
+const hmongeventRoutes = require('./hmong/routes/event');
+const hmongstudentRoutes = require('./hmong/routes/student')
+const hmonglinkRoutes = require('./hmong/routes/link');
+
+// bringing in my port routes
+const portfacultyRoutes = require('./port/routes/faculty');
+const portimageRoutes = require('./port/routes/images');
+const portcarouselRoutes = require('./port/routes/carousel');
+const porteventRoutes = require('./port/routes/event');
+const portstudentRoutes = require('./port/routes/student')
+const portlinkRoutes = require('./port/routes/link');
+
+// general route
+const authRoutes = require('./general/routes/auth');
+const userRoutes = require('./general/routes/user')
 
  // middlewares
 app.use(bodyParser.json())
@@ -35,14 +67,49 @@ app.use(cors())
 app.use(morgan('dev'))
 app.use(expressValidator())
 
-// routes
+// english routes
 app.use('/', imageRoutes)
 app.use('/', facultyRoutes)
-app.use('/', authRoutes)
-app.use('/', userRoutes)
 app.use('/', carouselRoutes)
 app.use('/', eventRoutes)
 app.use('/', studentRoutes)
+app.use('/', linkRoutes);
+
+// spanish routes
+app.use('/', spanishimageRoutes)
+app.use('/', spanishfacultyRoutes)
+app.use('/', spanishcarouselRoutes)
+app.use('/', spanisheventRoutes)
+app.use('/', spanishstudentRoutes)
+app.use('/', spanishlinkRoutes);
+
+// khmer routes
+app.use('/', khmerimageRoutes)
+app.use('/', khmerfacultyRoutes)
+app.use('/', khmercarouselRoutes)
+app.use('/', khmereventRoutes)
+app.use('/', khmerstudentRoutes)
+app.use('/', khmerlinkRoutes);
+
+// hmong routes
+app.use('/', hmongimageRoutes)
+app.use('/', hmongfacultyRoutes)
+app.use('/', hmongcarouselRoutes)
+app.use('/', hmongeventRoutes)
+app.use('/', hmongstudentRoutes)
+app.use('/', hmonglinkRoutes);
+
+// port routes
+app.use('/', portimageRoutes)
+app.use('/', portfacultyRoutes)
+app.use('/', portcarouselRoutes)
+app.use('/', porteventRoutes)
+app.use('/', portstudentRoutes)
+app.use('/', portlinkRoutes);
+
+// general routes
+app.use('/', authRoutes)
+app.use('/', userRoutes)
 app.get('/', (req, res) => {
     res.send('hello')
 })

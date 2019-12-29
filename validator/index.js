@@ -90,6 +90,24 @@ exports.createCarouselValidator = (req, res, next) => {
     next()
 }
 
+
+exports.createspanishCarouselValidator = (req, res, next) => {
+    // caption
+    req.check('missionStatement', "Por favor escriba el pie de foto").notEmpty()
+    req.check('missionStatement', "el subtítulo debe tener de 4 a 150 caracteres").isLength({
+        min: 4,
+        max: 150
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
 exports.userSignupValidator = (req, res, next) => {
     // name is not null and between 4-10 characters
     req.check('name', 'Name is required').notEmpty();
