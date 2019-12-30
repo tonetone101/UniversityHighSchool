@@ -9,7 +9,7 @@ router = express.Router()
 
 router.get('/spanishCarousel', getspanishCarousel)
 router.get('/spanishCarousel/:spanishCarouselId', singlespanishCarousel)
-router.post('/spanishCarousel/new/', createspanishCarousel)
+router.post('/spanishCarousel/new', createspanishCarousel)
 router.put('/spanishCarousel/edit/:spanishCarouselId', updatespanishCarousel)
 router.delete('/spanishCarousel/delete/:spanishCarouselId', deletespanishCarousel);
 

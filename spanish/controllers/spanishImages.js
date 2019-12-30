@@ -20,13 +20,13 @@ exports.spanishImageById = (req, res, next, id) => {
     SpanishImages.findById(id)
         .populate('postedBy', '_id name role')
         .select("_id caption photo created")
-        .exec((err, image) => {
-            if (err || !image) {
+        .exec((err, spanishImage) => {
+            if (err || !spanishImage) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            req.spanishImages = image;
+            req.spanishImages = spanishImage;
             next();
         });
 };
@@ -37,19 +37,19 @@ exports.createspanishImages = (req, res, next) => {
     form.parse(req, (err, fields, files) => {
         if (err) {
             return res.status(400).json({
-                error: 'Image could not be uploaded'
+                error: 'spanishImage could not be uploaded'
             });
         };
-        let image = new SpanishImages(fields);
+        let spanishImage = new SpanishImages(fields);
     
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;
-        image.postedBy = req.profile;
+        spanishImage.postedBy = req.profile;
         if (files.photo) {
-            image.photo.data = fs.readFileSync(files.photo.path);
-            image.photo.contentType = files.photo.type;
+            spanishImage.photo.data = fs.readFileSync(files.photo.path);
+            spanishImage.photo.contentType = files.photo.type;
         }
-        image.save((err, result) => {
+        spanishImage.save((err, result) => {
             res.json(result);
         });
     });
@@ -65,22 +65,22 @@ exports.updatespanishImages = (req, res, next) => {
             });
         }
         // save post
-        let image = req.spanishImages;
-        image = _.extend(image, fields);
-        image.updated = Date.now();
+        let spanishImage = req.spanishImages;
+        spanishImage = _.extend(spanishImage, fields);
+        spanishImage.updated = Date.now();
 
         if (files.photo) {
-            image.photo.data = fs.readFileSync(files.photo.path);
-            image.photo.contentType = files.photo.type;
+            spanishImage.photo.data = fs.readFileSync(files.photo.path);
+            spanishImage.photo.contentType = files.photo.type;
         }
 
-        image.save((err, result) => {
+        spanishImage.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(image);
+            res.json(spanishImage);
         });
     });
 };
@@ -102,16 +102,16 @@ exports.isAdmin = (req, res, next) => {
     next();
 };
 
-exports.deleteSpanishImages = (req, res) => {
-    let image = req.spanishImages;
-    image.remove((err, image) => {
+exports.deletespanishImages = (req, res) => {
+    let spanishImage = req.spanishImages;
+    spanishImage.remove((err, spanishImage) => {
         if (err) {
             return res.status(400).json({
                 error: err
             });
         }
         res.json({
-            message: 'Image deleted successfully'
+            message: 'spanishImage deleted successfully'
         });
     });
 };
@@ -121,6 +121,6 @@ exports.photo = (req, res, next) => {
     return res.send(req.spanishImages.photo.data);
 };
 
-exports.singleSpanishImages = (req, res) => {
+exports.singlespanishImage = (req, res) => {
     return res.json(req.spanishImages);
 };

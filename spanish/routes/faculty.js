@@ -14,6 +14,8 @@ router.delete('/spanishFaculty/delete/:spanishFacultyId',  deletespanishFaculty)
 
 router.get('/spanishFaculty/photo/:spanishFacultyId', photo);
 
+router.get('/spanishfaculty/photo/:spanishFacultyId', photo);
+
 router.param('userId', userById);
 router.param('spanishFacultyId', spanishFacultyById);
 

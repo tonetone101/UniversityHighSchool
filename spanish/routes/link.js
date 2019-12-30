@@ -20,7 +20,7 @@ const router = express.Router();
 router.get('/spanishLinks', getspanishLinks)
 
 // upload routes
-router.post('/spanishLink/new/:userId', createspanishLink);
+router.post('/spanishLink/new', createspanishLink);
 router.get('/spanishLinks/by/:userId', spanishLinksByUser);
 router.get('/spanishLink/:linkId', singlespanishLink);
 router.put('/spanishLink/:spanishLinkId', updatespanishLink);
