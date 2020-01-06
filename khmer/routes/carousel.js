@@ -9,7 +9,7 @@ router = express.Router()
 
 router.get('/khmerCarousel', getkhmerCarousel)
 router.get('/khmerCarousel/:khmerCarouselId', singlekhmerCarousel)
-router.post('/khmerCarousel/new/', createkhmerCarousel)
+router.post('/khmerCarousel/new', createkhmerCarousel)
 router.put('/khmerCarousel/edit/:khmerCarouselId', updatekhmerCarousel)
 router.delete('/khmerCarousel/delete/:khmerCarouselId', deletekhmerCarousel);
 
