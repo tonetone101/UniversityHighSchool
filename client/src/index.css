@@ -1,0 +1,27 @@
+body {
+    font-family: 'Titillium Web', sans-serif
+  }
+  .heading {
+    font-weight: 700;
+  }
+  .subheading {
+    font-weight: 300;
+  }
+
+#topHeader{
+  background-color:rgb(11, 14, 179);
+}
+
+#menu{
+  background-color:rgb(11, 14, 179);
+}
+
+#carol {
+    background-color:rgb(7, 94, 207);
+}
+
+#stats {
+  
+  background-color:rgb(11, 14, 179);
+}
+
