@@ -235,7 +235,7 @@ class Carol extends Component {
     }
 
     renderAnnouncements = () => {
-        <div>
+        <div style={{background: 'blue'}}>
             <h1>News and Announcements</h1>
         </div>
     }
