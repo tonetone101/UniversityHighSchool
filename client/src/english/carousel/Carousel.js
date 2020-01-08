@@ -185,7 +185,7 @@ class Carol extends Component {
                         <img
                         // style={{ height: "350px", width: "300px" }}
                         className="d-block w-100"
-                        src={require("../../images/logo.png")}
+                        src={require("../../images/UHS_research.JPG")}
                         alt="First slide"
                         />
                         <Carousel.Caption>
@@ -196,7 +196,7 @@ class Carol extends Component {
                         <img
                         // style={{ height: "350px", width: "300px" }}
                         className="d-block w-100"
-                        src={require("../../images/uhsProfile.png")}
+                        src={require("../../images/uhsStudents.JPG")}
                         alt="Second slide"
                         />
 
@@ -208,7 +208,7 @@ class Carol extends Component {
                         <img
                         // style={{ height: "350px", width: "300px" }}
                         className="d-block w-100"
-                        src={require("../../images/uhsMission.png")}
+                        src={require("../../images/uhsstudying.JPG")}
                         alt="Third slide"
                         />
 
