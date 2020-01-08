@@ -18,6 +18,7 @@ class SinglePartners extends Component {
 
     componentDidMount = () => {
         const partnersId = this.props.match.params.partnersId
+        console.log(this.props.match.params)
         singlePartner(partnersId).then(data => {
             if (data.error) {
                 console.log(data.error)
