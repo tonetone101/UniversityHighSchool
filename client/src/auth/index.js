@@ -1,5 +1,5 @@
 export const signup = user => {
-    return fetch(`${process.env.REACT_APP_API_URL}/signup`, {
+    return fetch(`/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -15,7 +15,7 @@ export const signup = user => {
 
 //signin fetch method
 export const signin = user => {
-    return fetch(`${process.env.REACT_APP_API_URL}/signin`, {
+    return fetch(`/signin`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -39,7 +39,7 @@ export const authenticate = (jwt, next) => {
 export const signout = (next) => {
     if(typeof window !== 'undefined') localStorage.removeItem('jwt')
     next()
-    return fetch(`${process.env.REACT_APP_API_URL}/signout`, {
+    return fetch(`/signout`, {
         method: 'GET',
     })
     .then(response => {
@@ -64,7 +64,7 @@ export const isAuthenticated = () => {
 
 export const forgotPassword = email => {
     console.log('email: ', email);
-    return fetch(`${process.env.REACT_APP_API_URL}/forgot-password/`, {
+    return fetch(`/forgot-password/`, {
         method: 'PUT',
         headers: {
             Accept: 'application/json',
@@ -80,7 +80,7 @@ export const forgotPassword = email => {
 };
 
 export const resetPassword = resetInfo => {
-    return fetch(`${process.env.REACT_APP_API_URL}/reset-password/`, {
+    return fetch(`/reset-password/`, {
         method: 'PUT',
         headers: {
             Accept: 'application/json',

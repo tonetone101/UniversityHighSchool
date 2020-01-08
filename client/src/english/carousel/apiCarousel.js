@@ -1,6 +1,6 @@
 
 export const create = (userId, token, carousel) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/carousel/new/${userId}`, {
+    return fetch(`/carousel/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -15,7 +15,7 @@ export const create = (userId, token, carousel) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/carousel`, {
+    return fetch(`/carousel`, {
         method: "GET"
     })
         .then(response => {
@@ -25,7 +25,7 @@ export const list = () => {
 };
 
 export const update = (carouselId, token, carousel) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/carousel/edit/${carouselId}`, {
+    return fetch(`/carousel/edit/${carouselId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -40,7 +40,7 @@ export const update = (carouselId, token, carousel) => {
 };
 
 export const singleCarousel = (carouselId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/carousel/${carouselId}`, {
+    return fetch(`/carousel/${carouselId}`, {
         method: "GET"
     })
         .then(response => {

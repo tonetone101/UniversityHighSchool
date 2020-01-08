@@ -1,5 +1,5 @@
 export const create = (userId, token, student) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/student/new/${userId}`, {
+    return fetch(`/student/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, student) => {
 };
 
 export const createLink = (userId, token, link) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/link/new/${userId}`, {
+    return fetch(`/link/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -29,7 +29,7 @@ export const createLink = (userId, token, link) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/links`, {
+    return fetch(`/links`, {
         method: "GET"
     })
         .then(response => {
@@ -39,7 +39,7 @@ export const list = () => {
 };
 
 export const remove = (linkId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/link/${linkId}`, {
+    return fetch(`/link/${linkId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -54,7 +54,7 @@ export const remove = (linkId, token) => {
 };
 
 export const update = (linkId, token, link) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/link/${linkId}`, {
+    return fetch(`/link/${linkId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -69,7 +69,7 @@ export const update = (linkId, token, link) => {
 };
 
 export const read = (userId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+    return fetch(`/user/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -84,7 +84,7 @@ export const read = (userId, token) => {
 };
 
 export const singleLink = (linkId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/link/${linkId}`, {
+    return fetch(`/link/${linkId}`, {
         method: "GET"
     })
         .then(response => {
