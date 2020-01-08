@@ -255,7 +255,7 @@ class Carol extends Component {
 
     render() {
         const {carousel, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
-        
+        console.log(carousel)
         if(spanishPage) {
             return <Redirect to={`/spanish`} />
          } else if (englishPage) {
