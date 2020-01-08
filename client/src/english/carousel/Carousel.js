@@ -300,7 +300,7 @@ class Carol extends Component {
                    
                 </div>
                         
-                        <div className='row container' style={{marginLeft: '150px'}}>
+                        <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
                            
                             <img 
                                 style={{ height: "300px", width: "200px" }}
