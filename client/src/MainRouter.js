@@ -66,6 +66,10 @@ import NewSpanishPhoto from './spanish/gallery/NewPhoto'
 import PhotoSpanish from './spanish/gallery/Photo'
 import SingleSpanishPhoto from './spanish/gallery/SinglePhoto'
 import EditSpanishPhoto from './spanish/gallery/EditPhoto'
+import NewSpanishPartners from './spanish/partners/NewPartners'
+import SpanishPartners from './spanish/partners/Partners'
+import SingleSpanishPartners from './spanish/partners/SinglePartner'
+import EditSpanishPartners from './spanish/partners/EditPartners'
 
 // khmer
 import NewkhmerCarousel from './khmer/carousel/NewCarousel'
@@ -90,6 +94,14 @@ import NewkhmerPhoto from './khmer/gallery/NewPhoto'
 import Photokhmer from './khmer/gallery/Photo'
 import SinglekhmerPhoto from './khmer/gallery/SinglePhoto'
 import EditkhmerPhoto from './khmer/gallery/EditPhoto'
+import NewPartners from './khmer/partners/NewPartners'
+import Partners from './khmer/partners/Partners'
+import SinglePartners from './khmer/partners/SinglePartner'
+import EditPartners from './khmer/partners/EditPartners'
+import NewkhmerPartners from './khmer/partners/NewPartners'
+import khmerPartners from './khmer/partners/Partners'
+import SinglekhmerPartners from './khmer/partners/SinglePartner'
+import EditkhmerPartners from './khmer/partners/EditPartners'
 
 const MainRouter = () => (
     <div >
@@ -157,7 +169,11 @@ const MainRouter = () => (
             <Route exact path="/spanish/images" component={PhotoSpanish}></Route>
             <Route exact path="/spanish/image/:imageId" component={SingleSpanishPhoto}></Route>
             <Route exact path="/spanish/edit/image/:imageId" component={EditSpanishPhoto}></Route>
-
+            <Route exact path="/spanish/partners" component={SpanishPartners}></Route>
+            <Route exact path="/spanish/new/partners" component={NewSpanishPartners}></Route>
+            <Route exact path="/spanish/partner" component={SingleSpanishPartners}></Route>
+            <Route exact path="/spanish/edit/partner/:partnersId" component={EditSpanishPartners}></Route>
+            <Route exact path="/spanish/partners/:partnersId" component={SingleSpanishPartners}></Route>
 
             {
             // khmer          
@@ -186,7 +202,11 @@ const MainRouter = () => (
             <Route exact path="/khmer/images" component={Photokhmer}></Route>
             <Route exact path="/khmer/image/:imageId" component={SinglekhmerPhoto}></Route>
             <Route exact path="/khmer/edit/image/:imageId" component={EditkhmerPhoto}></Route>
-
+            <Route exact path="/khmer/partners" component={khmerPartners}></Route>
+            <Route exact path="/khmer/new/partners" component={NewkhmerPartners}></Route>
+            <Route exact path="/khmer/partner" component={SinglekhmerPartners}></Route>
+            <Route exact path="/khmer/edit/partner/:partnersId" component={EditkhmerPartners}></Route>
+            <Route exact path="/khmer/partners/:partnersId" component={SinglekhmerPartners}></Route>
         </Switch>
         
     </div>
