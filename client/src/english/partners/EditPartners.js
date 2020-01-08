@@ -147,7 +147,7 @@ class EditPartners extends Component {
                         <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`/partners/photo/${id}`} onError={i => (i.target.src = ``)} alt='' />
 
 
-                        {this.editpartnersForm(name, about)}
+                        {this.editpartnersForm(about, name)}
             </div>
         )
     }
