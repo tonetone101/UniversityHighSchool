@@ -11,6 +11,9 @@ class EditCarousel extends Component {
             caption1: "",
             caption2: "",
             caption3: '',
+            news1: '',
+            news2: '',
+            news3: '',
             missionStatement: "",
             redirectToHome: false,
             error: '',
@@ -30,6 +33,9 @@ class EditCarousel extends Component {
                     caption1: data.caption1,
                     caption2: data.caption2, 
                     caption3: data.caption3, 
+                    news1: data.caption4,
+                    news2: data.caption5,
+                    news3: data.caption6,
                     error: ''
                 })
             }
@@ -80,6 +86,9 @@ class EditCarousel extends Component {
                         caption1: "",
                         caption2: '',
                         caption3: '',
+                        news1: '',
+                        news2: '',
+                        news3: '',
                         missionStatement: '',
                         redirectToHome: true
                     });
