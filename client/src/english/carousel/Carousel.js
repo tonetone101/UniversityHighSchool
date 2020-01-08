@@ -286,8 +286,9 @@ class Carol extends Component {
                         }
                     </div>
                                         </div>
-                        <div className='row text-center'>
-                        <img 
+                        <div className='row container'>
+                            <div className='text-center'>
+                                        <img 
                                             style={{ height: "300px", width: "200px" }}
                                             className="mt-4 col-sm-6"
                                             src={require("../../images/uhsMission.png")}
@@ -300,8 +301,9 @@ class Carol extends Component {
                                             src={require("../../images/uhsVision.png")}
                                             alt="Second slide" 
                                             
-                                        />   
-                                </div>
+                                        />  
+                            </div> 
+                        </div>
                                 
                                 
                                 <footer className='mt-5'>
