@@ -329,7 +329,7 @@ class Carol extends Component {
                         </div>
                         
                         <div>
-                            {this.renderAnnouncements()}
+                            {this.renderAnnouncements(carousel)}
                         </div>
                                 
                                 
