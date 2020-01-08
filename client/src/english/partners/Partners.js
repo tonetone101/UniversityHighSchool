@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { list, read } from "./apiPartners";
 import { Link, Redirect } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
-import {isAuthenticated} from '../../auth'
+import {isAuthenticated, signout} from '../../auth'
 
 class Partners extends Component {
     constructor() {
