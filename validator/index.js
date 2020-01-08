@@ -137,6 +137,29 @@ exports.userSignupValidator = (req, res, next) => {
     next();
 };
 
+exports.createPartnersValidator = (req, res, next) => {
+    // name
+    req.check('name', "Please write the name of partner or company").notEmpty()
+    req.check('name', "name must be 4 to 150 characters").isLength({
+        min: 4,
+        max: 150
+    })
+    // about
+    req.check('about', "Please write something about the partnership").notEmpty()
+    req.check('about', "about section must be 4 to 2000 characters").isLength({
+        min: 4,
+        max: 2000
+    })
+    //check for errors
+    const errors = req.validationErrors()
+    // if error, show error as the happen
+    if(errors) {
+        const firstError = errors.map((error) => error.msg )[0]
+        return res.status(400).json({ error: firstError})
+    }
+    next()
+}
+
 exports.userSigninValidator = (request, response, next) => {
     request
         .check('email', 'Email must be between 3 to 32 characters')
