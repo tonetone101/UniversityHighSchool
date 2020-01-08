@@ -252,20 +252,24 @@ class Carol extends Component {
             <div>
                 {this.renderTopHeader()}
                 {this.renderMenu()}
-                <div className='text-center'>
-                    {!carousel ? ( 
-                            <div className='jumbotron text-center '>
-                                <h2>Loading....</h2>
-                            </div>
-                            ) : (
-                                this.renderCarousel(carousel)
-                               
-                            )
-                        } 
-                    <div  id='stats' style={{height: '100px', borderBottom: 'solid black 1px'}}>
-                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'white'}} >
-                                    <h4  >{carousel.caption1}</h4>
-                                </Animated>
+                <div>
+                    <div className='text-center'>
+                        {!carousel ? ( 
+                                <div className='jumbotron text-center '>
+                                    <h2>Loading....</h2>
+                                </div>
+                                ) : (
+                                    this.renderCarousel(carousel)
+                                
+                                )
+                            } 
+                    </div>
+                    <div  id='stats' style={{height: '100px', }} className='container'>
+                        <div style={{borderBottom: 'solid black 1px'}}>
+                            <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
+                                <h4  >{carousel.caption1}</h4>
+                            </Animated>
+                        </div>
                                 <div className='container'>
                                         <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
                                        
