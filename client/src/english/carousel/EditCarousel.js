@@ -88,7 +88,7 @@ class EditCarousel extends Component {
         }
     };
 
-    editCarouselForm = (missionStatement, caption1, caption2, caption3) => (
+    editCarouselForm = (missionStatement, caption1, caption2, caption3, news1, news2, news3) => (
         <form className='container'>
               <div className="form-group">
                 <label className="text-muted">Header</label>
@@ -131,6 +131,42 @@ class EditCarousel extends Component {
                 />
             </div>
 
+            <div>
+                <h3>
+                    News and announcements
+                </h3>
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Announcement 1</label>
+                <input
+                    onChange={this.handleChange("news1")}
+                    type="text"
+                    className="form-control"
+                    value={news1}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Announcement 2</label>
+                <input
+                    onChange={this.handleChange("news2")}
+                    type="text"
+                    className="form-control"
+                    value={news2}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Announcement 3</label>
+                <input
+                    onChange={this.handleChange("news3")}
+                    type="text"
+                    className="form-control"
+                    value={news3}
+                />
+            </div>
+
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
@@ -142,7 +178,7 @@ class EditCarousel extends Component {
 
 
     render() {
-        const {id, caption1, missionStatement, caption2, caption3, redirectToHome, error, loading} = this.state
+        const {id, caption1, missionStatement, caption2, caption3, , redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/`} />;
@@ -165,7 +201,7 @@ class EditCarousel extends Component {
                     }
 
 
-                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3)}
+                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3,news1, news2, news3 )}
              
             </div>
         )
