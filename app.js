@@ -24,6 +24,7 @@ mongoose.connect(process.env.MONGO_URI, {
  const eventRoutes = require('./english/routes/event');
  const studentRoutes = require('./english/routes/student')
  const linkRoutes = require('./english/routes/link');
+ const partnersRoutes = require('./english/routes/partners');
 
  // bringing in my spanish routes
  const spanishfacultyRoutes = require('./spanish/routes/faculty');
@@ -74,6 +75,7 @@ app.use('/', carouselRoutes)
 app.use('/', eventRoutes)
 app.use('/', studentRoutes)
 app.use('/', linkRoutes);
+app.use('/', partnersRoutes);
 
 // spanish routes
 app.use('/', spanishimageRoutes)
