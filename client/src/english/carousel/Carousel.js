@@ -179,7 +179,7 @@ class Carol extends Component {
 
 
         return (
-            <div >
+            <div className='container'>
                 <Carousel >
                     <Carousel.Item>
                         <img
