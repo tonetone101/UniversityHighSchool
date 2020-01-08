@@ -286,7 +286,7 @@ class Carol extends Component {
                         }
                     </div>
                                         </div>
-                        <div className='row container'>
+                        <div className='row text-center'>
                         <img 
                                             style={{ height: "300px", width: "200px" }}
                                             className="mt-4 col-sm-6"
