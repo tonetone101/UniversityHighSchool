@@ -128,7 +128,7 @@ const MainRouter = () => (
             <Route exact path="/new/partners" component={NewPartners}></Route>
             <Route exact path="/partner" component={SinglePartners}></Route>
             <Route exact path="/edit/partner/:partnerId" component={EditPartners}></Route>
-            <Route exact path="/partners/:partnerId" component={SinglePartners}></Route>
+            <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
 
             {
             // spanish          
