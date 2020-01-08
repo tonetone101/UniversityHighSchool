@@ -7,7 +7,7 @@ exports.getCarousel = (req, res, next) => {
    
     const carousel = Carousel.find()
         .populate("postedBy", "_id name photo role ")
-        .select("_id caption1 photo1 caption2 photo2 caption3 caption4 caption5 caption6 photo3 missionStatement created")
+        .select("_id caption1 caption2 caption3 caption4 caption5 caption6 missionStatement created")
         .sort({ created: -1 })
         .then(carousel => {
            res.json(carousel)
@@ -19,7 +19,7 @@ exports.getCarousel = (req, res, next) => {
 exports.carouselById = (req, res, next, id) => {
     Carousel.findById(id)
         .populate('postedBy', '_id name role')
-        .select("_id caption1 photo1 caption2 photo2 caption3 caption4 caption5 caption6 photo3 missionStatement created")
+        .select("_id caption1 caption2 caption3 caption4 caption5 caption6 missionStatement created")
         .exec((err, carousel) => {
             if (err || !carousel) {
                 return res.status(400).json({
