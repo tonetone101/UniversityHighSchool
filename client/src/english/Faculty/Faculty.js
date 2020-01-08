@@ -191,13 +191,13 @@ class Faculty extends Component {
                         : " Unknown";
 
                         const photoUrl = faculty.postedBy
-                        ? `${process.env.REACT_APP_API_URL}/user/photo/${
+                        ? `/user/photo/${
                             event.postedBy._id
                           }?${new Date().getTime()}`
                         : ''
 
                         const facultyPhoto = faculty._id
-                        ? `${process.env.REACT_APP_API_URL}/faculty/photo/${
+                        ? `/faculty/photo/${
                             faculty._id
                           }?${new Date().getTime()}`
                         : ''

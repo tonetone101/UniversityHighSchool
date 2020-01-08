@@ -51,7 +51,7 @@ class SingleFaculty extends Component {
         : " Unknown";
 
         const photoUrl = faculty._id
-        ? `${process.env.REACT_APP_API_URL}/faculty/photo/${
+        ? `/faculty/photo/${
             faculty._id
           }?${new Date().getTime()}`
         : '';

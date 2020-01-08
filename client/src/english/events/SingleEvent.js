@@ -62,7 +62,7 @@ class SingleEvent extends Component {
         : " Unknown";
 
         const photoUrl = event._id
-        ? `${process.env.REACT_APP_API_URL}/event/photo/${
+        ? `/event/photo/${
             event._id
           }?${new Date().getTime()}`
         : '';

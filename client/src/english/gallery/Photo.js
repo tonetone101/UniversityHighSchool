@@ -161,7 +161,7 @@ class Photo extends Component {
                 {images.map((image, i) => {
 
                         const imagePhoto = image._id
-                        ? `${process.env.REACT_APP_API_URL}/image/photo/${
+                        ? `/image/photo/${
                             image._id
                           }?${new Date().getTime()}`
                         : ''
