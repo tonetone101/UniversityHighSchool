@@ -1,5 +1,5 @@
 export const create = (userId, token, partners) => {
-    return fetch(`/partners/new/${userId}`, {
+    return fetch(`/khmerPartners/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, partners) => {
 };
 
 export const list = () => {
-    return fetch(`/partners`, {
+    return fetch(`/khmerPartners`, {
         method: "GET"
     })
         .then(response => {
@@ -24,7 +24,7 @@ export const list = () => {
 };
 
 export const singlePartner = (partnersId) => {
-    return fetch(`/partners/${partnersId}`, {
+    return fetch(`/khmerPartners/${partnersId}`, {
         method: "GET"
     })
         .then(response => {
@@ -34,7 +34,7 @@ export const singlePartner = (partnersId) => {
 };
 
 export const remove = (partnersId, token) => {
-    return fetch(`/partners/delete/${partnersId}`, {
+    return fetch(`/khmerPartners/delete/${partnersId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -49,7 +49,7 @@ export const remove = (partnersId, token) => {
 };
 
 export const update = (partnersId, token, partners) => {
-    return fetch(`/partners/edit/${partnersId}`, {
+    return fetch(`/khmerPartners/edit/${partnersId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",

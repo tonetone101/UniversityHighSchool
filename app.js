@@ -33,6 +33,8 @@ mongoose.connect(process.env.MONGO_URI, {
  const spanisheventRoutes = require('./spanish/routes/event');
  const spanishstudentRoutes = require('./spanish/routes/student')
  const spanishlinkRoutes = require('./spanish/routes/link');
+ const spanishpartnersRoutes = require('./spanish/routes/partners');
+
 
 // bringing in my khmer routes
 const khmerfacultyRoutes = require('./khmer/routes/faculty');
@@ -41,6 +43,8 @@ const khmercarouselRoutes = require('./khmer/routes/carousel');
 const khmereventRoutes = require('./khmer/routes/event');
 const khmerstudentRoutes = require('./khmer/routes/student')
 const khmerlinkRoutes = require('./khmer/routes/link');
+const khmerpartnersRoutes = require('./khmer/routes/partners');
+
 
 // bringing in my hmong routes
 const hmongfacultyRoutes = require('./hmong/routes/faculty');
@@ -84,6 +88,8 @@ app.use('/', spanishcarouselRoutes)
 app.use('/', spanisheventRoutes)
 app.use('/', spanishstudentRoutes)
 app.use('/', spanishlinkRoutes);
+app.use('/', spanishpartnersRoutes);
+
 
 // khmer routes
 app.use('/', khmerimageRoutes)
@@ -92,6 +98,7 @@ app.use('/', khmercarouselRoutes)
 app.use('/', khmereventRoutes)
 app.use('/', khmerstudentRoutes)
 app.use('/', khmerlinkRoutes);
+app.use('/', khmerpartnersRoutes);
 
 // hmong routes
 app.use('/', hmongimageRoutes)
