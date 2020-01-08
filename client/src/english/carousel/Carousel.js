@@ -235,9 +235,11 @@ class Carol extends Component {
     }
 
     renderAnnouncements = () => {
-        <div style={{background: 'blue'}}>
-            <h1>News and Announcements</h1>
-        </div>
+        return (
+            <div style={{background: 'blue'}}>
+                <h1>News and Announcements</h1>
+            </div>
+        )
     }
 
     render() {
@@ -324,7 +326,10 @@ class Carol extends Component {
                             />  
                            
                         </div>
-                        {this.renderAnnouncements()}
+                        
+                        <div>
+                            {this.renderAnnouncements()}
+                        </div>
                                 
                                 
                         <footer className='mt-5'>
