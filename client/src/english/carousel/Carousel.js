@@ -271,11 +271,11 @@ class Carol extends Component {
                             </Animated>
                         </div>
                                 <div className='container'>
-                                        <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
+                                        <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
                                        
                                 </div>    
                                 <div className='container'>
-                                        <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
+                                        <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
                                        
                                 </div>                      
                     </div>
