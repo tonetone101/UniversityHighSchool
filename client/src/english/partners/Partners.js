@@ -177,7 +177,7 @@ class Partners extends Component {
                                     {partner.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/partner/${partner._id}`}
+                                        to={`/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
