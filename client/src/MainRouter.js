@@ -127,7 +127,7 @@ const MainRouter = () => (
             <Route exact path="/partners" component={Partners}></Route>
             <Route exact path="/new/partners" component={NewPartners}></Route>
             <Route exact path="/partner" component={SinglePartners}></Route>
-            <Route exact path="/edit/partner/:partnerId" component={EditPartners}></Route>
+            <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
             <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
 
             {
