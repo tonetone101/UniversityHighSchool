@@ -6,7 +6,7 @@ import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, NavDropdown, 
           Dropdown, DropdownButton,
-        Container, Col, Image
+        Container, Col, Image, Row
         } from 'react-bootstrap';
 import {Animated} from 'react-animated-css'
 
