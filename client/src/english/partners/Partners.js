@@ -208,8 +208,8 @@ class Partners extends Component {
                 {this.renderTopHeader()}
                 {this.renderMenu()}
                 <div className="container">
-                    <div className='row mt-4 mb-3'>
-                        <h2 style={{borderBottom: 'solid black 1px'}}>
+                    <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                        <h2 >
                             Our Partners
                             {!partners.length ? "Loading..." : ""}
                         </h2>
