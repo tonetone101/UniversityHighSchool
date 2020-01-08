@@ -163,7 +163,7 @@ class SinglePartners extends Component {
 
     renderpartners = (partners) => {  
         const photoUrl = partners._id
-        ? `/khmer/partners/photo/${
+        ? `/khmerPartners/photo/${
             partners._id
           }?${new Date().getTime()}`
         : '';

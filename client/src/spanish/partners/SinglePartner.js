@@ -163,7 +163,7 @@ class SinglePartners extends Component {
 
     renderpartners = (partners) => {  
         const photoUrl = partners._id
-        ? `/spanish/partners/photo/${
+        ? `/spanishPartners/photo/${
             partners._id
           }?${new Date().getTime()}`
         : '';
@@ -193,7 +193,7 @@ class SinglePartners extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/partners`}
+                            to={`/spanish/partners`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >

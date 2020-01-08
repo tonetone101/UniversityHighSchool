@@ -161,7 +161,7 @@ class Partners extends Component {
                 {partners.map((partner, i) => {
 
                         const partnersPhoto = partner._id
-                        ? `/partners/photo/${
+                        ? `/khmerPartners/photo/${
                             partner._id
                           }?${new Date().getTime()}`
                         : ''
