@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {singlePartner, remove} from './apiPartners'
 import {Link, Redirect} from 'react-router-dom'
-import {isAuthenticated} from '../../auth'
+import {isAuthenticated, signout} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
 
 
