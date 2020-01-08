@@ -177,7 +177,7 @@ class Partners extends Component {
                                     {partner.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/partner/${partner._id}`}
+                                        to={`/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
@@ -208,8 +208,8 @@ class Partners extends Component {
                 {this.renderTopHeader()}
                 {this.renderMenu()}
                 <div className="container">
-                    <div className='row mt-4 mb-3'>
-                        <h2 style={{borderBottom: 'solid black 1px'}}>
+                    <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                        <h2 >
                             Our Partners
                             {!partners.length ? "Loading..." : ""}
                         </h2>
