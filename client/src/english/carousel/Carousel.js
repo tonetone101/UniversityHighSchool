@@ -290,14 +290,14 @@ class Carol extends Component {
                            
                                         <img 
                                             style={{ height: "300px", width: "200px" }}
-                                            className="mt-4 col-sm-6"
+                                            className="mt-4 mr-2 col-sm-6"
                                             src={require("../../images/uhsMission.png")}
                                             alt="Second slide" 
                                             
                                         />   
                                         <img 
                                             style={{ height: "300px", width: "200px" }}
-                                            className="mt-4 col-sm-6"
+                                            className="mt-4 ml-2 col-sm-6"
                                             src={require("../../images/uhsVision.png")}
                                             alt="Second slide" 
                                             
