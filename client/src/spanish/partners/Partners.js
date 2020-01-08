@@ -123,29 +123,29 @@ class Partners extends Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/spanish'>Hogar</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link href="#features"><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link ><Link style={{color: 'white'}} to='/spanish/faculty'>Facultad</Link></Nav.Link>
                         </div>
-                        <Nav.Link href="#features"><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link ><Link style={{color: 'white'}} to='/spanish/student'>Estudiantes</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/spanish/admission'>Admisión</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/spanish/partners'>Nuestros compañeros</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/spanish/images'>Galería</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/spanishevents'>Próximos Eventos</Link></Nav.Link>
                         </div>
                     
                     </Nav>
@@ -162,7 +162,7 @@ class Partners extends Component {
                 {partners.map((partner, i) => {
 
                         const partnersPhoto = partner._id
-                        ? `/partners/photo/${
+                        ? `/spanish/partners/photo/${
                             partner._id
                           }?${new Date().getTime()}`
                         : ''
@@ -177,7 +177,7 @@ class Partners extends Component {
                                     {partner.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/partners/${partner._id}`}
+                                        to={`/spanish/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
@@ -219,7 +219,7 @@ class Partners extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                                <Link className='mb-5' to='/spanish/new/partners'>Add new partner</Link>
                             </div>
                         )
                     }

@@ -69,12 +69,12 @@ class SinglePartners extends Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/signup' >
+                                    <Link style={{color: 'black'}} to='/khmer/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -86,7 +86,7 @@ class SinglePartners extends Component {
                             this.state.user && (
                                 <Nav.Link>
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
+                                        this.props.history.push('/khmer')
                                     })}>
                                         Sign Out
                                     </a>
@@ -110,29 +110,29 @@ class SinglePartners extends Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link href="#features"><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
-                        <Nav.Link href="#features"><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link ><Link style={{color: 'white'}} to='/khmer/student'>និស្សិត</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/partners'>ដៃគូរបស់យើង</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/images'>វិចិត្រសាល</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmerevents'>ព្រឹត្តិការណ៍ជិតមកដល់</Link></Nav.Link>
                         </div>
                     
                     </Nav>
@@ -163,7 +163,7 @@ class SinglePartners extends Component {
 
     renderpartners = (partners) => {  
         const photoUrl = partners._id
-        ? `/partners/photo/${
+        ? `/khmer/partners/photo/${
             partners._id
           }?${new Date().getTime()}`
         : '';
@@ -193,7 +193,7 @@ class SinglePartners extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/partners`}
+                            to={`/khmer/partners`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -204,7 +204,7 @@ class SinglePartners extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/partner/${partners._id}`}
+                                        to={`/khmer/edit/partner/${partners._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update partners
@@ -237,7 +237,7 @@ class SinglePartners extends Component {
         if(redirectToFaculties) {
             return <Redirect to={`/partners`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/khmer/signin`} />
          }
 
         return (

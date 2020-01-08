@@ -82,12 +82,12 @@ class Partners extends Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/signup' >
+                                    <Link style={{color: 'black'}} to='/khmer/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -99,7 +99,7 @@ class Partners extends Component {
                             this.state.user && (
                                 <Nav.Link>
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
+                                        this.props.history.push('/khmer')
                                     })}>
                                         Sign Out
                                     </a>
@@ -123,29 +123,29 @@ class Partners extends Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link href="#features"><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
-                        <Nav.Link href="#features"><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link ><Link style={{color: 'white'}} to='/khmer/student'>និស្សិត</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/partners'>ដៃគូរបស់យើង</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/images'>វិចិត្រសាល</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmerevents'>ព្រឹត្តិការណ៍ជិតមកដល់</Link></Nav.Link>
                         </div>
                     
                     </Nav>
@@ -154,7 +154,6 @@ class Partners extends Component {
             </div>
         )
     }
-
     renderPartners = partners => {
 
         return (
@@ -177,7 +176,7 @@ class Partners extends Component {
                                     {partner.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/partners/${partner._id}`}
+                                        to={`/khmer/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
