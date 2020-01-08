@@ -183,7 +183,7 @@ class Faculty extends Component {
             <div  id='event' className='row container'>
                 {faculties.map((faculty, i) => {
                         const facultyPhoto = faculty._id
-                        ? `${process.env.REACT_APP_API_URL}/khmerFaculty/photo/${
+                        ? `/khmerFaculty/photo/${
                             faculty._id
                           }?${new Date().getTime()}`
                         : ''

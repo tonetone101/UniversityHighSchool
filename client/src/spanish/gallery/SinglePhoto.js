@@ -44,7 +44,7 @@ class SinglePhoto extends Component {
     renderImage = (image) => {
 
         const photoUrl = image._id
-        ? `${process.env.REACT_APP_API_URL}/spanishimage/photo/${
+        ? `/spanishimage/photo/${
             image._id
           }?${new Date().getTime()}`
         : '';

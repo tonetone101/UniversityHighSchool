@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { list, read, remove} from "./apiPhoto";
 import { Link, Redirect } from "react-router-dom";
 import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Image} from 'react-bootstrap';
 
 class Photo extends Component {
     constructor() {
@@ -181,46 +181,25 @@ class Photo extends Component {
                 {images.map((image, i) => {
 
                         const imagePhoto = image._id
-                        ? `${process.env.REACT_APP_API_URL}/spanishimage/photo/${
+                        ? `/spanishimage/photo/${
                             image._id
                           }?${new Date().getTime()}`
                         : ''
                         
                     return (
-                        <div  className="card col-md-6 mb-4" key={i}>
-                            <div  >
-                                <br />
 
-                                <div className="card-text column mr-5">
-                                    <p >
-                                        {image.caption.substring(0, 100)}{' '}
-                                    </p>  
-                                    
-                                    {/* <p >
-                                       Date : {event.date.substring(0, 100)}{' '}
-                                    </p>   */}
-
-                                    {/* <p >
-                                       Time: {event.time.substring(0, 100)}{' '}
-                                    </p>  */}
-          
-                                </div>
-                                                       
-                                <div className='column'>
-                                    <img
-                                        src={imagePhoto}
-                                        className="img-thunbnail mb-3"
-                                        style={{ height: "200px", width: "300px" }}
-                                    />
-                                
-                                    <Link
-                                        to={`/spanish/image/${image._id}`}
-                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                                    >
-                                        Ver
-                                    </Link>
-                                </div>
-                            </div>
+                        <div  className="col-md-4 mb-4" key={i}>
+                            <Image src={imagePhoto} fluid />
+                            <p >
+                                {image.caption.substring(0, 100)}{' '}
+                            </p> 
+                           
+                            <Link
+                                to={`/spanish/image/${image._id}`}
+                                className="btn btn-raised btn-primary btn-sm mb-4 "
+                            >
+                                Ver
+                            </Link>
                         </div>
                     );
                 })}
@@ -244,8 +223,8 @@ class Photo extends Component {
                 {this.renderTopHeader()}
                 {this.renderMenu()}
                 <div className="container">
-                    <div className='row mt-4 mb-3'>
-                        <h2 className="col-md-6">
+                    <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                        <h2 className="col-md-6" >
                             Momentos captados
                             {!images.length ? "Cargando..." : ""}
                         </h2>

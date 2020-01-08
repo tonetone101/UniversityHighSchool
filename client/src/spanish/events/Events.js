@@ -170,13 +170,13 @@ class Events extends Component {
                         : " Unknown";
 
                         const photoUrl = event.postedBy
-                        ? `${process.env.REACT_APP_API_URL}/user/photo/${
+                        ? `/user/photo/${
                             event.postedBy._id
                           }?${new Date().getTime()}`
                         : ''
 
                         const eventPhoto = event._id
-                        ? `${process.env.REACT_APP_API_URL}/event/photo/${
+                        ? `/event/photo/${
                             event._id
                           }?${new Date().getTime()}`
                         : ''

@@ -201,8 +201,8 @@ class Photo extends Component {
                 {this.renderTopHeader()}
                 {this.renderMenu()}
                 <div className="container">
-                    <div className='row mt-4 mb-3'>
-                        <h2 className="col-md-6">
+                    <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                        <h2 className="col-md-6" >
                             Captured Moments
                             {!images.length ? "Loading..." : ""}
                         </h2>

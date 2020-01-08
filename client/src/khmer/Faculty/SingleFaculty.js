@@ -42,7 +42,7 @@ class SingleFaculty extends Component {
 
     renderFaculty = (faculty) => {
         const photoUrl = faculty._id
-        ? `${process.env.REACT_APP_API_URL}/khmerFaculty/photo/${
+        ? `/khmerFaculty/photo/${
             faculty._id
           }?${new Date().getTime()}`
         : '';
