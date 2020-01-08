@@ -39,7 +39,7 @@ import Photo from './english/gallery/Photo'
 import SinglePhoto from './english/gallery/SinglePhoto'
 import EditPhoto from './english/gallery/EditPhoto'
 import NewPartners from './english/partners/NewPartners'
-import Partners from './english/partners/Partners1'
+import Partners from './english/partners/Partners'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
