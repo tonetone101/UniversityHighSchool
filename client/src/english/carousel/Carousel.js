@@ -4,7 +4,10 @@ import {list} from './apiCarousel'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, 
+          Dropdown, DropdownButton,
+        Container, Col, Image
+        } from 'react-bootstrap';
 import {Animated} from 'react-animated-css'
 
 class Carol extends Component {
@@ -286,21 +289,33 @@ class Carol extends Component {
                         }
                     </div>
                                         </div>
-                        <div className='row'>
-                        <img 
-                                            style={{ height: "300px"}}
+                        <div >
+                        <Container>
+                            <Row>
+                                <Col xs={6} md={4}>
+                                    <Image src="../../images/uhsMission.png" rounded />
+                                </Col>
+
+                                <Col xs={6} md={4}>
+                                    <Image src="../../images/uhsVision.png" rounded />
+                                </Col>
+                               
+                            </Row>
+                        </Container>
+                        {/* <img 
+                                            style={{ height: "300px" }}
                                             className="mt-4 col-md-6"
                                             src={require("../../images/uhsMission.png")}
                                             alt="Second slide" 
                                             
                                         />   
                                         <img 
-                                            style={{ height: "300px"}}
+                                            style={{ height: "300px" }}
                                             className="mt-4 col-md-6"
                                             src={require("../../images/uhsVision.png")}
                                             alt="Second slide" 
                                             
-                                        />   
+                                        />    */}
                                 </div>
                                 
                                 
