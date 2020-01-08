@@ -178,7 +178,7 @@ class EditCarousel extends Component {
 
 
     render() {
-        const {id, caption1, missionStatement, caption2, caption3, , redirectToHome, error, loading} = this.state
+        const {id, caption1, missionStatement, caption2, caption3, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/`} />;
