@@ -40,6 +40,8 @@ import SinglePhoto from './english/gallery/SinglePhoto'
 import EditPhoto from './english/gallery/EditPhoto'
 import NewPartners from './english/partners/NewPartners'
 import Partners from './english/partners/Partners'
+import SinglePartners from './english/partners/SinglePartners'
+import EditPartners from './english/partners/EditPartners'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -123,7 +125,9 @@ const MainRouter = () => (
             <Route exact path="/image/:imageId" component={SinglePhoto}></Route>
             <Route exact path="/edit/image/:imageId" component={EditPhoto}></Route>
             <Route exact path="/partners" component={Partners}></Route>
-
+            <Route exact path="/new/partners" component={NewPartners}></Route>
+            <Route exact path="/partner" component={SinglePartners}></Route>
+            <Route exact path="/edit/partner/:partnerId" component={EditPartners}></Route>
 
             {
             // spanish          

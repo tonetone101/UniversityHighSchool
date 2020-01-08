@@ -1,44 +1,30 @@
-import React, { Component } from "react";
-import { list, read } from "./apiPartners";
-import { Link, Redirect } from "react-router-dom";
+import React, {Component} from 'react'
+import {singlePartner, remove} from './apiPartners'
+import {Link, Redirect} from 'react-router-dom'
+import {isAuthenticated} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
-import {isAuthenticated, signout} from '../../auth'
 
-class Partners extends Component {
-    constructor() {
-        super();
-        this.state = {
-            user: '',
-            partners: [],
-            page: 1,
-            error: '',
-            searching: false,
-            spanishPage: false,
-            englishPage: false,
-            khmerPage: false
-        };
+
+class SinglePartners extends Component {
+    state = {
+        partners: '',
+        redirectToFaculties: false,
+        redirectToSignIn: false,
     }
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
-
-    loadPartners = page => {
-        list(page).then(data => {
+    componentDidMount = () => {
+        const partnersId = this.props.match.params.partnersId
+        singlePartner(partnersId).then(data => {
             if (data.error) {
-                console.log(data.error);
+                console.log(data.error)
             } else {
-                this.setState({ partners: data });
-                
-
+                this.setState({partners: data})
             }
-        });
-    };
-
-
-    componentDidMount() {
-        this.loadPartners(this.state.partners)
+        }) 
         this.renderUser()
     }
 
@@ -155,83 +141,126 @@ class Partners extends Component {
         )
     }
 
-    renderPartners = partners => {
+    deletepartners = () => {
+        const partnersId = this.props.match.params.partnersId
+        const token = isAuthenticated().token
+        remove(partnersId, token).then(data => {
+            if(data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({redirectToFaculties: true})
+            }
+        })
+    }
+
+    deleteConfirm = () => {
+        let answer = window.confirm('Are you sure you want to delete partner?')
+        if(answer) {
+            this.deletepartners()
+        }
+    }
+
+    renderpartners = (partners) => {  
+        const photoUrl = partners._id
+        ? `/partners/photo/${
+            partners._id
+          }?${new Date().getTime()}`
+        : '';
 
         return (
-            <div  className='row container'>
-                {partners.map((partner, i) => {
+                <div  className='row'>
+                     <div className='col-md-6 mt-5'>
+                        <img 
+                            src={photoUrl}
+                            alt=''
+                            onError={i =>
+                                (i.target.src = ``)
+                            }
+                            className="img-thunbnail mb-3 ml-50"
+                            style={{height: '500px', width: '500px', objectFit: 'cover', borderRadius: '10px'}}
+                        />
+                   </div>
 
-                        const partnersPhoto = partner._id
-                        ? `/partners/photo/${
-                            partner._id
-                          }?${new Date().getTime()}`
-                        : ''
-                        
-                    return (
-                        <div  className='col-md-4' key={i}>
-                            <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={partnersPhoto} />
-                            <Card.Body>
-                                <Card.Title>{partner.name.substring(0, 100)}</Card.Title>
-                                <Card.Text>
-                                    {partner.about.substring(0, 100)}
-                                </Card.Text>
-                                <Link
-                                        to={`/partner/${partner._id}`}
-                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                    <div style={{color: 'black'}} className='col-md-6 mt-5'>
+                        <h4 className="card-text">
+                           {partners.title}
+                        </h4>
+                        <p style={{color: 'black'}} className="card-text">
+                            {partners.about}
+                        </p>
+                    </div>
+
+                    <div className='row'>
+                        <Link
+                            to={`/partners`}
+                            className="btn btn-raised btn-primary btn-sm "
+                            style={{marginLeft: '30px'}}
+                        >
+                            Back to partners
+                        </Link>
+
+                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/edit/partner/${partners._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
                                     >
-                                        Read more
+                                        Update partners
                                     </Link>
-                            </Card.Body>
-                            </Card>
-                        </div>
-                    );
-                })}
-            </div>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
         );
-    };
+    }
 
     render() {
-        const { user, partners, error, spanishPage, khmerPage, englishPage} = this.state;
+        const {partners, redirectToFaculties, redirectToSignIn, spanishPage, khmerPage, englishPage} = this.state
+        
         if(spanishPage) {
-            return <Redirect to={`/spanish/partners`} />
+            return <Redirect to={`/spanish/partner`} />
          } else if (englishPage) {
-             return <Redirect to={'/partners'} />
+             return <Redirect to={'/partner'} />
          } else if (khmerPage) {
-            return <Redirect to={'/khmer/partners'} />
+            return <Redirect to={'/khmer/partner'} />
         } 
 
-
+        if(redirectToFaculties) {
+            return <Redirect to={`/partners`} />
+         } else if(redirectToSignIn) {
+            return <Redirect to={`/signin`} />
+         }
 
         return (
             <div>
                 {this.renderTopHeader()}
                 {this.renderMenu()}
-                <div className="container">
-                    <div className='row mt-4 mb-3'>
-                        <h2 style={{borderBottom: 'solid black 1px'}}>
-                            Our Partners
-                            {!partners.length ? "Loading..." : ""}
-                        </h2>
-
-                        <hr/>
-                    </div>
-                    {
-                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                            <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                           <div className='container mt-5'>
+                               <div style={{borderBottom: 'solid black 1px'}}>
+                                    <h3 style={{color: 'black'}}>{partners.name}</h3>
+                                </div>
+                               
+                                {!partners ? ( 
+                                        <div className='jumbotron text-center '>
+                                            <h2>Loading....</h2>
+                                        </div>
+                                        ) : (
+                                            this.renderpartners(partners)
+                                        )
+                                    }
+                               
                             </div>
-                        )
-                    }
-                
-                    <div>               
-                        {this.renderPartners(partners)}
-                    </div>   
-                
-                </div>
             </div>
-        );
+        )
     }
 }
 
-export default Partners
+export default SinglePartners
