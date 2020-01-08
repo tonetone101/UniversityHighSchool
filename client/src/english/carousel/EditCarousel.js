@@ -9,6 +9,7 @@ class EditCarousel extends Component {
         this.state = { 
             id: '',
             caption1: "",
+            caption2: "",
             missionStatement: "",
             redirectToHome: false,
             error: '',
@@ -69,6 +70,7 @@ class EditCarousel extends Component {
                     this.setState({
                         loading: false,
                         caption1: "",
+                        caption2: '',
                         missionStatement: '',
                         redirectToHome: true
                     });
@@ -97,6 +99,16 @@ class EditCarousel extends Component {
                     type="text"
                     className="form-control"
                     value={missionStatement}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Header</label>
+                <input
+                    onChange={this.handleChange("caption1")}
+                    type="text"
+                    className="form-control"
+                    value={caption1}
                 />
             </div>
 

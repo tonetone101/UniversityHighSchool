@@ -115,7 +115,7 @@ class Photo extends Component {
 
     renderMenu = () => {
         return (
-            <div>
+            <div style={{position: 'relative fixed'}}>
                  <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -136,6 +136,10 @@ class Photo extends Component {
                         </div>
 
                         <div id='link'>                        
+                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
                             <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
                         </div>
 
@@ -153,6 +157,7 @@ class Photo extends Component {
             </div>
         )
     }
+
 
     renderImages = images => {
 

@@ -134,6 +134,10 @@ class Carol extends Component {
                         </div>
 
                         <div id='link'>                        
+                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
                             <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
                         </div>
 
@@ -265,7 +269,11 @@ class Carol extends Component {
                                 <div className='container'>
                                         <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
                                        
-                                </div>                          
+                                </div>    
+                                <div className='container'>
+                                        <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
+                                       
+                                </div>                      
                     </div>
                     
                 </div>
@@ -278,15 +286,24 @@ class Carol extends Component {
                         }
                     </div>
                                         </div>
-                        <div className='text-center'>
+                        <div className='row'>
                         <img 
                                             style={{ height: "300px", width: "auto", border: 'solid blue 1px' }}
-                                            className="mt-4 "
-                                            src={require("../../images/uhsStat.png")}
+                                            className="mt-4 col-md-6"
+                                            src={require("../../images/uhsMission.png")}
+                                            alt="Second slide" 
+                                            
+                                        />   
+                                        <img 
+                                            style={{ height: "300px", width: "auto", border: 'solid blue 1px' }}
+                                            className="mt-4 col-md-6"
+                                            src={require("../../images/uhsVision.png")}
                                             alt="Second slide" 
                                             
                                         />   
                                 </div>
+                                
+                                
                                 <footer className='mt-5'>
                             <div class="container row ml-5">
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 

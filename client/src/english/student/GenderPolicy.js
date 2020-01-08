@@ -106,7 +106,7 @@ class GenderPolicy extends Component {
 
     renderMenu = () => {
         return (
-            <div>
+            <div style={{position: 'relative fixed'}}>
                  <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -124,6 +124,10 @@ class GenderPolicy extends Component {
                         
                         <div id='link'>                        
                             <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
