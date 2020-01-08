@@ -2,7 +2,7 @@ const express = require('express')
 const {getPartners, createPartners, partnersById, singlePartners, photo, updatePartners, deletePartners} = require('../controllers/spanishPartners')
 // const {createspanishPartnersValidator} = require('../validator')
 // const { requireSignin } = require('../controllers/auth');
-const { userById } = require('../controllers/user');
+const { userById } = require('../../general/controllers/user');
 
 router = express.Router()
 
