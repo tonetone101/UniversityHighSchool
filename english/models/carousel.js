@@ -22,6 +22,15 @@ const carouselSchema = new mongoose.Schema({
     caption3: {
         type: String,
     },
+    caption4: {
+        type: String,
+    },
+    caption5: {
+        type: String,
+    },
+    caption6: {
+        type: String,
+    },
     photo3: {
         data: Buffer,
         contentType: String
