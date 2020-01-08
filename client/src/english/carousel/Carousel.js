@@ -260,57 +260,67 @@ class Carol extends Component {
                                 </div>
                                 ) : (
                                     this.renderCarousel(carousel)
-                                
+                                    
                                 )
                             } 
-                    </div>
-                    <div  id='stats' style={{height: '100px', }} className='container'>
-                        <div style={{borderBottom: 'solid black 1px'}}>
-                            <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
-                                <h4  >{carousel.caption1}</h4>
-                            </Animated>
+                         
+                        <div  id='stats' style={{height: '100px', }} className='container'>
+                            <div style={{borderBottom: 'solid black 1px'}}>
+                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
+                                    <h4  >{carousel.caption1}</h4>
+                                </Animated>
+                            </div>
+                            
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
+                                
+                            </div>    
+                            
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
+                                
+                            </div>         
+
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption3}</h5>
+                                
+                            </div>              
                         </div>
-                                <div className='container'>
-                                        <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
-                                       
-                                </div>    
-                                <div className='container'>
-                                        <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
-                                       
-                                </div>                      
+
+                        <div className='text-center' >
+                            {
+                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                )
+                            }
+                        </div>
+                   
                     </div>
-                    
+                                        
+                   
                 </div>
-                <div>                       
-                    <div className='text-center' >
-                        {
-                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
-                            )
-                        }
-                    </div>
-                                        </div>
+                        
                         <div className='row container' style={{marginLeft: '150px'}}>
                            
-                                        <img 
-                                            style={{ height: "300px", width: "200px" }}
-                                            className="mt-4 col-sm-6"
-                                            src={require("../../images/uhsMission.png")}
-                                            alt="Second slide" 
-                                            
-                                        />   
-                                        <img 
-                                            style={{ height: "300px", width: "200px" }}
-                                            className="mt-4 col-sm-6"
-                                            src={require("../../images/uhsVision.png")}
-                                            alt="Second slide" 
-                                            
-                                        />  
+                            <img 
+                                style={{ height: "300px", width: "200px" }}
+                                className="mt-4 col-sm-6"
+                                src={require("../../images/uhsMission.png")}
+                                alt="Second slide" 
+                                
+                            />   
+                            <img 
+                                style={{ height: "300px", width: "200px" }}
+                                className="mt-4 col-sm-6"
+                                src={require("../../images/uhsVision.png")}
+                                alt="Second slide" 
+                                
+                            />  
                            
                         </div>
                                 
                                 
-                                <footer className='mt-5'>
+                        <footer className='mt-5'>
                             <div class="container row ml-5">
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
