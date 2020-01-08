@@ -10,6 +10,7 @@ class EditCarousel extends Component {
             id: '',
             caption1: "",
             caption2: "",
+            caption3: '',
             missionStatement: "",
             redirectToHome: false,
             error: '',
@@ -23,7 +24,14 @@ class EditCarousel extends Component {
             if (data.error) {
                 this.setState({redirectToHome: true})
             } else {
-                this.setState({id: data._id, missionStatement: data.missionStatement, error: ''})
+                this.setState({
+                    id: data._id, 
+                    missionStatement: data.missionStatement, 
+                    caption1: data.caption1,
+                    caption2: data.caption2, 
+                    caption3: data.caption3, 
+                    error: ''
+                })
             }
         })
     }
@@ -71,6 +79,7 @@ class EditCarousel extends Component {
                         loading: false,
                         caption1: "",
                         caption2: '',
+                        caption3: '',
                         missionStatement: '',
                         redirectToHome: true
                     });
@@ -79,7 +88,7 @@ class EditCarousel extends Component {
         }
     };
 
-    editCarouselForm = (caption1, missionStatement) => (
+    editCarouselForm = (missionStatement, caption1, caption2, caption3) => (
         <form className='container'>
               <div className="form-group">
                 <label className="text-muted">Header</label>
@@ -92,7 +101,7 @@ class EditCarousel extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Mission Statement</label>
+                <label className="text-muted">Caption</label>
                 <textarea
                     style={{height:'100px'}}
                     onChange={this.handleChange("missionStatement")}
@@ -103,12 +112,22 @@ class EditCarousel extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Header</label>
+                <label className="text-muted">Caption</label>
                 <input
-                    onChange={this.handleChange("caption1")}
+                    onChange={this.handleChange("caption2")}
                     type="text"
                     className="form-control"
-                    value={caption1}
+                    value={caption2}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Caption</label>
+                <input
+                    onChange={this.handleChange("caption3")}
+                    type="text"
+                    className="form-control"
+                    value={caption3}
                 />
             </div>
 
@@ -123,7 +142,7 @@ class EditCarousel extends Component {
 
 
     render() {
-        const {id, caption1, missionStatement, redirectToHome, error, loading} = this.state
+        const {id, caption1, missionStatement, caption2, caption3, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/`} />;
@@ -146,7 +165,7 @@ class EditCarousel extends Component {
                     }
 
 
-                        {this.editCarouselForm(caption1, missionStatement)}
+                        {this.editCarouselForm(caption1, missionStatement, caption2, caption3)}
              
             </div>
         )
