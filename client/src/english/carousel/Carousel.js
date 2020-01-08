@@ -183,7 +183,7 @@ class Carol extends Component {
                 <Carousel >
                     <Carousel.Item>
                         <img
-                        style={{ height: "350px" }}
+                        // style={{ height: "350px" }}
                         className="d-block w-100"
                         src={require("../../images/UHS_research.JPG")}
                         alt="First slide"
@@ -194,7 +194,7 @@ class Carol extends Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        style={{ height: "350px"}}
+                        // style={{ height: "350px"}}
                         className="d-block w-100"
                         src={require("../../images/uhsStudents.JPG")}
                         alt="Second slide"
@@ -206,7 +206,7 @@ class Carol extends Component {
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        style={{ height: "350px"}}
+                        // style={{ height: "350px"}}
                         className="d-block w-100"
                         src={require("../../images/uhsstudying.JPG")}
                         alt="Third slide"
@@ -225,7 +225,7 @@ class Carol extends Component {
 
     renderAnnouncements = (carousel) => {
         return (
-            <div className='container' style={{background: 'blue'}}>
+            <div className='container mt-4' style={{background: 'blue'}}>
                 <h1>Announcements</h1>
                 <h3>
                     {carousel.caption4}
@@ -272,7 +272,7 @@ class Carol extends Component {
                                 )
                             } 
                          
-                        <div  id='stats' style={{height: '100px', }} className='container'>
+                        <div  id='stats' style={{height: '100px', }} className='container mt-3'>
                             <div style={{borderBottom: 'solid black 1px'}}>
                                 <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
                                     <h4  >{carousel.caption1}</h4>
