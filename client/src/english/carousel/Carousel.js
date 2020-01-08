@@ -293,11 +293,11 @@ class Carol extends Component {
                         <Container>
                             <Row>
                                 <Col xs={6} md={4}>
-                                    <Image src="../../images/uhsMission.png" rounded />
+                                    <Image src={require("../../images/uhsMission.png")} rounded />
                                 </Col>
 
                                 <Col xs={6} md={4}>
-                                    <Image src="../../images/uhsVision.png" rounded />
+                                    <Image src={require("../../images/uhsVision.png")} rounded />
                                 </Col>
                                
                             </Row>
