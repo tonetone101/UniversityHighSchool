@@ -40,7 +40,7 @@ import SinglePhoto from './english/gallery/SinglePhoto'
 import EditPhoto from './english/gallery/EditPhoto'
 import NewPartners from './english/partners/NewPartners'
 import Partners from './english/partners/Partners'
-import SinglePartners from './english/partners/SinglePartners'
+import SinglePartners from './english/partners/SinglePartner'
 import EditPartners from './english/partners/EditPartners'
 
 // spanish
