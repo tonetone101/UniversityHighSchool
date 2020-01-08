@@ -1,6 +1,6 @@
 
 export const create = (userId, token, carousel) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishCarousel/new/${userId}`, {
+    return fetch(`/spanishCarousel/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -15,7 +15,7 @@ export const create = (userId, token, carousel) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishCarousel`, {
+    return fetch(`/spanishCarousel`, {
         method: "GET"
     })
         .then(response => {
@@ -25,7 +25,7 @@ export const list = () => {
 };
 
 export const read = (userId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+    return fetch(`/user/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -40,7 +40,7 @@ export const read = (userId, token) => {
 };
 
 export const update = (carouselId, token, carousel) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishCarousel/edit/${carouselId}`, {
+    return fetch(`/spanishCarousel/edit/${carouselId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -55,7 +55,7 @@ export const update = (carouselId, token, carousel) => {
 };
 
 export const singleCarousel = (carouselId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishCarousel/${carouselId}`, {
+    return fetch(`/spanishCarousel/${carouselId}`, {
         method: "GET"
     })
         .then(response => {

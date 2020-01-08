@@ -1,5 +1,5 @@
 export const create = (userId, token, event) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/khmerEvent/new/${userId}`, {
+    return fetch(`/khmerEvent/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, event) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/khmerEvent`, {
+    return fetch(`/khmerEvent`, {
         method: "GET"
     })
         .then(response => {
@@ -24,7 +24,7 @@ export const list = () => {
 };
 
 export const read = (userId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+    return fetch(`/user/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -39,7 +39,7 @@ export const read = (userId, token) => {
 };
 
 export const singleEvent = (eventId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/khmerEvent/${eventId}`, {
+    return fetch(`/khmerEvent/${eventId}`, {
         method: "GET"
     })
         .then(response => {
@@ -49,7 +49,7 @@ export const singleEvent = (eventId) => {
 };
 
 export const remove = (eventId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/khmerEvent/delete/${eventId}`, {
+    return fetch(`/khmerEvent/delete/${eventId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -64,7 +64,7 @@ export const remove = (eventId, token) => {
 };
 
 export const update = (eventId, token, event) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/khmerEvent/edit/${eventId}`, {
+    return fetch(`/khmerEvent/edit/${eventId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",

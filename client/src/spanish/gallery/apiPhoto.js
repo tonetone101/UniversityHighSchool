@@ -1,5 +1,5 @@
 export const create = (userId, token, photo) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishImage/new/${userId}`, {
+    return fetch(`/spanishImage/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, photo) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishImage`, {
+    return fetch(`/spanishImage`, {
         method: "GET"
     })
         .then(response => {
@@ -24,7 +24,7 @@ export const list = () => {
 };
 
 export const singlePhoto = (imageId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishImage/${imageId}`, {
+    return fetch(`/spanishImage/${imageId}`, {
         method: "GET"
     })
         .then(response => {
@@ -34,7 +34,7 @@ export const singlePhoto = (imageId) => {
 };
 
 export const remove = (photoId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishImage/delete/${photoId}`, {
+    return fetch(`/spanishImage/delete/${photoId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -48,7 +48,7 @@ export const remove = (photoId, token) => {
         .catch(err => console.log(err));
 };
 export const update = (photoId, token, photo) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishImage/edit/${photoId}`, {
+    return fetch(`/spanishImage/edit/${photoId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",

@@ -1,5 +1,5 @@
 export const create = (userId, token, faculty) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishFaculty/new/${userId}`, {
+    return fetch(`/spanishFaculty/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, faculty) => {
 };
 
 export const list = () => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishFaculty`, {
+    return fetch(`/spanishFaculty`, {
         method: "GET"
     })
         .then(response => {
@@ -24,7 +24,7 @@ export const list = () => {
 };
 
 export const read = (userId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/user/${userId}`, {
+    return fetch(`/user/${userId}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -39,7 +39,7 @@ export const read = (userId, token) => {
 };
 
 export const singleFaculty = (facultyId) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishFaculty/${facultyId}`, {
+    return fetch(`/spanishFaculty/${facultyId}`, {
         method: "GET"
     })
         .then(response => {
@@ -49,7 +49,7 @@ export const singleFaculty = (facultyId) => {
 };
 
 export const remove = (facultyId, token) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishFaculty/delete/${facultyId}`, {
+    return fetch(`/spanishFaculty/delete/${facultyId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -64,7 +64,7 @@ export const remove = (facultyId, token) => {
 };
 
 export const update = (facultyId, token, faculty) => {
-    return fetch(`${process.env.REACT_APP_API_URL}/spanishFaculty/edit/${facultyId}`, {
+    return fetch(`/spanishFaculty/edit/${facultyId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
