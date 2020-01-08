@@ -165,7 +165,7 @@ class EditCarousel extends Component {
                     }
 
 
-                        {this.editCarouselForm(caption1, missionStatement, caption2, caption3)}
+                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3)}
              
             </div>
         )
