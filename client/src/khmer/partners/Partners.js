@@ -83,12 +83,12 @@ class Partners extends Component {
                                <nav className='row'>
                                 <Nav.Link >
                                     <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
-                                        Sign In 
+                                    ចូល
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
                                     <Link style={{color: 'black'}} to='/khmer/signup' >
-                                        Sign Up
+                                    ចុះ​ឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                </nav>
@@ -101,7 +101,7 @@ class Partners extends Component {
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
                                         this.props.history.push('/khmer')
                                     })}>
-                                        Sign Out
+                                        ចាកចេញ
                                     </a>
                                 </Nav.Link>
                             )
@@ -179,7 +179,7 @@ class Partners extends Component {
                                         to={`/khmer/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
+                                          សូមមើល
                                     </Link>
                             </Card.Body>
                             </Card>
@@ -209,7 +209,7 @@ class Partners extends Component {
                 <div className="container">
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                         <h2 >
-                            Our Partners
+                        ដៃគូរបស់យើង
                             {!partners.length ? "Loading..." : ""}
                         </h2>
 
@@ -218,7 +218,7 @@ class Partners extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                                <Link className='mb-5' to='/new/partners'>បន្ថែមដៃគូថ្មី</Link>
                             </div>
                         )
                     }

@@ -52,7 +52,7 @@ class SinglePartners extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="translator"  >
+                    <DropdownButton id="dropdown-basic-button" title="Traductora"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
@@ -66,16 +66,16 @@ class SinglePartners extends Component {
                             </DropdownButton>
                         
                         {
-                            !this.state.user && (
+                            !isAuthenticated() && (
                                <nav className='row'>
                                 <Nav.Link >
                                     <Link className='ml-3' to='/signin' style={{color: 'black'}}>
-                                        Sign In 
+                                    Registrarse
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
                                     <Link style={{color: 'black'}} to='/signup' >
-                                        Sign Up
+                                    Regístrate
                                     </Link>
                                 </Nav.Link>
                                </nav>
@@ -83,12 +83,12 @@ class SinglePartners extends Component {
                         }
                         
                         {
-                            this.state.user && (
+                            isAuthenticated() && isAuthenticated().user && (
                                 <Nav.Link>
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
+                                        this.props.history.push('/spanish/images')
                                     })}>
-                                        Sign Out
+                                      Desconectar
                                     </a>
                                 </Nav.Link>
                             )
@@ -155,7 +155,7 @@ class SinglePartners extends Component {
     }
 
     deleteConfirm = () => {
-        let answer = window.confirm('Are you sure you want to delete partner?')
+        let answer = window.confirm('¿Estás seguro de que deseas eliminar el socio?')
         if(answer) {
             this.deletepartners()
         }
@@ -197,7 +197,7 @@ class SinglePartners extends Component {
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
-                            Back to partners
+                            Volver a socios
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
@@ -207,13 +207,13 @@ class SinglePartners extends Component {
                                         to={`/spanish/edit/partner/${partners._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
-                                        Update partners
+                                       Actualizar socios
                                     </Link>
                                     <button
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
-                                        Delete 
+                                        Eliminar 
                                     </button>
                                 </div>
                             </div>
@@ -251,7 +251,7 @@ class SinglePartners extends Component {
                                
                                 {!partners ? ( 
                                         <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
+                                            <h2>Cargando....</h2>
                                         </div>
                                         ) : (
                                             this.renderpartners(partners)

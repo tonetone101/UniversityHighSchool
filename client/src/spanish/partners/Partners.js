@@ -65,7 +65,7 @@ class Partners extends Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="translator"  >
+                    <DropdownButton id="dropdown-basic-button" title="Traductora"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
@@ -79,16 +79,16 @@ class Partners extends Component {
                             </DropdownButton>
                         
                         {
-                            !this.state.user && (
+                            !isAuthenticated() && (
                                <nav className='row'>
                                 <Nav.Link >
                                     <Link className='ml-3' to='/signin' style={{color: 'black'}}>
-                                        Sign In 
+                                    Registrarse
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
                                     <Link style={{color: 'black'}} to='/signup' >
-                                        Sign Up
+                                    Regístrate
                                     </Link>
                                 </Nav.Link>
                                </nav>
@@ -96,12 +96,12 @@ class Partners extends Component {
                         }
                         
                         {
-                            this.state.user && (
+                            isAuthenticated() && isAuthenticated().user && (
                                 <Nav.Link>
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
+                                        this.props.history.push('/spanish/images')
                                     })}>
-                                        Sign Out
+                                      Desconectar
                                     </a>
                                 </Nav.Link>
                             )
@@ -180,7 +180,7 @@ class Partners extends Component {
                                         to={`/spanish/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
+                                        Lee mas
                                     </Link>
                             </Card.Body>
                             </Card>
@@ -210,7 +210,7 @@ class Partners extends Component {
                 <div className="container">
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                         <h2 >
-                            Our Partners
+                        Nuestros compañeros
                             {!partners.length ? "Loading..." : ""}
                         </h2>
 
@@ -219,7 +219,7 @@ class Partners extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/spanish/new/partners'>Add new partner</Link>
+                                <Link className='mb-5' to='/spanish/new/partners'>Agregar nuevo socio</Link>
                             </div>
                         )
                     }

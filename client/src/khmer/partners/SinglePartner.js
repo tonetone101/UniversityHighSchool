@@ -70,12 +70,12 @@ class SinglePartners extends Component {
                                <nav className='row'>
                                 <Nav.Link >
                                     <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
-                                        Sign In 
+                                    ចូល
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
                                     <Link style={{color: 'black'}} to='/khmer/signup' >
-                                        Sign Up
+                                    ចុះ​ឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                </nav>
@@ -88,7 +88,7 @@ class SinglePartners extends Component {
                                     <a style={{color: 'black'}}  onClick={() => signout(() => {
                                         this.props.history.push('/khmer')
                                     })}>
-                                        Sign Out
+                                        ចាកចេញ
                                     </a>
                                 </Nav.Link>
                             )
@@ -100,7 +100,6 @@ class SinglePartners extends Component {
             </div>
         )
     }
-
     renderMenu = () => {
         return (
             <div>
