@@ -234,6 +234,12 @@ class Carol extends Component {
         );
     }
 
+    renderAnnouncements = () => {
+        <div>
+            <h1>News and Announcements</h1>
+        </div>
+    }
+
     render() {
         const {carousel, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
         
@@ -318,6 +324,7 @@ class Carol extends Component {
                             />  
                            
                         </div>
+                        {this.renderAnnouncements()}
                                 
                                 
                         <footer className='mt-5'>
