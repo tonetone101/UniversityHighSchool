@@ -287,7 +287,7 @@ class Carol extends Component {
                     </div>
                                         </div>
                         <div className='row container'>
-                            <div className='text-center'>
+                           
                                         <img 
                                             style={{ height: "300px", width: "200px" }}
                                             className="mt-4 col-sm-6"
@@ -302,7 +302,7 @@ class Carol extends Component {
                                             alt="Second slide" 
                                             
                                         />  
-                            </div> 
+                           
                         </div>
                                 
                                 
