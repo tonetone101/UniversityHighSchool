@@ -225,8 +225,8 @@ class Carol extends Component {
 
     renderAnnouncements = (carousel) => {
         return (
-            <div className='container mt-4' style={{color: 'white'}}>
-                <h1 id='announcements' >Announcements</h1>
+            <div className='container mt-4' style={{color: 'black'}}>
+                <h4 id='announcements' >Announcements</h4>
                 <h5>
                     {carousel.caption4}
                 </h5>
