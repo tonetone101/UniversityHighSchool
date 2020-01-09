@@ -181,9 +181,9 @@ class Carol extends Component {
         return (
             <div className='container'>
                 <Carousel >
-                    <Carousel.Item style={{height: "350px"}}>
+                    <Carousel.Item>
                         <img
-                        style={{height: '100%'}}
+                        // style={{ height: "350px", objectit: 'cover' }}
                         className="d-block w-100"
                         src={require("../../images/UHS_research.JPG")}
                         alt="First slide"
@@ -204,9 +204,9 @@ class Carol extends Component {
                      
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item style={{height: "350px"}}>
+                    <Carousel.Item>
                         <img
-                        style={{ height: "100%"}}
+                        style={{ height: "350px"}}
                         className="d-block w-100"
                         src={require("../../images/uhsstudying.JPG")}
                         alt="Third slide"
