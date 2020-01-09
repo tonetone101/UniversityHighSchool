@@ -204,9 +204,9 @@ class Carol extends Component {
                      
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item style={{height: "350px"}}>
                         <img
-                        style={{ height: "350px"}}
+                        style={{ height: "100%"}}
                         className="d-block w-100"
                         src={require("../../images/uhsstudying.JPG")}
                         alt="Third slide"
