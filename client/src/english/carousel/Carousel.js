@@ -343,10 +343,10 @@ class Carol extends Component {
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
-                                        <p>123 Empire street | Providence, RI 02910</p>
-                                        <p>Phone: (401) 332- 2233 | Somaly@uhSchool.org</p>
+                                        <p>1 Empire Plaza | Providence, RI 02903</p>
+                                        <p>Phone: (401) 264- 4829 | Somaly@uhSchool.org</p>
                                         <h5 className="text-capitalize">
-                                        &copy;2019 copyright : Coder
+                                        &copy; {new Date().getFullYear()} copyright : <a href="https://www.uhSchool.org">www.uhSchool.org </a>
                                         </h5> 
                                      </div>
                                 </div>
