@@ -346,7 +346,7 @@ class Carol extends Component {
                                         <p>1 Empire Plaza | Providence, RI 02903</p>
                                         <p>Phone: (401) 264- 4829 | Somaly@uhSchool.org</p>
                                         <h5 className="text-capitalize">
-                                        &copy; {new Date().getFullYear()} copyright : <a href="https://www.uhSchool.org">www.uhSchool.org </a>
+                                        &copy; {new Date().getFullYear()} copyright : <a href="www.uhschool.org">www.uhSchool.org </a>
                                         </h5> 
                                      </div>
                                 </div>
