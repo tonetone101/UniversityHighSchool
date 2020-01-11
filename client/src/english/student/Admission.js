@@ -4,7 +4,6 @@ import { create } from "./apiStudent";
 import { Redirect, Link } from "react-router-dom";
 import Links from './Links'
 import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
-import DownloadButton from 'downloadbutton'
 
 class Admission extends Component {
     constructor() {
