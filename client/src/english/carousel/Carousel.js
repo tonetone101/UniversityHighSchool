@@ -208,7 +208,7 @@ class Carol extends Component {
                         <img
                         style={{ height: "450px"}}
                         // className="d-block w-100"
-                        src={require("../../images/uhsstudying.JPG")}
+                        src={require("../../images/uhsProfile.png")}
                         alt="Third slide"
                         />
 
