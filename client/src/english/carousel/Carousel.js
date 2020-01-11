@@ -183,9 +183,9 @@ class Carol extends Component {
                 <Carousel >
                     <Carousel.Item>
                         <img
-                        style={{ height: "350px", objectit: 'cover' }}
+                        // style={{ height: "350px", objectit: 'cover' }}
                         className="d-block w-100"
-                        src='https://i.imgur.com/dzzDUnas.jpg'
+                        src={require("../../images/UHS_research.JPG")}
                         alt="First slide"
                         />
                         <Carousel.Caption>
