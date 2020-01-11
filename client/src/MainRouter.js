@@ -29,6 +29,8 @@ import SingleFaculty from './english/Faculty/SingleFaculty'
 import EditFaculty from './english/Faculty/EditFaculty'
 import NewStudent from './english/student/NewStudent'
 import Admission from './english/student/Admission'
+import Application from './english/student/UHSapplication'
+
 import Bully from './english/student/Bully'
 import Student from './english/student/Student'
 import GenderPolicy from './english/student/GenderPolicy'
@@ -137,6 +139,8 @@ const MainRouter = () => (
             <Route exact path="/partner" component={SinglePartners}></Route>
             <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
             <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
+            <Route exact path="/application" component={Application}></Route>
+
 
             {
             // spanish          

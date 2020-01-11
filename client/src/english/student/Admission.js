@@ -175,11 +175,9 @@ class Admission extends Component {
 
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
-                            <button onClick={() => {
-                                window.location.href = 'UHS_applicaion.txt'
-                            }}>
+                            <Link to='/application' target='_blank' download >
                                     Download application form
-                            </button>
+                            </Link>
                         </ListGroup.Item>
                         <ListGroup.Item></ListGroup.Item>
                     </ListGroup>
