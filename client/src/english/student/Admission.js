@@ -147,13 +147,6 @@ class Admission extends Component {
         )
     }
 
-    makeFile = () => {
-        return {
-    mime: 'text/plain',
-    filename: 'UHS_application.txt',
-    contents: 'all of the exports',
-  }
-    }
     
     render() {
         const {
@@ -183,9 +176,9 @@ class Admission extends Component {
 
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
-                            <DownloadButton className='waves-effect waves-light btn' genFile={makeFile} >
+                            <Button href='/UHS_applicationl.txt' target='_blank' download >
                                     Download application form
-                            </DownloadButton>
+                            </Button>
                         </ListGroup.Item>
                         <ListGroup.Item></ListGroup.Item>
                     </ListGroup>
