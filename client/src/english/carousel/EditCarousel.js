@@ -11,9 +11,9 @@ class EditCarousel extends Component {
             caption1: "",
             caption2: "",
             caption3: '',
-            news1: '',
-            news2: '',
-            news3: '',
+            caption4: "",
+            caption5: "",
+            caption6: '',
             missionStatement: "",
             redirectToHome: false,
             error: '',
@@ -33,9 +33,9 @@ class EditCarousel extends Component {
                     caption1: data.caption1,
                     caption2: data.caption2, 
                     caption3: data.caption3, 
-                    news1: data.caption4,
-                    news2: data.caption5,
-                    news3: data.caption6,
+                    caption4: data.caption4,
+                    caption5: data.caption5,
+                    caption6: data.caption6,
                     error: ''
                 })
             }
@@ -86,9 +86,9 @@ class EditCarousel extends Component {
                         caption1: "",
                         caption2: '',
                         caption3: '',
-                        news1: '',
-                        news2: '',
-                        news3: '',
+                        caption4: "",
+                        caption5: '',
+                        caption6: '',
                         missionStatement: '',
                         redirectToHome: true
                     });
@@ -97,7 +97,7 @@ class EditCarousel extends Component {
         }
     };
 
-    editCarouselForm = (missionStatement, caption1, caption2, caption3, news1, news2, news3) => (
+    editCarouselForm = (missionStatement, caption1, caption2, caption3, caption4, caption5, caption6) => (
         <form className='container'>
               <div className="form-group">
                 <label className="text-muted">Header</label>
@@ -149,30 +149,30 @@ class EditCarousel extends Component {
             <div className="form-group">
                 <label className="text-muted">Announcement 1</label>
                 <input
-                    onChange={this.handleChange("news1")}
+                    onChange={this.handleChange("caption4")}
                     type="text"
                     className="form-control"
-                    value={news1}
+                    value={caption4}
                 />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Announcement 2</label>
                 <input
-                    onChange={this.handleChange("news2")}
+                    onChange={this.handleChange("caption5")}
                     type="text"
                     className="form-control"
-                    value={news2}
+                    value={caption5}
                 />
             </div>
 
             <div className="form-group">
                 <label className="text-muted">Announcement 3</label>
                 <input
-                    onChange={this.handleChange("news3")}
+                    onChange={this.handleChange("caption6")}
                     type="text"
                     className="form-control"
-                    value={news3}
+                    value={caption6}
                 />
             </div>
 
@@ -187,7 +187,7 @@ class EditCarousel extends Component {
 
 
     render() {
-        const {id, caption1, missionStatement, caption2, caption3, news1, news2, news3, redirectToHome, error, loading} = this.state
+        const {id, caption1, missionStatement, caption2, caption3, caption4, caption5, caption6, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/`} />;
@@ -210,7 +210,7 @@ class EditCarousel extends Component {
                     }
 
 
-                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3, news1, news2, news3 )}
+                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3, caption4, caption5, caption6 )}
              
             </div>
         )
