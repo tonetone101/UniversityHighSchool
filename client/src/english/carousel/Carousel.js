@@ -57,7 +57,7 @@ class Carol extends Component {
 
     renderTopHeader = () => {
         return (
-            <div>
+            <div style={{border: 'solid black 2px'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -113,7 +113,7 @@ class Carol extends Component {
 
     renderMenu = () => {
         return (
-            <div style={{position: 'relative fixed'}}>
+            <div style={{border: 'solid black 2px'}}>
                  <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -179,11 +179,11 @@ class Carol extends Component {
 
 
         return (
-            <div className='container'>
-                <Carousel >
-                    <Carousel.Item>
+            <div >
+                <Carousel style={{background: 'black'}}>
+                    <Carousel.Item style={{background: 'black'}}>
                         <img
-                        style={{ height: "350px"}}
+                        style={{ height: "450"}}
                         // className="d-block w-100"
                         src={require("../../images/UHS_research.JPG")}
                         alt="First slide"
@@ -192,9 +192,9 @@ class Carol extends Component {
                        
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item style={{background: 'black'}}>
                         <img
-                        style={{ height: "350px"}}
+                        style={{ height: "450"}}
                         // className="d-block w-100"
                         src={require("../../images/uhsStudents.JPG")}
                         alt="Second slide"
@@ -204,9 +204,9 @@ class Carol extends Component {
                      
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item>
+                    <Carousel.Item style={{background: 'black'}}>
                         <img
-                        style={{ height: "350px"}}
+                        style={{ height: "450"}}
                         // className="d-block w-100"
                         src={require("../../images/uhsstudying.JPG")}
                         alt="Third slide"
@@ -259,6 +259,12 @@ class Carol extends Component {
         return (
             <div>
                 {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
                 {this.renderMenu()}
                 <div>
                     <div className='text-center'>
