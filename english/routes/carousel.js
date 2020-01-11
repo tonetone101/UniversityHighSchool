@@ -9,7 +9,7 @@ router = express.Router()
 
 router.get('/carousel', getCarousel)
 router.get('/carousel/:carouselId', singleCarousel)
-router.post('/carousel/new/:userId', createCarousel, createCarouselValidator)
+router.post('/carousel/new/', createCarousel, createCarouselValidator)
 router.put('/carousel/edit/:carouselId', updateCarousel)
 router.delete('/carousel/delete/:carouselId', deleteCarousel);
 

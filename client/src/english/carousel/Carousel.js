@@ -28,7 +28,7 @@ class Carol extends Component {
                 console.log(data.error)
             } else {
                 this.setState({carousel: data.find(d => {
-                    if (d._id == "5df6804c6b53ac295ad15f78") {
+                    if (d._id == "5e1a0b0a25722833febaab0d") {
                         return d
                     }
                 }) 
