@@ -175,8 +175,8 @@ class Admission extends Component {
 
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
-                            <Link to='/application' target='_blank' download >
-                                    Download application form
+                            <Link to='https://docs.google.com/document/d/1pN4Pjycnt3t3jS7Dl1LiwwwNTH8aiu1Ai2zNeo5P7co/edit?usp=sharing' target='_blank' download >
+                                    View application form
                             </Link>
                         </ListGroup.Item>
                         <ListGroup.Item></ListGroup.Item>
