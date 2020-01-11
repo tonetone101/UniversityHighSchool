@@ -119,9 +119,9 @@ app.use('/', portlinkRoutes);
 // general routes
 app.use('/', authRoutes)
 app.use('/', userRoutes)
-app.get('/', (req, res) => {
-    res.send('hello')
-})
+// app.get('/', (req, res) => {
+//     res.send('hello')
+// })
 
 // if in production, express will serve react file
 if (process.env.NODE_ENV === 'production') {
