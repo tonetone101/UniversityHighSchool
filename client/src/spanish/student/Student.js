@@ -160,6 +160,12 @@ class Student extends Component {
         return (
             <div>
                 {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
                 {this.renderMenu()}
                 <div className='container' >
                     <h3 className='text-center'>Bienvenido a nuestra sección de estudiantes</h3>

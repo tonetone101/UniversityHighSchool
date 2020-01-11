@@ -166,6 +166,12 @@ class GenderPolicy extends Component {
         return (
             <div>
                 {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
                 {this.renderMenu()}
                 <div className='container mt-4' >
                     <h3>STUDENT FAQ: Transgender and Gender Expansive Student Policy</h3>
