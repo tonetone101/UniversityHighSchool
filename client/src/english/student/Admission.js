@@ -69,12 +69,12 @@ class Admission extends Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/signup' >
+                                    <Link style={{color: 'white'}} to='/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -85,7 +85,7 @@ class Admission extends Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
                                         this.props.history.push('/')
                                     })}>
                                         Sign Out
