@@ -4,6 +4,7 @@ import { create } from "./apiStudent";
 import { Redirect, Link } from "react-router-dom";
 import Links from './Links'
 import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
+import DownloadButton from 'downloadbutton'
 
 class Admission extends Component {
     constructor() {
@@ -146,6 +147,13 @@ class Admission extends Component {
         )
     }
 
+    makeFile = () => {
+        return {
+    mime: 'text/plain',
+    filename: 'UHS_application.txt',
+    contents: 'all of the exports',
+  }
+    }
     
     render() {
         const {
@@ -175,9 +183,9 @@ class Admission extends Component {
 
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
-                            <Link to='/UHS_applicationl.txt' target='_blank' download >
+                            <DownloadButton className='waves-effect waves-light btn' genFile={makeFile} >
                                     Download application form
-                            </Link>
+                            </DownloadButton>
                         </ListGroup.Item>
                         <ListGroup.Item></ListGroup.Item>
                     </ListGroup>

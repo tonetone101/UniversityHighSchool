@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "downloadbutton": "^1.0.0",
     "google-translate": "^3.0.0",
     "mdbreact": "^4.24.0",
     "react": "^16.12.0",
