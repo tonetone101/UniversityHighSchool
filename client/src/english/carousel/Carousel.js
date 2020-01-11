@@ -226,7 +226,7 @@ class Carol extends Component {
     renderAnnouncements = (carousel) => {
         return (
             <div className='container mt-4' style={{color: 'black'}}>
-                <h4 id='announcements' >Announcements</h4>
+                <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>Announcements</h4>
                 <h5>
                     {carousel.caption4}
                 </h5>
@@ -344,7 +344,7 @@ class Carol extends Component {
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
                                         <p>1 Empire Plaza | Providence, RI 02903</p>
-                                        <p>Phone: (401) 264- 4829 | Somaly@uhSchool.org</p>
+                                        <p>Phone: (401) 254- 4829 | Somaly@uhSchool.org</p>
                                         <h5 className="text-capitalize">
                                         &copy; {new Date().getFullYear()} copyright : <a href="/">www.uhSchool.org </a>
                                         </h5> 
