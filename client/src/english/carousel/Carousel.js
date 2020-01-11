@@ -344,7 +344,7 @@ class Carol extends Component {
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
                                         <p>1 Empire Plaza | Providence, RI 02903</p>
-                                        <p>Phone: (401) 254- 4829 | Somaly@uhSchool.org</p>
+                                        <p>Phone: (401) 254- 4829 | Sprak-martins@uhschool.org</p>
                                         <h5 className="text-capitalize">
                                         &copy; {new Date().getFullYear()} copyright : <a href="/">www.uhSchool.org </a>
                                         </h5> 
