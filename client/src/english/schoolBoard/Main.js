@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { list, read, remove  } from "./apiSchoolBoardMeeting";
 import { Link } from "react-router-dom";
-import { isAuthenticated } from "../../auth";
 import { ListGroup} from 'react-bootstrap';
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
