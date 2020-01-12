@@ -254,7 +254,9 @@ class Carol extends Component {
                             }} >
                     {!carousel.link2 ? ''  : carousel.linkTitle2 }
                     </Link>
-                    {carousel.caption5}
+                    <div className='ml-4'>
+                        {carousel.caption5}
+                    </div>
                 </h5>
                 
                 <h5>
@@ -268,7 +270,9 @@ class Carol extends Component {
                             }} >
                     {!carousel.link3 ? ''  : carousel.linkTitle3 }
                     </Link>
-                    {carousel.caption6}
+                    <div className='ml-4'>
+                        {carousel.caption6}
+                    </div>
                 </h5>
             </div>
         )
