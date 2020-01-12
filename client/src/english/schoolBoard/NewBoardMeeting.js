@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { isAuthenticated } from "../../auth";
-import { createschoolBoardMeeting } from "./apiSchoolBoardMeeting";
+import { create} from "./apiSchoolBoardMeeting";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -60,7 +60,7 @@ class NewschoolBoardMeeting extends Component {
             const userId = isAuthenticated().user._id;
             const token = isAuthenticated().token;
 
-            createschoolBoardMeeting(userId, token, this.schoolBoardMeetingData).then(data => {
+            create(userId, token, this.schoolBoardMeetingData).then(data => {
                 if (data.error) this.setState({ error: data.error });
                 else {
                     
