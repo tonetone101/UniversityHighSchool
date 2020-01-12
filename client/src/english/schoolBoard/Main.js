@@ -12,6 +12,7 @@ class Main extends Component {
             user: '',
             schoolBoardMeeting: [],
             url: '',
+            docUrl: '',
             redirectToSignin: false
         };
        
@@ -177,7 +178,7 @@ class Main extends Component {
     }
 
     render() {
-        const { user, spanishPage, englishPage, khmerPage, schoolBoardMeeting, url } = this.state;
+        const { user, schoolBoardMeeting, spanishPage, englishPage, khmerPage, schoolBoardMeeting, url, redirectToSignin } = this.state;
         console.log(schoolBoardMeeting)
 
         if(spanishPage) {
