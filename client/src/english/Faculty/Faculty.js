@@ -139,7 +139,7 @@ class Faculty extends Component {
 
     renderMenu = () => {
         return (
-            <div style={{position: 'relative fixed'}}>
+            <div style={{border: 'solid black 2px'}}>
                  <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -160,7 +160,7 @@ class Faculty extends Component {
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
+                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        

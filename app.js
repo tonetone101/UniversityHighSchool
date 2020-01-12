@@ -5,7 +5,7 @@ const cors = require('cors')
 const expressValidator = require('express-validator')
 const app = express()
 const morgan = require('morgan')
-//require('dotenv').config();
+// require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -25,6 +25,9 @@ mongoose.connect(process.env.MONGO_URI, {
  const studentRoutes = require('./english/routes/student')
  const linkRoutes = require('./english/routes/link');
  const partnersRoutes = require('./english/routes/partners');
+ const schoolBoardMemberRoutes = require('./english/routes/schoolBoardMember');
+ const schoolBoardMeetingRoutes = require('./english/routes/schoolBoardMeeting');
+
 
  // bringing in my spanish routes
  const spanishfacultyRoutes = require('./spanish/routes/faculty');
@@ -80,6 +83,9 @@ app.use('/', eventRoutes)
 app.use('/', studentRoutes)
 app.use('/', linkRoutes);
 app.use('/', partnersRoutes);
+app.use('/', schoolBoardMemberRoutes);
+app.use('/', schoolBoardMeetingRoutes);
+
 
 // spanish routes
 app.use('/', spanishimageRoutes)

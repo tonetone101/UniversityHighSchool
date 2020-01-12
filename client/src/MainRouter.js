@@ -43,6 +43,8 @@ import NewPartners from './english/partners/NewPartners'
 import Partners from './english/partners/Partners'
 import SinglePartners from './english/partners/SinglePartner'
 import EditPartners from './english/partners/EditPartners'
+import SchoolBoardMeeting from './english/schoolBoard/Main'
+
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -138,6 +140,7 @@ const MainRouter = () => (
             <Route exact path="/partner" component={SinglePartners}></Route>
             <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
             <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
+            <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
 
 
             {

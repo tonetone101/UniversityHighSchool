@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { Carousel } from 'react-bootstrap';
 import {list} from './apiCarousel'
-import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
@@ -134,7 +133,7 @@ class Carol extends Component {
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
+                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
