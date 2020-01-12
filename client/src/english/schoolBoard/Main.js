@@ -178,7 +178,7 @@ class Main extends Component {
     }
 
     render() {
-        const { user, schoolBoardMeeting, spanishPage, englishPage, khmerPage, schoolBoardMeeting, url, redirectToSignin } = this.state;
+        const { user, spanishPage, englishPage, khmerPage, schoolBoardMeeting, url, redirectToSignin } = this.state;
         console.log(schoolBoardMeeting)
 
         if(spanishPage) {
