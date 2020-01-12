@@ -231,12 +231,12 @@ class Carol extends Component {
                     <Link onClick={() => { 
                             window.open(carousel.doc1) 
                             }} >
-                    {carousel.linkTitle1}
+                        {!carousel.doc1 ? ''  : carousel.linkTitle1 }
                     </Link>
                     <Link onClick={() => { 
                             window.open(`https://${carousel.link1}`) 
                             }} >
-                    {carousel.linkTitle1}
+                    {!carousel.link1 ? ''  : carousel.linkTitle1 }
                     </Link>
                     {carousel.caption4}
                 </h5>
@@ -245,12 +245,12 @@ class Carol extends Component {
                 <Link onClick={() => { 
                             window.open(carousel.doc2) 
                             }} >
-                    {carousel.linkTitle2}
+                        {!carousel.doc2 ? ''  : carousel.linkTitle2 }
                     </Link>
-                <Link onClick={() => { 
+                    <Link onClick={() => { 
                             window.open(`https://${carousel.link2}`) 
                             }} >
-                    {carousel.linkTitle2}
+                    {!carousel.link2 ? ''  : carousel.linkTitle2 }
                     </Link>
                     {carousel.caption5}
                 </h5>
@@ -259,12 +259,12 @@ class Carol extends Component {
                 <Link onClick={() => { 
                             window.open(carousel.doc3) 
                             }} >
-                    {carousel.linkTitle3}
+                        {!carousel.doc3 ? ''  : carousel.linkTitle3 }
                     </Link>
-                <Link onClick={() => { 
+                    <Link onClick={() => { 
                             window.open(`https://${carousel.link3}`) 
                             }} >
-                    {carousel.linkTitle3}
+                    {!carousel.link3 ? ''  : carousel.linkTitle3 }
                     </Link>
                     {carousel.caption6}
                 </h5>
