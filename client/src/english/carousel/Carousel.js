@@ -28,7 +28,7 @@ class Carol extends Component {
                 console.log(data.error)
             } else {
                 this.setState({carousel: data.find(d => {
-                    if (d._id == "5e1a0b0a25722833febaab0d") {
+                    if (d._id == "5e1b323c28d8db45de12be2d") {
                         return d
                     }
                 }) 
@@ -228,14 +228,44 @@ class Carol extends Component {
             <div className='container mt-4' style={{color: 'black'}}>
                 <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>Announcements</h4>
                 <h5>
+                    <Link onClick={() => { 
+                            window.open(carousel.doc1) 
+                            }} >
+                    {carousel.linkTitle1}
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link1}`) 
+                            }} >
+                    {carousel.linkTitle1}
+                    </Link>
                     {carousel.caption4}
                 </h5>
                 
                 <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc2) 
+                            }} >
+                    {carousel.linkTitle2}
+                    </Link>
+                <Link onClick={() => { 
+                            window.open(`https://${carousel.link2}`) 
+                            }} >
+                    {carousel.linkTitle2}
+                    </Link>
                     {carousel.caption5}
                 </h5>
                 
                 <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc3) 
+                            }} >
+                    {carousel.linkTitle3}
+                    </Link>
+                <Link onClick={() => { 
+                            window.open(`https://${carousel.link3}`) 
+                            }} >
+                    {carousel.linkTitle3}
+                    </Link>
                     {carousel.caption6}
                 </h5>
             </div>
@@ -244,7 +274,6 @@ class Carol extends Component {
 
     render() {
         const {carousel, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
-        console.log(carousel)
         if(spanishPage) {
             return <Redirect to={`/spanish`} />
          } else if (englishPage) {

@@ -15,10 +15,6 @@ const carouselSchema = new mongoose.Schema({
     caption2: {
         type: String,
     },
-    photo2: {
-        data: Buffer,
-        contentType: String
-    },
     caption3: {
         type: String,
     },
@@ -31,9 +27,32 @@ const carouselSchema = new mongoose.Schema({
     caption6: {
         type: String,
     },
-    photo3: {
-        data: Buffer,
-        contentType: String
+    link1: {
+        type: String,
+    },
+    link2: {
+        type: String,
+    },
+    link3: {
+        type: String,
+    },
+    doc1: {
+        type: String,
+    },
+    doc2: {
+        type: String,
+    },
+    doc3: {
+        type: String,
+    },
+    linkTitle1: {
+        type: String,
+    },
+    linkTitle2: {
+        type: String,
+    },
+    linkTitle3: {
+        type: String,
     },
     postedBy: {
         type: ObjectId,
