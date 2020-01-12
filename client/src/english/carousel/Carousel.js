@@ -238,7 +238,9 @@ class Carol extends Component {
                             }} >
                     {!carousel.link1 ? ''  : carousel.linkTitle1 }
                     </Link>
-                    {carousel.caption4}
+                    <div className='ml-4'>
+                        {carousel.caption4}
+                    </div>
                 </h5>
                 
                 <h5>
