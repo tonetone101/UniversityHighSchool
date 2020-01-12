@@ -200,7 +200,7 @@ class Main extends Component {
                       <hr />
                       
                       <div id='title'>
-          
+                         Upcoming Meetings: 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
                             <div key={i}>
