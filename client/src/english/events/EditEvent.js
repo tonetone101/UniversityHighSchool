@@ -189,7 +189,7 @@ class EditEvent extends Component {
                         {/* <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/event/photo/${id}`} onError={i => (i.target.src = ``)} alt='' /> */}
 
 
-                        {this.editEventForm(body, title, time, date, url)}
+                        {this.editEventForm(title, time, date, body, url)}
             </div>
         )
     }
