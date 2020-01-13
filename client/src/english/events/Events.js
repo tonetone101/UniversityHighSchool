@@ -185,12 +185,12 @@ class Events extends Component {
                         
                     return (
                        <div className='col-md-4' key={i}>
-                            <Card style={{ width: '18rem', border: 'solid black 2px' }}>
-                                <p className="font-italic mark mt-4">
+                            <Card border='dark' style={{ width: '18rem'}}>
+                                <Card.Header className="font-italic mark mt-4">
                                     Event Posted{" "}
                                     on{' '}
                                     {new Date(event.created).toDateString()}
-                                </p>
+                                </Card.Header >
                                 <Card.Body>
                                     <Card.Title>{event.title.substring(0, 100)}</Card.Title>
                                     <Card.Subtitle className="mb-2 text-muted">{event.where.substring(0, 100)}</Card.Subtitle>
