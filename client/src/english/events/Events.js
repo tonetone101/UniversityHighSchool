@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { list, read } from "./apiEvent";
 import { Link, Redirect } from "react-router-dom";
 import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Dropdown, Card, DropdownButton} from 'react-bootstrap';
 
 
 class Events extends Component {
