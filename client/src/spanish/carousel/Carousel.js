@@ -313,7 +313,7 @@ class Carol extends Component {
                                     <h4  >{carousel.caption1}</h4>
                                 </Animated>
                                 <div className='container'>
-                                        <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
+                                        <h5 style={{color:'black', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
                                        
                                 </div>                          
                     </div>
@@ -332,14 +332,14 @@ class Carol extends Component {
                            
                            <img 
                                style={{ height: "300px", width: "200px" }}
-                               className="mt-4 col-sm-6"
+                               className=" col-sm-6"
                                src={require("../../images/uhsMission.png")}
                                alt="Second slide" 
                                
                            />   
                            <img 
                                style={{ height: "300px", width: "200px" }}
-                               className="mt-4 col-sm-6"
+                               className=" col-sm-6"
                                src={require("../../images/uhsVision.png")}
                                alt="Second slide" 
                                
