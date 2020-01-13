@@ -13,6 +13,7 @@ class EditEvent extends Component {
             time:'',
             date:'',
             body: '',
+            url: '',
             redirectToEvent: false,
             error: '',
             filesize: 0,
@@ -25,7 +26,7 @@ class EditEvent extends Component {
             if (data.error) {
                 this.setState({redirectToEvent: true})
             } else {
-                this.setState({id: data._id, title: data.title, time: data.time, date: data.date, body: data.body, error: ''})
+                this.setState({id: data._id, title: data.title, time: data.time, date: data.date, body: data.body, url: data.url, error: ''})
             }
         })
     }
@@ -79,6 +80,7 @@ class EditEvent extends Component {
                         time: "",
                         date: "",
                         body: "",
+                        url: "",
                         redirectToEvent: true
                     });
                 }
@@ -86,7 +88,7 @@ class EditEvent extends Component {
         }
     };
 
-    editEventForm = (id, title, time, date, body) => (
+    editEventForm = (id, title, time, date, body, url) => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Event Photo</label>
@@ -138,6 +140,16 @@ class EditEvent extends Component {
                 />
             </div>
 
+            <div className="form-group">
+                <label className="text-muted">Google Doc Link</label>
+                <input
+                    onChange={this.handleChange("url")}
+                    type="text"
+                    className="form-control"
+                    value={url}
+                />
+            </div>
+
             <div>
                 <button
                     onClick={this.clickSubmit}
@@ -154,7 +166,7 @@ class EditEvent extends Component {
 
 
     render() {
-        const {id, title, time, date, body, redirectToEvent, error, loading} = this.state
+        const {id, title, time, date, body, url, redirectToEvent, error, loading} = this.state
 
         if (redirectToEvent) {
             return <Redirect to={`/event/${id}`} />;
@@ -177,7 +189,7 @@ class EditEvent extends Component {
                         {/* <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/event/photo/${id}`} onError={i => (i.target.src = ``)} alt='' /> */}
 
 
-                        {this.editEventForm(body, title, time, date)}
+                        {this.editEventForm(body, title, time, date, url)}
             </div>
         )
     }

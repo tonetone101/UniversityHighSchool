@@ -122,33 +122,33 @@ class Events extends Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link href="#features"><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
                         </div>
-                        <Nav.Link href="#features"><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
@@ -184,58 +184,40 @@ class Events extends Component {
                         : ''
                         
                     return (
-                        <div  className="card col-md-6 mb-4" key={i}>
-                            <div  >
-                                
-                               
+                       <div key={i}>
+                            <Card style={{ width: '18rem' }}>
                                 <p className="font-italic mark mt-4">
                                     Event Posted{" "}
-
-                                    {/* <Link to={`${posterId}`}>
-                                        <img  style={{ height: "40px", borderRadius:'30px', width: "40px" }} className="img-thumbnail" src={photoUrl} alt='' />
-
-                                        {posterName}{" "}
-                                    </Link> */}
                                     on{' '}
                                     {new Date(event.created).toDateString()}
                                 </p>
-                                <br />
-
-                                <div className="card-text column mr-5">
-                                    <p >
-                                        Event name: {event.title.substring(0, 100)}{' '}
-                                    </p>  
+                                <Card.Body>
+                                    <Card.Title>{event.title.substring(0, 100)}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">{event.where.substring(0, 100)}</Card.Subtitle>
                                     
-                                    {/* <p >
-                                       Date : {event.date.substring(0, 100)}{' '}
-                                    </p>   */}
-
-                                    {/* <p >
-                                       Time: {event.time.substring(0, 100)}{' '}
-                                    </p>  */}
-
-                                     <p >
-                                       Location : {event.where.substring(0, 100)}{' '}
-                                    </p>      
-
-                                    <p >
-                                       Description : {event.body.substring(0, 100)}{' '}
-                                    </p>           
-                                </div>
-                                                       
-                             
-                                {/* <img
-                                    src={eventPhoto}
-                                    className="img-thunbnail mb-3"
-                                    style={{ height: "200px", width: "100%" }}
-                                /> */}
-                                <Link
-                                    to={`/event/${event._id}`}
-                                    className="btn btn-raised btn-primary btn-sm mb-4"
-                                >
-                                    Read more
-                                </Link>
-                            </div>
+                                    <Card.Text>
+                                        {event.body.substring(0, 100)}
+                                    </Card.Text>
+                                
+                                    <Card.Link >
+                                        <Link
+                                                to={event.url}
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                               Google Doc
+                                        </Link>
+                                    </Card.Link>
+                                
+                                    <Card.Link >
+                                        <Link
+                                                to={`/event/${event._id}`}
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                                Read more
+                                        </Link>
+                                    </Card.Link>
+                                </Card.Body>
+                            </Card>
                         </div>
                     );
                 })}

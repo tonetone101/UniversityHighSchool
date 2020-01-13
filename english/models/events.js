@@ -24,6 +24,10 @@ const eventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    url: {
+        type: String,
+        required: true,
+    },
     photo: {
         data: Buffer,
         contentType: String

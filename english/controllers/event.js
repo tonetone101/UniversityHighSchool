@@ -6,7 +6,7 @@ const _ = require('lodash');
 exports.eventById = (req, res, next, id) => {
     Event.findById(id)
         .populate('postedBy', '_id name role')
-        .select('_id title date time where body created photo')
+        .select('_id title date time where body url created photo')
         .exec((err, event) => {
             if (err || !event) {
                 return res.status(400).json({
@@ -22,7 +22,7 @@ exports.eventById = (req, res, next, id) => {
 exports.getEvents = (req, res, next) => { 
     const events = Event.find()
         .populate("postedBy", "_id name photo role")
-        .select("_id title date time where body created photo")
+        .select("_id title date time where body url created photo")
         .sort({ created: -1 })
         .then(events => {
            res.json(events)
@@ -63,7 +63,7 @@ exports.createEvent = (req, res, next) => {
 exports.eventsByUser = (req, res) => {
     Event.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name')
-        .select('_id title time date where photo created')
+        .select('_id title time date where url photo created')
         .sort('_created')
         .exec((err, events) => {
             if (err) {

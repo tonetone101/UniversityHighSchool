@@ -12,6 +12,7 @@ class NewEvent extends Component {
             date: "",
             where: "",
             body: "",
+            url: "",
             photo: "",
             error: "",
             user: {},
@@ -70,6 +71,7 @@ class NewEvent extends Component {
                         time:"",
                         where: "",
                         body: "",
+                        url: "",
                         redirectToEvents: true
                     });
                 }
@@ -77,7 +79,7 @@ class NewEvent extends Component {
         }
     };
 
-    newEventForm = (title, date, time, where, body) => (
+    newEventForm = (title, date, time, where, body, url) => (
         <form >
             <div className="form-group">
                 <label className="text-muted">Event Photo</label>
@@ -138,6 +140,16 @@ class NewEvent extends Component {
                 />
             </div>
 
+            <div className="form-group">
+                <label className="text-muted">Google Doc Link</label>
+                <input
+                    onChange={this.handleChange("url")}
+                    type="text"
+                    className="form-control"
+                    value={url}
+                />
+            </div>
+
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
@@ -154,6 +166,7 @@ class NewEvent extends Component {
             date,
             where,
             body,
+            url,
             user,
             error,
             loading,
@@ -183,7 +196,7 @@ class NewEvent extends Component {
                             )} 
             
 
-                            {this.newEventForm(title, date, time, where, body)}
+                            {this.newEventForm(title, date, time, where, body, url)}
                        
             </div>
         );
