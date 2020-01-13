@@ -95,7 +95,7 @@ class SingleEvent extends Component {
                             Description: {event.body}
                         </p>
                         <p className="card-text ">
-                            Description: {event.url}
+                            GoogleDoc Url: {event.url}
                         </p>
                     </div>
                    <div >
