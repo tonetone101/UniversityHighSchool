@@ -184,7 +184,7 @@ class Events extends Component {
                         : ''
                         
                     return (
-                       <div key={i}>
+                       <div className='col-md-4' key={i}>
                             <Card style={{ width: '18rem' }}>
                                 <p className="font-italic mark mt-4">
                                     Event Posted{" "}
