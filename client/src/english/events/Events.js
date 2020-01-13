@@ -201,7 +201,9 @@ class Events extends Component {
                                 
                                     <Card.Link >
                                         <Link
-                                                to={event.url}
+                                               onClick={() => { 
+                                                window.open(`${event.url}`) 
+                                                }} 
                                                 className="btn btn-raised btn-primary btn-sm mb-4"
                                         >
                                                Google Doc
