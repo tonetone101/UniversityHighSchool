@@ -46,7 +46,7 @@ import EditPartners from './english/partners/EditPartners'
 import SchoolBoardMeeting from './english/schoolBoard/Main'
 import NewBoardMeeting from './english/schoolBoard/NewBoardMeeting'
 import SingleBoardMeeting from './english/schoolBoard/singleMain'
-
+import SchoolBoardMember from './english/schoolBoard/Members'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -145,6 +145,7 @@ const MainRouter = () => (
             <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
             <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
             <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
+            <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
 
 
             {
