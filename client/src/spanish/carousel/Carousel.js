@@ -227,6 +227,62 @@ class Carol extends Component {
         );
     }
 
+    renderAnnouncements = (carousel) => {
+        return (
+            <div className='container mt-4' style={{color: 'black'}}>
+                <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>Announcements</h4>
+                <h5>
+                    <Link onClick={() => { 
+                            window.open(carousel.doc1) 
+                            }} >
+                        {!carousel.doc1 ? ''  : carousel.linkTitle1 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link1}`) 
+                            }} >
+                    {!carousel.link1 ? ''  : carousel.linkTitle1 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption4}
+                    </div>
+                </h5>
+                
+                <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc2) 
+                            }} >
+                        {!carousel.doc2 ? ''  : carousel.linkTitle2 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link2}`) 
+                            }} >
+                    {!carousel.link2 ? ''  : carousel.linkTitle2 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption5}
+                    </div>
+                </h5>
+                
+                <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc3) 
+                            }} >
+                        {!carousel.doc3 ? ''  : carousel.linkTitle3 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link3}`) 
+                            }} >
+                    {!carousel.link3 ? ''  : carousel.linkTitle3 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption6}
+                    </div>
+                </h5>
+            </div>
+        )
+    }
+
+
     render() {
         const {carousel, spanishPage, englishPage, khmerPage, redirectToSignIn} = this.state
        
@@ -298,10 +354,10 @@ class Carol extends Component {
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
-                                        <p>123 Empire street | Providence, RI 02910</p>
-                                        <p>Teléfono: (401) 332- 2233 | Email: Somaly@uhSchool.org</p>
+                                        <p>1 Empire Plaza | Providence, RI 02903</p>
+                                        <p>Teléfono: (401) 254- 4829 | Email: Sprak-martins@uhschool.org</p>
                                         <h5 className="text-capitalize">
-                                        &copy;2019 derechos de autor : Descifrador
+                                        &copy;{new Date().getFullYear()} derechos de autor : <a href="/">www.uhSchool.org </a>
                                         </h5> 
                                      </div>
                                 </div>
