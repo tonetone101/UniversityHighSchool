@@ -28,6 +28,7 @@ class Carol extends Component {
                 this.setState({carousel: data.find(d => {
                     if (d._id == "5e08e92237be9a64fae607c9") {
                         return d
+                        
                     }
                 }) 
               })
@@ -174,56 +175,45 @@ class Carol extends Component {
 
         return (
             <div >
-                
-           
-                <Carousel >
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/logo.png")}
-                        alt="First slide"
-                        />
-                        <Carousel.Caption>
-                       
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsProfile.png")}
-                        alt="Second slide"
-                        />
+            <Carousel style={{background: 'black'}}>
+                <Carousel.Item style={{background: 'black'}}>
+                    <img
+                    style={{ height: "450px"}}
+                    // className="d-block w-100"
+                    src={require("../../images/UHS_research.JPG")}
+                    alt="First slide"
+                    />
+                    <Carousel.Caption>
+                   
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item style={{background: 'black'}}>
+                    <img
+                    style={{ height: "450px"}}
+                    // className="d-block w-100"
+                    src={require("../../images/uhsStudents.JPG")}
+                    alt="Second slide"
+                    />
 
-                        <Carousel.Caption>
-                     
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsMission.png")}
-                        alt="Third slide"
-                        />
+                    <Carousel.Caption>
+                 
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item style={{background: 'black'}}>
+                    <img
+                    style={{ height: "450px"}}
+                    // className="d-block w-100"
+                    src={require("../../images/uhsProfile.png")}
+                    alt="Third slide"
+                    />
 
-                        <Carousel.Caption>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsVision.png")}
-                        alt="Third slide"
-                        />
+                    <Carousel.Caption>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>   
 
-                        <Carousel.Caption>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>   
-            </div>      
+            
+        </div>     
         );
     }
 
@@ -319,7 +309,7 @@ class Carol extends Component {
                             )
                         } 
                     <div  id='stats' style={{height: '100px', borderBottom: 'solid black 1px'}}>
-                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'white'}} >
+                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
                                     <h4  >{carousel.caption1}</h4>
                                 </Animated>
                                 <div className='container'>
@@ -337,16 +327,25 @@ class Carol extends Component {
                             )
                         }
                     </div>
-                                      
-                        <div className='text-center'>
-                        <img 
-                                            style={{ height: "300px", width: "auto", border: 'solid blue 1px' }}
-                                            className="mt-4 "
-                                            src={require("../../images/uhsStat.png")}
-                                            alt="Second slide" 
-                                            
-                                        />   
-                                </div>
+
+                    <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
+                           
+                           <img 
+                               style={{ height: "300px", width: "200px" }}
+                               className="mt-4 col-sm-6"
+                               src={require("../../images/uhsMission.png")}
+                               alt="Second slide" 
+                               
+                           />   
+                           <img 
+                               style={{ height: "300px", width: "200px" }}
+                               className="mt-4 col-sm-6"
+                               src={require("../../images/uhsVision.png")}
+                               alt="Second slide" 
+                               
+                           />  
+                          
+                       </div>
             
                         <footer >
                             
