@@ -115,7 +115,7 @@ class SingleFaculty extends Component {
         const {faculty, redirectToFaculties, redirectToSignIn} = this.state
         
         if(redirectToFaculties) {
-            return <Redirect to={`/faculty`} />
+            return <Redirect to={`/spanish/faculty`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }
