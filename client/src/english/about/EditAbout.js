@@ -23,7 +23,7 @@ class EditAbout extends Component {
             } else {
                 this.setState({
                     id: data._id, 
-                    about: data.about, 
+                    about: data.body, 
                     error: ''
                 })
             }
@@ -125,7 +125,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(id, about)}
+                        {this.editaboutForm(about, id)}
              
             </div>
         )
