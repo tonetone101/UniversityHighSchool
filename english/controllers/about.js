@@ -40,7 +40,7 @@ exports.createabout = (req, res, next) => {
                 error: 'Image could not be uploaded'
             });
         };
-        let about = new about(fields);
+        let about = new About(fields);
 
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;

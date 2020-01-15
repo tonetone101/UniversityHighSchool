@@ -1,50 +1,47 @@
-import React, { Component } from "react";
-import { list, read } from "./apiEvent";
-import { Link, Redirect } from "react-router-dom";
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, Card, DropdownButton} from 'react-bootstrap';
+import React, {Component} from 'react'
+import { Carousel } from 'react-bootstrap';
+import {list} from './apiAbout'
+import {Link, Redirect } from 'react-router-dom'
+import {signout, isAuthenticated} from '../../auth'
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import {Animated} from 'react-animated-css'
 
-
-class Events extends Component {
-    constructor() {
-        super();
-        this.state = {
-            user: '',
-            events: [],
-            spanishPage: false,
-            englishPage: false,
-            khmerPage: false
-        };
+class About extends Component {
+    state = {
+        user: '',
+        about: [],
+        redirectToHome: false,
+        redirectToSignIn: false,
+        spanishPage: false,
+        englishPage: false,
+        khmerPage: false
     }
-
-    loadEvents = page => {
-        list(page).then(data => {
-            if (data.error) {
-                console.log(data.error);
-            } else {
-                //console.log(data)
-                this.setState({ events: data });
-                
-
-            }
-        });
-    };
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
     componentDidMount() {
-        this.loadEvents(this.state.events)
+        list().then(data => {
+            if (data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({carousel: data.find(d => {
+                    if (d._id == "5e1f9ded7142ac69941ccd8d") {
+                        return d
+                    }
+                }) 
+              })
+              
+            }
+        }) 
         this.renderUser()
-        console.log(this.state.events)
     }
 
     componentWillReceiveProps() {
         this.renderUser()
     }
 
-   
     translateSpanish = () => {
         this.setState({spanishPage: true, englishPage: false, khmerPage: false})
     }
@@ -52,14 +49,14 @@ class Events extends Component {
     translateEnglish = () => {
         this.setState({englishPage: true, spanishPage: false, khmerPage: false})
     }
-
+ 
     translateKhmer = () => {
         this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
     }
 
     renderTopHeader = () => {
         return (
-            <div>
+            <div style={{border: 'solid black 2px'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -161,84 +158,35 @@ class Events extends Component {
         )
     }
 
-
-    renderEvents = events => {
+    renderAbout = (about) => {
+       const photoUrl = about.postedBy
+        ? `${process.env.REACT_APP_API_URL}/user/photo/${
+            about._id
+          }?${new Date().getTime()}`
+        : ''
 
         return (
-            <div  id='event' className='row container'>
-                {events.map((event, i) => {
-                    const posterId = event.postedBy
-                        ? `/user/${event.postedBy._id}`
-                        : "";
-                    const posterName = event.postedBy
-                        ? event.postedBy.name
-                        : " Unknown";
-
-                        const photoUrl = event.postedBy
-                        ? `/user/photo/${
-                            event.postedBy._id
-                          }?${new Date().getTime()}`
-                        : ''
-
-                        const eventPhoto = event._id
-                        ? `/event/photo/${
-                            event._id
-                          }?${new Date().getTime()}`
-                        : ''
-                        
-                    return (
-                       <div className='col-md-4' key={i}>
-                            <Card border='dark' style={{ width: '18rem'}}>
-                                <Card.Header className="font-italic mark mt-4">
-                                    Event Posted{" "}
-                                    on{' '}
-                                    {new Date(event.created).toDateString()}
-                                </Card.Header >
-                                <Card.Body>
-                                    <Card.Title>{event.title.substring(0, 100)}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">{event.where.substring(0, 100)}</Card.Subtitle>
-                                    
-                                    <Card.Text>
-                                        {event.body.substring(0, 100)}
-                                    </Card.Text>
-                                
-                                    <Card.Link >
-                                        <Link
-                                               onClick={() => { 
-                                                window.open(`${event.url}`) 
-                                                }} 
-                                                className="btn btn-raised btn-primary btn-sm mb-4"
-                                        >
-                                               Google Doc
-                                        </Link>
-                                    </Card.Link>
-                                
-                                    <Card.Link >
-                                        <Link
-                                                to={`/event/${event._id}`}
-                                                className="btn btn-raised btn-primary btn-sm mb-4"
-                                        >
-                                                Read more
-                                        </Link>
-                                    </Card.Link>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    );
-                })}
-            </div>
+            <div >
+               <p>
+                   {about.body}
+               </p>    
+            </div>    
+              
         );
-    };
+    }
 
     render() {
-        const { user, events, spanishPage, englishPage, khmerPage } = this.state;
+        const {about, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
         if(spanishPage) {
-            return <Redirect to={`/spanishevents`} />
+            return <Redirect to={`/spanish`} />
          } else if (englishPage) {
-             return <Redirect to={'/events'} />
+             return <Redirect to={'/'} />
          } else if (khmerPage) {
-            return <Redirect to={'/khmerevents'} />
-        } 
+            return <Redirect to={'/khmer'} />
+        }
+         else if(redirectToSignIn) {
+            return <Redirect to={`/signin`} />
+         } 
 
         return (
             <div>
@@ -250,27 +198,46 @@ class Events extends Component {
                         />
                     </div>
                 {this.renderMenu()}
-                <div className="container">
-                    <h2 className="mt-5 mb-5">
-                        Upcoming Events
-                        {!events.length ? "Loading..." : ""}
-                    </h2>
-                    {
-                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                            <div>
-                                <Link className='mb-5' to='/new/event'>Add Event</Link>
-                            </div>
-                        )
-                    }
                 
-                    <div>               
-                        {this.renderEvents(events)}
-                    </div>   
-                
+                <div>
+                    <div className='text-center'>
+                        {!about ? ( 
+                                <div className='jumbotron text-center '>
+                                    <h2>Loading....</h2>
+                                </div>
+                                ) : (
+                                    this.renderAbout(about)
+                                    
+                                )
+                            } 
+
+                        <div className='text-center' >
+                            {
+                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                    <Link to={`/edit/about/${about._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                )
+                            }
+                        </div>
+                    </div>               
                 </div>
+                                
+                <footer className='mt-5'>
+                    <div class="container row ml-5">
+                        <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
+                        <div className="col-md-6 d-flex justify-content-around align-items-baseline">
+                            <div >
+                                <p>1 Empire Plaza | Providence, RI 02903</p>
+                                <p>Phone: (401) 254- 4829 | Sprak-martins@uhschool.org</p>
+                                <h5 className="text-capitalize">
+                                &copy; {new Date().getFullYear()} copyright : <a href="/">www.uhSchool.org </a>
+                                </h5> 
+                                </div>
+                        </div>
+                        </div>
+                </footer> 
             </div>
-        );
+        )
     }
 }
 
-export default Events;
+export default About

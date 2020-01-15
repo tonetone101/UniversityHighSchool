@@ -49,6 +49,7 @@ import SingleBoardMeeting from './english/schoolBoard/singleMain'
 import SchoolBoardMember from './english/schoolBoard/Members'
 import NewSchoolBoardMember from './english/schoolBoard/NewMembers'
 import SingleSchoolBoardMember from './english/schoolBoard/SingleMembers'
+import About from './english/about/About'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -150,6 +151,7 @@ const MainRouter = () => (
             <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
             <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
             <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
+            <Route exact path="/about" component={About}></Route>
 
 
             {

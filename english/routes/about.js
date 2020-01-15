@@ -9,7 +9,7 @@ router = express.Router()
 
 router.get('/about', getabouts)
 router.get('/about/:aboutId', singleabout)
-router.post('/about/new/:userId', createabout )
+router.post('/about/new', createabout )
 router.put('/about/edit/:aboutId', updateabout)
 router.delete('/about/delete/:aboutId', deleteabout);
 
