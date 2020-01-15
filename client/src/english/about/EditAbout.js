@@ -125,7 +125,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(about )}
+                        {this.editaboutForm(id, about)}
              
             </div>
         )
