@@ -39,7 +39,7 @@ export const update = (aboutId, token, about) => {
         .catch(err => console.log(err));
 };
 
-export const singleabout = (aboutId) => {
+export const singleAbout = (aboutId) => {
     return fetch(`/about/${aboutId}`, {
         method: "GET"
     })

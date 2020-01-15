@@ -26,7 +26,7 @@ class About extends Component {
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState({carousel: data.find(d => {
+                this.setState({about: data.find(d => {
                     if (d._id == "5e1f9ded7142ac69941ccd8d") {
                         return d
                     }
