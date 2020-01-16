@@ -166,7 +166,7 @@ class About extends Component {
         : ''
 
         return (
-            <div className='container mt-5'>
+            <div className='container mt-5' syle={{boxShadow: "1px 3px 1px #9E9E9E"}}>
                 <Card border='dark' >
                     <Card.Body>
                         <Card.Title>About Us</Card.Title>
