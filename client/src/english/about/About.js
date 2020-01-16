@@ -166,7 +166,7 @@ class About extends Component {
         : ''
 
         return (
-            <div className='col-md-12'>
+            <div className='container'>
                 <Card border='dark' >
                     <Card.Body>
                         <Card.Title>About Us</Card.Title>
