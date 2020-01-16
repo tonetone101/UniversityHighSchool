@@ -4,7 +4,7 @@ import {list} from './apiAbout'
 import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, Card, Dropdown, DropdownButton} from 'react-bootstrap';
-import BoxShadow from 'react-box-shadow'
+import {BoxShadow} from 'react-box-shadow'
 
 class About extends Component {
     state = {
