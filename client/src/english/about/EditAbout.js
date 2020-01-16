@@ -8,7 +8,7 @@ class EditAbout extends Component {
         super()
         this.state = { 
             id: '',
-            about: "",
+            body: "",
             redirectToHome: false,
             error: '',
             filesize: 0,
@@ -23,7 +23,7 @@ class EditAbout extends Component {
             } else {
                 this.setState({
                     id: data._id, 
-                    about: data.body, 
+                    body: data.body, 
                     error: ''
                 })
             }
@@ -79,15 +79,15 @@ class EditAbout extends Component {
         }
     };
 
-    editaboutForm = (about) => (
+    editaboutForm = (body) => (
         <form className='container'>
             <div className="form-group">
                 <label className="text-muted">About UHS</label>
                 <input
-                    onChange={this.handleChange("about")}
+                    onChange={this.handleChange("body")}
                     type="text"
                     className="form-control"
-                    value={about}
+                    value={body}
                 />
             </div>
 
@@ -102,7 +102,7 @@ class EditAbout extends Component {
 
 
     render() {
-        const {id, about, redirectToHome, error, loading} = this.state
+        const {id, body, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/about`} />;
@@ -125,7 +125,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(about, id)}
+                        {this.editaboutForm(body)}
              
             </div>
         )
