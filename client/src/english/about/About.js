@@ -3,7 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import {list} from './apiAbout'
 import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, Card, Dropdown, DropdownButton} from 'react-bootstrap';
 import {Animated} from 'react-animated-css'
 
 class About extends Component {
@@ -166,12 +166,26 @@ class About extends Component {
         : ''
 
         return (
-            <div className='container mt-4'>
-                <h2 style={{borderBottom: 'solid black 1px'}}>About Us</h2>
-               <p>
-                   {about.body}
-               </p>    
-            </div>    
+            <div className='col-md-12'>
+                <Card border='dark' >
+                    <Card.Body>
+                        <Card.Title>About Us</Card.Title>
+                        
+                        <Card.Text>
+                            {about.body}
+                        </Card.Text>
+                    
+                    </Card.Body>
+                </Card>
+            </div>
+
+
+            // <div className='container mt-4'>
+            //     <h2 style={{borderBottom: 'solid black 1px'}}>About Us</h2>
+            //    <p>
+            //        {about.body}
+            //    </p>    
+            // </div>    
               
         );
     }
