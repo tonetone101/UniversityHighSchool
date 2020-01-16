@@ -166,7 +166,8 @@ class About extends Component {
         : ''
 
         return (
-            <div >
+            <div className='container mt-4'>
+                <h2 style={{borderBottom: 'solid black 1px'}}>About Us</h2>
                <p>
                    {about.body}
                </p>    
