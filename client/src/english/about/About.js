@@ -4,7 +4,7 @@ import {list} from './apiAbout'
 import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, Card, Dropdown, DropdownButton} from 'react-bootstrap';
-import {BoxShadow} from 'react-box-shadow'
+
 
 class About extends Component {
     state = {
@@ -167,11 +167,6 @@ class About extends Component {
 
         return (
             <div className='container mt-5'>
-                <BoxShadow
-                    spreadRadius={4}
-                    blurRadius={16}
-                    color='#067df7'
-                    />
                 <Card border='dark' >
                     <Card.Body>
                         <Card.Title>About Us</Card.Title>
