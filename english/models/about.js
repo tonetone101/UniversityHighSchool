@@ -4,23 +4,23 @@ const {ObjectId} = mongoose.Schema
 const aboutSchema = new mongoose.Schema({
     body: {
         type: String,
-        required: true,
+        
     },
     paragraph2: {
         type: String,
-        required: true,
+        
     },
     paragraph3: {
         type: String,
-        required: true,
+        
     },
     paragraph4: {
         type: String,
-        required: true,
+        
     },
     paragraph5: {
         type: String,
-        required: true,
+        
     },
     photo: {
         data: Buffer,
