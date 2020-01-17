@@ -26,7 +26,7 @@ class Carol extends Component {
                 console.log(data.error)
             } else {
                 this.setState({carousel: data.find(d => {
-                    if (d._id == "5e08e92237be9a64fae607c9") {
+                    if (d._id == "5e21c056fbf8f0740c371684") {
                         return d
                         
                     }
@@ -120,6 +120,10 @@ class Carol extends Component {
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/spanish'>Hogar</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/about'>Sobre nosotros</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
@@ -346,6 +350,10 @@ class Carol extends Component {
                            />  
                           
                        </div>
+
+                       <div>
+                            {this.renderAnnouncements(carousel)}
+                        </div>
             
                         <footer >
                             
