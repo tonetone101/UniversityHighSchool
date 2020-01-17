@@ -191,11 +191,11 @@ class Main extends Component {
                         
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' ? ( 
                           <div>
-                            <Link to={`/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
+                            <Link to={`/spanish/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
                           </div> 
                           ) : ( null)
                          }
-                         <Link to={`/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
+                         <Link to={`/spanish/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
 
                       </div>
                       <hr />

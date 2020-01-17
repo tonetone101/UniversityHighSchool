@@ -128,7 +128,7 @@ class EditCarousel extends Component {
         <form className='container'>
               <div className="form-group">
                 <label className="text-muted">Header</label>
-                <input
+                <textarea
                     onChange={this.handleChange("caption1")}
                     type="text"
                     className="form-control"
@@ -149,7 +149,7 @@ class EditCarousel extends Component {
 
             <div className="form-group">
                 <label className="text-muted">Caption</label>
-                <input
+                <textarea
                     onChange={this.handleChange("caption2")}
                     type="text"
                     className="form-control"
@@ -159,7 +159,7 @@ class EditCarousel extends Component {
 
             <div className="form-group">
                 <label className="text-muted">Caption</label>
-                <input
+                <textarea
                     onChange={this.handleChange("caption3")}
                     type="text"
                     className="form-control"
@@ -176,7 +176,7 @@ class EditCarousel extends Component {
             <div style={{border: 'black solid 1px'}}>
                 <div className="form-group">
                     <label className="text-muted">Google doc link1</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("doc1")}
                         placeholder='google doc link here'
                         type="text"
@@ -186,7 +186,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Link1</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("link1")}
                         placeholder='www.example.com'
                         type="text"
@@ -196,7 +196,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">link TITLE 1</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("linkTitle1")}
                         type="text"
                         className="form-control"
@@ -205,7 +205,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Announcement 1</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("caption4")}
                         type="text"
                         className="form-control"
@@ -217,7 +217,7 @@ class EditCarousel extends Component {
             <div style={{border: 'black solid 1px'}}> 
                 <div className="form-group">
                     <label className="text-muted">Google doc link2</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("doc2")}
                         placeholder='google doc link here'
                         type="text"
@@ -227,7 +227,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Link2</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("link2")}
                         placeholder='www.example.com'
                         type="text"
@@ -237,7 +237,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">link TITLE 2</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("linkTitle2")}
                         type="text"
                         className="form-control"
@@ -246,7 +246,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Announcement 2</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("caption5")}
                         type="text"
                         className="form-control"
@@ -258,7 +258,7 @@ class EditCarousel extends Component {
             <div style={{border: 'black solid 1px'}}>
                 <div className="form-group">
                     <label className="text-muted">Google doc link3</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("doc3")}
                         placeholder='google doc link here'
                         type="text"
@@ -268,7 +268,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Link3</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("link3")}
                         placeholder='www.example.com'
                         type="text"
@@ -278,7 +278,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">link TITLE 3</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("linkTitle3")}
                         type="text"
                         className="form-control"
@@ -287,7 +287,7 @@ class EditCarousel extends Component {
                 </div>
                 <div className="form-group">
                     <label className="text-muted">Announcement 3</label>
-                    <input
+                    <textarea
                         onChange={this.handleChange("caption6")}
                         type="text"
                         className="form-control"

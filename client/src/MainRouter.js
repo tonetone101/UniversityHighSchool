@@ -79,6 +79,15 @@ import NewSpanishPartners from './spanish/partners/NewPartners'
 import SpanishPartners from './spanish/partners/Partners'
 import SingleSpanishPartners from './spanish/partners/SinglePartner'
 import EditSpanishPartners from './spanish/partners/EditPartners'
+import SchoolBoardMeeting from './spanish/schoolBoard/Main'
+import NewBoardMeeting from './spanish/schoolBoard/NewBoardMeeting'
+import SingleBoardMeeting from './spanish/schoolBoard/singleMain'
+import SchoolBoardMember from './spanish/schoolBoard/Members'
+import NewSchoolBoardMember from './spanish/schoolBoard/NewMembers'
+import SingleSchoolBoardMember from './spanish/schoolBoard/SingleMembers'
+import About from './spanish/about/About'
+import EditAbout from './spanish/about/EditAbout'
+
 
 // khmer
 import NewkhmerCarousel from './khmer/carousel/NewCarousel'
@@ -188,6 +197,15 @@ const MainRouter = () => (
             <Route exact path="/spanish/partner" component={SingleSpanishPartners}></Route>
             <Route exact path="/spanish/edit/partner/:partnersId" component={EditSpanishPartners}></Route>
             <Route exact path="/spanish/partners/:partnersId" component={SingleSpanishPartners}></Route>
+            <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
+            <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
+            <Route exact path="/spanish/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
+            <Route exact path="/spanish/schoolBoardMember" component={SchoolBoardMember}></Route>
+            <Route exact path="/spanish/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
+            <Route exact path="/spanish/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
+            <Route exact path="/spanish/about" component={About}></Route>
+            <Route exact path="/spanish/edit/about/:aboutId" component={EditAbout}></Route>
+
 
             {
             // khmer          

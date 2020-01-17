@@ -51,7 +51,7 @@ class SingleschoolBoardMember extends Component {
         : " Unknown";
 
         const photoUrl = schoolBoardMember._id
-        ? `/schoolBoardMember/photo/${
+        ? `/spanish/schoolBoardMember/photo/${
             schoolBoardMember._id
           }?${new Date().getTime()}`
         : '';
@@ -81,7 +81,7 @@ class SingleschoolBoardMember extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/schoolBoardMember`}
+                            to={`/spanish/schoolBoardMember`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -92,7 +92,7 @@ class SingleschoolBoardMember extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/schoolBoardMember/${schoolBoardMember._id}`}
+                                        to={`/spanish/edit/schoolBoardMember/${schoolBoardMember._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update schoolBoardMember

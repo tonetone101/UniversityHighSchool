@@ -220,7 +220,7 @@ class SchoolBoardMember extends Component {
                                     {schoolBoardMember.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/schoolBoardMember/${schoolBoardMember._id}`}
+                                        to={`/spanish/schoolBoardMember/${schoolBoardMember._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
@@ -244,7 +244,7 @@ class SchoolBoardMember extends Component {
             return <Redirect to={'/khmer/schoolBoardMember'} />
         } 
 
-        if (searched) { return <Redirect to={`schoolBoardMember/${searchedschoolBoardMember._id}`}/> } 
+        if (searched) { return <Redirect to={`spanish/schoolBoardMember/${searchedschoolBoardMember._id}`}/> } 
 
         return (
             <div>
@@ -274,7 +274,7 @@ class SchoolBoardMember extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/new/schoolBoardMember'>Add schoolBoardMember</Link>
+                                <Link className='mb-5' to='/spanish/new/schoolBoardMember'>Add schoolBoardMember</Link>
                             </div>
                         )
                     }

@@ -61,7 +61,7 @@ class SingleschoolBoardMeeting extends Component {
                        {isAuthenticated().user && 
                         isAuthenticated().user.role === 'admin' &&  
                         <div>
-                             <Link to={`/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                             <Link to={`/spanish/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting
                             </Link>
                             <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
