@@ -1,36 +1,72 @@
-import React, {Component} from 'react'
-import {singlePartner, remove} from './apiPartners'
-import {Link, Redirect} from 'react-router-dom'
+import React, { Component } from "react";
+import { list, read } from "./apiSchoolBoardMember";
+import { Link, Redirect } from "react-router-dom";
 import {isAuthenticated, signout} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
 
-
-class SinglePartners extends Component {
-    state = {
-        partners: '',
-        redirectToFaculties: false,
-        redirectToSignIn: false,
+class SchoolBoardMember extends Component {
+    constructor() {
+        super();
+        this.state = {
+            user: '',
+            schoolBoardMembers: [],
+            spanishPage: false,
+            englishPage: false,
+            term: '',
+            searched: false,
+            searchedschoolBoardMember: '',
+            error: '',
+            searching: false,
+            spanishPage: false,
+            englishPage: false,
+            khmerPage: false
+        };
     }
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
-    componentDidMount = () => {
-        const partnerId = this.props.match.params.partnersId
-        console.log(this.props.match.params)
-        singlePartner(partnerId).then(data => {
+    loadschoolBoardMembers = page => {
+        list(page).then(data => {
             if (data.error) {
-                console.log(data.error)
+                console.log(data.error);
             } else {
-                this.setState({partners: data})
+                //console.log(data)
+                this.setState({ schoolBoardMembers: data });
+                
+
             }
-        }) 
+        });
+    };
+
+
+    componentDidMount() {
+        this.loadschoolBoardMembers(this.state.schoolBoardMembers)
         this.renderUser()
+        console.log(this.state.schoolBoardMembers)
     }
+
 
     componentWillReceiveProps() {
         this.renderUser()
+    }
+
+    handleChange = event => {
+        this.setState({error: ''})
+        this.setState({term: event.target.value})
+    }
+
+    search = (e) => {
+        e.preventDefault()
+        this.state.schoolBoardMembers.map(staff => {
+            if (staff.name === this.state.term) {
+                this.setState({searched: true, searchedschoolBoardMember: staff})
+            } else {
+                this.setState({searching: true, error: 'Staff member not found'})
+            }
+        })
+
     }
 
     translateSpanish = () => {
@@ -146,126 +182,111 @@ class SinglePartners extends Component {
         )
     }
 
-    deletepartners = () => {
-        const partnersId = this.props.match.params.partnersId
-        const token = isAuthenticated().token
-        remove(partnersId, token).then(data => {
-            if(data.error) {
-                console.log(data.error)
-            } else {
-                this.setState({redirectToFaculties: true})
-            }
-        })
-    }
-
-    deleteConfirm = () => {
-        let answer = window.confirm('¿Estás seguro de que deseas eliminar el socio?')
-        if(answer) {
-            this.deletepartners()
-        }
-    }
-
-    renderpartners = (partners) => {  
-        const photoUrl = partners._id
-        ? `/spanishPartners/photo/${
-            partners._id
-          }?${new Date().getTime()}`
-        : '';
+    renderschoolBoardMembers = schoolBoardMembers => {
 
         return (
-                <div  className='row'>
-                     <div className='col-md-6 mt-5'>
-                        <img 
-                            src={photoUrl}
-                            alt=''
-                            onError={i =>
-                                (i.target.src = ``)
-                            }
-                            className="img-thunbnail mb-3 ml-50"
-                            style={{height: '500px', width: '500px', objectFit: 'cover', borderRadius: '10px'}}
-                        />
-                   </div>
+            <div  id='event' className='row container'>
+                {schoolBoardMembers.map((schoolBoardMember, i) => {
+                    const posterId = schoolBoardMember.postedBy
+                        ? `/user/${schoolBoardMember.postedBy._id}`
+                        : "";
+                    const posterName = schoolBoardMember.postedBy
+                        ? schoolBoardMember.postedBy.name
+                        : " Unknown";
 
-                    <div style={{color: 'black'}} className='col-md-6 mt-5'>
-                        <h4 className="card-text">
-                           {partners.title}
-                        </h4>
-                        <p style={{color: 'black'}} className="card-text">
-                            {partners.about}
-                        </p>
-                    </div>
+                        const photoUrl = schoolBoardMember.postedBy
+                        ? `/user/photo/${
+                            event.postedBy._id
+                          }?${new Date().getTime()}`
+                        : ''
 
-                    <div className='row'>
-                        <Link
-                            to={`/spanish/partners`}
-                            className="btn btn-raised btn-primary btn-sm "
-                            style={{marginLeft: '30px'}}
-                        >
-                            Volver a socios
-                        </Link>
+                        const schoolBoardMemberPhoto = schoolBoardMember._id
+                        ? `/schoolBoardMember/photo/${
+                            schoolBoardMember._id
+                          }?${new Date().getTime()}`
+                        : ''
+                        
+                    return (
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
-                            <div >
-                                <div >
-                                    <Link
-                                        to={`/spanish/edit/partner/${partners._id}`}
-                                        className='btn btn-raised btn-warning ml-3'
+                        <div  className='col-md-4' key={i}>
+                            <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={schoolBoardMemberPhoto} />
+                            <Card.Body>
+                                <Card.Title>{schoolBoardMember.name.substring(0, 100)}</Card.Title>
+                                <Card.Text>
+                                    {schoolBoardMember.title.substring(0, 100)}
+                                </Card.Text>
+                                <Card.Text>
+                                    {schoolBoardMember.about.substring(0, 100)}
+                                </Card.Text>
+                                <Link
+                                        to={`/schoolBoardMember/${schoolBoardMember._id}`}
+                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                       Actualizar socios
+                                        Read more
                                     </Link>
-                                    <button
-                                        onClick={this.deleteConfirm}
-                                        className='btn btn-raised btn-danger ml-3'
-                                    >
-                                        Eliminar 
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                            </Card.Body>
+                            </Card>
+                        </div>
+                    );
+                })}
+            </div>
         );
-    }
+    };
 
     render() {
-        const {partners, redirectToFaculties, redirectToSignIn, spanishPage, khmerPage, englishPage} = this.state
-        
+        const { user, schoolBoardMembers, searched, spanishPage, khmerPage, englishPage, searchedschoolBoardMember, error } = this.state;
         if(spanishPage) {
-            return <Redirect to={`/spanish/partner/${partners._id}`} />
+            return <Redirect to={`/spanish/schoolBoardMember`} />
          } else if (englishPage) {
-             return <Redirect to={`/partner/${partners._id}`} />
+             return <Redirect to={'/schoolBoardMember'} />
          } else if (khmerPage) {
-            return <Redirect to={`/khmer/partner/${partners._id}`} />
+            return <Redirect to={'/khmer/schoolBoardMember'} />
         } 
 
-        if(redirectToFaculties) {
-            return <Redirect to={`/partners`} />
-         } else if(redirectToSignIn) {
-            return <Redirect to={`/spanish/signin`} />
-         }
+        if (searched) { return <Redirect to={`schoolBoardMember/${searchedschoolBoardMember._id}`}/> } 
 
         return (
             <div>
                 {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
                 {this.renderMenu()}
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{partners.name}</h3>
-                                </div>
-                               
-                                {!partners ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Cargando....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderpartners(partners)
-                                        )
-                                    }
-                               
+                <div className="container">
+                    <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
+                        <h2 className="col-md-6">
+                            School Board Members
+                            {!schoolBoardMembers.length ? "Loading..." : ""}
+                        </h2>
+                        <br/>
+
+                        <form className="col-md-6 text-center" onSubmit={this.search}>
+                            <input placeholder='by schoolBoardMember name' type='text' value={this.state.term} onChange={this.handleChange} />
+                            <Button onClick={this.search}>Search</Button>
+                            {"  "}{error}
+                        </form>
+                        <hr/>
+                    </div>
+                    {
+                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                            <div>
+                                <Link className='mb-5' to='/new/schoolBoardMember'>Add schoolBoardMember</Link>
                             </div>
+                        )
+                    }
+                
+                    <div>               
+                        {this.renderschoolBoardMembers(schoolBoardMembers)}
+                    </div>   
+                
+                </div>
             </div>
-        )
+        );
     }
 }
 
-export default SinglePartners
+export default SchoolBoardMember;

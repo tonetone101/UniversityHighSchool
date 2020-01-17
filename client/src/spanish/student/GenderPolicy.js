@@ -71,12 +71,12 @@ class GenderPolicy extends Component {
                             !isAuthenticated() && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/spanish/signin' style={{color: 'white'}}>
                                     Registrarse
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/signup' >
+                                    <Link style={{color: 'white'}} to='/spanish/signup' >
                                     Regístrate
                                     </Link>
                                 </Nav.Link>
@@ -87,8 +87,8 @@ class GenderPolicy extends Component {
                         {
                             isAuthenticated() && isAuthenticated().user && (
                                 <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/spanish/genderpolicy')
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
+                                        this.props.history.push('/spanish')
                                     })}>
                                       Desconectar
                                     </a>
@@ -113,6 +113,10 @@ class GenderPolicy extends Component {
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/spanish'>Hogar</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/about'>Sobre nosotros</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                

@@ -1,29 +1,38 @@
 import React, {Component} from 'react'
-import {singlePartner, remove} from './apiPartners'
-import {Link, Redirect} from 'react-router-dom'
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
+import {list} from './apiAbout'
+import {Link, Redirect } from 'react-router-dom'
+import {signout, isAuthenticated} from '../../auth'
+import { Navbar, Nav, Card, Dropdown, DropdownButton} from 'react-bootstrap';
 
 
-class SinglePartners extends Component {
+class About extends Component {
     state = {
-        partners: '',
-        redirectToFaculties: false,
+        user: '',
+        about: [],
+        redirectToHome: false,
         redirectToSignIn: false,
+        spanishPage: false,
+        englishPage: false,
+        khmerPage: false
     }
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
-    componentDidMount = () => {
-        const partnerId = this.props.match.params.partnersId
-        console.log(this.props.match.params)
-        singlePartner(partnerId).then(data => {
+    componentDidMount() {
+        list().then(data => {
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState({partners: data})
+                this.setState({about: data.find(d => {
+                    if (d._id == "5e1f9ded7142ac69941ccd8d") {
+                        return d
+                    }
+                }) 
+              })
+              
             }
         }) 
         this.renderUser()
@@ -40,7 +49,7 @@ class SinglePartners extends Component {
     translateEnglish = () => {
         this.setState({englishPage: true, spanishPage: false, khmerPage: false})
     }
-
+ 
     translateKhmer = () => {
         this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
     }
@@ -146,126 +155,86 @@ class SinglePartners extends Component {
         )
     }
 
-    deletepartners = () => {
-        const partnersId = this.props.match.params.partnersId
-        const token = isAuthenticated().token
-        remove(partnersId, token).then(data => {
-            if(data.error) {
-                console.log(data.error)
-            } else {
-                this.setState({redirectToFaculties: true})
-            }
-        })
-    }
-
-    deleteConfirm = () => {
-        let answer = window.confirm('¿Estás seguro de que deseas eliminar el socio?')
-        if(answer) {
-            this.deletepartners()
-        }
-    }
-
-    renderpartners = (partners) => {  
-        const photoUrl = partners._id
-        ? `/spanishPartners/photo/${
-            partners._id
+    renderAbout = (about) => {
+       const photoUrl = about.postedBy
+        ? `${process.env.REACT_APP_API_URL}/user/photo/${
+            about._id
           }?${new Date().getTime()}`
-        : '';
+        : ''
 
         return (
-                <div  className='row'>
-                     <div className='col-md-6 mt-5'>
-                        <img 
-                            src={photoUrl}
-                            alt=''
-                            onError={i =>
-                                (i.target.src = ``)
-                            }
-                            className="img-thunbnail mb-3 ml-50"
-                            style={{height: '500px', width: '500px', objectFit: 'cover', borderRadius: '10px'}}
-                        />
-                   </div>
+            <div className='container mt-5'>
+                <Card border='dark' >
+                    <Card.Body>
+                        <Card.Title>About Us</Card.Title>
+                        
+                        <Card.Text>
+                            {about.body}
+                        </Card.Text>
+                    
+                    </Card.Body>
+                </Card>
+            </div>
 
-                    <div style={{color: 'black'}} className='col-md-6 mt-5'>
-                        <h4 className="card-text">
-                           {partners.title}
-                        </h4>
-                        <p style={{color: 'black'}} className="card-text">
-                            {partners.about}
-                        </p>
-                    </div>
 
-                    <div className='row'>
-                        <Link
-                            to={`/spanish/partners`}
-                            className="btn btn-raised btn-primary btn-sm "
-                            style={{marginLeft: '30px'}}
-                        >
-                            Volver a socios
-                        </Link>
-
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
-                            <div >
-                                <div >
-                                    <Link
-                                        to={`/spanish/edit/partner/${partners._id}`}
-                                        className='btn btn-raised btn-warning ml-3'
-                                    >
-                                       Actualizar socios
-                                    </Link>
-                                    <button
-                                        onClick={this.deleteConfirm}
-                                        className='btn btn-raised btn-danger ml-3'
-                                    >
-                                        Eliminar 
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+            // <div className='container mt-4'>
+            //     <h2 style={{borderBottom: 'solid black 1px'}}>About Us</h2>
+            //    <p>
+            //        {about.body}
+            //    </p>    
+            // </div>    
+              
         );
     }
 
     render() {
-        const {partners, redirectToFaculties, redirectToSignIn, spanishPage, khmerPage, englishPage} = this.state
-        
+        const {about, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
         if(spanishPage) {
-            return <Redirect to={`/spanish/partner/${partners._id}`} />
+            return <Redirect to={`/spanish`} />
          } else if (englishPage) {
-             return <Redirect to={`/partner/${partners._id}`} />
+             return <Redirect to={'/'} />
          } else if (khmerPage) {
-            return <Redirect to={`/khmer/partner/${partners._id}`} />
-        } 
-
-        if(redirectToFaculties) {
-            return <Redirect to={`/partners`} />
-         } else if(redirectToSignIn) {
-            return <Redirect to={`/spanish/signin`} />
-         }
+            return <Redirect to={'/khmer'} />
+        }
+         else if(redirectToSignIn) {
+            return <Redirect to={`/signin`} />
+         } 
 
         return (
             <div>
                 {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
                 {this.renderMenu()}
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{partners.name}</h3>
+                
+                <div>
+                    <div className='text-center'>
+                        {!about ? ( 
+                                <div className='jumbotron text-center '>
+                                    <h2>Loading....</h2>
                                 </div>
-                               
-                                {!partners ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Cargando....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderpartners(partners)
-                                        )
-                                    }
-                               
-                            </div>
+                                ) : (
+                                    this.renderAbout(about)
+                                    
+                                )
+                            } 
+
+                        <div className='text-center' >
+                            {
+                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                    <Link to={`/edit/about/${about._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                )
+                            }
+                        </div>
+                    </div>               
+                </div>
             </div>
         )
     }
 }
 
-export default SinglePartners
+export default About
