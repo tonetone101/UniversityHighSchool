@@ -312,15 +312,28 @@ class Carol extends Component {
                                
                             )
                         } 
-                    <div  id='stats' style={{height: '100px', borderBottom: 'solid black 1px'}}>
+                    <div  id='stats' style={{height: '100px', }} className='container mt-3'>
+                            <div style={{borderBottom: 'solid black 1px'}}>
                                 <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
                                     <h4  >{carousel.caption1}</h4>
                                 </Animated>
-                                <div className='container'>
-                                        <h5 style={{color:'black', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
-                                       
-                                </div>                          
-                    </div>
+                            </div>
+                            
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
+                                
+                            </div>    
+                            
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
+                                
+                            </div>         
+
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption3}</h5>
+                                
+                            </div>              
+                        </div>
                     
                 </div>
                 <div>                       
