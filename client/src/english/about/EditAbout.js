@@ -81,7 +81,7 @@ class EditAbout extends Component {
 
     editaboutForm = (body) => (
         <form className='container'>
-            <div className="form-group" style={{textIndent: '50px'}}>
+            <div className="form-group" >
                 <label className="text-muted">About UHS</label>
                 <textarea
                     onChange={this.handleChange("body")}
