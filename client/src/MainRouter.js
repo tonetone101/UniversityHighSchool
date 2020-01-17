@@ -197,14 +197,14 @@ const MainRouter = () => (
             <Route exact path="/spanish/partner" component={SingleSpanishPartners}></Route>
             <Route exact path="/spanish/edit/partner/:partnersId" component={EditSpanishPartners}></Route>
             <Route exact path="/spanish/partners/:partnersId" component={SingleSpanishPartners}></Route>
-            <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
-            <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
-            <Route exact path="/spanish/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
-            <Route exact path="/spanish/schoolBoardMember" component={SchoolBoardMember}></Route>
-            <Route exact path="/spanish/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
-            <Route exact path="/spanish/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
-            <Route exact path="/spanish/about" component={About}></Route>
-            <Route exact path="/spanish/edit/about/:aboutId" component={EditAbout}></Route>
+            <Route exact path="/spanish/schoolBoardMeeting" component={SpanishSchoolBoardMeeting}></Route>
+            <Route exact path="/spanish/newschoolBoardMeeting" component={NewSpanishBoardMeeting}></Route>
+            <Route exact path="/spanish/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleSpanishBoardMeeting}></Route>
+            <Route exact path="/spanish/schoolBoardMember" component={SpanishSchoolBoardMember}></Route>
+            <Route exact path="/spanish/new/schoolBoardMember" component={NewSpanishSchoolBoardMember}></Route>
+            <Route exact path="/spanish/schoolBoardMember/:schoolBoardMemberId" component={SingleSpanishSchoolBoardMember}></Route>
+            <Route exact path="/spanish/about" component={SpanishAbout}></Route>
+            <Route exact path="/spanish/edit/about/:aboutId" component={EditSpanishAbout}></Route>
 
 
             {
