@@ -28,10 +28,10 @@ class EditAbout extends Component {
                 this.setState({
                     id: data._id, 
                     body: data.body, 
-                    paragraph2: '',
-                    paragraph3: '',
-                    paragraph4: '',
-                    paragraph5: '',
+                    paragraph2: data.paragraph2,
+                    paragraph3: data.paragraph3,
+                    paragraph4: data.paragraph4,
+                    paragraph5: data.paragraph5,
                     error: ''
                 })
             }
