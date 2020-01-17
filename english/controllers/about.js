@@ -6,7 +6,7 @@ const _ = require('lodash');
 exports.aboutById = (req, res, next, id) => {
     About.findById(id)
         .populate('postedBy', '_id name role')
-        .select('_id body url created photo')
+        .select('_id body paragraph2 paragraph3 paragraph4 paragraph5 url created photo')
         .exec((err, about) => {
             if (err || !about) {
                 return res.status(400).json({
@@ -22,7 +22,7 @@ exports.aboutById = (req, res, next, id) => {
 exports.getabouts = (req, res, next) => { 
     const abouts = About.find()
         .populate("postedBy", "_id name photo role")
-        .select("_id body url created photo")
+        .select("_id body paragraph2 paragraph3 paragraph4 paragraph5 url created photo")
         .sort({ created: -1 })
         .then(abouts => {
            res.json(abouts)
@@ -63,7 +63,7 @@ exports.createabout = (req, res, next) => {
 exports.aboutsByUser = (req, res) => {
     About.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name')
-        .select('_id title time date where url photo created')
+        .select('_id body paragraph2 paragraph3 paragraph4 paragraph5 url photo created')
         .sort('_created')
         .exec((err, abouts) => {
             if (err) {

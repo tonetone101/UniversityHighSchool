@@ -27,7 +27,7 @@ class About extends Component {
                 console.log(data.error)
             } else {
                 this.setState({about: data.find(d => {
-                    if (d._id == "5e1f9ded7142ac69941ccd8d") {
+                    if (d._id == "5e22433d06576302afeda501") {
                         return d
                     }
                 }) 

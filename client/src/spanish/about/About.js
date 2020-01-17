@@ -171,6 +171,22 @@ class About extends Component {
                         <Card.Text>
                             {about.body}
                         </Card.Text>
+
+                        <Card.Text>
+                            {about.paragraph2}
+                        </Card.Text>
+
+                        <Card.Text>
+                            {about.paragraph3}
+                        </Card.Text>
+
+                        <Card.Text>
+                            {about.paragraph4}
+                        </Card.Text>
+
+                        <Card.Text>
+                            {about.paragraph5}
+                        </Card.Text>
                     
                     </Card.Body>
                 </Card>

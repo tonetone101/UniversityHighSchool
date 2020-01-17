@@ -6,6 +6,22 @@ const aboutSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    paragraph2: {
+        type: String,
+        required: true,
+    },
+    paragraph3: {
+        type: String,
+        required: true,
+    },
+    paragraph4: {
+        type: String,
+        required: true,
+    },
+    paragraph5: {
+        type: String,
+        required: true,
+    },
     photo: {
         data: Buffer,
         contentType: String

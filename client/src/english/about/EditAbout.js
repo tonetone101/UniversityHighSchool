@@ -9,6 +9,10 @@ class EditAbout extends Component {
         this.state = { 
             id: '',
             body: "",
+            paragraph2: '',
+            paragraph3: '',
+            paragraph4: '',
+            paragraph5: '',
             redirectToHome: false,
             error: '',
             filesize: 0,
@@ -24,6 +28,10 @@ class EditAbout extends Component {
                 this.setState({
                     id: data._id, 
                     body: data.body, 
+                    paragraph2: '',
+                    paragraph3: '',
+                    paragraph4: '',
+                    paragraph5: '',
                     error: ''
                 })
             }
@@ -72,6 +80,10 @@ class EditAbout extends Component {
                     this.setState({
                         loading: false,
                         about: "",
+                        paragraph2: '',
+                        paragraph3: '',
+                        paragraph4: '',
+                        paragraph5: '',
                         redirectToHome: true
                     });
                 }
@@ -79,15 +91,55 @@ class EditAbout extends Component {
         }
     };
 
-    editaboutForm = (body) => (
+    editaboutForm = (body, paragraph2, paragraph3, paragraph4, paragraph5 ) => (
         <form className='container'>
             <div className="form-group" >
-                <label className="text-muted">About UHS</label>
+                <label className="text-muted">Paragraph1</label>
                 <textarea
                     onChange={this.handleChange("body")}
                     type="text"
                     className="form-control"
                     value={body}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">paragraph2</label>
+                <textarea
+                    onChange={this.handleChange("paragraph2")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph2}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">paragraph3</label>
+                <textarea
+                    onChange={this.handleChange("paragraph3")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph3}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">paragraph4</label>
+                <textarea
+                    onChange={this.handleChange("paragraph4")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph4}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">paragraph5</label>
+                <textarea
+                    onChange={this.handleChange("paragraph5")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph5}
                 />
             </div>
 
@@ -102,7 +154,7 @@ class EditAbout extends Component {
 
 
     render() {
-        const {id, body, redirectToHome, error, loading} = this.state
+        const {id, body, paragraph2, paragraph3, paragraph4, paragraph5, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/about`} />;
@@ -125,7 +177,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(body)}
+                        {this.editaboutForm(body, paragraph2, paragraph3, paragraph4, paragraph5)}
              
             </div>
         )
