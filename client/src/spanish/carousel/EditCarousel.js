@@ -9,6 +9,20 @@ class EditCarousel extends Component {
         this.state = { 
             id: '',
             caption1: "",
+            caption2: "",
+            caption3: '',
+            caption4: "",
+            caption5: "",
+            caption6: '',
+            link1: "",
+            link2: "",
+            link3: '',
+            linkTitle1: "",
+            linkTitle2: "",
+            linkTitle3: '',
+            doc1: "",
+            doc2: "",
+            doc3: '',
             missionStatement: "",
             redirectToHome: false,
             error: '',
@@ -22,7 +36,26 @@ class EditCarousel extends Component {
             if (data.error) {
                 this.setState({redirectToHome: true})
             } else {
-                this.setState({id: data._id, missionStatement: data.missionStatement, error: ''})
+                this.setState({
+                    id: data._id, 
+                    missionStatement: data.missionStatement, 
+                    caption1: data.caption1,
+                    caption2: data.caption2, 
+                    caption3: data.caption3, 
+                    caption4: data.caption4,
+                    caption5: data.caption5,
+                    caption6: data.caption6,
+                    link1: data.link1,
+                    link2: data.link2,
+                    link3: data.link3,
+                    linkTitle1: data.linkTitle1,
+                    linkTitle2: data.linkTitle2,
+                    linkTitle3: data.linkTitle3,
+                    doc1: data.doc1,
+                    doc2: data.doc2,
+                    doc3: data.doc3,
+                    error: ''
+                })
             }
         })
     }
@@ -69,6 +102,23 @@ class EditCarousel extends Component {
                     this.setState({
                         loading: false,
                         caption1: "",
+                        id: data._id, 
+                        missionStatement: data.missionStatement, 
+                        caption1: data.caption1,
+                        caption2: data.caption2, 
+                        caption3: data.caption3, 
+                        caption4: data.caption4,
+                        caption5: data.caption5,
+                        caption6: data.caption6,
+                        link1: data.link1,
+                        link2: data.link2,
+                        link3: data.link3,
+                        linkTitle1: data.linkTitle1,
+                        linkTitle2: data.linkTitle2,
+                        linkTitle3: data.linkTitle3,
+                        doc1: data.doc1,
+                        doc2: data.doc2,
+                        doc3: data.doc3,
                         missionStatement: '',
                         redirectToHome: true
                     });
@@ -77,10 +127,10 @@ class EditCarousel extends Component {
         }
     };
 
-    editCarouselForm = (caption1, missionStatement) => (
+    editCarouselForm = (missionStatement, caption1, caption2, caption3, caption4, caption5, caption6, link1, link2, link3, linkTitle1, linkTitle2, linkTitle3, doc1, doc2, doc3) => (
         <form className='container'>
-             <div className="form-group">
-                <label className="text-muted">Encabezado</label>
+              <div className="form-group">
+                <label className="text-muted">Header</label>
                 <input
                     onChange={this.handleChange("caption1")}
                     type="text"
@@ -90,7 +140,7 @@ class EditCarousel extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Estado de la misión</label>
+                <label className="text-muted">Caption</label>
                 <textarea
                     style={{height:'100px'}}
                     onChange={this.handleChange("missionStatement")}
@@ -100,18 +150,167 @@ class EditCarousel extends Component {
                 />
             </div>
 
+            <div className="form-group">
+                <label className="text-muted">Caption</label>
+                <input
+                    onChange={this.handleChange("caption2")}
+                    type="text"
+                    className="form-control"
+                    value={caption2}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Caption</label>
+                <input
+                    onChange={this.handleChange("caption3")}
+                    type="text"
+                    className="form-control"
+                    value={caption3}
+                />
+            </div>
+
+            <div>
+                <h3>
+                    News and announcements
+                </h3>
+            </div>
+
+            <div style={{border: 'black solid 1px'}}>
+                <div className="form-group">
+                    <label className="text-muted">Google doc link1</label>
+                    <input
+                        onChange={this.handleChange("doc1")}
+                        placeholder='google doc link here'
+                        type="text"
+                        className="form-control"
+                        value={doc1}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Link1</label>
+                    <input
+                        onChange={this.handleChange("link1")}
+                        placeholder='www.example.com'
+                        type="text"
+                        className="form-control"
+                        value={link1}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">link TITLE 1</label>
+                    <input
+                        onChange={this.handleChange("linkTitle1")}
+                        type="text"
+                        className="form-control"
+                        value={linkTitle1}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Announcement 1</label>
+                    <input
+                        onChange={this.handleChange("caption4")}
+                        type="text"
+                        className="form-control"
+                        value={caption4}
+                    />
+                </div>
+            </div>
+
+            <div style={{border: 'black solid 1px'}}> 
+                <div className="form-group">
+                    <label className="text-muted">Google doc link2</label>
+                    <input
+                        onChange={this.handleChange("doc2")}
+                        placeholder='google doc link here'
+                        type="text"
+                        className="form-control"
+                        value={doc2}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Link2</label>
+                    <input
+                        onChange={this.handleChange("link2")}
+                        placeholder='www.example.com'
+                        type="text"
+                        className="form-control"
+                        value={link2}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">link TITLE 2</label>
+                    <input
+                        onChange={this.handleChange("linkTitle2")}
+                        type="text"
+                        className="form-control"
+                        value={linkTitle2}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Announcement 2</label>
+                    <input
+                        onChange={this.handleChange("caption5")}
+                        type="text"
+                        className="form-control"
+                        value={caption5}
+                    />
+                </div>
+            </div>
+
+            <div style={{border: 'black solid 1px'}}>
+                <div className="form-group">
+                    <label className="text-muted">Google doc link3</label>
+                    <input
+                        onChange={this.handleChange("doc3")}
+                        placeholder='google doc link here'
+                        type="text"
+                        className="form-control"
+                        value={doc3}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Link3</label>
+                    <input
+                        onChange={this.handleChange("link3")}
+                        placeholder='www.example.com'
+                        type="text"
+                        className="form-control"
+                        value={link3}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">link TITLE 3</label>
+                    <input
+                        onChange={this.handleChange("linkTitle3")}
+                        type="text"
+                        className="form-control"
+                        value={linkTitle3}
+                    />
+                </div>
+                <div className="form-group">
+                    <label className="text-muted">Announcement 3</label>
+                    <input
+                        onChange={this.handleChange("caption6")}
+                        type="text"
+                        className="form-control"
+                        value={caption6}
+                    />
+                </div>
+            </div>
+
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
             >
-                Editar
+                Edit
             </button>
         </form>
     );
 
 
     render() {
-        const {id, caption1, missionStatement, redirectToHome, error, loading} = this.state
+        const {id, caption1, missionStatement, caption2, caption3, caption4, caption5, caption6, link1, link2, link3, linkTitle1, linkTitle2, linkTitle3, doc1, doc2, doc3, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/spanish`} />;
@@ -134,7 +333,7 @@ class EditCarousel extends Component {
                     }
 
 
-                        {this.editCarouselForm(caption1, missionStatement)}
+                        {this.editCarouselForm(missionStatement, caption1, caption2, caption3, caption4, caption5, caption6, link1, link2, link3, linkTitle1, linkTitle2, linkTitle3, doc1, doc2, doc3 )}
              
             </div>
         )
