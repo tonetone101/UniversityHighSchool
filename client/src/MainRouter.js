@@ -82,11 +82,11 @@ import EditSpanishPartners from './spanish/partners/EditPartners'
 import SchoolBoardMeeting from './spanish/schoolBoard/Main'
 import NewBoardMeeting from './spanish/schoolBoard/NewBoardMeeting'
 import SingleBoardMeeting from './spanish/schoolBoard/singleMain'
-import SchoolBoardMember from './spanish/schoolBoard/Members'
-import NewSchoolBoardMember from './spanish/schoolBoard/NewMembers'
-import SingleSchoolBoardMember from './spanish/schoolBoard/SingleMembers'
-import About from './spanish/about/About'
-import EditAbout from './spanish/about/EditAbout'
+import SpanishSchoolBoardMember from './spanish/schoolBoard/Members'
+import NewSpanishSchoolBoardMember from './spanish/schoolBoard/NewMembers'
+import SingleSpanishSchoolBoardMember from './spanish/schoolBoard/SingleMembers'
+import SpanishAbout from './spanish/about/About'
+import EditSpanishAbout from './spanish/about/EditAbout'
 
 
 // khmer

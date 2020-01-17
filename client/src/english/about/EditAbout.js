@@ -83,7 +83,7 @@ class EditAbout extends Component {
         <form className='container'>
             <div className="form-group">
                 <label className="text-muted">About UHS</label>
-                <input
+                <textarea
                     onChange={this.handleChange("body")}
                     type="text"
                     className="form-control"
