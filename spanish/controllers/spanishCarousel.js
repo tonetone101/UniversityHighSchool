@@ -7,7 +7,7 @@ exports.getspanishCarousel = (req, res, next) => {
    
     const spanishCarousel = SpanishCarousel.find()
         .populate("postedBy", "_id name photo role ")
-        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 missionStatement created")
+        .select("_id caption1 caption2 caption3 caption4 caption5 caption6 missionStatement link1 link2 link3 linkTitle1 linkTitle2 linkTitle3 doc1 doc2 doc3 created")
         .sort({ created: -1 })
         .then(spanishCarousel => {
            res.json(spanishCarousel)
@@ -19,7 +19,7 @@ exports.getspanishCarousel = (req, res, next) => {
 exports.spanishCarouselById = (req, res, next, id) => {
     SpanishCarousel.findById(id)
         .populate('postedBy', '_id name role')
-        .select("_id caption1 photo1 caption2 photo2 caption3 photo3 missionStatement created")
+        .select("_id caption1 caption2 caption3 caption4 caption5 caption6 missionStatement link1 link2 link3 linkTitle1 linkTitle2 linkTitle3 doc1 doc2 doc3 created")
         .exec((err, spanishCarousel) => {
             if (err || !spanishCarousel) {
                 return res.status(400).json({
