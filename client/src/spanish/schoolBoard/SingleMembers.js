@@ -51,7 +51,7 @@ class SingleschoolBoardMember extends Component {
         : " Unknown";
 
         const photoUrl = schoolBoardMember._id
-        ? `/spanish/schoolBoardMember/photo/${
+        ? `/spanishschoolBoardMember/photo/${
             schoolBoardMember._id
           }?${new Date().getTime()}`
         : '';
