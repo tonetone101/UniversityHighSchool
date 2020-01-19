@@ -26,7 +26,7 @@ class NewschoolBoardMember extends Component {
 
     isValid = () => {
         const { title, name, about, fileSize } = this.state;
-        if (fileSize > 1000000) {
+        if (fileSize > 10000000) {
             this.setState({
                 error: "File size should be less than 100kb",
                 loading: false
@@ -76,7 +76,7 @@ class NewschoolBoardMember extends Component {
     newschoolBoardMemberForm = (title, name, about) => (
         <form >
             <div className="form-group">
-                <label className="text-muted">Event Photo</label>
+                <label className="text-muted">Board member Photo</label>
                 <input
                     onChange={this.handleChange("photo")}
                     type="file"
@@ -135,7 +135,7 @@ class NewschoolBoardMember extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/schoolBoardMember`} />;
+            return <Redirect to={`/spanish/schoolBoardMember`} />;
         }
 
         return (

@@ -117,9 +117,9 @@ class SingleschoolBoardMember extends Component {
         const {schoolBoardMember, redirectToschoolBoardMember, redirectToSignIn} = this.state
         
         if(redirectToschoolBoardMember) {
-            return <Redirect to={`/schoolBoardMember`} />
+            return <Redirect to={`/spanish/schoolBoardMember`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/spanish/signin`} />
          }
 
         return (

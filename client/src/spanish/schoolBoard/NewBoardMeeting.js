@@ -124,7 +124,7 @@ class NewschoolBoardMeeting extends Component {
        
 
         if (redirectToschoolBoardMeetings) {
-            return <Redirect to={'/schoolBoardMeeting'} />;
+            return <Redirect to={'/spanish/schoolBoardMeeting'} />;
             
         }
 

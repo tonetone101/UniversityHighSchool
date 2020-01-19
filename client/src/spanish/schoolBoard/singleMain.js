@@ -80,9 +80,9 @@ class SingleschoolBoardMeeting extends Component {
         const {schoolBoardMeeting, redirectToschoolBoardMeetings, redirectToSignIn} = this.state
         
         if(redirectToschoolBoardMeetings) {
-            return <Redirect to={`/schoolBoardMeeting`} />
+            return <Redirect to={`/spanish/schoolBoardMeeting`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/spanish/signin`} />
          }
 
         return (
