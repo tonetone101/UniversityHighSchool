@@ -205,7 +205,7 @@ class SchoolBoardMember extends Component {
                         : ''
 
                         const schoolBoardMemberPhoto = schoolBoardMember._id
-                        ? `/schoolBoardMember/photo/${
+                        ? `/spanishschoolBoardMember/photo/${
                             schoolBoardMember._id
                           }?${new Date().getTime()}`
                         : ''
