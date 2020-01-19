@@ -188,7 +188,7 @@ class Events extends Component {
                         
                     return (
                        <div className='col-md-4 mt-3' key={i}>
-                            <Card border='dark' style={{ width: '18rem', height: '400px'}}>
+                            <Card border='dark' style={{ width: '18rem', height: '375px'}}>
                                 <Card.Header className="font-italic mark mt-4">
                                     Event Posted{" "}
                                     on{' '}
