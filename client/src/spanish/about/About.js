@@ -242,7 +242,7 @@ class About extends Component {
                         <div className='text-center' >
                             {
                                 isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                    <Link to={`/edit/about/${about._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                    <Link to={`/spanish/edit/about/${about._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
                                 )
                             }
                         </div>

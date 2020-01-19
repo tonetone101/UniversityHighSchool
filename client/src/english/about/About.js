@@ -209,11 +209,11 @@ class About extends Component {
     render() {
         const {about, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
         if(spanishPage) {
-            return <Redirect to={`/spanish`} />
+            return <Redirect to={`/spanish/about`} />
          } else if (englishPage) {
-             return <Redirect to={'/'} />
+             return <Redirect to={'/about'} />
          } else if (khmerPage) {
-            return <Redirect to={'/khmer'} />
+            return <Redirect to={'/khmer/about'} />
         }
          else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
