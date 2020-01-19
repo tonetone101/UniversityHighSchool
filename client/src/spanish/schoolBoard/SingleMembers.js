@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {singleschoolBoardMember, remove} from './apiSchoolBoardMember'
+import {singlespanishschoolBoardMember, remove} from './apiSchoolBoardMember'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
@@ -13,7 +13,7 @@ class SingleschoolBoardMember extends Component {
 
     componentDidMount = () => {
         const schoolBoardMemberId = this.props.match.params.schoolBoardMemberId
-        singleschoolBoardMember(schoolBoardMemberId).then(data => {
+        singlespanishschoolBoardMember(schoolBoardMemberId).then(data => {
             if (data.error) {
                 console.log(data.error)
             } else {

@@ -212,7 +212,7 @@ class SchoolBoardMember extends Component {
                         
                     return (
 
-                        <div  className='col-md-4' key={i}>
+                        <div  className='col-md-4 mb-5' key={i}>
                             <Card style={{ width: '18rem' }}>
                             <Card.Img variant="top" src={schoolBoardMemberPhoto} />
                             <Card.Body>
