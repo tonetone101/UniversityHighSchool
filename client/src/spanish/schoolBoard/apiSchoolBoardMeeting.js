@@ -1,5 +1,5 @@
 export const create = (userId, token, schoolBoardMeeting) => {
-    return fetch(`/spanish/schoolBoardMeeting/new/${userId}`, {
+    return fetch(`/spanishschoolBoardMeeting/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -14,7 +14,7 @@ export const create = (userId, token, schoolBoardMeeting) => {
 };
 
 export const list = () => {
-    return fetch(`/spanish/schoolBoardMeeting`, {
+    return fetch(`/spanishschoolBoardMeeting`, {
         method: "GET"
     })
         .then(response => {
@@ -39,7 +39,7 @@ export const read = (userId, token) => {
 };
 
 export const singleschoolBoardMeeting = (schoolBoardMeetingId) => {
-    return fetch(`/spanish/schoolBoardMeeting/${schoolBoardMeetingId}`, {
+    return fetch(`/spanishschoolBoardMeeting/${schoolBoardMeetingId}`, {
         method: "GET"
     })
         .then(response => {
@@ -49,7 +49,7 @@ export const singleschoolBoardMeeting = (schoolBoardMeetingId) => {
 };
 
 export const remove = (schoolBoardMeetingId, token) => {
-    return fetch(`/spanish/schoolBoardMeeting/delete/${schoolBoardMeetingId}`, {
+    return fetch(`/spanishschoolBoardMeeting/delete/${schoolBoardMeetingId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -64,7 +64,7 @@ export const remove = (schoolBoardMeetingId, token) => {
 };
 
 export const update = (schoolBoardMeetingId, token, schoolBoardMeeting) => {
-    return fetch(`/spanish/schoolBoardMeeting/edit/${schoolBoardMeetingId}`, {
+    return fetch(`/spanishschoolBoardMeeting/edit/${schoolBoardMeetingId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",

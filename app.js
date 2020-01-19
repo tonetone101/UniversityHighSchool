@@ -39,7 +39,8 @@ mongoose.connect(process.env.MONGO_URI, {
  const spanishlinkRoutes = require('./spanish/routes/link');
  const spanishpartnersRoutes = require('./spanish/routes/partners');
  const spanishaboutRoutes = require('./spanish/routes/about');
-
+ const spanishschoolBoardMemberRoutes = require('./spanish/routes/schoolBoardMember');
+ const spanishschoolBoardMeetingRoutes = require('./spanish/routes/schoolBoardMeeting');
 
 
 // bringing in my khmer routes
@@ -100,7 +101,8 @@ app.use('/', spanishstudentRoutes)
 app.use('/', spanishlinkRoutes);
 app.use('/', spanishpartnersRoutes);
 app.use('/', spanishaboutRoutes)
-
+app.use('/', spanishschoolBoardMemberRoutes);
+app.use('/', spanishschoolBoardMeetingRoutes)
 
 // khmer routes
 app.use('/', khmerimageRoutes)

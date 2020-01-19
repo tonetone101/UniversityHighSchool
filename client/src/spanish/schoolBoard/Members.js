@@ -164,6 +164,10 @@ class SchoolBoardMember extends Component {
                         </div>
 
                         <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/schoolBoardMeeting'>Consejo Escolar</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/spanish/partners'>Nuestros compañeros</Link></Nav.Link>
                         </div>
 
@@ -223,7 +227,7 @@ class SchoolBoardMember extends Component {
                                         to={`/spanish/schoolBoardMember/${schoolBoardMember._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
+                                        Lee mas
                                     </Link>
                             </Card.Body>
                             </Card>
@@ -259,7 +263,7 @@ class SchoolBoardMember extends Component {
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6">
-                            School Board Members
+                            Miembros de la junta escolar
                             {!schoolBoardMembers.length ? "Loading..." : ""}
                         </h2>
                         <br/>
@@ -274,7 +278,7 @@ class SchoolBoardMember extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/spanish/new/schoolBoardMember'>Add schoolBoardMember</Link>
+                                <Link className='mb-5' to='/spanish/new/schoolBoardMember'>Agregar miembro del consejo escolar</Link>
                             </div>
                         )
                     }

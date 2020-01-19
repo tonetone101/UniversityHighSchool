@@ -1,11 +1,11 @@
 export const create = (userId, token, schoolBoardMember) => {
-    return fetch(`/schoolBoardMember/new/${userId}`, {
+    return fetch(`/spanishschoolBoardMember/new/${userId}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: schoolBoardMember
+        body: spanishschoolBoardMember
     })
         .then(response => {
             return response.json();
@@ -14,7 +14,7 @@ export const create = (userId, token, schoolBoardMember) => {
 };
 
 export const list = () => {
-    return fetch(`/schoolBoardMember`, {
+    return fetch(`/spanishschoolBoardMember`, {
         method: "GET"
     })
         .then(response => {
@@ -38,8 +38,8 @@ export const read = (userId, token) => {
         .catch(err => console.log(err));
 };
 
-export const singleschoolBoardMember = (schoolBoardMemberId) => {
-    return fetch(`/schoolBoardMember/${schoolBoardMemberId}`, {
+export const singlespanishschoolBoardMember = (spanishschoolBoardMemberId) => {
+    return fetch(`/spanishschoolBoardMember/${spanishschoolBoardMemberId}`, {
         method: "GET"
     })
         .then(response => {
@@ -48,8 +48,8 @@ export const singleschoolBoardMember = (schoolBoardMemberId) => {
         .catch(err => console.log(err));
 };
 
-export const remove = (schoolBoardMemberId, token) => {
-    return fetch(`/schoolBoardMember/delete/${schoolBoardMemberId}`, {
+export const remove = (spanishschoolBoardMemberId, token) => {
+    return fetch(`/spanishschoolBoardMember/delete/${spanishschoolBoardMemberId}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -63,14 +63,14 @@ export const remove = (schoolBoardMemberId, token) => {
         .catch(err => console.log(err));
 };
 
-export const update = (schoolBoardMemberId, token, schoolBoardMember) => {
-    return fetch(`/schoolBoardMember/edit/${schoolBoardMemberId}`, {
+export const update = (spanishschoolBoardMemberId, token, spanishschoolBoardMember) => {
+    return fetch(`/spanishschoolBoardMember/edit/${spanishschoolBoardMemberId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: schoolBoardMember
+        body: spanishschoolBoardMember
     })
         .then(response => {
             return response.json();

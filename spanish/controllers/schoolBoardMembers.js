@@ -1,4 +1,4 @@
-const SpanishspanishSchoolBoardMember = require('../models/spanishspanishschoolBoardMembers');
+const SpanishspanishSchoolBoardMember = require('../models/spanishschoolBoardMembers');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');

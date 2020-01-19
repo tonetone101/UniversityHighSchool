@@ -85,7 +85,8 @@ class SingleschoolBoardMember extends Component {
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
-                            Back to schoolBoardMember
+                           Volver a miembro de la junta escolar
+
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
@@ -95,13 +96,14 @@ class SingleschoolBoardMember extends Component {
                                         to={`/spanish/edit/schoolBoardMember/${schoolBoardMember._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
-                                        Update schoolBoardMember
+                                        Actualizar miembro del consejo escolar
+
                                     </Link>
                                     <button
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
-                                        Delete 
+                                        Eliminar 
                                     </button>
                                 </div>
                             </div>
@@ -129,7 +131,7 @@ class SingleschoolBoardMember extends Component {
                                
                                 {!schoolBoardMember ? ( 
                                         <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
+                                            <h2>Cargando....</h2>
                                         </div>
                                         ) : (
                                             this.renderschoolBoardMember(schoolBoardMember)

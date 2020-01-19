@@ -137,6 +137,10 @@ class About extends Component {
                         </div>
 
                         <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/schoolBoardMeeting'>Consejo Escolar</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/spanish/partners'>Nuestros compañeros</Link></Nav.Link>
                         </div>
 

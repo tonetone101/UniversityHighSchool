@@ -138,6 +138,10 @@ class Main extends Component {
                             <div id='link'>                        
                                 <Nav.Link ><Link style={{color: 'white'}} to='/spanish/admission'>Admisión</Link></Nav.Link>
                             </div>
+
+                            <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/schoolBoardMeeting'>Consejo Escolar</Link></Nav.Link>
+                        </div>
     
                             <div id='link'>                        
                                 <Nav.Link ><Link style={{color: 'white'}} to='/spanish/partners'>Nuestros compañeros</Link></Nav.Link>
@@ -186,22 +190,22 @@ class Main extends Component {
                     </div>
                 {this.renderMenu()}
                   <div className='container mt-4'>
-                     <h1>Welcome to our schoolBoard Meeting section</h1>
+                     <h1>Bienvenido a nuestra sección de Junta Escolar</h1>
                       <div  >
                         
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' ? ( 
                           <div>
-                            <Link to={`/spanish/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
+                            <Link to={`/spanish/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Añadir Reunión de la junta escolar</Link>
                           </div> 
                           ) : ( null)
                          }
-                         <Link to={`/spanish/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
+                         <Link to={`/spanish/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Miembros de la Junta</Link>
 
                       </div>
                       <hr />
                       
                       <div id='title'>
-                         <h3>Upcoming Meetings:</h3> 
+                         <h3>Próximas reuniones:</h3> 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
                             <div key={i}>
@@ -215,7 +219,7 @@ class Main extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
-                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                                <Link to={`/spanish/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>ver</Link>
                                             ) : (null)
                                         }
                                     </ListGroup.Item>

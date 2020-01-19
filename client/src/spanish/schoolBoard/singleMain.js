@@ -56,16 +56,17 @@ class SingleschoolBoardMeeting extends Component {
                             to={`/schoolBoardMeeting`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
-                            Back to schoolBoardMeetings
+                            Reuniones de regreso a la escuela
+
                         </Link>
                        {isAuthenticated().user && 
                         isAuthenticated().user.role === 'admin' &&  
                         <div>
                              <Link to={`/spanish/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
-                                Update schoolBoardMeeting
+                             Actualización de la reunión de la Junta Escolar
                             </Link>
                             <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
-                                Delete Post
+                                Eliminar reunión
                             </button>
                         </div>
                         
@@ -89,7 +90,7 @@ class SingleschoolBoardMeeting extends Component {
                            <div  className='text-center'>
                                 {!schoolBoardMeeting ? ( 
                                         <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
+                                            <h2>Cargando....</h2>
                                         </div>
                                         ) : (
                                             this.renderschoolBoardMeeting(schoolBoardMeeting)
