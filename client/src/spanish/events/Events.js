@@ -190,59 +190,46 @@ class Events extends Component {
                         : ''
                         
                     return (
-                        <div  className="card col-md-6 mb-4" key={i}>
-                            <div  >
+                        <div className='col-md-4 mb-5' key={i}>
+                        <Card border='dark' style={{ width: '18rem', height: '375px'}}>
+                            <Card.Header className="font-italic mark mt-4">
+                                Evento publicado en{" "}
+                              
+                                {new Date(event.created).toDateString()}
+                            </Card.Header >
+                            <Card.Body>
+                                <Card.Title>{event.title.substring(0, 100)}</Card.Title>
+                                <Card.Subtitle className="mb-2 text-muted">{event.where.substring(0, 100)}</Card.Subtitle>
                                 
-                               
-                                <p className="font-italic mark mt-4">
-                                    Evento publicado en{" "}
+                                <Card.Text>
+                                    {event.body.substring(0, 100)}
+                                </Card.Text>
+                            
+                                <Card.Link >
+                                    <Link
+                                           onClick={() => { 
+                                            window.open(`${event.url}`) 
+                                            }} 
+                                            className="btn btn-raised btn-primary btn-sm mb-4"
+                                    >
+                                           Google Doc
+                                    </Link>
+                                </Card.Link>
+                            
+                                <Card.Link >
+                                    <Link
+                                            to={`/spanish/event/${event._id}`}
+                                            className="btn btn-raised btn-primary btn-sm mb-4"
+                                    >
+                                            Lee mas
+                                    </Link>
+                                </Card.Link>
+                            </Card.Body>
+                        </Card>
+                    </div>
 
-                                    {/* <Link to={`${posterId}`}>
-                                        <img  style={{ height: "40px", borderRadius:'30px', width: "40px" }} className="img-thumbnail" src={photoUrl} alt='' />
 
-                                        {posterName}{" "}
-                                    </Link> */}
-                                   
-                                    {new Date(event.created).toDateString()}
-                                </p>
-                                <br />
-
-                                <div className="card-text column mr-5">
-                                    <p >
-                                    Nombre del evento: {event.title.substring(0, 100)}{' '}
-                                    </p>  
-                                    
-                                    {/* <p >
-                                       Date : {event.date.substring(0, 100)}{' '}
-                                    </p>   */}
-
-                                    {/* <p >
-                                       Time: {event.time.substring(0, 100)}{' '}
-                                    </p>  */}
-
-                                     <p >
-                                        Ubicación: {event.where.substring(0, 100)}{' '}
-                                    </p>      
-
-                                    <p >
-                                        Descripción: {event.body.substring(0, 100)}{' '}
-                                    </p>           
-                                </div>
-                                                       
-                             
-                                {/* <img
-                                    src={eventPhoto}
-                                    className="img-thunbnail mb-3"
-                                    style={{ height: "200px", width: "100%" }}
-                                /> */}
-                                <Link
-                                    to={`/spanish/event/${event._id}`}
-                                    className="btn btn-raised btn-primary btn-sm mb-4"
-                                >
-                                    Lee mas
-                                </Link>
-                            </div>
-                        </div>
+                       
                     );
                 })}
             </div>
