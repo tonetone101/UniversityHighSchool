@@ -25,7 +25,7 @@ export const list = () => {
 };
 
 export const update = (aboutId, token, about) => {
-    return fetch(`/spanish/about/edit/${aboutId}`, {
+    return fetch(`/spanishabout/edit/${aboutId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -40,7 +40,7 @@ export const update = (aboutId, token, about) => {
 };
 
 export const singleAbout = (aboutId) => {
-    return fetch(`/spanish/about/${aboutId}`, {
+    return fetch(`/spanishabout/${aboutId}`, {
         method: "GET"
     })
         .then(response => {
