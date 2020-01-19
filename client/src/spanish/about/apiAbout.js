@@ -15,7 +15,7 @@ export const create = (userId, token, about) => {
 };
 
 export const list = () => {
-    return fetch(`/spanish/about`, {
+    return fetch(`/spanishabout`, {
         method: "GET"
     })
         .then(response => {

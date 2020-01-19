@@ -157,7 +157,7 @@ class About extends Component {
 
     renderAbout = (about) => {
        const photoUrl = about.postedBy
-        ? `${process.env.REACT_APP_API_URL}/user/photo/${
+        ? `${process.env.REACT_APP_API_URL}/spanish/user/photo/${
             about._id
           }?${new Date().getTime()}`
         : ''
