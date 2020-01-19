@@ -5,7 +5,7 @@ export const create = (userId, token, schoolBoardMember) => {
             Accept: "application/json",
             Authorization: `Bearer ${token}`
         },
-        body: spanishschoolBoardMember
+        body: schoolBoardMember
     })
         .then(response => {
             return response.json();
