@@ -6,7 +6,7 @@ const _ = require('lodash');
 exports.spanishaboutById = (req, res, next, id) => {
     SpanishAbout.findById(id)
         .populate('postedBy', '_id name role')
-        .select('_id body url created photo')
+        .select('_id body paragraph2 paragraph3 paragraph4 paragraph5 url created photo')
         .exec((err, spanishabout) => {
             if (err || !spanishabout) {
                 return res.status(400).json({
@@ -22,7 +22,7 @@ exports.spanishaboutById = (req, res, next, id) => {
 exports.getspanishabouts = (req, res, next) => { 
     const spanishabouts = SpanishAbout.find()
         .populate("postedBy", "_id name photo role")
-        .select("_id body url created photo")
+        .select("_id body paragraph2 paragraph3 paragraph4 paragraph5 url created photo")
         .sort({ created: -1 })
         .then(spanishabouts => {
            res.json(spanishabouts)
@@ -63,7 +63,7 @@ exports.createspanishabout = (req, res, next) => {
 exports.spanishaboutsByUser = (req, res) => {
     SpanishAbout.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name')
-        .select('_id title time date where url photo created')
+        .select('_id body paragraph2 paragraph3 paragraph4 paragraph5 url photo created')
         .sort('_created')
         .exec((err, spanishabouts) => {
             if (err) {

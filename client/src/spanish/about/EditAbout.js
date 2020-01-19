@@ -9,6 +9,10 @@ class EditAbout extends Component {
         this.state = { 
             id: '',
             body: "",
+            paragraph2: '',
+            paragraph3: '',
+            paragraph4: '',
+            paragraph5: '',
             redirectToHome: false,
             error: '',
             filesize: 0,
@@ -24,6 +28,10 @@ class EditAbout extends Component {
                 this.setState({
                     id: data._id, 
                     body: data.body, 
+                    paragraph2: data.paragraph2,
+                    paragraph3: data.paragraph3,
+                    paragraph4: data.paragraph4,
+                    paragraph5: data.paragraph5,
                     error: ''
                 })
             }
@@ -72,6 +80,10 @@ class EditAbout extends Component {
                     this.setState({
                         loading: false,
                         about: "",
+                        paragraph2: '',
+                        paragraph3: '',
+                        paragraph4: '',
+                        paragraph5: '',
                         redirectToHome: true
                     });
                 }
@@ -79,11 +91,11 @@ class EditAbout extends Component {
         }
     };
 
-    editaboutForm = (body) => (
+    editaboutForm = (body, paragraph2, paragraph3, paragraph4, paragraph5 ) => (
         <form className='container'>
-            <div className="form-group">
-                <label className="text-muted">About UHS</label>
-                <input
+            <div className="form-group" >
+                <label className="text-muted">Párrafo1</label>
+                <textarea
                     onChange={this.handleChange("body")}
                     type="text"
                     className="form-control"
@@ -91,18 +103,58 @@ class EditAbout extends Component {
                 />
             </div>
 
+            <div className="form-group" >
+                <label className="text-muted">Párrafo2</label>
+                <textarea
+                    onChange={this.handleChange("paragraph2")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph2}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">Párrafo3</label>
+                <textarea
+                    onChange={this.handleChange("paragraph3")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph3}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">Párrafo4</label>
+                <textarea
+                    onChange={this.handleChange("paragraph4")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph4}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">Párrafo5</label>
+                <textarea
+                    onChange={this.handleChange("paragraph5")}
+                    type="text"
+                    className="form-control"
+                    value={paragraph5}
+                />
+            </div>
+
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
             >
-                Edit
+               Editar
             </button>
         </form>
     );
 
 
     render() {
-        const {id, body, redirectToHome, error, loading} = this.state
+        const {id, body, paragraph2, paragraph3, paragraph4, paragraph5, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
             return <Redirect to={`/about`} />;
@@ -117,7 +169,7 @@ class EditAbout extends Component {
 
                         {loading ? ( 
                         <div className='jumbotron text-center'>
-                            <h2>Loading....</h2>
+                            <h2>Cargando....</h2>
                         </div>
                         ) : (
                             ""
@@ -125,7 +177,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(body)}
+                        {this.editaboutForm(body, paragraph2, paragraph3, paragraph4, paragraph5)}
              
             </div>
         )

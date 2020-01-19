@@ -27,7 +27,7 @@ class About extends Component {
                 console.log(data.error)
             } else {
                 this.setState({about: data.find(d => {
-                    if (d._id == "5e1f9ded7142ac69941ccd8d") {
+                    if (d._id == "5e247f609147d80aab97c633") {
                         return d
                     }
                 }) 
@@ -166,7 +166,7 @@ class About extends Component {
             <div className='container mt-5'>
                 <Card border='dark' >
                     <Card.Body>
-                        <Card.Title>About Us</Card.Title>
+                        <Card.Title>Sobre nosotros</Card.Title>
                         
                         <Card.Text>
                             {about.body}

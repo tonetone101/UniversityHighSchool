@@ -6,6 +6,22 @@ const spanishaboutSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    paragraph2: {
+        type: String,
+        
+    },
+    paragraph3: {
+        type: String,
+        
+    },
+    paragraph4: {
+        type: String,
+        
+    },
+    paragraph5: {
+        type: String,
+        
+    },
     photo: {
         data: Buffer,
         contentType: String
