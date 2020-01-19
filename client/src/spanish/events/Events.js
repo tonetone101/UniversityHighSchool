@@ -3,7 +3,7 @@ import { list, read } from "./apiEvent";
 import { Link, Redirect } from "react-router-dom";
 import {isAuthenticated, signout} from '../../auth'
 import cookie from "react-cookies";
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Card, Dropdown, DropdownButton} from 'react-bootstrap';
 
 
 
