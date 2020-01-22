@@ -58,9 +58,17 @@ class SingleApplication extends Component {
 
         return (
                 <div  className='text-center'>
-                    <div className='mt-5'>
-                         <iframe src={photoUrl} style={{height: '100vh', width: '100%'}} ></iframe>
-                    </div>
+                    <Link to={`/application/${application._id}`} 
+                        onClick={event => {
+                            event.preventDefault();
+                            window.open(photoUrl)
+                        }}
+                    >
+                        <div className='mt-5'>
+                            <iframe src={photoUrl} style={{height: '100vh', width: '100%'}} ></iframe>
+                        </div>
+                    </Link>
+                    
 
                     <div className='row'>
                         <Link
