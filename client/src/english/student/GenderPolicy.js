@@ -96,6 +96,16 @@ class GenderPolicy extends Component {
                                 </Nav.Link>
                             )
                         }
+
+{
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
+                                        Applications
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
                       
                     </Nav>
                 </Navbar.Collapse>
