@@ -35,7 +35,7 @@ class SingleApplication extends Component {
     }
 
     deleteConfirm = () => {
-        let answer = window.confirm('Are you sure you want to delete your post?')
+        let answer = window.confirm('Are you sure you want to delete this application?')
         if(answer) {
             this.deleteapplication()
         }
@@ -58,17 +58,9 @@ class SingleApplication extends Component {
 
         return (
                 <div  className='text-center'>
-                    <Link to={`/application/${application._id}`} 
-                        onClick={event => {
-                            event.preventDefault();
-                            window.open(photoUrl)
-                        }}
-                    >
-                        <div className='mt-5'>
-                            <iframe src={photoUrl} style={{height: '100vh', width: '100%'}} ></iframe>
-                        </div>
-                    </Link>
-                    
+                    <div className='mt-5'>
+                         <iframe src={photoUrl} style={{height: '100vh', width: '100%'}} ></iframe>
+                    </div>
 
                     <div className='row'>
                         <Link

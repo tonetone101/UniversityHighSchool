@@ -118,7 +118,10 @@ class NewApplication extends Component {
 
         return (
             <div className='container'>
-                            <h2 className="mt-5 mb-5">Add new application</h2>
+                            <h3>
+                                Please Upload copy of your Student's application
+                                and enter the student's name
+                            </h3>
                             <div
                                 className="alert alert-danger"
                                 style={{ display: error ? "" : "none" }}

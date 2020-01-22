@@ -262,13 +262,6 @@ class Application extends Component {
                         </form>
                         <hr/>
                     </div>
-                    {
-                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                            <div>
-                                <Link className='mb-5' to='/new/application'>Add Application</Link>
-                            </div>
-                        )
-                    }
                 
                     <div>               
                         {this.renderApplications(applications)}
