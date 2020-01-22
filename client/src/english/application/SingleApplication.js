@@ -59,8 +59,8 @@ class SingleApplication extends Component {
         return (
                 <div  className='row'>
                      <div className='col-md-6 mt-5'>
-                         <iframe src={require(photoUrl)}></iframe>
-                        {/* <img 
+                         {/* <iframe src={require(photoUrl)}></iframe> */}
+                        <img 
                             src={photoUrl}
                             alt=''
                             onError={i =>
@@ -68,7 +68,7 @@ class SingleApplication extends Component {
                             }
                             className="img-thunbnail mb-3 ml-50"
                             style={{height: '500px', width: '500px', objectFit: 'cover', borderRadius: '10px'}}
-                        /> */}
+                        />
                    </div>
 
                     <div className='row'>
