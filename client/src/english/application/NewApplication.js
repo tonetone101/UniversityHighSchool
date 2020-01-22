@@ -25,7 +25,7 @@ class NewApplication extends Component {
     }
 
     isValid = () => {
-        const { title, name, about, fileSize } = this.state;
+        const {name, fileSize } = this.state;
         if (fileSize > 1000000) {
             this.setState({
                 error: "File size should be less than 100kb",
@@ -33,8 +33,8 @@ class NewApplication extends Component {
             });
             return false;
         }
-        if (title.length === 0 || name.length === 0 || about.length === 0) {
-            this.setState({ error: "All fields are required", loading: false });
+        if (name.length === 0) {
+            this.setState({ error: "Please enter student's name", loading: false });
             return false;
         }
         return true;
