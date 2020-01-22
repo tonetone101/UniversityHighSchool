@@ -174,7 +174,9 @@ class Admission extends Component {
                 {this.renderMenu()}
                 <div className='container mt-3' >
                     <h3 className='text-center'>Welcome to our Admissions section</h3>
-
+                    <p>
+                        Here you can view and download a copy of our application as well as submit a completed form to us. 
+                    </p>
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
                             <Link onClick={() => { 
