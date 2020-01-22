@@ -103,9 +103,15 @@ class Carol extends Component {
                             )
                         }
 
-                        <Link to='/application' >
-                            Applications
-                        </Link>
+                        {
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Link to='/application' >
+                                    Applications
+                                </Link>
+                            )
+                        }
+
+                        
                       
                     </Nav>
                 </Navbar.Collapse>
