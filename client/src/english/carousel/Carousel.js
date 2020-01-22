@@ -56,7 +56,7 @@ class Carol extends Component {
 
     renderTopHeader = () => {
         return (
-            <div style={{border: 'solid black 2px'}}>
+            <div style={{border: 'solid black 2px', width: '100%'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -105,9 +105,11 @@ class Carol extends Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                <Link to='/application' >
-                                    Applications
-                                </Link>
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '100px'}} to='/application' >
+                                        Applications
+                                    </Link>
+                                </Nav.Link>
                             )
                         }
 
