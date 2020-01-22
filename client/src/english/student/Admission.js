@@ -178,7 +178,7 @@ class Admission extends Component {
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
                             <Link onClick={() => { 
-                                            window.open('./uhs_application.pdf') 
+                                            window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
                                             }} >
                                     View application form
                             </Link>

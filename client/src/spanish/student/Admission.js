@@ -173,7 +173,7 @@ class Admission extends Component {
                     <ListGroup variant="flush">
                         <ListGroup.Item> 
                             <Link onClick={() => { 
-                                            window.open(`https://docs.google.com/document/d/1Vz1XyULO3SD7QvMGtKn0Ag8qnPoJ5fTjHKKlulz1580/edit`) 
+                                            window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
                                             }} >
                                 Ver formulario de solicitud
                             </Link>
