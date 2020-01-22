@@ -3,7 +3,7 @@ import { isAuthenticated, signout } from "../../auth";
 import { create } from "./apiStudent";
 import { Redirect, Link } from "react-router-dom";
 import Links from './Links'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
 
 class Admission extends Component {
     constructor() {
@@ -167,17 +167,19 @@ class Admission extends Component {
                         />
                     </div>
                 {this.renderMenu()}
-                <div className='container mt-4' >
+                <div className='container mt-3' >
                     <h3 className='text-center'>Bienvenido a nuestra sección de Admisiones</h3>
-                <ul>
-                    <li>
-                        <Link to='/spanish/new/student'>
-                                Prerregistro
-                        </Link>
-                    </li>
-                    
-                    
-                </ul>
+
+                    <ListGroup variant="flush">
+                        <ListGroup.Item> 
+                            <Link onClick={() => { 
+                                            window.open(`https://docs.google.com/document/d/1uluuUs0R476kUofw_swMilykVO0mIkh7YrgQtvLlBs4/edit?usp=sharing`) 
+                                            }} >
+                                Ver formulario de solicitud
+                            </Link>
+                        </ListGroup.Item>
+                        <ListGroup.Item></ListGroup.Item>
+                    </ListGroup>
                 </div>
             </div>
         );

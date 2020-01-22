@@ -128,9 +128,9 @@ class SingleEvent extends Component {
         const {event, redirectToHome, redirectToSignIn} = this.state
         
         if(redirectToHome) {
-            return <Redirect to={`/`} />
+            return <Redirect to={`/spanishevents`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/spanish/signin`} />
          }
 
         return (
