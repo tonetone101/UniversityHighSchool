@@ -1,4 +1,4 @@
-const khmerSchoolBoardMember = require('../models/KhmerschoolBoardMembers');
+const khmerSchoolBoardMember = require('../models/khmerschoolBoardMembers');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
