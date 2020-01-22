@@ -119,7 +119,7 @@ class NewApplication extends Component {
         return (
             <div className='container'>
                             <h3>
-                                Please Upload copy of your Student's application
+                                Please Upload a copy of your Student's application
                                 and enter the student's name
                             </h3>
                             <div
