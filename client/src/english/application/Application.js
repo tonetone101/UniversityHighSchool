@@ -214,7 +214,7 @@ class Application extends Component {
                         <div  className='col-md-4 mb-5' key={i}>
                             <Link
                                 to={`/application/${application._id}`}
-                                className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                className="mb-4 ml-5"
                                 >
                                 {application.name}
                             </Link>

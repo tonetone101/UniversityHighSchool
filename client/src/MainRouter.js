@@ -54,6 +54,7 @@ import EditAbout from './english/about/EditAbout'
 
 import Applications from './english/application/Application'
 import NewApplication from './english/application/NewApplication'
+import SingleApplication from './english/application/SingleApplication'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -168,6 +169,7 @@ const MainRouter = () => (
             <Route exact path="/edit/about/:aboutId" component={EditAbout}></Route>
             <Route exact path="/application" component={Applications}></Route>
             <Route exact path="/new/application" component={NewApplication}></Route>
+            <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
 
 
             {
