@@ -57,19 +57,10 @@ class SingleApplication extends Component {
         : '';
 
         return (
-                <div  className='row'>
-                     <div className='col-md-6 mt-5'>
-                         <iframe src={photoUrl}></iframe>
-                        {/* <img 
-                            src={photoUrl}
-                            alt=''
-                            onError={i =>
-                                (i.target.src = ``)
-                            }
-                            className="img-thunbnail mb-3 ml-50"
-                            style={{height: '500px', width: '500px', objectFit: 'cover', borderRadius: '10px'}}
-                        /> */}
-                   </div>
+                <div  className='text-center'>
+                    <div className='mt-5'>
+                         <iframe src={photoUrl} style={{height: '100vh', width: '100%'}} ></iframe>
+                    </div>
 
                     <div className='row'>
                         <Link
@@ -82,20 +73,12 @@ class SingleApplication extends Component {
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
                             <div >
-                                <div >
-                                    <Link
-                                        to={`/edit/application/${application._id}`}
-                                        className='btn btn-raised btn-warning ml-3'
-                                    >
-                                        Update application
-                                    </Link>
                                     <button
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
                                         Delete 
                                     </button>
-                                </div>
                             </div>
                         )}
                     </div>
