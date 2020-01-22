@@ -1,36 +1,71 @@
 import React, { Component } from "react";
-import { isAuthenticated, signout } from "../../auth";
-import { create } from "./apiStudent";
-import { Redirect, Link } from "react-router-dom";
-import Links from './Links'
-import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
+import { list, read } from "./apiApplication";
+import { Link, Redirect } from "react-router-dom";
+import {isAuthenticated, signout} from '../../auth'
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
 
-class Admission extends Component {
+class Application extends Component {
     constructor() {
         super();
         this.state = {
-            error: "",
-            user: {},
-            fileSize: 0,
-            loading: false,
-            redirectToProfile: false,
+            user: '',
+            applications: [],
+            spanishPage: false,
+            englishPage: false,
+            term: '',
+            searched: false,
+            searchedApplication: '',
+            error: '',
+            searching: false,
             spanishPage: false,
             englishPage: false,
             khmerPage: false
         };
     }
 
-
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
+    loadApplications = page => {
+        list(page).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                //console.log(data)
+                this.setState({ applications: data });
+                
+
+            }
+        });
+    };
+
+
     componentDidMount() {
+        this.loadApplications(this.state.applications)
         this.renderUser()
     }
 
+
     componentWillReceiveProps() {
         this.renderUser()
+    }
+
+    handleChange = event => {
+        this.setState({error: ''})
+        this.setState({term: event.target.value})
+    }
+
+    search = (e) => {
+        e.preventDefault()
+        this.state.applications.map(application => {
+            if (application.name === this.state.term) {
+                this.setState({searched: true, searchedApplication: application})
+            } else {
+                this.setState({searching: true, error: 'Application not found'})
+            }
+        })
+
     }
 
     translateSpanish = () => {
@@ -117,7 +152,7 @@ class Admission extends Component {
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link><Link style={{color: 'white'}} to='/Application'>Application</Link></Nav.Link>
                         </div>
                         <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
                         
@@ -148,19 +183,59 @@ class Admission extends Component {
             </div>
         )
     }
-    
-    render() {
-        const {
-            spanishPage, englishPage, khmerPage
-        } = this.state;
 
+
+    renderApplications = applications => {
+
+        return (
+            <div  id='event' className='row container'>
+                {applications.map((application, i) => {
+                    const posterId = application.postedBy
+                        ? `/user/${application.postedBy._id}`
+                        : "";
+                    const posterName = application.postedBy
+                        ? application.postedBy.name
+                        : " Unknown";
+
+                        const photoUrl = application.postedBy
+                        ? `/user/photo/${
+                            event.postedBy._id
+                          }?${new Date().getTime()}`
+                        : ''
+
+                        const applicationFile = application._id
+                        ? `/application/photo/${
+                            application._id
+                          }?${new Date().getTime()}`
+                        : ''
+                        
+                    return (
+
+                        <div  className='col-md-4 mb-5' key={i}>
+                            <Link
+                                to={`/application/${application._id}`}
+                                className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                {application.name}
+                            </Link>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
+
+    render() {
+        const { user, applications, searched, spanishPage, khmerPage, englishPage, searchedApplication, error } = this.state;
         if(spanishPage) {
-            return <Redirect to={`/spanish/admission`} />
+            return <Redirect to={`/spanish/application`} />
          } else if (englishPage) {
-             return <Redirect to={'/admission'} />
+             return <Redirect to={'/application'} />
          } else if (khmerPage) {
-            return <Redirect to={'/khmer/admission'} />
+            return <Redirect to={'/khmer/application'} />
         } 
+
+        if (searched) { return <Redirect to={`application/${searchedApplication._id}`}/> } 
 
         return (
             <div>
@@ -172,27 +247,37 @@ class Admission extends Component {
                         />
                     </div>
                 {this.renderMenu()}
-                <div className='container mt-3' >
-                    <h3 className='text-center'>Welcome to our Admissions section</h3>
+                <div className="container">
+                    <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
+                        <h2 className="col-md-6">
+                            Applications
+                            {!applications.length ? "Loading..." : ""}
+                        </h2>
+                        <br/>
 
-                    <ListGroup variant="flush">
-                        <ListGroup.Item> 
-                            <Link onClick={() => { 
-                                            window.open(`https://docs.google.com/document/d/1pN4Pjycnt3t3jS7Dl1LiwwwNTH8aiu1Ai2zNeo5P7co/edit?usp=sharing`) 
-                                            }} >
-                                    View application form
-                            </Link>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Link to='/new/application'>
-                                Submit Student application
-                            </Link>
-                        </ListGroup.Item>
-                    </ListGroup>
+                        <form className="col-md-6 text-center" onSubmit={this.search}>
+                            <input placeholder='by application name' type='text' value={this.state.term} onChange={this.handleChange} />
+                            <Button onClick={this.search}>Search</Button>
+                            {"  "}{error}
+                        </form>
+                        <hr/>
+                    </div>
+                    {
+                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                            <div>
+                                <Link className='mb-5' to='/new/application'>Add Application</Link>
+                            </div>
+                        )
+                    }
+                
+                    <div>               
+                        {this.renderApplications(applications)}
+                    </div>   
+                
                 </div>
             </div>
         );
     }
 }
 
-export default Admission;
+export default Application;

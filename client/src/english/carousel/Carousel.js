@@ -72,7 +72,7 @@ class Carol extends Component {
 
                                 <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
                             
-                            </DropdownButton>
+                    </DropdownButton>
                         
                         {
                             !this.state.user && (
@@ -102,6 +102,10 @@ class Carol extends Component {
                                 </Nav.Link>
                             )
                         }
+
+                        <Link to='/application' >
+                            Applications
+                        </Link>
                       
                     </Nav>
                 </Navbar.Collapse>

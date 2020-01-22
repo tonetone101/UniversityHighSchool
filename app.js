@@ -27,6 +27,7 @@ mongoose.connect(process.env.MONGO_URI, {
  const partnersRoutes = require('./english/routes/partners');
  const schoolBoardMemberRoutes = require('./english/routes/schoolBoardMember');
  const schoolBoardMeetingRoutes = require('./english/routes/schoolBoardMeeting');
+ const applicationRoutes = require('./english/routes/application');
  const aboutRoutes = require('./english/routes/about');
 
 
@@ -51,7 +52,9 @@ const khmereventRoutes = require('./khmer/routes/event');
 const khmerstudentRoutes = require('./khmer/routes/student')
 const khmerlinkRoutes = require('./khmer/routes/link');
 const khmerpartnersRoutes = require('./khmer/routes/partners');
-
+const khmeraboutRoutes = require('./khmer/routes/about');
+const khmerschoolBoardMemberRoutes = require('./khmer/routes/schoolBoardMember');
+const khmerschoolBoardMeetingRoutes = require('./khmer/routes/schoolBoardMeeting');
 
 // bringing in my hmong routes
 const hmongfacultyRoutes = require('./hmong/routes/faculty');
@@ -90,6 +93,7 @@ app.use('/', partnersRoutes);
 app.use('/', schoolBoardMemberRoutes);
 app.use('/', schoolBoardMeetingRoutes);
 app.use('/', aboutRoutes)
+app.use('/', applicationRoutes)
 
 
 // spanish routes
@@ -112,6 +116,9 @@ app.use('/', khmereventRoutes)
 app.use('/', khmerstudentRoutes)
 app.use('/', khmerlinkRoutes);
 app.use('/', khmerpartnersRoutes);
+app.use('/', khmeraboutRoutes)
+app.use('/', khmerschoolBoardMemberRoutes);
+app.use('/', khmerschoolBoardMeetingRoutes)
 
 // hmong routes
 app.use('/', hmongimageRoutes)

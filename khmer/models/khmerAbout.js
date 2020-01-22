@@ -1,38 +1,30 @@
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const spanishschoolBoardMeetingSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        
-    },
-    date: {
-        type: String,
-        
-    },
-    time: {
-        type: String,
-        
-    },
-    where: {
-        type: String,
-        
-    },
+const khmeraboutSchema = new mongoose.Schema({
     body: {
+        type: String,
+        required: true,
+    },
+    paragraph2: {
+        type: String,
+        
+    },
+    paragraph3: {
+        type: String,
+        
+    },
+    paragraph4: {
+        type: String,
+        
+    },
+    paragraph5: {
         type: String,
         
     },
     photo: {
         data: Buffer,
         contentType: String
-    },
-    url: {
-        type: String,
-        
-    },
-    docUrl: {
-        type: String,
-        
     },
     postedBy: {
         type: ObjectId,
@@ -45,4 +37,4 @@ const spanishschoolBoardMeetingSchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("SpanishSchoolBoardMeeting", spanishschoolBoardMeetingSchema);
+module.exports = mongoose.model("KhmerAbout", khmeraboutSchema);

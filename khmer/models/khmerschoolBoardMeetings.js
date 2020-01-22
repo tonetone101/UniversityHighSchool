@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
-const spanishschoolBoardMeetingSchema = new mongoose.Schema({
+const khmerschoolBoardMeetingSchema = new mongoose.Schema({
     title: {
         type: String,
         
@@ -45,4 +45,4 @@ const spanishschoolBoardMeetingSchema = new mongoose.Schema({
     updated: Date,
 })
 
-module.exports = mongoose.model("SpanishSchoolBoardMeeting", spanishschoolBoardMeetingSchema);
+module.exports = mongoose.model("KhmerSchoolBoardMeeting", khmerschoolBoardMeetingSchema);
