@@ -107,6 +107,16 @@ class Events extends Component {
                                 </Nav.Link>
                             )
                         }
+
+{   
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/spanish/application' >
+                                        Aplicaciones
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
                       
                     </Nav>
                 </Navbar.Collapse>

@@ -129,11 +129,11 @@ class Application extends Component {
                             )
                         }
 
-{
+{   
                             isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                                 <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
-                                        Applications
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/spanish/application' >
+                                        Aplicaciones
                                     </Link>
                                 </Nav.Link>
                             )
