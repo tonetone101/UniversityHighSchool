@@ -178,7 +178,11 @@ class Admission extends Component {
                                 Ver formulario de solicitud
                             </Link>
                         </ListGroup.Item>
-                        <ListGroup.Item></ListGroup.Item>
+                        <ListGroup.Item>
+                            <Link to='/spanish/new/application'>
+                                Submit Student application
+                            </Link>
+                        </ListGroup.Item>
                     </ListGroup>
                 </div>
             </div>

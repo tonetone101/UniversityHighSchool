@@ -92,6 +92,10 @@ import SingleSpanishSchoolBoardMember from './spanish/schoolBoard/SingleMembers'
 import SpanishAbout from './spanish/about/About'
 import EditSpanishAbout from './spanish/about/EditAbout'
 
+import SpanishApplication from './spanish/application/Application'
+import SpanishNewApplication from './spanish/application/NewApplication'
+import SpanishSingleApplication from './spanish/application/SingleApplication'
+
 
 // khmer
 import NewkhmerCarousel from './khmer/carousel/NewCarousel'
@@ -215,6 +219,10 @@ const MainRouter = () => (
             
             <Route exact path="/spanish/about" component={SpanishAbout}></Route>
             <Route exact path="/spanish/edit/about/:aboutId" component={EditSpanishAbout}></Route>
+
+            <Route exact path="/spanish/new/application" component={SpanishNewApplication}></Route>
+            <Route exact path="/application" component={SpanishApplication}></Route>
+            <Route exact path="/spanish/application/:applicationId" component={SpanishSingleApplication}></Route>
 
 
             {
