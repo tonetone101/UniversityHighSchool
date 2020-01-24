@@ -279,17 +279,21 @@ class Admission extends Component {
                     </p>
                     
                     <div className='row mt-5'>
-                         <div className='col-md-3 mt-4'>
-                            {this.renderAppLinks()}
+                        <div className='col-md-3 mt-4'>
+                                {this.renderAppLinks()}
+                            
+                            <div className='mt-4'>
+                                {this.renderContact()}
+                            </div>  
                         </div>
+
+                            
 
                         <div className='col-md-6 text-center'>
                             {this.renderRequirements(admission)}
                         </div>
 
-                        <div className='col-md-3 mt-4'>
-                            {this.renderContact()}
-                        </div>                     
+                                     
                         
                     </div>
                 </div>
