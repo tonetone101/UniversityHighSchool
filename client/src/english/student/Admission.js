@@ -41,6 +41,8 @@ class Admission extends Component {
                     comments: data.comments,
                     loading: true
 
+              }, () => {
+                    console.log(this.state.comments)
               })
               
             }
@@ -58,6 +60,9 @@ class Admission extends Component {
                     admission: data,
                     comments: data.comments,
                     loading: true
+
+              }, () => {
+                    console.log(this.state.comments)
               })
               
             }
