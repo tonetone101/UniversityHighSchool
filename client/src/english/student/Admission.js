@@ -219,7 +219,7 @@ class Admission extends Component {
             <div>
                 <h3>News and Announcements</h3>
                 <div>
-                    <AdmissionNews admissionId={admission._id} comments={admission.comments.reverse()} updateComments={this.updateComments} />
+                    <AdmissionNews admissionId={admission._id} comments={admission.comment} updateComments={this.updateComments} />
                 </div>
             </div>
         )
