@@ -162,15 +162,10 @@ class Admission extends Component {
     renderContact = () => {
         return (
             <div>
-                <h3>Contact</h3>
+                <p style={{fontWeight: 'bold'}}>Contact</p>
                 <p> Phone: (401) 254- 4829</p>
                 <p> Email: admissions@uhschool.org</p>
-
-                <div className='mt-5'>
-                    <h3>Address</h3>
-                    <p>1 Empire Plaza</p>
-                    <p>Providence, RI 02903</p>
-                </div>
+                <p>1 Empire Plaza | Providence, RI 02903</p>
             </div>
         )
     }
