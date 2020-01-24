@@ -59,7 +59,8 @@ class Admission extends Component {
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState({admission: data.find(d => {
+                this.setState({
+                admission: data.find(d => {
                     if (d._id == "5e2af5d6c293e447276287a1") {
                         return d
                     }
@@ -69,6 +70,7 @@ class Admission extends Component {
                         return c.comments
                     }
                 }) 
+
               })
               
             }
@@ -217,7 +219,7 @@ class Admission extends Component {
             <div>
                 <h3>News and Announcements</h3>
                 <div>
-                    <AdmissionNews admissionId={admission._id} comments={this.state.comments.reverse()} updateComments={this.updateComments} />
+                    <AdmissionNews admissionId={admission._id} comments={admission.comments.reverse()} updateComments={this.updateComments} />
                 </div>
             </div>
         )
