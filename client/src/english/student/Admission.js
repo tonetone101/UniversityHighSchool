@@ -30,7 +30,8 @@ class Admission extends Component {
 
     componentDidMount() {
         this.renderUser()
-        getAdmission().then(data => {
+        const admissionId = '5e2b09817bec634f51efacd8'
+        getAdmission(admissionId).then(data => {
             if (data.error) {
                 console.log(data.error)
             } else {
@@ -45,7 +46,7 @@ class Admission extends Component {
 
     componentWillReceiveProps(props) {
         this.renderUser()
-        const admissionId = props.match.params.admissionId
+        const admissionId = '5e2b09817bec634f51efacd8'
         getAdmission(admissionId).then(data => {
             if (data.error) {
                 console.log(data.error)
