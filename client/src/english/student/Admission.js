@@ -201,12 +201,13 @@ class Admission extends Component {
     }
 
     renderRequirements = (admission) => {
+        const {comments} = this.state
         return (
             <div>
                 <h3>{admission.title}</h3>
                 <div>
                     {this.state.loading &&
-                        <AdmissionNews admissionId={admission._id} comments={...this.state.comments} updateComments={this.updateComments} />
+                        <AdmissionNews admissionId={admission._id} comments={...comments} updateComments={this.updateComments} />
                     }
                 </div>
             </div>
