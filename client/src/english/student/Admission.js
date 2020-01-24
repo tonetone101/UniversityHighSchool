@@ -158,36 +158,21 @@ class Admission extends Component {
             </div>
         )
     }
-    
-    render() {
-        const {
-            spanishPage, englishPage, khmerPage
-        } = this.state;
 
-        if(spanishPage) {
-            return <Redirect to={`/spanish/admission`} />
-         } else if (englishPage) {
-             return <Redirect to={'/admission'} />
-         } else if (khmerPage) {
-            return <Redirect to={'/khmer/admission'} />
-        } 
-
+    renderContact = () => {
         return (
             <div>
-                {this.renderTopHeader()}
-                <div className="text-center">
-                        <img 
-                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
-                            src={require("../../images/logo.png")}
-                        />
-                    </div>
-                {this.renderMenu()}
-                <div className='container mt-3' >
-                    <h3 className='text-center'>Welcome to our Admissions section</h3>
-                    <p>
-                        Here you can view and download a copy of our application as well as submit a completed form to us. 
-                    </p>
-                    <ListGroup variant="flush">
+                <h3>Contact</h3>
+                <h4> Phone: (401) 254- 4829</h4>
+                <h4> Email: admissions@uhschool.org</h4>
+            </div>
+        )
+    }
+
+    renderAppLinks = () => {
+        return (
+            <div>
+                 <ListGroup variant="flush">
                         <ListGroup.Item> 
                             <Link onClick={() => { 
                                             window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
@@ -218,6 +203,48 @@ class Admission extends Component {
                             </Link>
                         </ListGroup.Item>
                     </ListGroup>
+            </div>
+        )
+    }
+    
+    render() {
+        const {
+            spanishPage, englishPage, khmerPage
+        } = this.state;
+
+        if(spanishPage) {
+            return <Redirect to={`/spanish/admission`} />
+         } else if (englishPage) {
+             return <Redirect to={'/admission'} />
+         } else if (khmerPage) {
+            return <Redirect to={'/khmer/admission'} />
+        } 
+
+        return (
+            <div>
+                {this.renderTopHeader()}
+                <div className="text-center">
+                        <img 
+                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
+                            src={require("../../images/logo.png")}
+                        />
+                    </div>
+                {this.renderMenu()}
+                <div className='container mt-3' >
+                    <h3 className='text-center'>Welcome to our Admissions section</h3>
+                    <p className='text-center'> 
+                        Here you can view and download a copy of our application as well as submit a completed form to us. 
+                    </p>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            {this.renderContact()}
+                        </div>
+                        
+                        <div className='col-md-6'>
+                            {this.renderAppLinks()}
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
         );
