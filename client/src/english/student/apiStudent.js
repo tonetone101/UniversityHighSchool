@@ -126,7 +126,7 @@ export const uncomment = (userId, token, admissionId, comment) => {
 };
 
 export const getAdmission = () => {
-    return fetch(`/admission/comments`, {
+    return fetch(`/admission/5e2b09817bec634f51efacd8`, {
         method: "GET",
     })
         .then(response => {

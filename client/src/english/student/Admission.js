@@ -6,12 +6,10 @@ import AdmissionNews from './AdmissionNews'
 import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
 
 class Admission extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+        state = {
             error: "",
             user: {},
-            admission: [],
+            admission: '',
             fileSize: 0,
             comments: [],
             loading: false,
@@ -20,7 +18,6 @@ class Admission extends Component {
             englishPage: false,
             khmerPage: false
         };
-    }
 
 
     renderUser = () => {
@@ -37,16 +34,9 @@ class Admission extends Component {
             if (data.error) {
                 console.log(data.error)
             } else {
-                this.setState({admission: data.find(d => {
-                    if (d._id == "5e2b09817bec634f51efacd8") {
-                        return d
-                    }
-                }),
-                comments: data.find(c => {
-                    if (c._id == "5e2b09817bec634f51efacd8") {
-                        return c.comments
-                    }
-                }) 
+                this.setState({
+                    admission: data,
+                    comments: data.comments
               })
               
             }
@@ -60,17 +50,8 @@ class Admission extends Component {
                 console.log(data.error)
             } else {
                 this.setState({
-                admission: data.find(d => {
-                    if (d._id == "5e2af5d6c293e447276287a1") {
-                        return d
-                    }
-                }),
-                comments: data.find(c => {
-                    if (c._id == "5e2af5d6c293e447276287a1") {
-                        return c.comments
-                    }
-                }) 
-
+                    admission: data,
+                    comments: data.comments
               })
               
             }

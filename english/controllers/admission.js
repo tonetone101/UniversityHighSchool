@@ -156,5 +156,9 @@ exports.updateComment = (req, res) => {
     });
 };
 
+exports.singleadmission = (req, res) => {
+    return res.json(req.admission);
+};
+
 
 
