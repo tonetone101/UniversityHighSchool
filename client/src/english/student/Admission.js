@@ -170,6 +170,14 @@ class Admission extends Component {
         )
     }
 
+    renderRequirements = () => {
+        return (
+            <div>
+                <h3>Requirements</h3>
+            </div>
+        )
+    }
+
     renderAppLinks = () => {
         return (
             <div>
@@ -237,11 +245,15 @@ class Admission extends Component {
                         Here you can view and download a copy of our application as well as submit a completed form to us. 
                     </p>
                     <div className='row'>
-                        <div className='col-md-6'>
+                        <div className='col-md-3'>
                             {this.renderContact()}
                         </div>
-                        
+
                         <div className='col-md-6'>
+                            {this.renderRequirements()}
+                        </div>
+                        
+                        <div className='col-md-3'>
                             {this.renderAppLinks()}
                         </div>
                         
