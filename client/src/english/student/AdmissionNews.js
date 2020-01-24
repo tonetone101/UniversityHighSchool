@@ -78,10 +78,6 @@ class AdmissionNews extends React.Component {
 
     render() {
        
-       const photoUrl = `${process.env.REACT_APP_API_URL}/user/photo/${
-           isAuthenticated().user._id
-         }?${new Date().getTime()}`
-       
          const {comments} = this.props
          const {error} = this.state
 
