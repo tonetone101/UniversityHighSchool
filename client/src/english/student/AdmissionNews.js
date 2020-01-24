@@ -80,7 +80,7 @@ class AdmissionNews extends React.Component {
        
          const {comments} = this.props
          const {error} = this.state
-         consolr.log(this.props)
+         console.log(this.props)
 
         return (
             <div>
