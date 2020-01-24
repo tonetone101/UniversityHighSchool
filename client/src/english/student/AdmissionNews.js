@@ -103,7 +103,7 @@ class AdmissionNews extends React.Component {
                                             <div className='text-center row'>
                                                 
                                                     <p className='col-md-8'>
-                                                        {comment.text}
+                                                        {comment}
                                                     </p>
                                                
                                                
