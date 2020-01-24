@@ -6,8 +6,8 @@ import AdmissionNews from './AdmissionNews'
 import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
 
 class Admission extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             error: "",
             user: {},
