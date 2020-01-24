@@ -97,7 +97,7 @@ class AdmissionNews extends React.Component {
 
                             <div className="col-md-12 col-md-offset-2">
                                
-                                {comments.map((comment, i) => (
+                                {this.props.comments.map((comment, i) => (
                                     <div key={i}>
                                        
                                             <div className='text-center row'>
