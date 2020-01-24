@@ -43,9 +43,10 @@ class Admission extends Component {
         }) 
     }
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(props) {
         this.renderUser()
-        getAdmission().then(data => {
+        const admissionId = props.match.params.admissionId
+        getAdmission(admissionId).then(data => {
             if (data.error) {
                 console.log(data.error)
             } else {
