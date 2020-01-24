@@ -192,9 +192,26 @@ class Admission extends Component {
                             <Link onClick={() => { 
                                             window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
                                             }} >
-                                    View application form
+                                    View English application form
                             </Link>
                         </ListGroup.Item>
+
+                        <ListGroup.Item> 
+                            <Link onClick={() => { 
+                                            window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
+                                            }} >
+                                View Spanish application form
+                            </Link>
+                        </ListGroup.Item>
+
+                        <ListGroup.Item> 
+                            <Link onClick={() => { 
+                                            window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
+                                            }} >
+                                View Portuguese application form
+                            </Link>
+                        </ListGroup.Item>
+
                         <ListGroup.Item>
                             <Link to='/new/application'>
                                 Submit Student application

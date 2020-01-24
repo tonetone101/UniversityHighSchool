@@ -3,7 +3,7 @@ const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
 
-exports.gespanishtapplication = (req, res, next) => {
+exports.getspanishapplication = (req, res, next) => {
    
     const spanishapplication = SpanishApplication.find()
         .select("_id name photo created")

@@ -76,7 +76,7 @@ class NewApplication extends Component {
     newapplicationForm = (name) => (
         <form >
             <div className="form-group">
-                <label className="text-muted">Application form</label>
+                <label className="text-muted">Formulario de solicitud </label>
                 <input
                     onChange={this.handleChange("photo")}
                     type="file"
@@ -86,7 +86,7 @@ class NewApplication extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Student's Name</label>
+                <label className="text-muted">El nombre del estudiante</label>
                 <input
                     onChange={this.handleChange("name")}
                     type="text"
@@ -99,7 +99,7 @@ class NewApplication extends Component {
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
             >
-                Add application
+                Agregar aplicación
             </button>
         </form>
     );
@@ -119,8 +119,8 @@ class NewApplication extends Component {
         return (
             <div className='container'>
                             <h3>
-                                Please Upload a copy of your Student's application
-                                and enter the student's name
+                                Cargue una copia de la solicitud de su estudiante
+                                e ingrese el nombre del estudiante
                             </h3>
                             <div
                                 className="alert alert-danger"
@@ -131,7 +131,7 @@ class NewApplication extends Component {
 
                             {loading ? (
                                 <div className="jumbotron text-center">
-                                    <h2>Loading...</h2>
+                                    <h2>Cargando...</h2>
                                 </div>
                             ) : (
                                 ""
