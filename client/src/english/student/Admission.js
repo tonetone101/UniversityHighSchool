@@ -219,7 +219,7 @@ class Admission extends Component {
             <div>
                 <h3>News and Announcements</h3>
                 <div>
-                    <AdmissionNews admissionId={admission._id} comments={admission.comments} updateComments={this.updateComments} />
+                    <AdmissionNews admissionId={admission._id} comments={[admission.comments]} updateComments={this.updateComments} />
                 </div>
             </div>
         )
@@ -270,6 +270,8 @@ class Admission extends Component {
         const {
             admission, spanishPage, englishPage, khmerPage
         } = this.state;
+
+        console.log(admission)
 
         if(spanishPage) {
             return <Redirect to={`/spanish/admission`} />
