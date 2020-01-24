@@ -163,8 +163,14 @@ class Admission extends Component {
         return (
             <div>
                 <h3>Contact</h3>
-                <h4> Phone: (401) 254- 4829</h4>
-                <h4> Email: admissions@uhschool.org</h4>
+                <p> Phone: (401) 254- 4829</p>
+                <p> Email: admissions@uhschool.org</p>
+
+                <div className='mt-5'>
+                    <h3>Address</h3>
+                    <p>1 Empire Plaza</p>
+                    <p>Providence, RI 02903</p>
+                </div>
             </div>
         )
     }
