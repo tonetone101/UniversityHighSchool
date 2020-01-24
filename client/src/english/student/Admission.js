@@ -173,7 +173,7 @@ class Admission extends Component {
     renderRequirements = () => {
         return (
             <div>
-                <h3>Requirements</h3>
+                <h3>News and Announcements</h3>
             </div>
         )
     }
@@ -249,7 +249,7 @@ class Admission extends Component {
                             {this.renderContact()}
                         </div>
 
-                        <div className='col-md-6'>
+                        <div className='col-md-6 text-center'>
                             {this.renderRequirements()}
                         </div>
                         
