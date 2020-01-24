@@ -37,7 +37,8 @@ class Admission extends Component {
             } else {
                 this.setState({
                     admission: data,
-                    comments: data.comments
+                    comments: data.comments,
+                    loading: true
               })
               
             }
@@ -53,7 +54,8 @@ class Admission extends Component {
             } else {
                 this.setState({
                     admission: data,
-                    comments: data.comments
+                    comments: data.comments,
+                    loading: true
               })
               
             }
@@ -202,7 +204,9 @@ class Admission extends Component {
             <div>
                 <h3>{admission.title}</h3>
                 <div>
-                    <AdmissionNews admissionId={admission._id} comments={this.state.comments} updateComments={this.updateComments} />
+                    {this.state.loading &&
+                        <AdmissionNews admissionId={admission._id} comments={this.state.comments} updateComments={this.updateComments} />
+                    }
                 </div>
             </div>
         )
