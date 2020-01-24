@@ -2,6 +2,9 @@ const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
 const admissionSchema = new mongoose.Schema({
+    title: {
+        type: String,       
+    },
     comments: [
         {
             text: String,

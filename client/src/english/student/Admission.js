@@ -38,12 +38,12 @@ class Admission extends Component {
                 console.log(data.error)
             } else {
                 this.setState({admission: data.find(d => {
-                    if (d._id == "5e2af5d6c293e447276287a1") {
+                    if (d._id == "5e2b09817bec634f51efacd8") {
                         return d
                     }
                 }),
                 comments: data.find(c => {
-                    if (c._id == "5e2af5d6c293e447276287a1") {
+                    if (c._id == "5e2b09817bec634f51efacd8") {
                         return c.comments
                     }
                 }) 
@@ -217,7 +217,7 @@ class Admission extends Component {
     renderRequirements = (admission) => {
         return (
             <div>
-                <h3>News and Announcements</h3>
+                <h3>{admission.title}</h3>
                 {/* <div>
                     <AdmissionNews admissionId={admission._id} comments={[admission.comments]} updateComments={this.updateComments} />
                 </div> */}
