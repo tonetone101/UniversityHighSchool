@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { isAuthenticated, signout } from "../../auth";
-import { create } from "./apiStudent";
+import { getAdmission } from "./apiStudent";
 import { Redirect, Link } from "react-router-dom";
-import Links from './Links'
+import AdmissionNews from './AdmissionNews'
 import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
 
 class Admission extends Component {
@@ -11,7 +11,9 @@ class Admission extends Component {
         this.state = {
             error: "",
             user: {},
+            admission: [],
             fileSize: 0,
+            comments: [],
             loading: false,
             redirectToProfile: false,
             spanishPage: false,
@@ -25,12 +27,52 @@ class Admission extends Component {
         this.setState({user: isAuthenticated().user })
     }
 
+    updateComments = comments => {
+        this.setState({comments})
+    }
+
     componentDidMount() {
         this.renderUser()
+        getAdmission().then(data => {
+            if (data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({admission: data.find(d => {
+                    if (d._id == "5e2af5d6c293e447276287a1") {
+                        return d
+                    }
+                }),
+                comments: data.find(c => {
+                    if (c._id == "5e2af5d6c293e447276287a1") {
+                        return c.comments
+                    }
+                }) 
+              })
+              
+            }
+        }) 
     }
 
     componentWillReceiveProps() {
         this.renderUser()
+        getAdmission().then(data => {
+            if (data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({admission: data.find(d => {
+                    if (d._id == "5e2af5d6c293e447276287a1") {
+                        return d
+                    }
+                }),
+                comments: data.find(c => {
+                    if (c._id == "5e2af5d6c293e447276287a1") {
+                        return c.comments
+                    }
+                }) 
+              })
+              
+            }
+        }) 
     }
 
     translateSpanish = () => {
@@ -170,10 +212,13 @@ class Admission extends Component {
         )
     }
 
-    renderRequirements = () => {
+    renderRequirements = (admission) => {
         return (
             <div>
                 <h3>News and Announcements</h3>
+                <div>
+                    <AdmissionNews admissionId={admission._id} comments={this.state.comments.reverse()} updateComments={this.updateComments} />
+                </div>
             </div>
         )
     }
@@ -221,7 +266,7 @@ class Admission extends Component {
     
     render() {
         const {
-            spanishPage, englishPage, khmerPage
+            admission, spanishPage, englishPage, khmerPage
         } = this.state;
 
         if(spanishPage) {
@@ -254,7 +299,7 @@ class Admission extends Component {
                         </div>
 
                         <div className='col-md-6 text-center'>
-                            {this.renderRequirements()}
+                            {this.renderRequirements(admission)}
                         </div>
 
                         <div className='col-md-3 mt-4'>

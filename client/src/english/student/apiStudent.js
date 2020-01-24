@@ -92,3 +92,45 @@ export const singleLink = (linkId) => {
         })
         .catch(err => console.log(err));
 };
+
+export const comment = (userId, token, admissionId, comment) => {
+    return fetch(`/admission/comment`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({userId, admissionId, comment})
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const uncomment = (userId, token, admissionId, comment) => {
+    return fetch(`/admission/uncomment`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({userId, admissionId, comment})
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const getAdmission = () => {
+    return fetch(`/admission/comments`, {
+        method: "GET",
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
