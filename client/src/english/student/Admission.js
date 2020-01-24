@@ -258,7 +258,7 @@ class Admission extends Component {
             admission, comments, spanishPage, englishPage, khmerPage
         } = this.state;
 
-        console.log(admission)
+        console.log(comments.text)
 
         if(spanishPage) {
             return <Redirect to={`/spanish/admission`} />
