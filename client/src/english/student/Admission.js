@@ -181,6 +181,9 @@ class Admission extends Component {
     renderAppLinks = () => {
         return (
             <div>
+                <h4 style={{fontWeight: 'bold'}}>
+                    Registration
+                </h4>
                  <ListGroup variant="flush">
                         <ListGroup.Item> 
                             <Link onClick={() => { 
@@ -240,22 +243,23 @@ class Admission extends Component {
                     </div>
                 {this.renderMenu()}
                 <div className='container mt-3' >
-                    <h3 className='text-center'>Welcome to our Admissions section</h3>
                     <p className='text-center'> 
+                        Welcome to our Admissions section. 
                         Here you can view and download a copy of our application as well as submit a completed form to us. 
                     </p>
-                    <div className='row'>
-                        <div className='col-md-3'>
-                            {this.renderContact()}
+                    
+                    <div className='row mt-5'>
+                         <div className='col-md-3 mt-4'>
+                            {this.renderAppLinks()}
                         </div>
 
                         <div className='col-md-6 text-center'>
                             {this.renderRequirements()}
                         </div>
-                        
-                        <div className='col-md-3'>
-                            {this.renderAppLinks()}
-                        </div>
+
+                        <div className='col-md-3 mt-4'>
+                            {this.renderContact()}
+                        </div>                     
                         
                     </div>
                 </div>
