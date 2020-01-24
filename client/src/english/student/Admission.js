@@ -214,13 +214,13 @@ class Admission extends Component {
         )
     }
 
-    renderRequirements = (admission) => {
+    renderRequirements = (admission, comments) => {
         return (
             <div>
                 <h3>{admission.title}</h3>
-                {/* <div>
-                    <AdmissionNews admissionId={admission._id} comments={[admission.comments]} updateComments={this.updateComments} />
-                </div> */}
+                <div>
+                    <AdmissionNews admissionId={admission._id} comments={comments} updateComments={this.updateComments} />
+                </div>
             </div>
         )
     }
@@ -268,7 +268,7 @@ class Admission extends Component {
     
     render() {
         const {
-            admission, spanishPage, englishPage, khmerPage
+            admission, comments, spanishPage, englishPage, khmerPage
         } = this.state;
 
         console.log(admission)
@@ -303,7 +303,7 @@ class Admission extends Component {
                         </div>
 
                         <div className='col-md-6 text-center'>
-                            {this.renderRequirements(admission)}
+                            {this.renderRequirements(admission, comments)}
                         </div>
 
                         <div className='col-md-3 mt-4'>

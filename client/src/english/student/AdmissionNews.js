@@ -97,18 +97,18 @@ class AdmissionNews extends React.Component {
 
                             <div className="col-md-12 col-md-offset-2">
                                
-                                {this.props.comments.map((comment, i) => (
+                                {comments.map((comment, i) => (
                                     <div key={i}>
                                        
                                             <div className='text-center row'>
                                                 
                                                     <p className='col-md-8'>
-                                                        {comment}
+                                                        {comment.text}
                                                     </p>
                                                
                                                
                                                 <span className='col-md-4' >
-                                                    
+                                                    <div >{new Date(comment.created).toDateString()}</div>
                                                     {   
                                                         isAuthenticated() && isAuthenticated().user.role === 'admin' &&  
                                                         (
