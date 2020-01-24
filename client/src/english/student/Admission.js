@@ -214,12 +214,12 @@ class Admission extends Component {
         )
     }
 
-    renderRequirements = (admission, comments) => {
+    renderRequirements = (admission) => {
         return (
             <div>
                 <h3>{admission.title}</h3>
                 <div>
-                    <AdmissionNews admissionId={admission._id} comments={comments} updateComments={this.updateComments} />
+                    <AdmissionNews admissionId={admission._id} comments={this.state.comments} updateComments={this.updateComments} />
                 </div>
             </div>
         )
@@ -303,7 +303,7 @@ class Admission extends Component {
                         </div>
 
                         <div className='col-md-6 text-center'>
-                            {this.renderRequirements(admission, comments)}
+                            {this.renderRequirements(admission)}
                         </div>
 
                         <div className='col-md-3 mt-4'>
