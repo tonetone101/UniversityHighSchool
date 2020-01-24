@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 exports.admissionById = (req, res, next, id) => {
     Admission.findById(id)
-        .populate('postedBy', '_id name role')
+        .populate('comments', '_id text created')
         .select('_id comments created photo')
         .exec((err, admission) => {
             if (err || !admission) {
@@ -50,7 +50,7 @@ exports.createadmission = (req, res, next) => {
 exports.getAdmissions = (req, res) => {
     const admissions = Admission.find()
         .populate("uploadedBy", "_id name photo group")
-        .populate("comments", "text created")
+        .populate('comments', '_id text created')
         .populate("comments.uploadedBy", "_id name")
         .select("_id comments")
         .sort({ created: -1 })

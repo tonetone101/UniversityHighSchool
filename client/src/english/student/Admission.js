@@ -218,9 +218,9 @@ class Admission extends Component {
         return (
             <div>
                 <h3>News and Announcements</h3>
-                <div>
+                {/* <div>
                     <AdmissionNews admissionId={admission._id} comments={[admission.comments]} updateComments={this.updateComments} />
-                </div>
+                </div> */}
             </div>
         )
     }

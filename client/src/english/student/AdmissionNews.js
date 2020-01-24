@@ -108,7 +108,7 @@ class AdmissionNews extends React.Component {
                                                
                                                
                                                 <span className='col-md-4' >
-                                                    <div >{new Date(comment.created).toDateString()}</div>
+                                                    
                                                     {   
                                                         isAuthenticated() && isAuthenticated().user.role === 'admin' &&  
                                                         (
