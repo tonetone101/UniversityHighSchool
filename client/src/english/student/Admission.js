@@ -38,6 +38,8 @@ class Admission extends Component {
                 this.setState({
                     admission: data,
                     comments: data.comments,
+                    loading: true
+
               })
               
             }
@@ -204,7 +206,7 @@ class Admission extends Component {
                 <h3>{admission.title}</h3>
                 <div>
                     {this.state.loading &&
-                        <AdmissionNews admissionId={admission._id} comments={this.state.comments} updateComments={this.updateComments} />
+                        <AdmissionNews admissionId={admission._id} comments={...this.state.comments} updateComments={this.updateComments} />
                     }
                 </div>
             </div>
