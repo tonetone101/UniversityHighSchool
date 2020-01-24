@@ -49,6 +49,7 @@ exports.createadmission = (req, res, next) => {
 
 exports.getAdmissions = (req, res) => {
     const admissions = Admission.find()
+        .populate("uploadedBy", "_id name photo group")
         .populate('comments', '_id text created')
         .populate("comments.uploadedBy", "_id name")
         .select("_id title comments")
@@ -96,7 +97,7 @@ exports.comment = (req, res) => {
     comment.uploadedBy = req.body.userId;
 
     Admission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, { new: true })
-        .populate('comments', '_id text created')
+        .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
             if (err) {
@@ -113,7 +114,7 @@ exports.uncomment = (req, res) => {
     let comment = req.body.comment;
 
     Admission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
-        .populate('comments', '_id text created')
+        .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
             if (err) {
