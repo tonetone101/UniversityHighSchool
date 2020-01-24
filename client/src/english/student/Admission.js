@@ -45,7 +45,7 @@ class Admission extends Component {
         }) 
     }
 
-    componentDidUpdate(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         this.renderUser()
         const admissionId = '5e2b09817bec634f51efacd8'
         getAdmission(admissionId).then(data => {
