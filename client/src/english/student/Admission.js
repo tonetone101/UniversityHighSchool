@@ -38,7 +38,6 @@ class Admission extends Component {
                 this.setState({
                     admission: data,
                     comments: data.comments,
-                    loading: true
               })
               
             }
@@ -47,7 +46,7 @@ class Admission extends Component {
 
     UNSAFE_componentWillReceiveProps(props) {
         this.renderUser()
-        const admissionId = '5e2b09817bec634f51efacd8'
+        const admissionId = props.match.params.admissionId
         getAdmission(admissionId).then(data => {
             if (data.error) {
                 console.log(data.error)
