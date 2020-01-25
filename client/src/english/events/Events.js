@@ -211,19 +211,25 @@ class Events extends Component {
                                     <Card.Text>
                                         {event.body.substring(0, 100)}
                                     </Card.Text>
-                                
-                                    <Card.Link >
-                                        <Link
-                                               onClick={() => { 
-                                                window.open(`${event.url}`) 
-                                                }} 
-                                                className="btn btn-raised btn-primary btn-sm mb-4"
-                                        >
-                                               Link
-                                        </Link>
-                                    </Card.Link>
-
-                                    <Card.Link >
+                                    {
+                                        event.url ?
+                                            <Card.Link >
+                                                <Link
+                                                    onClick={() => { 
+                                                        window.open(`${event.url}`) 
+                                                        }} 
+                                                        className="btn btn-raised btn-primary btn-sm mb-4"
+                                                >
+                                                    Link
+                                                </Link>
+                                            </Card.Link> : null
+                                      
+                                        
+                                    }
+                                    
+                                    {
+                                        event.url2 ?
+                                        <Card.Link >
                                         <Link
                                                onClick={() => { 
                                                 window.open(`${event.url2}`) 
@@ -232,9 +238,12 @@ class Events extends Component {
                                         >
                                                Link2
                                         </Link>
-                                    </Card.Link>
+                                    </Card.Link> : null
+                                    }
 
-                                    <Card.Link >
+                                    {               
+                                        event.url3 ?
+                                        <Card.Link >
                                         <Link
                                                onClick={() => { 
                                                 window.open(`${event.url3}`) 
@@ -243,9 +252,12 @@ class Events extends Component {
                                         >
                                                Link3
                                         </Link>
-                                    </Card.Link>
+                                    </Card.Link> : null
+                                    }
 
-                                    <Card.Link >
+                                    {               
+                                        event.url4 ?
+                                        <Card.Link >
                                         <Link
                                                onClick={() => { 
                                                 window.open(`${event.url4}`) 
@@ -254,9 +266,12 @@ class Events extends Component {
                                         >
                                                Link4
                                         </Link>
-                                    </Card.Link>
+                                    </Card.Link>: null
+                                    }
 
-                                    <Card.Link >
+                                    {
+                                        event.url5 ? 
+                                        <Card.Link >
                                         <Link
                                                onClick={() => { 
                                                 window.open(`${event.url5}`) 
@@ -265,7 +280,9 @@ class Events extends Component {
                                         >
                                                Link5
                                         </Link>
-                                    </Card.Link>
+                                    </Card.Link> : null
+                                    }
+                                                                     
                                 
                                     <Card.Link >
                                         <Link
