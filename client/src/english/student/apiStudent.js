@@ -104,6 +104,7 @@ export const comment = (userId, token, admissionId, comment) => {
         body: JSON.stringify({userId, admissionId, comment})
     })
         .then(response => {
+            console.log('comment added', response)
             return response.json();
         })
         .catch(err => console.log(err));

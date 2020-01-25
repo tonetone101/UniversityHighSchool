@@ -93,10 +93,10 @@ exports.isAdmin = (req, res, next) => {
 };
 
 exports.comment = (req, res) => {
-    let comment = req.body.comment;
+    let comment = req.body.comments;
     comment.uploadedBy = req.body.userId;
 
-    Admission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, {safe: true, upsert: true})
+    Admission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, {safe: true, upsert: true, new: true})
         .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
@@ -111,7 +111,7 @@ exports.comment = (req, res) => {
 };
 
 exports.uncomment = (req, res) => {
-    let comment = req.body.comment;
+    let comment = req.body.comments;
 
     Admission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
         .populate('comments.uploadedBy', '_id name')
