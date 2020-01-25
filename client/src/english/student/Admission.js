@@ -51,22 +51,6 @@ class Admission extends Component {
 
     UNSAFE_componentWillReceiveProps(props) {
         this.renderUser()
-        const admissionId = props.match.params.admissionId
-        getAdmission(admissionId).then(data => {
-            if (data.error) {
-                console.log(data.error)
-            } else {
-                this.setState({
-                    admission: data,
-                    comments: data.comments,
-                    loading: true
-
-              }, () => {
-                    console.log(this.state.comments)
-              })
-              
-            }
-        }) 
     }
 
     translateSpanish = () => {
