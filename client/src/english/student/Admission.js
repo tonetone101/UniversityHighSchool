@@ -195,7 +195,7 @@ class Admission extends Component {
         return (
             <div>
                 <h3>{admission.title}</h3>
-                <div>
+                <div className='mt-5'>
                     {this.state.loading &&
                         <AdmissionNews admissionId={admission._id} comments={comments.reverse()} updateComments={this.updateComments} />
                     }
@@ -287,7 +287,7 @@ class Admission extends Component {
 
                             
 
-                        <div className='col-md-6 text-center'>
+                        <div className='col-md-6'>
                             {this.renderRequirements(admission)}
                            
                         </div>
