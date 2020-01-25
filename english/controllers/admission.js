@@ -5,7 +5,9 @@ const _ = require('lodash');
 
 exports.admissionById = (req, res, next, id) => {
     Admission.findById(id)
-        .populate('comments', '_id text created')
+        .populate("uploadedBy", "_id name")
+        .populate("comments.uploadedBy", "_id name")
+        .populate("uploadedBy", "_id name role")
         .select('_id title comments created photo')
         .exec((err, admission) => {
             if (err || !admission) {
