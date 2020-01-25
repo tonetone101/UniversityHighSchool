@@ -5,6 +5,10 @@ const admissionSchema = new mongoose.Schema({
     title: {
         type: String,       
     },
+    uploadedBy: {
+        type: ObjectId,
+        ref: "User"
+    },
     comments: [
         {
             text: String,
