@@ -219,7 +219,51 @@ class Events extends Component {
                                                 }} 
                                                 className="btn btn-raised btn-primary btn-sm mb-4"
                                         >
-                                               Google Doc
+                                               Link
+                                        </Link>
+                                    </Card.Link>
+
+                                    <Card.Link >
+                                        <Link
+                                               onClick={() => { 
+                                                window.open(`${event.url2}`) 
+                                                }} 
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                               Link2
+                                        </Link>
+                                    </Card.Link>
+
+                                    <Card.Link >
+                                        <Link
+                                               onClick={() => { 
+                                                window.open(`${event.url3}`) 
+                                                }} 
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                               Link3
+                                        </Link>
+                                    </Card.Link>
+
+                                    <Card.Link >
+                                        <Link
+                                               onClick={() => { 
+                                                window.open(`${event.url4}`) 
+                                                }} 
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                               Link4
+                                        </Link>
+                                    </Card.Link>
+
+                                    <Card.Link >
+                                        <Link
+                                               onClick={() => { 
+                                                window.open(`${event.url5}`) 
+                                                }} 
+                                                className="btn btn-raised btn-primary btn-sm mb-4"
+                                        >
+                                               Link5
                                         </Link>
                                     </Card.Link>
                                 

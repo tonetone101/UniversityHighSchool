@@ -14,6 +14,10 @@ class EditEvent extends Component {
             date:'',
             body: '',
             url: '',
+            url2: "",
+            url3: "",
+            url4: "",
+            url5: "",
             redirectToEvent: false,
             error: '',
             filesize: 0,
@@ -26,7 +30,18 @@ class EditEvent extends Component {
             if (data.error) {
                 this.setState({redirectToEvent: true})
             } else {
-                this.setState({id: data._id, title: data.title, time: data.time, date: data.date, body: data.body, url: data.url, error: ''})
+                this.setState({
+                    id: data._id, 
+                    title: data.title, 
+                    time: data.time, 
+                    date: data.date, 
+                    body: data.body, 
+                    url: data.url, 
+                    url2: data.url2,
+                    url3: data.url3,
+                    url4: data.url4,
+                    url5: data.url5,
+                    error: ''})
             }
         })
     }
@@ -81,6 +96,10 @@ class EditEvent extends Component {
                         date: "",
                         body: "",
                         url: "",
+                        url2: "",
+                        url3: "",
+                        url4: "",
+                        url5: "",
                         redirectToEvent: true
                     });
                 }
@@ -88,7 +107,7 @@ class EditEvent extends Component {
         }
     };
 
-    editEventForm = (id, title, time, date, body, url) => (
+    editEventForm = (id, title, time, date, body, url, url2, url3, url4, url5 ) => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Event Photo</label>
@@ -141,12 +160,52 @@ class EditEvent extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Google Doc Link</label>
+                <label className="text-muted">Link1</label>
                 <input
                     onChange={this.handleChange("url")}
                     type="text"
                     className="form-control"
                     value={url}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link2</label>
+                <input
+                    onChange={this.handleChange("url2")}
+                    type="text"
+                    className="form-control"
+                    value={url2}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link3</label>
+                <input
+                    onChange={this.handleChange("url3")}
+                    type="text"
+                    className="form-control"
+                    value={url3}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link4</label>
+                <input
+                    onChange={this.handleChange("url4")}
+                    type="text"
+                    className="form-control"
+                    value={url4}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link5</label>
+                <input
+                    onChange={this.handleChange("url5")}
+                    type="text"
+                    className="form-control"
+                    value={url5}
                 />
             </div>
 
@@ -166,7 +225,10 @@ class EditEvent extends Component {
 
 
     render() {
-        const {id, title, time, date, body, url, redirectToEvent, error, loading} = this.state
+        const {id, title, time, date, body, url, url2,
+            url3,
+            url4,
+            url5, redirectToEvent, error, loading} = this.state
 
         if (redirectToEvent) {
             return <Redirect to={`/event/${id}`} />;
@@ -189,7 +251,7 @@ class EditEvent extends Component {
                         {/* <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/event/photo/${id}`} onError={i => (i.target.src = ``)} alt='' /> */}
 
 
-                        {this.editEventForm(url, title, time, date, body)}
+                        {this.editEventForm(url, url2, url3, url4, url5, title, time, date, body)}
             </div>
         )
     }

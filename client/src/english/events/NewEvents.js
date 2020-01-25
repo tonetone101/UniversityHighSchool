@@ -13,6 +13,10 @@ class NewEvent extends Component {
             where: "",
             body: "",
             url: "",
+            url2: "",
+            url3: "",
+            url4: "",
+            url5: "",
             photo: "",
             error: "",
             user: {},
@@ -72,6 +76,10 @@ class NewEvent extends Component {
                         where: "",
                         body: "",
                         url: "",
+                        url2: "",
+                        url3: "",
+                        url4: "",
+                        url5: "",
                         redirectToEvents: true
                     });
                 }
@@ -79,7 +87,7 @@ class NewEvent extends Component {
         }
     };
 
-    newEventForm = (title, date, time, where, body, url) => (
+    newEventForm = (title, date, time, where, body, url, url2, url3, url4, url5) => (
         <form >
             <div className="form-group">
                 <label className="text-muted">Event Photo</label>
@@ -141,12 +149,52 @@ class NewEvent extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Google Doc Link</label>
+                <label className="text-muted">Link1</label>
                 <input
                     onChange={this.handleChange("url")}
                     type="text"
                     className="form-control"
                     value={url}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link2</label>
+                <input
+                    onChange={this.handleChange("url2")}
+                    type="text"
+                    className="form-control"
+                    value={url2}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link3</label>
+                <input
+                    onChange={this.handleChange("url3")}
+                    type="text"
+                    className="form-control"
+                    value={url3}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link4</label>
+                <input
+                    onChange={this.handleChange("url4")}
+                    type="text"
+                    className="form-control"
+                    value={url4}
+                />
+            </div>
+
+            <div className="form-group">
+                <label className="text-muted">Link5</label>
+                <input
+                    onChange={this.handleChange("url5")}
+                    type="text"
+                    className="form-control"
+                    value={url5}
                 />
             </div>
 
@@ -167,6 +215,10 @@ class NewEvent extends Component {
             where,
             body,
             url,
+            url2,
+            url3,
+            url4,
+            url5,
             user,
             error,
             loading,
@@ -196,7 +248,7 @@ class NewEvent extends Component {
                             )} 
             
 
-                            {this.newEventForm(title, date, time, where, body, url)}
+                            {this.newEventForm(title, date, time, where, body, url, url2, url3, url4, url5 )}
                        
             </div>
         );
