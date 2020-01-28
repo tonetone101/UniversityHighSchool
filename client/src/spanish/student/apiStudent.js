@@ -92,3 +92,13 @@ export const singleLink = (linkId) => {
         })
         .catch(err => console.log(err));
 };
+
+export const getAdmission = () => {
+    return fetch(`/spanishadmission/5e30347ab162336c86419afa`, {
+        method: "GET",
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
