@@ -246,7 +246,7 @@ class Admission extends Component {
 
     
     render() {
-        const { spanishPage, khmerPage, englishPage} = this.state;
+        const {admission, spanishPage, khmerPage, englishPage} = this.state;
 
         if(spanishPage) {
             return <Redirect to={`/spanish/admission`} />
