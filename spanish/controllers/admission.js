@@ -98,7 +98,7 @@ exports.comment = (req, res) => {
     let comment = req.body.comment;
     comment.uploadedBy = req.body.userId;
 
-    SpanishAdmission.findByIdAndUpdate(req.body.spanishadmissionId, { $push: { comments: comment } }, { new: true})
+    SpanishAdmission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, { new: true})
         .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
@@ -115,7 +115,7 @@ exports.comment = (req, res) => {
 exports.uncomment = (req, res) => {
     let comment = req.body.comment;
 
-    SpanishAdmission.findByIdAndUpdate(req.body.spanishadmissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
+    SpanishAdmission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
         .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
