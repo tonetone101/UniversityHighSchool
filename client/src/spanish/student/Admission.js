@@ -19,7 +19,10 @@ class Admission extends Component {
             khmerPage: false
         };
     
-
+        renderUser = () => {
+            this.setState({user: isAuthenticated().user })
+        }
+        
         updateComments = comments => {
             this.setState({comments})
             console.log(comments)
