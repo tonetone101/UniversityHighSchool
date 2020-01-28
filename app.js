@@ -5,7 +5,7 @@ const cors = require('cors')
 const expressValidator = require('express-validator')
 const app = express()
 const morgan = require('morgan')
-// require('dotenv').config();
+require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -58,6 +58,8 @@ const khmerpartnersRoutes = require('./khmer/routes/partners');
 const khmeraboutRoutes = require('./khmer/routes/about');
 const khmerschoolBoardMemberRoutes = require('./khmer/routes/schoolBoardMember');
 const khmerschoolBoardMeetingRoutes = require('./khmer/routes/schoolBoardMeeting');
+const khmerapplicationRoutes = require('./khmer/routes/application');
+const khmeradmissionRoutes = require('./khmer/routes/admission');
 
 // bringing in my hmong routes
 const hmongfacultyRoutes = require('./hmong/routes/faculty');
@@ -125,6 +127,8 @@ app.use('/', khmerpartnersRoutes);
 app.use('/', khmeraboutRoutes)
 app.use('/', khmerschoolBoardMemberRoutes);
 app.use('/', khmerschoolBoardMeetingRoutes)
+app.use('/', khmerapplicationRoutes)
+app.use('/', khmeradmissionRoutes)
 
 // hmong routes
 app.use('/', hmongimageRoutes)
