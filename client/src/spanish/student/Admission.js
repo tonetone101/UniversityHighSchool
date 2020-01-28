@@ -49,9 +49,9 @@ class Admission extends Component {
         }
     
 
-    componentWillReceiveProps() {
-        this.renderUser()
-    }
+        UNSAFE_componentWillReceiveProps(props) {
+            this.renderUser()
+        }
 
     translateSpanish = () => {
         this.setState({spanishPage: true, englishPage: false, khmerPage: false})

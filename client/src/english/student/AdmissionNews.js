@@ -41,6 +41,7 @@ class AdmissionNews extends React.Component {
 
             comment(userId, token, admissionId, {text: this.state.text})
                 .then(data => {
+                    console.log(data)
                     if(data.error) {
                         console.log(data.error)
                     } else {

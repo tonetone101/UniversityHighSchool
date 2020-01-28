@@ -35,7 +35,7 @@ class AdmissionNews extends React.Component {
 
         if(this.isValid()) {
             const userId = isAuthenticated().user._id
-            const admissionId = '5e30347ab162336c86419afa'
+            const admissionId = this.props.admissionId
             const token = isAuthenticated().token
             
 
