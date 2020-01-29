@@ -64,34 +64,6 @@ class AdmissionNews extends React.Component {
          }
     }
 
-    addUrlComment = e => {
-        e.preventDefault()
-
-        if(!isAuthenticated()) {
-            this.setState({error: 'Please sign in to leave a google link'})
-            return false
-        }
-
-        if(this.isValid()) {
-            const userId = isAuthenticated().user._id
-            const admissionId = this.props.admissionId
-            const token = isAuthenticated().token
-            
-
-            comment(userId, token, admissionId, {url: this.state.url})
-                .then(data => {
-                    console.log(data)
-                    if(data.error) {
-                        console.log(data.error)
-                    } else {
-                        this.setState({url: ''})
-                        // push up data to parent component
-                        this.props.updateComments(data.comments)
-                    }
-                })
-         }
-    }
-
     deleteComment = (comment) => {
         const userId = isAuthenticated().user._id
         const admissionId = this.props.admissionId
@@ -149,8 +121,8 @@ class AdmissionNews extends React.Component {
                                        
                                             <div className='row'>
                                                     <Link onClick={() => { 
-                                            window.open(comment.url) 
-                                            }}>
+                                                        window.open(comment.url) 
+                                                        }}>
                                                         <p className='col-md-8'>
                                                             {comment.text}
                                                         </p>
