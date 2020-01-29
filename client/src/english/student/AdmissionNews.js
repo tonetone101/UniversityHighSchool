@@ -13,7 +13,13 @@ class AdmissionNews extends React.Component {
     handleChange = event => {
         this.setState({error: ''})
         this.setState({
-            text: event.target.value,
+            text: event.target.value
+        })
+    }
+
+    handleUrlChange = event => {
+        this.setState({error: ''})
+        this.setState({
             url: event.target.value
         })
     }
@@ -43,13 +49,41 @@ class AdmissionNews extends React.Component {
             const token = isAuthenticated().token
             
 
-            comment(userId, token, admissionId, {text: this.state.text, url: this.state.url})
+            comment(userId, token, admissionId, {text: this.state.text})
                 .then(data => {
                     console.log(data)
                     if(data.error) {
                         console.log(data.error)
                     } else {
-                        this.setState({text: '', url: ''})
+                        this.setState({text: ''})
+                        // push up data to parent component
+                        this.props.updateComments(data.comments)
+                    }
+                })
+         }
+    }
+
+    addUrlComment = e => {
+        e.preventDefault()
+
+        if(!isAuthenticated()) {
+            this.setState({error: 'Please sign in to leave a google link'})
+            return false
+        }
+
+        if(this.isValid()) {
+            const userId = isAuthenticated().user._id
+            const admissionId = this.props.admissionId
+            const token = isAuthenticated().token
+            
+
+            comment(userId, token, admissionId, {url: this.state.url})
+                .then(data => {
+                    console.log(data)
+                    if(data.error) {
+                        console.log(data.error)
+                    } else {
+                        this.setState({url: ''})
                         // push up data to parent component
                         this.props.updateComments(data.comments)
                     }
@@ -94,9 +128,16 @@ class AdmissionNews extends React.Component {
                                     <form onSubmit={this.addComment} >
                                         <div className='form-group col-md-6 '>
                                             <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
-                                            <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleChange} className='form-control'/>
 
                                             <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                        </div>
+                                    </form>
+
+                                    <form onSubmit={this.addUrlComment} >
+                                        <div className='form-group col-md-6 '>
+                                            <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
+
+                                            <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add google link</button>
                                         </div>
                                     </form>
                                 )
