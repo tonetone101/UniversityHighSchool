@@ -12,6 +12,7 @@ const admissionSchema = new mongoose.Schema({
     comments: [
         {
             text: String,
+            url: String,
             created: {
                 type: Date,
                 default: Date.now

@@ -1,37 +1,37 @@
-const KhmerSchoolBoardMeeting = require('../models/khmerschoolBoardMeetings');
+const PortSchoolBoardMeeting = require('../models/portschoolBoardMeetings');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
 
-exports.khmerschoolBoardMeetingById = (req, res, next, id) => {
-    KhmerSchoolBoardMeeting.findById(id)
+exports.portschoolBoardMeetingById = (req, res, next, id) => {
+    PortSchoolBoardMeeting.findById(id)
         .populate('postedBy', '_id name role')
         .select('_id title date time where body url docUrl created photo')
-        .exec((err, khmerschoolBoardMeeting) => {
-            if (err || !khmerschoolBoardMeeting) {
+        .exec((err, portschoolBoardMeeting) => {
+            if (err || !portschoolBoardMeeting) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            req.khmerschoolBoardMeeting = khmerschoolBoardMeeting;
+            req.portschoolBoardMeeting = portschoolBoardMeeting;
             next();
         });
 };
 
 
-exports.getkhmerschoolBoardMeetings = (req, res, next) => { 
-    const khmerschoolBoardMeetings = KhmerSchoolBoardMeeting.find()
+exports.getportschoolBoardMeetings = (req, res, next) => { 
+    const portschoolBoardMeetings = PortSchoolBoardMeeting.find()
         .populate("postedBy", "_id name photo role")
         .select("_id title date time where body url docUrl created photo")
         .sort({ created: -1 })
-        .then(khmerschoolBoardMeetings => {
-           res.json(khmerschoolBoardMeetings)
+        .then(portschoolBoardMeetings => {
+           res.json(portschoolBoardMeetings)
         })
         .catch(err => console.log(err));
       
 };
 
-exports.createkhmerschoolBoardMeeting = (req, res, next) => {
+exports.createportschoolBoardMeeting = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -40,16 +40,16 @@ exports.createkhmerschoolBoardMeeting = (req, res, next) => {
                 error: 'Image could not be uploaded'
             });
         };
-        let khmerschoolBoardMeeting = new KhmerSchoolBoardMeeting(fields);
+        let portschoolBoardMeeting = new PortSchoolBoardMeeting(fields);
 
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;
-        khmerschoolBoardMeeting.postedBy = req.profile;
+        portschoolBoardMeeting.postedBy = req.profile;
         if (files.photo) {
-            khmerschoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path, 'utf8');
-            khmerschoolBoardMeeting.photo.contentType = files.photo.type;
+            portschoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path, 'utf8');
+            portschoolBoardMeeting.photo.contentType = files.photo.type;
         }
-        khmerschoolBoardMeeting.save((err, result) => {
+        portschoolBoardMeeting.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
@@ -60,26 +60,26 @@ exports.createkhmerschoolBoardMeeting = (req, res, next) => {
     });
 };
 
-exports.khmerschoolBoardMeetingsByUser = (req, res) => {
-    KhmerSchoolBoardMeeting.find({ postedBy: req.profile._id })
+exports.portschoolBoardMeetingsByUser = (req, res) => {
+    PortSchoolBoardMeeting.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name')
         .select('_id title time date where url docUrl photo created')
         .sort('_created')
-        .exec((err, khmerschoolBoardMeetings) => {
+        .exec((err, portschoolBoardMeetings) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(khmerschoolBoardMeetings);
+            res.json(portschoolBoardMeetings);
         });
 };
 
 exports.isAdmin = (req, res, next) => {
-    let sameUser = req.khmerschoolBoardMeeting && req.auth && req.khmerschoolBoardMeeting.postedBy._id == req.auth._id;
-    let adminUser = req.khmerschoolBoardMeeting && req.auth && req.auth.role === 'admin';
+    let sameUser = req.portschoolBoardMeeting && req.auth && req.portschoolBoardMeeting.postedBy._id == req.auth._id;
+    let adminUser = req.portschoolBoardMeeting && req.auth && req.auth.role === 'admin';
 
-    console.log("req.khmerschoolBoardMeeting ", req.khmerschoolBoardMeeting, " req.auth ", req.auth);
+    console.log("req.portschoolBoardMeeting ", req.portschoolBoardMeeting, " req.auth ", req.auth);
     console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
 
     let isAdmin = sameUser || adminUser;
@@ -93,7 +93,7 @@ exports.isAdmin = (req, res, next) => {
 };
 
 
-exports.updatekhmerschoolBoardMeeting = (req, res, next) => {
+exports.updateportschoolBoardMeeting = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -103,29 +103,29 @@ exports.updatekhmerschoolBoardMeeting = (req, res, next) => {
             });
         }
         // save post
-        let khmerschoolBoardMeeting = req.khmerschoolBoardMeeting;
-        khmerschoolBoardMeeting = _.extend(khmerschoolBoardMeeting, fields);
-        khmerschoolBoardMeeting.updated = Date.now();
+        let portschoolBoardMeeting = req.portschoolBoardMeeting;
+        portschoolBoardMeeting = _.extend(portschoolBoardMeeting, fields);
+        portschoolBoardMeeting.updated = Date.now();
 
         if (files.photo) {
-            khmerschoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path);
-            khmerschoolBoardMeeting.photo.contentType = files.photo.type;
+            portschoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path);
+            portschoolBoardMeeting.photo.contentType = files.photo.type;
         }
 
-        khmerschoolBoardMeeting.save((err, result) => {
+        portschoolBoardMeeting.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(khmerschoolBoardMeeting);
+            res.json(portschoolBoardMeeting);
         });
     });
 };
 
-exports.deletekhmerschoolBoardMeeting = (req, res) => {
-    let khmerschoolBoardMeeting = req.khmerschoolBoardMeeting;
-    khmerschoolBoardMeeting.remove((err, khmerschoolBoardMeeting) => {
+exports.deleteportschoolBoardMeeting = (req, res) => {
+    let portschoolBoardMeeting = req.portschoolBoardMeeting;
+    portschoolBoardMeeting.remove((err, portschoolBoardMeeting) => {
         if (err) {
             return res.status(400).json({
                 error: err
@@ -138,12 +138,12 @@ exports.deletekhmerschoolBoardMeeting = (req, res) => {
 };
 
 exports.photo = (req, res, next) => {
-    res.set('Content-Type', req.khmerschoolBoardMeeting.photo.contentType);
-    return res.send(req.khmerschoolBoardMeeting.photo.data);
+    res.set('Content-Type', req.portschoolBoardMeeting.photo.contentType);
+    return res.send(req.portschoolBoardMeeting.photo.data);
 };
 
-exports.singlekhmerschoolBoardMeeting = (req, res) => {
-    return res.json(req.khmerschoolBoardMeeting);
+exports.singleportschoolBoardMeeting = (req, res) => {
+    return res.json(req.portschoolBoardMeeting);
 };
 
 

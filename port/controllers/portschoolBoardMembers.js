@@ -1,37 +1,37 @@
-const khmerSchoolBoardMember = require('../models/khmerschoolBoardMembers');
+const PortSchoolBoardMember = require('../models/portschoolBoardMembers');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
 
-exports.getkhmerschoolBoardMember = (req, res, next) => {
+exports.getportschoolBoardMember = (req, res, next) => {
    
-    const khmerschoolBoardMember = KhmerSchoolBoardMember.find()
+    const portschoolBoardMember = PortSchoolBoardMember.find()
         // .populate("postedBy", "_id name photo role ")
         .select("_id title name about photo created")
         .sort({ created: -1 })
-        .then(khmerschoolBoardMember => {
-           res.json(khmerschoolBoardMember)
+        .then(portschoolBoardMember => {
+           res.json(portschoolBoardMember)
         })
         .catch(err => console.log(err));
       
 };
 
-exports.khmerschoolBoardMemberById = (req, res, next, id) => {
-    KhmerSchoolBoardMember.findById(id)
+exports.portschoolBoardMemberById = (req, res, next, id) => {
+    PortSchoolBoardMember.findById(id)
         .populate('postedBy', '_id name role')
         .select('_id title name about created photo')
-        .exec((err, khmerschoolBoardMember) => {
-            if (err || !khmerschoolBoardMember) {
+        .exec((err, portschoolBoardMember) => {
+            if (err || !portschoolBoardMember) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            req.khmerschoolBoardMember = khmerschoolBoardMember;
+            req.portschoolBoardMember = portschoolBoardMember;
             next();
         });
 };
 
-exports.createkhmerschoolBoardMember = (req, res, next) => {
+exports.createportschoolBoardMember = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -40,22 +40,22 @@ exports.createkhmerschoolBoardMember = (req, res, next) => {
                 error: 'Image could not be uploaded'
             });
         };
-        let khmerschoolBoardMember = new KhmerSchoolBoardMember(fields);
+        let portschoolBoardMember = new PortSchoolBoardMember(fields);
     
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;
-        khmerschoolBoardMember.postedBy = req.profile;
+        portschoolBoardMember.postedBy = req.profile;
         if (files.photo) {
-            khmerschoolBoardMember.photo.data = fs.readFileSync(files.photo.path);
-            khmerschoolBoardMember.photo.contentType = files.photo.type;
+            portschoolBoardMember.photo.data = fs.readFileSync(files.photo.path);
+            portschoolBoardMember.photo.contentType = files.photo.type;
         }
-        khmerschoolBoardMember.save((err, result) => {
+        portschoolBoardMember.save((err, result) => {
             res.json(result);
         });
     });
 };
 
-exports.updatekhmerschoolBoardMember = (req, res, next) => {
+exports.updateportschoolBoardMember = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -65,54 +65,54 @@ exports.updatekhmerschoolBoardMember = (req, res, next) => {
             });
         }
         // save post
-        let khmerschoolBoardMember = req.khmerschoolBoardMember;
-        khmerschoolBoardMember = _.extend(khmerschoolBoardMember, fields);
-        khmerschoolBoardMember.updated = Date.now();
+        let portschoolBoardMember = req.portschoolBoardMember;
+        portschoolBoardMember = _.extend(portschoolBoardMember, fields);
+        portschoolBoardMember.updated = Date.now();
 
         if (files.photo) {
-            khmerschoolBoardMember.photo.data = fs.readFileSync(files.photo.path);
-            khmerschoolBoardMember.photo.contentType = files.photo.type;
+            portschoolBoardMember.photo.data = fs.readFileSync(files.photo.path);
+            portschoolBoardMember.photo.contentType = files.photo.type;
         }
 
-        khmerschoolBoardMember.save((err, result) => {
+        portschoolBoardMember.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(khmerschoolBoardMember);
+            res.json(portschoolBoardMember);
         });
     });
 };
 
-exports.deletekhmerschoolBoardMember = (req, res) => {
-    let khmerschoolBoardMember = req.khmerschoolBoardMember;
-    khmerschoolBoardMember.remove((err, khmerschoolBoardMember) => {
+exports.deleteportschoolBoardMember = (req, res) => {
+    let portschoolBoardMember = req.portschoolBoardMember;
+    portschoolBoardMember.remove((err, portschoolBoardMember) => {
         if (err) {
             return res.status(400).json({
                 error: err
             });
         }
         res.json({
-            message: 'khmerschoolBoard member deleted successfully'
+            message: 'portschoolBoard member deleted successfully'
         });
     });
 };
 
 exports.photo = (req, res, next) => {
-    res.set('Content-Type', req.khmerschoolBoardMember.photo.contentType);
-    return res.send(req.khmerschoolBoardMember.photo.data);
+    res.set('Content-Type', req.portschoolBoardMember.photo.contentType);
+    return res.send(req.portschoolBoardMember.photo.data);
 };
 
-exports.singlekhmerschoolBoardMember = (req, res) => {
-    return res.json(req.khmerschoolBoardMember);
+exports.singleportschoolBoardMember = (req, res) => {
+    return res.json(req.portschoolBoardMember);
 };
 
 exports.isAdmin = (req, res, next) => {
-    let sameUser = req.khmerschoolBoardMember && req.auth && req.khmerschoolBoardMember.postedBy._id == req.auth._id;
-    let adminUser = req.khmerschoolBoardMember && req.auth && req.auth.role === 'admin';
+    let sameUser = req.portschoolBoardMember && req.auth && req.portschoolBoardMember.postedBy._id == req.auth._id;
+    let adminUser = req.portschoolBoardMember && req.auth && req.auth.role === 'admin';
 
-    console.log("req.khmerschoolBoardMember ", req.khmerschoolBoardMember, " req.auth ", req.auth);
+    console.log("req.portschoolBoardMember ", req.portschoolBoardMember, " req.auth ", req.auth);
     console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
 
     let isAdmin = sameUser || adminUser;
