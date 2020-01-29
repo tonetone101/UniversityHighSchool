@@ -125,21 +125,23 @@ class AdmissionNews extends React.Component {
             <div>
                         {
                                 isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                    <form onSubmit={this.addComment} >
-                                        <div className='form-group col-md-6 '>
-                                            <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                    <div>
+                                        <form onSubmit={this.addComment} >
+                                            <div className='form-group col-md-6 '>
+                                                <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
 
-                                            <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
-                                        </div>
-                                    </form>
+                                                <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                            </div>
+                                        </form>
 
-                                    <form onSubmit={this.addUrlComment} >
-                                        <div className='form-group col-md-6 '>
-                                            <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
+                                        <form onSubmit={this.addUrlComment} >
+                                            <div className='form-group col-md-6 mt-5'>
+                                                <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
 
-                                            <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add google link</button>
-                                        </div>
-                                    </form>
+                                                <button className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add google link</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 )
                             }
                            
