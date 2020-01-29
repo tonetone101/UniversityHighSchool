@@ -126,11 +126,11 @@ class AdmissionNews extends React.Component {
                         {
                                 isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                                     <div>
-                                        <form onSubmit={this.addComment} >
+                                        <form onSubmit={this.addComment} onSubmit={this.addUrlComment}>
                                             <div className='form-group col-md-6 '>
                                                 <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
                                                 <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
-                                                <button onClick={this.addUrlComment} className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                                <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
                                             </div>
                                         </form>
                                     </div>
