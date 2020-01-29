@@ -49,13 +49,14 @@ class AdmissionNews extends React.Component {
             const token = isAuthenticated().token
             
 
-            comment(userId, token, admissionId, {text: this.state.text})
+            comment(userId, token, admissionId, {text: this.state.text, url: this.state.url})
                 .then(data => {
                     console.log(data)
                     if(data.error) {
                         console.log(data.error)
                     } else {
                         this.setState({text: ''})
+                        this.setState({url: ''})
                         // push up data to parent component
                         this.props.updateComments(data.comments)
                     }
@@ -126,7 +127,7 @@ class AdmissionNews extends React.Component {
                         {
                                 isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                                     <div>
-                                        <form onSubmit={this.addComment} onSubmit={this.addUrlComment}>
+                                        <form onSubmit={this.addComment}>
                                             <div className='form-group col-md-6 '>
                                                 <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
                                                 <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
