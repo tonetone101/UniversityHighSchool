@@ -261,6 +261,13 @@ const MainRouter = () => (
             <Route exact path="/khmer/partners/:partnersId" component={SinglekhmerPartners}></Route>
             <Route exact path="/khmer/about" component={KhmerAbout}></Route>
             <Route exact path="/khmer/edit/about/:aboutId" component={EditkhmerAbout}></Route>
+            <Route exact path="/khmer/schoolBoardMeeting" component={KhmerSchoolBoardMeeting}></Route>
+            <Route exact path="/khmer/newschoolBoardMeeting" component={NewKhmerBoardMeeting}></Route>
+            <Route exact path="/khmer/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleKhmerBoardMeeting}></Route>
+            
+            <Route exact path="/khmer/schoolBoardMember" component={KhmerSchoolBoardMember}></Route>
+            <Route exact path="/khmer/new/schoolBoardMember" component={NewKhmerSchoolBoardMember}></Route>
+            <Route exact path="/khmer/schoolBoardMember/:schoolBoardMemberId" component={SingleKhmerSchoolBoardMember}></Route>
 
         </Switch>
         
