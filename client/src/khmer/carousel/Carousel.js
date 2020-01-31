@@ -26,7 +26,7 @@ class Carol extends Component {
                 console.log(data.error)
             } else {
                 this.setState({carousel: data.find(d => {
-                    if (d._id == "5e10b34a180f7c94c6109860") {
+                    if (d._id == "5e342c928f2e938d7bb04109") {
                         return d
                     }
                 }) 
@@ -55,12 +55,12 @@ class Carol extends Component {
 
     renderTopHeader = () => {
         return (
-            <div>
+            <div style={{border: 'solid black 2px', width: '100%'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="អ្នកបកប្រែ"  >
+                    <DropdownButton id="dropdown-basic-button" title="translator"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
@@ -71,18 +71,18 @@ class Carol extends Component {
 
                                 <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
                             
-                            </DropdownButton>
+                    </DropdownButton>
                         
                         {
-                            !isAuthenticated() && (
+                            !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'white'}}>
                                     ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/khmer/signup' >
+                                    <Link style={{color: 'white'}} to='/khmer/signup' >
                                     ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
@@ -91,16 +91,28 @@ class Carol extends Component {
                         }
                         
                         {
-                            isAuthenticated() && isAuthenticated().user && (
+                            this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
                                         this.props.history.push('/khmer')
                                     })}>
-                                      ផ្តាច់
+                                        ផ្តាច់
                                     </a>
                                 </Nav.Link>
                             )
                         }
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/khmer/application' >
+                                        ពាក្យសុំ
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
+
+                        
                       
                     </Nav>
                 </Navbar.Collapse>
@@ -108,6 +120,7 @@ class Carol extends Component {
             </div>
         )
     }
+
 
     renderMenu = () => {
         return (
@@ -121,6 +134,10 @@ class Carol extends Component {
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
 
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/about'>អំពី​ពួក​យើង</Link></Nav.Link>
+                        </div>
+
                        <div id='link'>                
                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
@@ -129,6 +146,10 @@ class Carol extends Component {
                         
                         <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/schoolBoardMeeting'>ក្រុមប្រឹក្សាភិបាលសាលា</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
@@ -172,59 +193,103 @@ class Carol extends Component {
         : ''
 
 
-        return (
-            <div >
-                
-           
-                <Carousel>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/logo.png")}
-                        alt="First slide"
-                        />
-                        <Carousel.Caption>
-                       
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsProfile.png")}
-                        alt="Second slide"
-                        />
+        return (  
+             <div >
+             <Carousel style={{background: 'black'}}>
+                 <Carousel.Item style={{background: 'black'}}>
+                     <img
+                     style={{ height: "450px"}}
+                     // className="d-block w-100"
+                     src={require("../../images/UHS_research.JPG")}
+                     alt="First slide"
+                     />
+                     <Carousel.Caption>
+                    
+                     </Carousel.Caption>
+                 </Carousel.Item>
+                 <Carousel.Item style={{background: 'black'}}>
+                     <img
+                     style={{ height: "450px"}}
+                     // className="d-block w-100"
+                     src={require("../../images/uhsStudents.JPG")}
+                     alt="Second slide"
+                     />
 
-                        <Carousel.Caption>
-                     
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsMission.png")}
-                        alt="Third slide"
-                        />
+                     <Carousel.Caption>
+                  
+                     </Carousel.Caption>
+                 </Carousel.Item>
+                 <Carousel.Item style={{background: 'black'}}>
+                     <img
+                     style={{ height: "450px"}}
+                     // className="d-block w-100"
+                     src={require("../../images/uhsProfile.png")}
+                     alt="Third slide"
+                     />
 
-                        <Carousel.Caption>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                        // style={{ height: "350px", width: "300px" }}
-                        className="d-block w-100"
-                        src={require("../../images/uhsVision.png")}
-                        alt="Third slide"
-                        />
+                     <Carousel.Caption>
+                     </Carousel.Caption>
+                 </Carousel.Item>
+             </Carousel>   
 
-                        <Carousel.Caption>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>   
-            </div>      
+             
+         </div>       
         );
+    }
+
+    renderAnnouncements = (carousel) => {
+        return (
+            <div className='container mt-4' style={{color: 'black'}}>
+                <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>សេចក្តីប្រកាស</h4>
+                <h5>
+                    <Link onClick={() => { 
+                            window.open(carousel.doc1) 
+                            }} >
+                        {!carousel.doc1 ? ''  : carousel.linkTitle1 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link1}`) 
+                            }} >
+                    {!carousel.link1 ? ''  : carousel.linkTitle1 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption4}
+                    </div>
+                </h5>
+                
+                <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc2) 
+                            }} >
+                        {!carousel.doc2 ? ''  : carousel.linkTitle2 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link2}`) 
+                            }} >
+                    {!carousel.link2 ? ''  : carousel.linkTitle2 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption5}
+                    </div>
+                </h5>
+                
+                <h5>
+                <Link onClick={() => { 
+                            window.open(carousel.doc3) 
+                            }} >
+                        {!carousel.doc3 ? ''  : carousel.linkTitle3 }
+                    </Link>
+                    <Link onClick={() => { 
+                            window.open(`https://${carousel.link3}`) 
+                            }} >
+                    {!carousel.link3 ? ''  : carousel.linkTitle3 }
+                    </Link>
+                    <div className='ml-4'>
+                        {carousel.caption6}
+                    </div>
+                </h5>
+            </div>
+        )
     }
 
     render() {
@@ -262,46 +327,72 @@ class Carol extends Component {
                                
                             )
                         } 
-                    <div  id='stats' style={{height: '100px', borderBottom: 'solid black 1px'}}>
-                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'white'}} >
+
+  
+<div  id='stats' style={{height: '100px', }} className='container mt-3'>
+                            <div style={{borderBottom: 'solid black 1px'}}>
+                                <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
                                     <h4  >{carousel.caption1}</h4>
                                 </Animated>
-                                <div className='container'>
-                                        <h5 style={{color:'white', marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
-                                       
-                                </div>                          
-                    </div>
-                    
-                </div>
-                <div>                       
-                    <div className='text-center' >
-                        {
-                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                <Link to={`/khmer/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>ធ្វើបច្ចុប្បន្នភាព</Link>
-                            )
-                        }
-                    </div>
-                                        
-                        <div className='text-center'>
-                        <img 
-                                            style={{ height: "300px", width: "auto", border: 'solid blue 1px' }}
-                                            className="mt-4 "
-                                            src={require("../../images/uhsStat.png")}
-                                            alt="Second slide" 
-                                            
-                                        />   
-                        </div>
-            
-                        <footer >
+                            </div>
                             
-                            <div className="container row ml-5">
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.missionStatement}</h5>
+                                
+                            </div>    
+                            
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption2}</h5>
+                                
+                            </div>         
+
+                            <div className='container'>
+                                    <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption3}</h5>
+                                
+                            </div>              
+                        </div>
+
+                        <div className='text-center' >
+                            {
+                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in Khmer</Link>
+                                )
+                            }
+                        </div>
+
+                        <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
+                           
+                           <img 
+                               style={{ height: "300px", width: "200px" }}
+                               className="mt-4 col-sm-6"
+                               src={require("../../images/uhsMission.png")}
+                               alt="Second slide" 
+                               
+                           />   
+                           <img 
+                               style={{ height: "300px", width: "200px" }}
+                               className="mt-4 col-sm-6"
+                               src={require("../../images/uhsVision.png")}
+                               alt="Second slide" 
+                               
+                           />  
+                          
+                       </div>
+                       
+                       <div>
+                           {this.renderAnnouncements(carousel)}
+                       </div>
+
+            
+                       <footer className='mt-5'>
+                            <div class="container row ml-5">
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
-                                        <p>123 Empire street | Providence, RI 02910</p>
-                                        <p>លេខទូរស័ព្ទ: (401) 332- 2233 | អ៊ីមែល: Somaly@uhSchool.org</p>
+                                        <p>1 Empire Plaza | Providence, RI 02903</p>
+                                        <p>ទូរស័ព្ទ: (401) 254- 4829 | Sprak-martins@uhschool.org</p>
                                         <h5 className="text-capitalize">
-                                        &copy;2019 រក្សាសិទ្ធិ៖ ឌិគ្រីប
+                                        &copy; {new Date().getFullYear()} រក្សាសិទ្ធិ : <a href="/">www.uhSchool.org </a>
                                         </h5> 
                                      </div>
                                 </div>
