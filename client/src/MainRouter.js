@@ -126,6 +126,9 @@ import SinglekhmerPartners from './khmer/partners/SinglePartner'
 import EditkhmerPartners from './khmer/partners/EditPartners'
 import KhmerAbout from './khmer/about/About'
 import EditkhmerAbout from './khmer/about/EditAbout'
+import SingleKhmerBoardMeeting from './khmer/schoolBoard/singleMain'
+import SingleKhmerSchoolBoardMember from './khmer/schoolBoard/SingleMembers'
+
 
 const MainRouter = () => (
     <div >
