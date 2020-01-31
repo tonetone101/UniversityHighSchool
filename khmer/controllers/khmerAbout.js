@@ -1,4 +1,4 @@
-const khmerAbout = require('../models/khmerAbout');
+const KhmerAbout = require('../models/khmerAbout');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');

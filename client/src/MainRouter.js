@@ -124,6 +124,7 @@ import NewkhmerPartners from './khmer/partners/NewPartners'
 import khmerPartners from './khmer/partners/Partners'
 import SinglekhmerPartners from './khmer/partners/SinglePartner'
 import EditkhmerPartners from './khmer/partners/EditPartners'
+import KhmerAbout from './khmer/about/About'
 
 const MainRouter = () => (
     <div >
@@ -257,6 +258,8 @@ const MainRouter = () => (
             <Route exact path="/khmer/partner" component={SinglekhmerPartners}></Route>
             <Route exact path="/khmer/edit/partner/:partnersId" component={EditkhmerPartners}></Route>
             <Route exact path="/khmer/partners/:partnersId" component={SinglekhmerPartners}></Route>
+            <Route exact path="/khmer/about" component={KhmerAbout}></Route>
+
         </Switch>
         
     </div>
