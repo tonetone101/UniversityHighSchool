@@ -60,7 +60,7 @@ class Partners extends Component {
 
     renderTopHeader = () => {
         return (
-            <div>
+            <div style={{border: 'solid black 2px', width: '100%'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -76,19 +76,19 @@ class Partners extends Component {
 
                                 <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
                             
-                            </DropdownButton>
+                    </DropdownButton>
                         
                         {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
-                                    ចូល
+                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'white'}}>
+                                    ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/khmer/signup' >
-                                    ចុះ​ឈ្មោះ
+                                    <Link style={{color: 'white'}} to='/khmer/signup' >
+                                    ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                </nav>
@@ -98,14 +98,26 @@ class Partners extends Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
                                         this.props.history.push('/khmer')
                                     })}>
-                                        ចាកចេញ
+                                        ផ្តាច់
                                     </a>
                                 </Nav.Link>
                             )
                         }
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/khmer/application' >
+                                        ពាក្យសុំ
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
+
+                        
                       
                     </Nav>
                 </Navbar.Collapse>
@@ -113,6 +125,7 @@ class Partners extends Component {
             </div>
         )
     }
+
 
     renderMenu = () => {
         return (
@@ -126,6 +139,10 @@ class Partners extends Component {
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
 
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/about'>អំពី​ពួក​យើង</Link></Nav.Link>
+                        </div>
+
                        <div id='link'>                
                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
@@ -134,6 +151,10 @@ class Partners extends Component {
                         
                         <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/schoolBoardMeeting'>ក្រុមប្រឹក្សាភិបាលសាលា</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
@@ -154,6 +175,7 @@ class Partners extends Component {
             </div>
         )
     }
+    
     renderPartners = partners => {
 
         return (

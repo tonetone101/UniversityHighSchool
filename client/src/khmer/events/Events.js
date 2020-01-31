@@ -62,12 +62,12 @@ class Events extends Component {
  
     renderTopHeader = () => {
         return (
-            <div>
+            <div style={{border: 'solid black 2px', width: '100%'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="អ្នកបកប្រែ"  >
+                    <DropdownButton id="dropdown-basic-button" title="translator"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
@@ -78,18 +78,18 @@ class Events extends Component {
 
                                 <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
                             
-                            </DropdownButton>
+                    </DropdownButton>
                         
                         {
-                            !isAuthenticated() && (
+                            !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'black'}}>
+                                    <Link className='ml-3' to='/khmer/signin' style={{color: 'white'}}>
                                     ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/khmer/signup' >
+                                    <Link style={{color: 'white'}} to='/khmer/signup' >
                                     ចុះឈ្មោះ
                                     </Link>
                                 </Nav.Link>
@@ -98,16 +98,28 @@ class Events extends Component {
                         }
                         
                         {
-                            isAuthenticated() && isAuthenticated().user && (
+                            this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
                                         this.props.history.push('/khmer')
                                     })}>
-                                      ផ្តាច់
+                                        ផ្តាច់
                                     </a>
                                 </Nav.Link>
                             )
                         }
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/khmer/application' >
+                                        ពាក្យសុំ
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
+
+                        
                       
                     </Nav>
                 </Navbar.Collapse>
@@ -115,6 +127,7 @@ class Events extends Component {
             </div>
         )
     }
+
 
     renderMenu = () => {
         return (
@@ -128,6 +141,10 @@ class Events extends Component {
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
 
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/about'>អំពី​ពួក​យើង</Link></Nav.Link>
+                        </div>
+
                        <div id='link'>                
                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
@@ -136,6 +153,10 @@ class Events extends Component {
                         
                         <div id='link'>                        
                             <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
+                        </div>
+
+                        <div id='link'>                        
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/schoolBoardMeeting'>ក្រុមប្រឹក្សាភិបាលសាលា</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
