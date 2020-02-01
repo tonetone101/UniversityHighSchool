@@ -1,4 +1,4 @@
-const portCarousel = require('../models/portCarousel');
+const PortCarousel = require('../models/portCarousel');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
