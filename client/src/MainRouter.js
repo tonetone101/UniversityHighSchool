@@ -282,7 +282,7 @@ const MainRouter = () => (
             <Route exact path="/khmer/new/schoolBoardMember" component={NewKhmerSchoolBoardMember}></Route>
             <Route exact path="/khmer/schoolBoardMember/:schoolBoardMemberId" component={SingleKhmerSchoolBoardMember}></Route>
             <Route exact path="/khmer/new/application" component={KhmerNewApplication}></Route>
-            <Route exact path="/application" component={KhmerApplication}></Route>
+            <Route exact path="/khmer/application" component={KhmerApplication}></Route>
             <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
         </Switch>
         
