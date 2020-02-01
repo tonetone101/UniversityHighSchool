@@ -136,6 +136,10 @@ import KhmerSchoolBoardMember from './khmer/schoolBoard/Members'
 import NewKhmerBoardMeeting from './khmer/schoolBoard/NewBoardMeeting'
 import NewKhmerSchoolBoardMember from './khmer/schoolBoard/NewMembers'
 
+import KhmerApplication from './khmer/application/Application'
+import KhmerNewApplication from './khmer/application/NewApplication'
+import KhmerSingleApplication from './khmer/application/SingleApplication'
+
 const MainRouter = () => (
     <div >
         {/* <TopHeader/> */}
@@ -277,7 +281,9 @@ const MainRouter = () => (
             <Route exact path="/khmer/schoolBoardMember" component={KhmerSchoolBoardMember}></Route>
             <Route exact path="/khmer/new/schoolBoardMember" component={NewKhmerSchoolBoardMember}></Route>
             <Route exact path="/khmer/schoolBoardMember/:schoolBoardMemberId" component={SingleKhmerSchoolBoardMember}></Route>
-
+            <Route exact path="/khmer/new/application" component={KhmerNewApplication}></Route>
+            <Route exact path="/application" component={KhmerApplication}></Route>
+            <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
         </Switch>
         
     </div>

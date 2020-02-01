@@ -92,3 +92,45 @@ export const singleLink = (linkId) => {
         })
         .catch(err => console.log(err));
 };
+
+export const comment = (userId, token, admissionId, comment) => {
+    return fetch(`/khmeradmission/comment`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({userId, admissionId, comment})
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const uncomment = (userId, token, admissionId, comment) => {
+    return fetch(`/khmeradmission/uncomment`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({userId, admissionId, comment})
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const getAdmission = () => {
+    return fetch(`/khmeradmission/5e35ef1dfd3edf98ae409203`, {
+        method: "GET",
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

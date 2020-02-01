@@ -1,56 +1,71 @@
 import React, { Component } from "react";
-import { isAuthenticated, signout } from "../../auth";
-import { getAdmission } from "./apiStudent";
-import { Redirect, Link } from "react-router-dom";
-import AdmissionNews from './AdmissionNews'
-import { Navbar, Nav, ListGroup, Dropdown, DropdownButton} from 'react-bootstrap';
+import { list, read } from "./apiApplication";
+import { Link, Redirect } from "react-router-dom";
+import {isAuthenticated, signout} from '../../auth'
+import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
 
-class Admission extends Component {
-        state = {
-            error: "",
-            user: {},
-            admission: '',
-            fileSize: 0,
-            comments: [],
-            loading: false,
-            redirectToProfile: false,
+class Application extends Component {
+    constructor() {
+        super();
+        this.state = {
+            user: '',
+            applications: [],
+            spanishPage: false,
+            englishPage: false,
+            term: '',
+            searched: false,
+            searchedApplication: '',
+            error: '',
+            searching: false,
             spanishPage: false,
             englishPage: false,
             khmerPage: false
         };
-
+    }
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
     }
 
-    updateComments = comments => {
-        this.setState({comments})
-        console.log(comments)
-    }
+    loadApplications = page => {
+        list(page).then(data => {
+            if (data.error) {
+                console.log(data.error);
+            } else {
+                //console.log(data)
+                this.setState({ applications: data });
+                
+
+            }
+        });
+    };
+
 
     componentDidMount() {
+        this.loadApplications(this.state.applications)
         this.renderUser()
-        const admissionId = this.props.match.params.admissionId
-        getAdmission(admissionId).then(data => {
-            if (data.error) {
-                console.log(data.error)
-            } else {
-                this.setState({
-                    admission: data,
-                    comments: data.comments,
-                    loading: true
-
-              }, () => {
-                    console.log(this.state.comments)
-              })
-              
-            }
-        }) 
     }
 
-    UNSAFE_componentWillReceiveProps(props) {
+
+    componentWillReceiveProps() {
         this.renderUser()
+    }
+
+    handleChange = event => {
+        this.setState({error: ''})
+        this.setState({term: event.target.value})
+    }
+
+    search = (e) => {
+        e.preventDefault()
+        this.state.applications.map(application => {
+            if (application.name === this.state.term) {
+                this.setState({searched: true, searchedApplication: application})
+            } else {
+                this.setState({searching: true, error: 'Application not found'})
+            }
+        })
+
     }
 
     translateSpanish = () => {
@@ -182,86 +197,58 @@ class Admission extends Component {
             </div>
         )
     }
-    renderContact = () => {
+
+    renderApplications = applications => {
+
         return (
-            <div>
-                <p style={{fontWeight: 'bold'}}>ទំនាក់ទំនង</p>
-                <p> ទូរស័ព្ទ: (401) 254- 4829</p>
-                <p> អ៊ីមែល: admissions@uhschool.org</p>
-                <p>1 Empire Plaza | Providence, RI 02903</p>
+            <div  id='event' className='row container'>
+                {applications.map((application, i) => {
+                    const posterId = application.postedBy
+                        ? `/user/${application.postedBy._id}`
+                        : "";
+                    const posterName = application.postedBy
+                        ? application.postedBy.name
+                        : " Unknown";
+
+                        const photoUrl = application.postedBy
+                        ? `/user/photo/${
+                            event.postedBy._id
+                          }?${new Date().getTime()}`
+                        : ''
+
+                        const applicationFile = application._id
+                        ? `/application/photo/${
+                            application._id
+                          }?${new Date().getTime()}`
+                        : ''
+                        
+                    return (
+
+                        <div  className='col-md-4 mb-5' key={i}>
+                            <Link
+                                to={`/application/${application._id}`}
+                                className="mb-4 ml-5"
+                                >
+                                {application.name}
+                            </Link>
+                        </div>
+                    );
+                })}
             </div>
-        )
-    }
+        );
+    };
 
-    renderRequirements = (admission) => {
-        const {comments} = this.state
-        return (
-            <div>
-                <h3>{admission.title}</h3>
-                <div className='mt-5'>
-                    {this.state.loading &&
-                        <AdmissionNews admissionId={admission._id} comments={comments.reverse()} updateComments={this.updateComments} />
-                    }
-                </div>
-            </div>
-        )
-    }
-
-    renderAppLinks = () => {
-        return (
-            <div>
-                <h4 style={{fontWeight: 'bold'}}>
-                ការចុះឈ្មោះ
-                </h4>
-                 <ListGroup variant="flush">
-                        <ListGroup.Item> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
-                                            }} >
-                                មើលពាក្យសុំជាភាសាអង់គ្លេស
-                            </Link>
-                        </ListGroup.Item>
-
-                        <ListGroup.Item> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
-                                            }} >
-                                មើលពាក្យសុំជាភាសាអេស្ប៉ាញ
-                            </Link>
-                        </ListGroup.Item>
-
-                        <ListGroup.Item> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
-                                            }} >
-                                មើលពាក្យសុំព័រទុយហ្កាល់
-                            </Link>
-                        </ListGroup.Item>
-
-                        <ListGroup.Item>
-                            <Link to='/khmer/new/application'>
-                                បញ្ជូនពាក្យសុំនិស្សិត
-                            </Link>
-                        </ListGroup.Item>
-                    </ListGroup>
-            </div>
-        )
-    }
-    
     render() {
-        const {
-            admission, comments, spanishPage, englishPage, khmerPage
-        } = this.state;
-
-        console.log(comments.text)
-
+        const { user, applications, searched, spanishPage, khmerPage, englishPage, searchedApplication, error } = this.state;
         if(spanishPage) {
-            return <Redirect to={`/spanish/admission`} />
+            return <Redirect to={`/spanish/application`} />
          } else if (englishPage) {
-             return <Redirect to={'/admission'} />
+             return <Redirect to={'/application'} />
          } else if (khmerPage) {
-            return <Redirect to={'/khmer/admission'} />
+            return <Redirect to={'/khmer/application'} />
         } 
+
+        if (searched) { return <Redirect to={`application/${searchedApplication._id}`}/> } 
 
         return (
             <div>
@@ -273,35 +260,30 @@ class Admission extends Component {
                         />
                     </div>
                 {this.renderMenu()}
-                <div className='container mt-3' >
-                    <p className='text-center'> 
-                        សូមស្វាគមន៍ចំពោះផ្នែកចូលរៀនរបស់យើង។
-                        នៅទីនេះអ្នកអាចមើលនិងទាញយកច្បាប់ចម្លងនៃពាក្យសុំរបស់យើងក៏ដូចជាបញ្ជូនសំណុំបែបបទដែលបានបំពេញជូនយើង។
-                    </p>
-                    
-                    <div className='row mt-5'>
-                        <div className='col-md-3 mt-4'>
-                                {this.renderAppLinks()}
-                            
-                            <div className='mt-4'>
-                                {this.renderContact()}
-                            </div>  
-                        </div>
+                <div className="container">
+                    <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
+                        <h2 className="col-md-6">
+                            Applications
+                            {!applications.length ? "Loading..." : ""}
+                        </h2>
+                        <br/>
 
-                            
-
-                        <div className='col-md-6'>
-                            {this.renderRequirements(admission)}
-                           
-                        </div>
-
-                                     
-                        
+                        <form className="col-md-6 text-center" onSubmit={this.search}>
+                            <input placeholder='by application name' type='text' value={this.state.term} onChange={this.handleChange} />
+                            <Button onClick={this.search}>Search</Button>
+                            {"  "}{error}
+                        </form>
+                        <hr/>
                     </div>
+                
+                    <div>               
+                        {this.renderApplications(applications)}
+                    </div>   
+                
                 </div>
             </div>
         );
     }
 }
 
-export default Admission;
+export default Application;
