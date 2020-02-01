@@ -1,11 +1,11 @@
-const KhmerPartners = require('../models/khmerPartners');
+const PortPartners = require('../models/portPartners');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
 
 exports.getPartners = (req, res, next) => {
    
-    const partners = KhmerPartners.find()
+    const partners = PortPartners.find()
         // .populate("postedBy", "_id name photo role ")
         .select("_id name about photo created")
         .sort({ created: -1 })
@@ -17,7 +17,7 @@ exports.getPartners = (req, res, next) => {
 };
 
 exports.partnersById = (req, res, next, id) => {
-    KhmerPartners.findById(id)
+    PortPartners.findById(id)
         // .populate("postedBy", "_id name photo role ")
         .select("_id name about photo created")
         .exec((err, partners) => {
@@ -40,7 +40,7 @@ exports.createPartners = (req, res, next) => {
                 error: 'Image could not be uploaded'
             });
         };
-        let partners = new KhmerPartners(fields);
+        let partners = new PortPartners(fields);
     
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;

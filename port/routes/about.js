@@ -1,21 +1,21 @@
 const express = require('express')
-const {createkhmerabout, getkhmerabouts, khmeraboutsByUser, photo, khmeraboutById, singlekhmerabout, updatekhmerabout, deletekhmerabout, isAdmin} = require('../controllers/khmerAbout')
-// const {createkhmeraboutValidator} = require('../../validator')
+const {createportabout, getportabouts, portaboutsByUser, photo, portaboutById, singleportabout, updateportabout, deleteportabout, isAdmin} = require('../controllers/portAbout')
+// const {createportaboutValidator} = require('../../validator')
 // const { requireSignin } = require('../controllers/auth');
 const { userById } = require('../../general/controllers/user');
 
 
 router = express.Router()
 
-router.get('/khmerabout', getkhmerabouts)
-router.get('/khmerabout/:khmeraboutId', singlekhmerabout)
-router.post('/khmerabout/new', createkhmerabout )
-router.put('/khmerabout/edit/:khmeraboutId', updatekhmerabout)
-router.delete('/khmerabout/delete/:khmeraboutId', deletekhmerabout);
+router.get('/portabout', getportabouts)
+router.get('/portabout/:portaboutId', singleportabout)
+router.post('/portabout/new', createportabout )
+router.put('/portabout/edit/:portaboutId', updateportabout)
+router.delete('/portabout/delete/:portaboutId', deleteportabout);
 
-router.get('/khmerabout/photo/:khmeraboutId', photo);
+router.get('/portabout/photo/:portaboutId', photo);
 
 router.param('userId', userById);
-router.param('khmeraboutId', khmeraboutById);
+router.param('portaboutId', portaboutById);
 
 module.exports = router

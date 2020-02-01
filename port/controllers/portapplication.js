@@ -1,36 +1,36 @@
-const KhmerApplication = require('../models/portApplication');
+const PortApplication = require('../models/portApplication');
 const formidable = require('formidable');
 const fs = require('fs');
 const _ = require('lodash');
 
-exports.getkhmerapplication = (req, res, next) => {
+exports.getportapplication = (req, res, next) => {
    
-    const khmerapplication = KhmerApplication.find()
+    const portapplication = PortApplication.find()
         .select("_id name photo created")
         .sort({ created: -1 })
-        .then(khmerapplication => {
-           res.json(khmerapplication)
+        .then(portapplication => {
+           res.json(portapplication)
         })
         .catch(err => console.log(err));
       
 };
 
-exports.khmerapplicationById = (req, res, next, id) => {
-    KhmerApplication.findById(id)
+exports.portapplicationById = (req, res, next, id) => {
+    PortApplication.findById(id)
         .populate('postedBy', '_id name role')
         .select('_id name created photo')
-        .exec((err, khmerapplication) => {
-            if (err || !khmerapplication) {
+        .exec((err, portapplication) => {
+            if (err || !portapplication) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            req.khmerapplication = khmerapplication;
+            req.portapplication = portapplication;
             next();
         });
 };
 
-exports.createkhmerapplication = (req, res, next) => {
+exports.createportapplication = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -39,22 +39,22 @@ exports.createkhmerapplication = (req, res, next) => {
                 error: 'Image could not be uploaded'
             });
         };
-        let khmerapplication = new KhmerApplication(fields);
+        let portapplication = new PortApplication(fields);
     
         // req.profile.hashed_password = undefined;
         // req.profile.salt = undefined;
-        khmerapplication.postedBy = req.profile;
+        portapplication.postedBy = req.profile;
         if (files.photo) {
-            khmerapplication.photo.data = fs.readFileSync(files.photo.path);
-            khmerapplication.photo.contentType = files.photo.type;
+            portapplication.photo.data = fs.readFileSync(files.photo.path);
+            portapplication.photo.contentType = files.photo.type;
         }
-        khmerapplication.save((err, result) => {
+        portapplication.save((err, result) => {
             res.json(result);
         });
     });
 };
 
-exports.updatekhmerapplication = (req, res, next) => {
+exports.updateportapplication = (req, res, next) => {
     let form = new formidable.IncomingForm();
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
@@ -64,54 +64,54 @@ exports.updatekhmerapplication = (req, res, next) => {
             });
         }
         // save post
-        let khmerapplication = req.khmerapplication;
-        khmerapplication = _.extend(khmerapplication, fields);
-        khmerapplication.updated = Date.now();
+        let portapplication = req.portapplication;
+        portapplication = _.extend(portapplication, fields);
+        portapplication.updated = Date.now();
 
         if (files.photo) {
-            khmerapplication.photo.data = fs.readFileSync(files.photo.path);
-            khmerapplication.photo.contentType = files.photo.type;
+            portapplication.photo.data = fs.readFileSync(files.photo.path);
+            portapplication.photo.contentType = files.photo.type;
         }
 
-        khmerapplication.save((err, result) => {
+        portapplication.save((err, result) => {
             if (err) {
                 return res.status(400).json({
                     error: err
                 });
             }
-            res.json(khmerapplication);
+            res.json(portapplication);
         });
     });
 };
 
-exports.deletekhmerapplication = (req, res) => {
-    let khmerapplication = req.khmerapplication;
-    khmerapplication.remove((err, khmerapplication) => {
+exports.deleteportapplication = (req, res) => {
+    let portapplication = req.portapplication;
+    portapplication.remove((err, portapplication) => {
         if (err) {
             return res.status(400).json({
                 error: err
             });
         }
         res.json({
-            message: 'khmerapplication deleted successfully'
+            message: 'portapplication deleted successfully'
         });
     });
 };
 
 exports.photo = (req, res, next) => {
-    res.set('Content-Type', req.khmerapplication.photo.contentType);
-    return res.send(req.khmerapplication.photo.data);
+    res.set('Content-Type', req.portapplication.photo.contentType);
+    return res.send(req.portapplication.photo.data);
 };
 
-exports.singlekhmerapplication = (req, res) => {
-    return res.json(req.khmerapplication);
+exports.singleportapplication = (req, res) => {
+    return res.json(req.portapplication);
 };
 
 exports.isAdmin = (req, res, next) => {
-    let sameUser = req.khmerapplication && req.auth && req.khmerapplication.postedBy._id == req.auth._id;
-    let adminUser = req.khmerapplication && req.auth && req.auth.role === 'admin';
+    let sameUser = req.portapplication && req.auth && req.portapplication.postedBy._id == req.auth._id;
+    let adminUser = req.portapplication && req.auth && req.auth.role === 'admin';
 
-    console.log("req.khmerapplication ", req.khmerapplication, " req.auth ", req.auth);
+    console.log("req.portapplication ", req.portapplication, " req.auth ", req.auth);
     console.log("SAMEUSER: ", sameUser, " ADMINUSER: ", adminUser);
 
     let isAdmin = sameUser || adminUser;

@@ -5,7 +5,7 @@ const cors = require('cors')
 const expressValidator = require('express-validator')
 const app = express()
 const morgan = require('morgan')
-//require('dotenv').config();
+require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
@@ -76,6 +76,12 @@ const portcarouselRoutes = require('./port/routes/carousel');
 const porteventRoutes = require('./port/routes/event');
 const portstudentRoutes = require('./port/routes/student')
 const portlinkRoutes = require('./port/routes/link');
+const portpartnersRoutes = require('./port/routes/partners');
+const portaboutRoutes = require('./port/routes/about');
+const portschoolBoardMemberRoutes = require('./port/routes/schoolBoardMember');
+const portschoolBoardMeetingRoutes = require('./port/routes/schoolBoardMeeting');
+const portapplicationRoutes = require('./port/routes/application');
+const portadmissionRoutes = require('./port/routes/admission');
 
 // general route
 const authRoutes = require('./general/routes/auth');
@@ -145,6 +151,12 @@ app.use('/', portcarouselRoutes)
 app.use('/', porteventRoutes)
 app.use('/', portstudentRoutes)
 app.use('/', portlinkRoutes);
+app.use('/', portpartnersRoutes);
+app.use('/', portaboutRoutes)
+app.use('/', portschoolBoardMemberRoutes);
+app.use('/', portschoolBoardMeetingRoutes)
+app.use('/', portapplicationRoutes)
+app.use('/', portadmissionRoutes)
 
 // general routes
 app.use('/', authRoutes)
