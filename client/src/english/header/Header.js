@@ -77,9 +77,7 @@ class Header extends React.Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
-                                    })}>
+                                    <a style={{color: 'white'}}  onClick={() => signout()}>
                                         Sign Out
                                     </a>
                                 </Nav.Link>
