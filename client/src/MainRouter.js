@@ -12,7 +12,7 @@ import khmerSignIn from './user/khmerSignIn'
 
 import Home from './core/Home'
 import Menu from './core/Menu'
-import Header from './core/Header'
+//import Header from './core/Header'
 import TopHeader from './core/TopHeader'
 import Header from './english/header/Header'
 
