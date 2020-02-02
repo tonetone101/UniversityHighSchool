@@ -13,6 +13,18 @@ class Header extends React.Component {
         khmerPage: false
     }
 
+    renderUser = () => {
+        this.setState({user: isAuthenticated().user })
+    }
+
+    componentDidMount() {
+        this.renderUser()
+    }
+
+    componentWillReceiveProps() {
+        this.renderUser()
+    }
+
     translateSpanish = () => {
         this.setState({spanishPage: true, englishPage: false, khmerPage: false})
     }
