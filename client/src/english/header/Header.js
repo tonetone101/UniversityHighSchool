@@ -21,7 +21,7 @@ class Header extends React.Component {
         this.renderUser()
     }
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(props) {
         this.renderUser()
     }
 
@@ -78,7 +78,7 @@ class Header extends React.Component {
                             this.state.user && (
                                 <Nav.Link>
                                     <a style={{color: 'white'}}  onClick={() => signout(() => {
-                                        props.history.push('/')
+                                        history.push('/')
                                     })}>
                                         Sign Out
                                     </a>

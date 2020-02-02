@@ -14,6 +14,7 @@ import Home from './core/Home'
 import Menu from './core/Menu'
 import Header from './core/Header'
 import TopHeader from './core/TopHeader'
+import Header from './english/header/Header'
 
 // english
 import NewCarousel from './english/carousel/NewCarousel'
