@@ -7,6 +7,7 @@ import {Link, Redirect } from 'react-router-dom'
 class Header extends React.Component {
     state = {
         user: '',
+        signedout: false,
         redirectToSignIn: false,
         spanishPage: false,
         englishPage: false,
@@ -77,7 +78,11 @@ class Header extends React.Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'white'}}  onClick={() => signout()}>
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
+                                        this.setState({
+                                            signedout: true
+                                        })
+                                    })}>
                                         Sign Out
                                     </a>
                                 </Nav.Link>
@@ -152,7 +157,7 @@ class Header extends React.Component {
     }
 
   render() {
-    const {spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
+    const {spanishPage, englishPage, khmerPage, redirectToSignIn, signedout } = this.state
         if(spanishPage) {
             return <Redirect to={`/spanish`} />
          } else if (englishPage) {
@@ -163,6 +168,9 @@ class Header extends React.Component {
          else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
+         else if(signedout) {
+             return <Redirect to={'/'} />
+         }
 
       return (
           <div>
