@@ -37,7 +37,7 @@ class Student extends Component {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className='container' >
                     <h3 className='text-center mt-4'>Welcome to our Student section</h3>
                     <p className='text-center'>Below you'll find a list of content about our policies and other important links we believe will benefit our students</p>

@@ -109,7 +109,7 @@ class SchoolBoardMember extends Component {
 
         return (
             <div>
-                <Header />
+               <Header history={this.props.history} />
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6">

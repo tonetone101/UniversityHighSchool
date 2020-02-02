@@ -124,7 +124,7 @@ class SinglePartners extends Component {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className='container mt-5'>
                     <div style={{borderBottom: 'solid black 1px'}}>
                         <h3 style={{color: 'black'}}>{partners.name}</h3>

@@ -5,7 +5,7 @@ const GenderPolicy = () => {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className='container mt-4' >
                     <h3>STUDENT FAQ: Transgender and Gender Expansive Student Policy</h3>
                     <div>

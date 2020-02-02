@@ -5,7 +5,7 @@ const Bully = () => {
 
     return (
         <div>
-            <Header />
+           <Header history={this.props.history} />
             <div className='container mt-4' >
                 <h3>STUDENTS and STAFF BULLYING AND HARASSMENT POLICY </h3>
                 <div>

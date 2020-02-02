@@ -86,17 +86,17 @@ class SingleLink extends Component {
 
         return (
             <div>
-                           <div  className='text-center'>
-                                {!link ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderLink(link)
-                                        )
-                                    }
-                               
+                <div  className='text-center'>
+                    {!link ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Loading....</h2>
                             </div>
+                            ) : (
+                                this.renderLink(link)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

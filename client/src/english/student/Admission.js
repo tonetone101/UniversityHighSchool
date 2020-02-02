@@ -124,7 +124,7 @@ class Admission extends Component {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className='container mt-3' >
                     <p className='text-center'> 
                         Welcome to our Admissions section. 

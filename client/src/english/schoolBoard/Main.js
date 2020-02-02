@@ -56,7 +56,7 @@ class Main extends Component {
         
         return (
             <div>
-                <Header />
+               <Header history={this.props.history} />
                   <div className='container mt-4'>
                      <h1>Welcome to our schoolBoard Meeting section</h1>
                       <div  >

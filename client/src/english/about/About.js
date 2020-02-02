@@ -85,7 +85,7 @@ class About extends Component {
 
         return (
             <div>
-               <Header />             
+               <Header history={this.props.history} />             
                 <div>
                     <div className='text-center'>
                         {!about ? ( 

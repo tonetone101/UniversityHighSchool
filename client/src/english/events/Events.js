@@ -152,7 +152,7 @@ class Events extends Component {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className="container">
                     <h2 className="mt-5 mb-5">
                         Upcoming Events

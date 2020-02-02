@@ -85,7 +85,7 @@ class Partners extends Component {
 
         return (
             <div>
-                <Header />
+                <Header history={this.props.history} />
                 <div className="container">
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                         <h2 >
