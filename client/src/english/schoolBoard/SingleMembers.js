@@ -42,14 +42,6 @@ class SingleschoolBoardMember extends Component {
     }
 
     renderschoolBoardMember = (schoolBoardMember) => {
-        const posterId = schoolBoardMember.postedBy
-        ? `/user/${schoolBoardMember.postedBy._id}`
-        : "";
-        
-        const posterName = schoolBoardMember.postedBy
-        ? schoolBoardMember.postedBy.name
-        : " Unknown";
-
         const photoUrl = schoolBoardMember._id
         ? `/schoolBoardMember/photo/${
             schoolBoardMember._id
@@ -122,21 +114,21 @@ class SingleschoolBoardMember extends Component {
 
         return (
             <div>
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{schoolBoardMember.name}</h3>
-                                </div>
-                               
-                                {!schoolBoardMember ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderschoolBoardMember(schoolBoardMember)
-                                        )
-                                    }
-                               
+                <div className='container mt-5'>
+                    <div style={{borderBottom: 'solid black 1px'}}>
+                        <h3 style={{color: 'black'}}>{schoolBoardMember.name}</h3>
+                    </div>
+                    
+                    {!schoolBoardMember ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Loading....</h2>
                             </div>
+                            ) : (
+                                this.renderschoolBoardMember(schoolBoardMember)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

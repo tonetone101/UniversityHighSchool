@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {singlePartner, remove} from './apiPartners'
 import {Link, Redirect} from 'react-router-dom'
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
-
+import {isAuthenticated} from '../../auth'
+import Header from '../header/Header'
 
 class SinglePartners extends Component {
     state = {
@@ -32,120 +31,6 @@ class SinglePartners extends Component {
     componentWillReceiveProps() {
         this.renderUser()
     }
-
-    translateSpanish = () => {
-        this.setState({spanishPage: true, englishPage: false, khmerPage: false})
-    }
-
-    translateEnglish = () => {
-        this.setState({englishPage: true, spanishPage: false, khmerPage: false})
-    }
-
-    translateKhmer = () => {
-        this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
-    }
-
-    renderTopHeader = () => {
-        return (
-            <div>
-                <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="translator"  >
-                                <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
-                                </Dropdown.Item>
-                                <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
-                                </Dropdown.Item>
-                                <Dropdown.Item><a>Hmong</a></Dropdown.Item>
-
-                                <Dropdown.Item><a onClick={this.translateEnglish}>English</a></Dropdown.Item>
-
-                                <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
-                            
-                            </DropdownButton>
-                        
-                        {
-                            !this.state.user && (
-                               <nav className='row'>
-                                <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'black'}}>
-                                        Sign In 
-                                    </Link>
-                                </Nav.Link>
-                                <Nav.Link>
-                                    <Link style={{color: 'black'}} to='/signup' >
-                                        Sign Up
-                                    </Link>
-                                </Nav.Link>
-                               </nav>
-                            )
-                        }
-                        
-                        {
-                            this.state.user && (
-                                <Nav.Link>
-                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
-                                    })}>
-                                        Sign Out
-                                    </a>
-                                </Nav.Link>
-                            )
-                        }
-                      
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-            </div>
-        )
-    }
-
-    renderMenu = () => {
-        return (
-            <div style={{position: 'relative fixed'}}>
-                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    
-                    <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
-                         <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
-                        </div>
-
-                       <div id='link'>                
-                           <Nav.Link href="#features"><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
-                        </div>
-                        <Nav.Link href="#features"><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
-                        
-                        
-                        <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/schoolboard'>School Board</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link href="#features"><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
-                        </div>
-                    
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-            </div>
-        )
-    }
-
 
     deletepartners = () => {
         const partnersId = this.props.match.params.partnersId
@@ -229,15 +114,7 @@ class SinglePartners extends Component {
     }
 
     render() {
-        const {partners, redirectToFaculties, redirectToSignIn, spanishPage, khmerPage, englishPage} = this.state
-        
-        if(spanishPage) {
-            return <Redirect to={`/spanish/partner/${partners._id}`} />
-         } else if (englishPage) {
-             return <Redirect to={`/partner/${partners._id}`} />
-         } else if (khmerPage) {
-            return <Redirect to={`/khmer/partner/${partners._id}`} />
-        } 
+        const {partners, redirectToFaculties, redirectToSignIn} = this.state
 
         if(redirectToFaculties) {
             return <Redirect to={`/partners`} />
@@ -247,23 +124,22 @@ class SinglePartners extends Component {
 
         return (
             <div>
-                {this.renderTopHeader()}
-                {this.renderMenu()}
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{partners.name}</h3>
-                                </div>
-                               
-                                {!partners ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderpartners(partners)
-                                        )
-                                    }
-                               
+                <Header />
+                <div className='container mt-5'>
+                    <div style={{borderBottom: 'solid black 1px'}}>
+                        <h3 style={{color: 'black'}}>{partners.name}</h3>
+                    </div>
+                    
+                    {!partners ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Loading....</h2>
                             </div>
+                            ) : (
+                                this.renderpartners(partners)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

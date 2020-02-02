@@ -42,14 +42,6 @@ class SingleApplication extends Component {
     }
 
     renderapplication = (application) => {
-        const posterId = application.postedBy
-        ? `/user/${application.postedBy._id}`
-        : "";
-        
-        const posterName = application.postedBy
-        ? application.postedBy.name
-        : " Unknown";
-
         const photoUrl = application._id
         ? `/application/photo/${
             application._id

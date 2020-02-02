@@ -35,21 +35,13 @@ class SingleFaculty extends Component {
     }
 
     deleteConfirm = () => {
-        let answer = window.confirm('Are you sure you want to delete your post?')
+        let answer = window.confirm('Are you sure you want to delete faculty?')
         if(answer) {
             this.deleteFaculty()
         }
     }
 
     renderFaculty = (faculty) => {
-        const posterId = faculty.postedBy
-        ? `/user/${faculty.postedBy._id}`
-        : "";
-        
-        const posterName = faculty.postedBy
-        ? faculty.postedBy.name
-        : " Unknown";
-
         const photoUrl = faculty._id
         ? `/faculty/photo/${
             faculty._id
@@ -122,21 +114,21 @@ class SingleFaculty extends Component {
 
         return (
             <div>
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{faculty.name}</h3>
-                                </div>
-                               
-                                {!faculty ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderFaculty(faculty)
-                                        )
-                                    }
-                               
+                <div className='container mt-5'>
+                    <div style={{borderBottom: 'solid black 1px'}}>
+                        <h3 style={{color: 'black'}}>{faculty.name}</h3>
+                    </div>
+                    
+                    {!faculty ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Loading....</h2>
                             </div>
+                            ) : (
+                                this.renderFaculty(faculty)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

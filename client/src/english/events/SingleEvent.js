@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import {singleEvent, remove} from './apiEvent'
 import {Link, Redirect} from 'react-router-dom'
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
-
+import {isAuthenticated} from '../../auth'
 
 class SingleEvent extends Component {
     state = {
@@ -53,14 +51,6 @@ class SingleEvent extends Component {
     }
 
     renderEvent = (event) => {
-        const posterId = event.postedBy
-        ? `/user/${event.postedBy._id}`
-        : "";
-        
-        const posterName = event.postedBy
-        ? event.postedBy.name
-        : " Unknown";
-
         const photoUrl = event._id
         ? `/event/photo/${
             event._id
@@ -71,11 +61,6 @@ class SingleEvent extends Component {
                 <div  >
                     <p className="font-italic mark">
                         Event Posted on{" "}
-                        {/* <Link to={`${posterId}`}> */}
-                        {/* <img  style={{ height: "40px", borderRadius:'30px', width: "40px" }} className="img-thumbnail" src={photoUrl} alt='' /> */}
-
-                            {" "}
-                        {/* </Link> */}
                         {new Date(event.created).toDateString()}
                     </p>
                     <div className='container' >

@@ -86,17 +86,17 @@ class SingleschoolBoardMeeting extends Component {
 
         return (
             <div>
-                           <div  className='text-center'>
-                                {!schoolBoardMeeting ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderschoolBoardMeeting(schoolBoardMeeting)
-                                        )
-                                    }
-                               
+                <div  className='text-center'>
+                    {!schoolBoardMeeting ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Loading....</h2>
                             </div>
+                            ) : (
+                                this.renderschoolBoardMeeting(schoolBoardMeeting)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

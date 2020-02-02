@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import { Carousel } from 'react-bootstrap';
 import {list} from './apiCarousel'
-import {Link, Redirect } from 'react-router-dom'
-import {signout, isAuthenticated} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import {Link } from 'react-router-dom'
+import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
 import Header from '../header/Header'
 
@@ -161,28 +160,10 @@ class Carol extends Component {
     }
 
     render() {
-        const {carousel, spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
-        if(spanishPage) {
-            return <Redirect to={`/spanish`} />
-         } else if (englishPage) {
-             return <Redirect to={'/'} />
-         } else if (khmerPage) {
-            return <Redirect to={'/khmer'} />
-        }
-         else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
-         } 
+        const {carousel } = this.state
 
         return (
             <div>
-                {/* {this.renderTopHeader()}
-                <div className="text-center">
-                        <img 
-                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
-                            src={require("../../images/logo.png")}
-                        />
-                    </div>
-                {this.renderMenu()} */}
                 <Header />
                 <div>
                     <div className='text-center'>
