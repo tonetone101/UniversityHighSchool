@@ -5,6 +5,7 @@ import {Link, Redirect } from 'react-router-dom'
 import {signout, isAuthenticated} from '../../auth'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
 import {Animated} from 'react-animated-css'
+import Header from '../header/Header'
 
 class Carol extends Component {
     state = {
@@ -307,14 +308,15 @@ class Carol extends Component {
 
         return (
             <div>
-                {this.renderTopHeader()}
+                {/* {this.renderTopHeader()}
                 <div className="text-center">
                         <img 
                             style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
                             src={require("../../images/logo.png")}
                         />
                     </div>
-                {this.renderMenu()}
+                {this.renderMenu()} */}
+                <Header />
                 <div>
                     <div className='text-center'>
                         {!carousel ? ( 
