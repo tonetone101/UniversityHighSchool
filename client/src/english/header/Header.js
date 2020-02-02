@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
 import {signout, isAuthenticated} from '../../auth'
+import {Link, Redirect } from 'react-router-dom'
 
 
 class Header extends React.Component {
