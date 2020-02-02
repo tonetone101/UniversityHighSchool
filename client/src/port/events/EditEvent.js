@@ -231,7 +231,7 @@ class EditEvent extends Component {
             url5, redirectToEvent, error, loading} = this.state
 
         if (redirectToEvent) {
-            return <Redirect to={`/event/${id}`} />;
+            return <Redirect to={`/port/event/${id}`} />;
         }
 
         return (

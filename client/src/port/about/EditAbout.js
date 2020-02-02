@@ -157,7 +157,7 @@ class EditAbout extends Component {
         const {id, body, paragraph2, paragraph3, paragraph4, paragraph5, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
-            return <Redirect to={`/about`} />;
+            return <Redirect to={`/port/about`} />;
         }
 
         return (

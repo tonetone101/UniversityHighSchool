@@ -138,7 +138,7 @@ class EditFaculty extends Component {
         const {id, title, name, about, redirectToFaculty, error, loading} = this.state
 
         if (redirectToFaculty) {
-            return <Redirect to={`/faculty/${id}`} />;
+            return <Redirect to={`/port/faculty/${id}`} />;
         }
 
         return (
@@ -155,7 +155,7 @@ class EditFaculty extends Component {
                             ""
                         )
                     }
-                        <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/faculty/photo/${id}`} onError={i => (i.target.src = ``)} alt='' />
+                        <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/portFaculty/photo/${id}`} onError={i => (i.target.src = ``)} alt='' />
 
 
                         {this.editFacultyForm(title, name, about)}

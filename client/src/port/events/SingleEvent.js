@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import {singleEvent, remove} from './apiEvent'
 import {Link, Redirect} from 'react-router-dom'
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
-
+import {isAuthenticated} from '../../auth'
 
 class SingleEvent extends Component {
     state = {
@@ -53,14 +51,6 @@ class SingleEvent extends Component {
     }
 
     renderEvent = (event) => {
-        const posterId = event.postedBy
-        ? `/user/${event.postedBy._id}`
-        : "";
-        
-        const posterName = event.postedBy
-        ? event.postedBy.name
-        : " Unknown";
-
         const photoUrl = event._id
         ? `/event/photo/${
             event._id
@@ -70,7 +60,7 @@ class SingleEvent extends Component {
         return (
                 <div  >
                     <p className="font-italic mark">
-                        Event Posted on{" "}
+                        Evento publicado em{" "}
                         {/* <Link to={`${posterId}`}> */}
                         {/* <img  style={{ height: "40px", borderRadius:'30px', width: "40px" }} className="img-thumbnail" src={photoUrl} alt='' /> */}
 
@@ -80,22 +70,22 @@ class SingleEvent extends Component {
                     </p>
                     <div className='container' >
                         <p className="card-text">
-                            Name of event: {event.title}
+                             Nome do evento: {event.title}
                         </p>
                         <p className="card-text">
-                            Date: {event.date}
+                             Encontro: {event.date}
                         </p>
                         <p className="card-text">
-                            Time: {event.time}
+                            Tempo: {event.time}
                         </p>
                         <p className="card-text">
-                            Location: {event.where}
+                            Localização: {event.where}
                         </p>
                         <p className="card-text ">
-                            Description: {event.body}
+                            Descrição: {event.body}
                         </p>
                         <p className="card-text ">
-                            GoogleDoc Url: {event.url}
+                            URL do GoogleDoc: {event.url}
                         </p>
                     </div>
                    <div >
@@ -111,10 +101,11 @@ class SingleEvent extends Component {
 
                     <div className='d-inline-block mb-5'>
                         <Link
-                            to={`/events`}
+                            to={`/port/events`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
-                            Back to events
+                            Voltar para eventos
+
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
@@ -124,7 +115,7 @@ class SingleEvent extends Component {
                                         to={`/edit/event/${event._id}`}
                                         className='btn btn-raised btn-warning'
                                     >
-                                        Update Event
+                                        Update Event in portuguese
                                     </Link>
                                     <button
                                         onClick={this.deleteConfirm}
@@ -151,7 +142,7 @@ class SingleEvent extends Component {
                            <div className='container'>
                                 {!event ? ( 
                                         <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
+                                            <h2>Carregando....</h2>
                                         </div>
                                         ) : (
                                             this.renderEvent(event)

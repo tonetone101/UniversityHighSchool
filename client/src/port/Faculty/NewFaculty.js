@@ -135,7 +135,7 @@ class NewFaculty extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/faculty`} />;
+            return <Redirect to={`/port/faculty`} />;
         }
 
         return (

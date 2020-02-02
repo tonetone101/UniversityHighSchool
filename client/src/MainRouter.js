@@ -141,6 +141,49 @@ import KhmerApplication from './khmer/application/Application'
 import KhmerNewApplication from './khmer/application/NewApplication'
 import KhmerSingleApplication from './khmer/application/SingleApplication'
 
+// port
+import NewportCarousel from './port/carousel/NewCarousel'
+import EditportCarousel from './port/carousel/EditCarousel'
+import Carolport from './port/carousel/Carousel'
+import NewportEvent from './port/events/NewEvents'
+import Eventport from './port/events/Events'
+import EditportEvent from './port/events/EditEvent'
+import SingleportEvent from './port/events/SingleEvent'
+import NewportFaculty from './port/Faculty/NewFaculty'
+import Facultyport from './port/Faculty/Faculty'
+import SingleportFaculty from './port/Faculty/SingleFaculty'
+import EditportFaculty from './port/Faculty/EditFaculty'
+import NewportStudent from './port/student/NewStudent'
+import Admissionport from './port/student/Admission'
+import Bullyport from './port/student/Bully'
+import Studentport from './port/student/Student'
+import GenderportPolicy from './port/student/GenderPolicy'
+import NewportLinks from './port/student/NewLinks'
+import SingleportLink from './port/student/SingleLink'
+import NewportPhoto from './port/gallery/NewPhoto'
+import Photoport from './port/gallery/Photo'
+import SingleportPhoto from './port/gallery/SinglePhoto'
+import EditportPhoto from './port/gallery/EditPhoto'
+import NewportPartners from './port/partners/NewPartners'
+import portPartners from './port/partners/Partners'
+import SingleportPartners from './port/partners/SinglePartner'
+import EditportPartners from './port/partners/EditPartners'
+import portAbout from './port/about/About'
+import EditportAbout from './port/about/EditAbout'
+
+import SingleportBoardMeeting from './port/schoolBoard/singleMain'
+import SingleportSchoolBoardMember from './port/schoolBoard/SingleMembers'
+
+import portSchoolBoardMeeting from './port/schoolBoard/Main'
+import portSchoolBoardMember from './port/schoolBoard/Members'
+
+import NewportBoardMeeting from './port/schoolBoard/NewBoardMeeting'
+import NewportSchoolBoardMember from './port/schoolBoard/NewMembers'
+
+import portApplication from './port/application/Application'
+import portNewApplication from './port/application/NewApplication'
+import portSingleApplication from './port/application/SingleApplication'
+
 const MainRouter = () => (
     <div >
         {/* <TopHeader/> */}
@@ -285,6 +328,51 @@ const MainRouter = () => (
             <Route exact path="/khmer/new/application" component={KhmerNewApplication}></Route>
             <Route exact path="/khmer/application" component={KhmerApplication}></Route>
             <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
+
+            {
+            // port          
+            }
+            <Route exact path="/port/signup" component={portSignUp}></Route>
+            <Route exact path="/port/signin" component={portSignIn}></Route>
+            <Route exact path="/port" component={Carolport}></Route>
+            <Route exact path="/port/new/carousel" component={NewportCarousel}></Route>
+            <Route exact path="/port/edit/carousel/:carouselId" component={EditportCarousel}></Route>
+            <Route exact path="/port/events" component={Eventport}></Route>
+            <Route exact path="/port/new/event" component={NewportEvent}></Route>
+            <Route exact path="/port/edit/event/:eventId" component={EditportEvent}></Route>
+            <Route exact path="/port/event/:eventId" component={SingleportEvent}></Route>
+            <Route exact path="/port/new/faculty" component={NewportFaculty}></Route>
+            <Route exact path="/port/faculty" component={Facultyport}></Route>
+            <Route exact path="/port/faculty/:facultyId" component={SingleportFaculty}></Route>
+            <Route exact path="/port/edit/faculty/:facultyId" component={EditportFaculty}></Route>
+            <Route exact path="/port/new/student" component={NewportStudent}></Route>
+            <Route exact path="/port/admission" component={Admissionport}></Route>
+            <Route exact path="/port/bully" component={Bullyport}></Route>
+            <Route exact path="/port/student" component={Studentport}></Route>
+            <Route exact path="/port/genderpolicy" component={GenderportPolicy}></Route>
+            <Route exact path="/port/newlink" component={NewportLinks}></Route>
+            <Route exact path="/port/link/:linkId" component={SingleportLink}></Route>
+            <Route exact path="/port/new/image" component={NewportPhoto}></Route>
+            <Route exact path="/port/images" component={Photoport}></Route>
+            <Route exact path="/port/image/:imageId" component={SingleportPhoto}></Route>
+            <Route exact path="/port/edit/image/:imageId" component={EditportPhoto}></Route>
+            <Route exact path="/port/partners" component={portPartners}></Route>
+            <Route exact path="/port/new/partners" component={NewportPartners}></Route>
+            <Route exact path="/port/partner" component={SingleportPartners}></Route>
+            <Route exact path="/port/edit/partner/:partnersId" component={EditportPartners}></Route>
+            <Route exact path="/port/partners/:partnersId" component={SingleportPartners}></Route>
+            <Route exact path="/port/about" component={portAbout}></Route>
+            <Route exact path="/port/edit/about/:aboutId" component={EditportAbout}></Route>
+            <Route exact path="/port/schoolBoardMeeting" component={portSchoolBoardMeeting}></Route>
+            <Route exact path="/port/newschoolBoardMeeting" component={NewportBoardMeeting}></Route>
+            <Route exact path="/port/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleportBoardMeeting}></Route>
+            
+            <Route exact path="/port/schoolBoardMember" component={portSchoolBoardMember}></Route>
+            <Route exact path="/port/new/schoolBoardMember" component={NewportSchoolBoardMember}></Route>
+            <Route exact path="/port/schoolBoardMember/:schoolBoardMemberId" component={SingleportSchoolBoardMember}></Route>
+            <Route exact path="/port/new/application" component={portNewApplication}></Route>
+            <Route exact path="/port/application" component={portApplication}></Route>
+            <Route exact path="/port/application/:applicationId" component={portSingleApplication}></Route>
         </Switch>
         
     </div>
