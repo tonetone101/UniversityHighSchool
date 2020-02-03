@@ -26,7 +26,7 @@ class PortAbout extends Component {
                 console.log(data.error)
             } else {
                 this.setState({about: data.find(d => {
-                    if (d._id == "5e22433d06576302afeda501") {
+                    if (d._id == "5e3784b4186726bbe53b1222") {
                         return d
                     }
                 }) 
