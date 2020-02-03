@@ -106,7 +106,7 @@ class NewLink extends Component {
                 >
                     Post link
                 </button>
-                <Link className='btn btn-raised ml-5' to={'/student'}>Back</Link>
+                <Link className='btn btn-raised ml-5' to={'/port/student'}>Back</Link>
 
                
             </div>

@@ -65,7 +65,7 @@ class Links extends Component {
                         
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' ? ( 
                           <div>
-                            <Link to={`/newlink`} className='btn btn-raised btn-primary'>Add Link</Link>
+                            <Link to={`/port/newlink`} className='btn btn-raised btn-primary'>Add Link</Link>
                           </div> 
                           ) : ( null)
                          }
@@ -88,7 +88,7 @@ class Links extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
-                                                <Link to={`/link/${link._id}`} className='ml-2 text-danger'>view</Link>
+                                                <Link to={`/port/link/${link._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }
                                     </ListGroup.Item>
