@@ -107,7 +107,7 @@ class EditEvent extends Component {
         }
     };
 
-    editEventForm = (id, title, time, date, body, url, url2, url3, url4, url5 ) => (
+    editEventForm = (title, time, date, body, url, url2, url3, url4, url5 ) => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Event Photo</label>
@@ -251,7 +251,7 @@ class EditEvent extends Component {
                         {/* <img style={{height: '200px', width: 'auto'}} className='img-thumbnail' src={`${process.env.REACT_APP_API_URL}/event/photo/${id}`} onError={i => (i.target.src = ``)} alt='' /> */}
 
 
-                        {this.editEventForm(url5, url, title, time, date, body, url2, url3, url4 )}
+                        {this.editEventForm(title, time, date, body, url, url2, url3, url4, url5 )}
             </div>
         )
     }
