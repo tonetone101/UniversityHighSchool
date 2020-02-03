@@ -5,7 +5,7 @@ import {isAuthenticated} from '../../auth'
 import { Card } from 'react-bootstrap';
 import Header from '../header/Header'
 
-class About extends Component {
+class PortAbout extends Component {
     state = {
         user: '',
         about: [],
@@ -113,4 +113,4 @@ class About extends Component {
     }
 }
 
-export default About
+export default PortAbout

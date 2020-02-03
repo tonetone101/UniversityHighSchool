@@ -171,7 +171,7 @@ import NewportPartners from './port/partners/NewPartners'
 import portPartners from './port/partners/Partners'
 import SingleportPartners from './port/partners/SinglePartner'
 import EditportPartners from './port/partners/EditPartners'
-import portAbout from './port/about/About'
+import PortAbout from './port/about/About'
 import EditportAbout from './port/about/EditAbout'
 
 import SingleportBoardMeeting from './port/schoolBoard/singleMain'
@@ -364,7 +364,7 @@ const MainRouter = () => (
             <Route exact path="/port/partner" component={SingleportPartners}></Route>
             <Route exact path="/port/edit/partner/:partnersId" component={EditportPartners}></Route>
             <Route exact path="/port/partners/:partnersId" component={SingleportPartners}></Route>
-            <Route exact path="/port/about" component={portAbout}></Route>
+            <Route exact path="/port/about" component={PortAbout}></Route>
             <Route exact path="/port/edit/about/:aboutId" component={EditportAbout}></Route>
             <Route exact path="/port/schoolBoardMeeting" component={portSchoolBoardMeeting}></Route>
             <Route exact path="/port/newschoolBoardMeeting" component={NewportBoardMeeting}></Route>
