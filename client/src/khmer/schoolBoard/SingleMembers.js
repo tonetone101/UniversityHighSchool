@@ -3,7 +3,6 @@ import {singleschoolBoardMember, remove} from './apiSchoolBoardMember'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
-
 class SingleschoolBoardMember extends Component {
     state = {
         schoolBoardMember: '',
@@ -117,7 +116,7 @@ class SingleschoolBoardMember extends Component {
         if(redirectToschoolBoardMember) {
             return <Redirect to={`/khmer/schoolBoardMember`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/khmer/signin`} />
          }
 
         return (

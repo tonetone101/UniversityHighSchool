@@ -113,7 +113,7 @@ class NewApplication extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/application`} />;
+            return <Redirect to={`/khmer/application`} />;
         }
 
         return (

@@ -89,7 +89,7 @@ class Links extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
-                                                <Link to={`/link/${link._id}`} className='ml-2 text-danger'>ver</Link>
+                                                <Link to={`/spanish/link/${link._id}`} className='ml-2 text-danger'>ver</Link>
                                             ) : (null)
                                         }
                                         

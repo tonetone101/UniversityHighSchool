@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import { Navbar, Nav, Dropdown, DropdownButton} from 'react-bootstrap';
 import {signout, isAuthenticated} from '../../auth'
 import {Link, Redirect } from 'react-router-dom'
 
@@ -61,39 +61,39 @@ class Header extends React.Component {
                     </DropdownButton>
                         
                         {
-                            !this.state.user && (
-                               <nav className='row'>
-                                <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
-                                        Sign In 
-                                    </Link>
-                                </Nav.Link>
-                                <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/signup' >
-                                        Sign Up
-                                    </Link>
-                                </Nav.Link>
-                               </nav>
-                            )
+                            !isAuthenticated() && (
+                                <nav className='row'>
+                                 <Nav.Link >
+                                     <Link className='ml-3' to='/khmer/signin' style={{color: 'white'}}>
+                                     ចុះឈ្មោះ
+                                     </Link>
+                                 </Nav.Link>
+                                 <Nav.Link>
+                                     <Link style={{color: 'white'}} to='/khmer/signup' >
+                                     ចុះឈ្មោះ
+                                     </Link>
+                                 </Nav.Link>
+                                </nav>
+                             )
                         }
                         
                         {
-                            this.state.user && (
+                             isAuthenticated() && isAuthenticated().user && (
                                 <Nav.Link>
                                     <a style={{color: 'white'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
+                                        this.props.history.push('/khmer')
                                     })}>
-                                        Sign Out
+                                      ផ្តាច់
                                     </a>
                                 </Nav.Link>
                             )
                         }
 
                         {
-                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                             isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                                 <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
-                                        Applications
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/khmer/application' >
+                                        ពាក្យសុំ
                                     </Link>
                                 </Nav.Link>
                             )
@@ -110,43 +110,44 @@ class Header extends React.Component {
 
     renderMenu = () => {
         return (
-            <div style={{border: 'solid black 2px'}}>
+            <div>
                  <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer'>ផ្ទះ</Link></Nav.Link>
                         </div>
+
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/about'>About Us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/about'>អំពី​ពួក​យើង</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link ><Link style={{color: 'white'}} to='/khmer/faculty'>មហាវិទ្យាល័យ</Link></Nav.Link>
                         </div>
-                        <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link ><Link style={{color: 'white'}} to='/khmer/student'>និស្សិត</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/admission'>ការចូលរៀន</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white'}} to='/khmer/schoolBoardMeeting'>ក្រុមប្រឹក្សាភិបាលសាលា</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/partners'>ដៃគូរបស់យើង</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmer/images'>វិចិត្រសាល</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link ><Link style={{color: 'white'}} to='/khmerevents'>ព្រឹត្តិការណ៍ជិតមកដល់</Link></Nav.Link>
                         </div>
                     
                     </Nav>

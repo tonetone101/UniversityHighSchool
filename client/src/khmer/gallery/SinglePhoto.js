@@ -107,7 +107,7 @@ class SinglePhoto extends Component {
         if(redirectToGallery) {
             return <Redirect to={`/khmer/images`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/khmer/signin`} />
          }
 
         return (
