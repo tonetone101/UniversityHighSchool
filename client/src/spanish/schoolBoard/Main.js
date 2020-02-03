@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { list, read, remove  } from "./apiSchoolBoardMeeting";
+import { list } from "./apiSchoolBoardMeeting";
 import { Link, Redirect } from "react-router-dom";
 import { ListGroup} from 'react-bootstrap';
-import {signout, isAuthenticated} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
+import {isAuthenticated} from '../../auth'
+import Header from '../header/Header'
 
 class Main extends Component {
     constructor() {
@@ -28,10 +28,7 @@ class Main extends Component {
             if (data.error) {
                 console.log(data.error);
             } else {
-                //console.log(data)
-                this.setState({ schoolBoardMeeting: data, url: data.url, docUrl: data.docUrl });
-                
-
+                this.setState({ schoolBoardMeeting: data, url: data.url, docUrl: data.docUrl });                
             }
         });
     };
@@ -45,160 +42,17 @@ class Main extends Component {
             this.renderUser()
         }
 
-        translateSpanish = () => {
-            this.setState({spanishPage: true, englishPage: false, khmerPage: false})
-        }
-    
-        translateEnglish = () => {
-            this.setState({englishPage: true, spanishPage: false, khmerPage: false})
-        }
-     
-        translateKhmer = () => {
-            this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
-        }
-    
-        renderTopHeader = () => {
-            return (
-                <div>
-                    <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mr-auto " >
-                        <DropdownButton id="dropdown-basic-button" title="Traductora"  >
-                                    <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
-                                    </Dropdown.Item>
-                                    <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
-                                    </Dropdown.Item>
-                                    <Dropdown.Item><a>Hmong</a></Dropdown.Item>
-    
-                                    <Dropdown.Item><a onClick={this.translateEnglish}>English</a></Dropdown.Item>
-    
-                                    <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
-                                
-                                </DropdownButton>
-                            
-                            {
-                                !isAuthenticated() && (
-                                   <nav className='row'>
-                                    <Nav.Link >
-                                        <Link className='ml-3' to='/spanish/signin' style={{color: 'white'}}>
-                                        Registrarse
-                                        </Link>
-                                    </Nav.Link>
-                                    <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/spanish/signup' >
-                                        Regístrate
-                                        </Link>
-                                    </Nav.Link>
-                                   </nav>
-                                )
-                            }
-                            
-                            {
-                                isAuthenticated() && isAuthenticated().user && (
-                                    <Nav.Link>
-                                        <a style={{color: 'white'}}  onClick={() => signout(() => {
-                                            this.props.history.push('/spanish')
-                                        })}>
-                                          Desconectar
-                                        </a>
-                                    </Nav.Link>
-                                )
-                            }
-
-{   
-                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/spanish/application' >
-                                        Aplicaciones
-                                    </Link>
-                                </Nav.Link>
-                            )
-                        }
-                          
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-                </div>
-            )
-        }
-    
-        renderMenu = () => {
-            return (
-                <div>
-                     <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        
-                        <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
-                             <div id='link'>                        
-                                <Nav.Link ><Link style={{color: 'white'}} to='/spanish'>Hogar</Link></Nav.Link>
-                            </div>
-    
-                            <div id='link'>                        
-                                <Nav.Link><Link style={{color: 'white'}} to='/spanish/about'>Sobre nosotros</Link></Nav.Link>
-                            </div>
-    
-                           <div id='link'>                
-                               <Nav.Link ><Link style={{color: 'white'}} to='/spanish/faculty'>Facultad</Link></Nav.Link>
-                            </div>
-                            <Nav.Link ><Link style={{color: 'white'}} to='/spanish/student'>Estudiantes</Link></Nav.Link>
-                            
-                            
-                            <div id='link'>                        
-                                <Nav.Link ><Link style={{color: 'white'}} to='/spanish/admission'>Admisión</Link></Nav.Link>
-                            </div>
-
-                            <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/spanish/schoolBoardMeeting'>Consejo Escolar</Link></Nav.Link>
-                        </div>
-    
-                            <div id='link'>                        
-                                <Nav.Link ><Link style={{color: 'white'}} to='/spanish/partners'>Nuestros compañeros</Link></Nav.Link>
-                            </div>
-    
-                            <div id='link'>                        
-                                <Nav.Link ><Link style={{color: 'white'}} to='/spanish/images'>Galería</Link></Nav.Link>
-                            </div>
-    
-                            <div id='link'>                        
-                                <Nav.Link ><Link style={{color: 'white'}} to='/spanishevents'>Próximos Eventos</Link></Nav.Link>
-                            </div>
-                        
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-                </div>
-            )
-        }
-    
-
     render() {
-        const { user, spanishPage, englishPage, khmerPage, schoolBoardMeeting, url, redirectToSignIn } = this.state;
-        console.log(schoolBoardMeeting)
+        const { schoolBoardMeeting, url, redirectToSignIn } = this.state;
 
-        if(spanishPage) {
-            return <Redirect to={`/spanish/schoolBoardMeeting`} />
-         } else if (englishPage) {
-             return <Redirect to={'/schoolBoardMeeting'} />
-         } else if (khmerPage) {
-            return <Redirect to={'/khmer/schoolBoardMeeting'} />
-        }
-
-         else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+         if(redirectToSignIn) {
+            return <Redirect to={`/spanish/signin`} />
          } 
         
         return (
             <div>
-                {this.renderTopHeader()}
-                <div className="text-center">
-                        <img 
-                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
-                            src={require("../../images/logo.png")}
-                        />
-                    </div>
-                {this.renderMenu()}
+                 <Header history={this.props.history} />
+
                   <div className='container mt-4'>
                      <h1>Bienvenido a nuestra sección de Junta Escolar</h1>
                       <div  >

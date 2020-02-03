@@ -53,7 +53,7 @@ class SingleschoolBoardMeeting extends Component {
 
                     <div className='d-inline-block mb-5'>
                         <Link
-                            to={`/schoolBoardMeeting`}
+                            to={`/spanish/schoolBoardMeeting`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
                             Reuniones de regreso a la escuela
@@ -63,7 +63,7 @@ class SingleschoolBoardMeeting extends Component {
                         isAuthenticated().user.role === 'admin' &&  
                         <div>
                              <Link to={`/spanish/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
-                             Actualización de la reunión de la Junta Escolar
+                                Actualización de la reunión de la Junta Escolar
                             </Link>
                             <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
                                 Eliminar reunión
@@ -87,17 +87,17 @@ class SingleschoolBoardMeeting extends Component {
 
         return (
             <div>
-                           <div  className='text-center'>
-                                {!schoolBoardMeeting ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Cargando....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderschoolBoardMeeting(schoolBoardMeeting)
-                                        )
-                                    }
-                               
+                <div  className='text-center'>
+                    {!schoolBoardMeeting ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Cargando....</h2>
                             </div>
+                            ) : (
+                                this.renderschoolBoardMeeting(schoolBoardMeeting)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }
