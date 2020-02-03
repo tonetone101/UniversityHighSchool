@@ -50,7 +50,7 @@ exports.createportadmission = (req, res, next) => {
 };
 
 exports.getportAdmissions = (req, res) => {
-    const portadmissions = portAdmission.find()
+    const portadmissions = PortAdmission.find()
         .populate("uploadedBy", "_id name photo group")
         .populate('comments', '_id text created')
         .populate("comments.uploadedBy", "_id name")
@@ -63,7 +63,7 @@ exports.getportAdmissions = (req, res) => {
 };
 
 exports.portadmissionByUser = (req, res) => {
-    portAdmission.find({ postedBy: req.profile._id })
+    PortAdmission.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name')
         .select('_id comments created')
         .sort('_created')
@@ -98,7 +98,7 @@ exports.comment = (req, res) => {
     let comment = req.body.comment;
     comment.uploadedBy = req.body.userId;
 
-    portAdmission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, { new: true})
+    PortAdmission.findByIdAndUpdate(req.body.admissionId, { $push: { comments: comment } }, { new: true})
         .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
@@ -115,7 +115,7 @@ exports.comment = (req, res) => {
 exports.uncomment = (req, res) => {
     let comment = req.body.comment;
 
-    portAdmission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
+    PortAdmission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }, { new: true })
         .populate('comments.uploadedBy', '_id name')
         .populate('uploadedBy', '_id name')
         .exec((err, result) => {
@@ -132,13 +132,13 @@ exports.uncomment = (req, res) => {
 exports.updateComment = (req, res) => {
     let comment = req.body.comment;
 
-    portAdmission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }).exec((err, result) => {
+    PortAdmission.findByIdAndUpdate(req.body.admissionId, { $pull: { comments: { _id: comment._id } } }).exec((err, result) => {
         if (err) {
             return res.status(400).json({
                 error: err
             });
         } else {
-            portAdmission.findByIdAndUpdate(
+            PortAdmission.findByIdAndUpdate(
                 req.body.admissionId,
                 { $push: { comments: comment, updated: new Date() } },
                 { new: true }
