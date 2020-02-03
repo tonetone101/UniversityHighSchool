@@ -177,7 +177,7 @@ class Header extends React.Component {
                 <div className="text-center" id='header'>
                         <img 
                             style={{height: '150px', width: '600px'}}
-                            src={require("../../images/logo.png")}
+                            src={require("../../images/uhsBanner.png")}
                         />
                     </div>
                 {this.renderMenu()}
