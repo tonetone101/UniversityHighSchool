@@ -83,7 +83,7 @@ class EditEvent extends Component {
         this.setState({ loading: true });
 
         if (this.isValid()) {
-            const eventId = this.state.id
+            const eventId = tthis.props.match.params.eventId
             const token = isAuthenticated().token;
 
             update(eventId, token, this.eventData).then(data => {
