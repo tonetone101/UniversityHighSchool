@@ -26,23 +26,23 @@ const eventSchema = new mongoose.Schema({
     },
     url: {
         type: String,
-        required: true,
+        
     },
     url2: {
         type: String,
-        required: true,
+        
     },
     url3: {
         type: String,
-        required: true,
+        
     },
     url4: {
         type: String,
-        required: true,
+        
     },
     url5: {
         type: String,
-        required: true,
+        
     },
     photo: {
         data: Buffer,
