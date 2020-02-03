@@ -42,16 +42,8 @@ class SingleFaculty extends Component {
     }
 
     renderFaculty = (faculty) => {
-        const posterId = faculty.postedBy
-        ? `/user/${faculty.postedBy._id}`
-        : "";
-        
-        const posterName = faculty.postedBy
-        ? faculty.postedBy.name
-        : " Unknown";
-
         const photoUrl = faculty._id
-        ? `/faculty/photo/${
+        ? `/portFaculty/photo/${
             faculty._id
           }?${new Date().getTime()}`
         : '';

@@ -109,7 +109,7 @@ class NewPhoto extends Component {
         } = this.state;
 
         if (redirectToGallery) {
-            return <Redirect to={`/images`} />;
+            return <Redirect to={`/port/images`} />;
         }
 
         return (

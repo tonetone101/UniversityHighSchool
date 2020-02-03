@@ -135,7 +135,7 @@ class NewschoolBoardMember extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/schoolBoardMember`} />;
+            return <Redirect to={`/port/schoolBoardMember`} />;
         }
 
         return (

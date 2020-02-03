@@ -53,15 +53,15 @@ class SingleLink extends Component {
 
                     <div className='d-inline-block mb-5'>
                         <Link
-                            to={`/student`}
+                            to={`/port/student`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
-                            Back to links
+                            Voltar à página do aluno
                         </Link>
                        {isAuthenticated().user && 
                         isAuthenticated().user.role === 'admin' &&  
                         <div>
-                             <Link to={`/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                             <Link to={`/port/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update Link
                             </Link>
                             <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
@@ -79,24 +79,24 @@ class SingleLink extends Component {
         const {link, redirectToLinks, redirectToSignIn} = this.state
         
         if(redirectToLinks) {
-            return <Redirect to={`/student`} />
+            return <Redirect to={`/port/student`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (
             <div>
-                           <div  className='text-center'>
-                                {!link ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderLink(link)
-                                        )
-                                    }
-                               
+                <div  className='text-center'>
+                    {!link ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Carregando....</h2>
                             </div>
+                            ) : (
+                                this.renderLink(link)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

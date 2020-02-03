@@ -123,7 +123,7 @@ class NewPartners extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/partners`} />;
+            return <Redirect to={`/port/partners`} />;
         }
 
         return (

@@ -3,7 +3,6 @@ import {singleschoolBoardMember, remove} from './apiSchoolBoardMember'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
-
 class SingleschoolBoardMember extends Component {
     state = {
         schoolBoardMember: '',
@@ -42,16 +41,8 @@ class SingleschoolBoardMember extends Component {
     }
 
     renderschoolBoardMember = (schoolBoardMember) => {
-        const posterId = schoolBoardMember.postedBy
-        ? `/user/${schoolBoardMember.postedBy._id}`
-        : "";
-        
-        const posterName = schoolBoardMember.postedBy
-        ? schoolBoardMember.postedBy.name
-        : " Unknown";
-
         const photoUrl = schoolBoardMember._id
-        ? `/schoolBoardMember/photo/${
+        ? `/portschoolBoardMember/photo/${
             schoolBoardMember._id
           }?${new Date().getTime()}`
         : '';
@@ -81,18 +72,18 @@ class SingleschoolBoardMember extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/schoolBoardMember`}
+                            to={`/port/schoolBoardMember`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
-                            Back to schoolBoardMember
+                            Voltar para a escola Membro do Conselho
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/schoolBoardMember/${schoolBoardMember._id}`}
+                                        to={`/port/edit/schoolBoardMember/${schoolBoardMember._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update schoolBoardMember
@@ -115,28 +106,28 @@ class SingleschoolBoardMember extends Component {
         const {schoolBoardMember, redirectToschoolBoardMember, redirectToSignIn} = this.state
         
         if(redirectToschoolBoardMember) {
-            return <Redirect to={`/schoolBoardMember`} />
+            return <Redirect to={`/port/schoolBoardMember`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (
             <div>
-                           <div className='container mt-5'>
-                               <div style={{borderBottom: 'solid black 1px'}}>
-                                    <h3 style={{color: 'black'}}>{schoolBoardMember.name}</h3>
-                                </div>
-                               
-                                {!schoolBoardMember ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderschoolBoardMember(schoolBoardMember)
-                                        )
-                                    }
-                               
+                <div className='container mt-5'>
+                    <div style={{borderBottom: 'solid black 1px'}}>
+                        <h3 style={{color: 'black'}}>{schoolBoardMember.name}</h3>
+                    </div>
+                    
+                    {!schoolBoardMember ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Carregando....</h2>
                             </div>
+                            ) : (
+                                this.renderschoolBoardMember(schoolBoardMember)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

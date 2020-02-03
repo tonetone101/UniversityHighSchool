@@ -9,6 +9,7 @@ class Header extends React.Component {
         user: '',
         redirectToSignIn: false,
         spanishPage: false,
+        portPage: false,
         englishPage: false,
         khmerPage: false
     }
@@ -26,15 +27,19 @@ class Header extends React.Component {
     }
 
     translateSpanish = () => {
-        this.setState({spanishPage: true, englishPage: false, khmerPage: false})
+        this.setState({spanishPage: true, englishPage: false, portPage: false, khmerPage: false})
+    }
+
+    translatePort = () => {
+        this.setState({portPage: true, englishPage: false, spanishPage: false, khmerPage: false})
     }
 
     translateEnglish = () => {
-        this.setState({englishPage: true, spanishPage: false, khmerPage: false})
+        this.setState({englishPage: true, spanishPage: false, portPage: false, khmerPage: false})
     }
  
     translateKhmer = () => {
-        this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
+        this.setState({khmerPage: true, spanishPage: false, portPage: false, englishPage: false,})
     }
 
     renderTopHeader = () => {
@@ -49,11 +54,10 @@ class Header extends React.Component {
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
                                 </Dropdown.Item>
-                                <Dropdown.Item><a>Hmong</a></Dropdown.Item>
 
                                 <Dropdown.Item><a onClick={this.translateEnglish}>English</a></Dropdown.Item>
 
-                                <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
+                                <Dropdown.Item><a onClick={this.translatePort}>Portuguese</a></Dropdown.Item>
                             
                     </DropdownButton>
                         
@@ -154,15 +158,18 @@ class Header extends React.Component {
     }
 
   render() {
-    const {spanishPage, englishPage, khmerPage, redirectToSignIn } = this.state
+    const {spanishPage, englishPage, khmerPage, portPage, redirectToSignIn } = this.state
         if(spanishPage) {
             return <Redirect to={`/spanish`} />
          } else if (englishPage) {
              return <Redirect to={'/'} />
          } else if (khmerPage) {
             return <Redirect to={'/khmer'} />
+        }  else if (portPage) {
+            return <Redirect to={'/port'} />
         }
-         else if(redirectToSignIn) {
+        
+        else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
 

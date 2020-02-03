@@ -3,7 +3,6 @@ import {singlePhoto, remove} from './apiPhoto'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
-
 class SinglePhoto extends Component {
     state = {
         image: '',
@@ -44,7 +43,7 @@ class SinglePhoto extends Component {
     renderImage = (image) => {
 
         const photoUrl = image._id
-        ? `/image/photo/${
+        ? `/portImage/photo/${
             image._id
           }?${new Date().getTime()}`
         : '';
@@ -70,7 +69,7 @@ class SinglePhoto extends Component {
                                     className="btn btn-raised btn-primary btn-sm mb-2"
                                     style={{marginLeft: '30px'}}
                                 >
-                                    Back to gallery
+                                    Voltar à galeria
                                 </Link>
 
                                 {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
@@ -114,13 +113,13 @@ class SinglePhoto extends Component {
             <div className='text-center'>
                 <div className='mt-5 container' style={{borderBottom: 'solid black 1px'}}>
                     <h2>
-                        A Captured Moment
+                        Um momento capturado
                     </h2>
                 </div>
                            <div className='container'>
                                 {!image ? ( 
                                         <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
+                                            <h2>Carregando....</h2>
                                         </div>
                                         ) : (
                                             this.renderImage(image)

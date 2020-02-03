@@ -114,7 +114,7 @@ class EditPhoto extends Component {
         const {id, caption, redirectToGallery, error, loading} = this.state
 
         if (redirectToGallery) {
-            return <Redirect to={`/image/${id}`} />;
+            return <Redirect to={`/port/image/${id}`} />;
         }
 
         return (

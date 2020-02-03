@@ -42,10 +42,8 @@ class SingleschoolBoardMeeting extends Component {
     }
 
     renderschoolBoardMeeting = (schoolBoardMeeting) => {
-
         return (
-                <div  >
-                    
+                <div  >                   
                     <p className="card-text">
                         {schoolBoardMeeting.body}
                         {schoolBoardMeeting.url}
@@ -53,15 +51,15 @@ class SingleschoolBoardMeeting extends Component {
 
                     <div className='d-inline-block mb-5'>
                         <Link
-                            to={`/schoolBoardMeeting`}
+                            to={`/port/schoolBoardMeeting`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
-                            Back to schoolBoardMeetings
+                            Voltar às reuniões do conselho escolar
                         </Link>
                        {isAuthenticated().user && 
                         isAuthenticated().user.role === 'admin' &&  
                         <div>
-                             <Link to={`/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                             <Link to={`/port/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting
                             </Link>
                             <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
@@ -79,24 +77,24 @@ class SingleschoolBoardMeeting extends Component {
         const {schoolBoardMeeting, redirectToschoolBoardMeetings, redirectToSignIn} = this.state
         
         if(redirectToschoolBoardMeetings) {
-            return <Redirect to={`/schoolBoardMeeting`} />
+            return <Redirect to={`/port/schoolBoardMeeting`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (
             <div>
-                           <div  className='text-center'>
-                                {!schoolBoardMeeting ? ( 
-                                        <div className='jumbotron text-center '>
-                                            <h2>Loading....</h2>
-                                        </div>
-                                        ) : (
-                                            this.renderschoolBoardMeeting(schoolBoardMeeting)
-                                        )
-                                    }
-                               
+                <div  className='text-center'>
+                    {!schoolBoardMeeting ? ( 
+                            <div className='jumbotron text-center '>
+                                <h2>Carregando....</h2>
                             </div>
+                            ) : (
+                                this.renderschoolBoardMeeting(schoolBoardMeeting)
+                            )
+                        }
+                    
+                </div>
             </div>
         )
     }

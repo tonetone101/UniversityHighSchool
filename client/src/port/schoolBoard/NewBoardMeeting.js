@@ -106,7 +106,7 @@ class NewschoolBoardMeeting extends Component {
                 >
                     Post schoolBoardMeeting
                 </button>
-                <Link className='btn btn-raised ml-5' to={'/schoolBoardMeeting'}>Back</Link>
+                <Link className='btn btn-raised ml-5' to={'/port/schoolBoardMeeting'}>Back</Link>
 
                
             </div>
@@ -124,7 +124,7 @@ class NewschoolBoardMeeting extends Component {
        
 
         if (redirectToschoolBoardMeetings) {
-            return <Redirect to={'/schoolBoardMeeting'} />;
+            return <Redirect to={'/port/schoolBoardMeeting'} />;
             
         }
 

@@ -147,7 +147,7 @@ class NewStudent extends Component {
         } = this.state;
 
         if (redirectToProfile) {
-            return <Redirect to={'/'} />;
+            return <Redirect to={'/port/student'} />;
         }
 
         return (

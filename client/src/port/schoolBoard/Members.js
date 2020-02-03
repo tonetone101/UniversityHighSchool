@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { list, read } from "./apiSchoolBoardMember";
+import { list } from "./apiSchoolBoardMember";
 import { Link, Redirect } from "react-router-dom";
-import {isAuthenticated, signout} from '../../auth'
-import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton, Card, Button, InputGroup, FormControl} from 'react-bootstrap';
+import {isAuthenticated} from '../../auth'
+import { Card, Button } from 'react-bootstrap';
+import Header from '../header/Header'
 
 class SchoolBoardMember extends Component {
     constructor() {
@@ -10,16 +11,11 @@ class SchoolBoardMember extends Component {
         this.state = {
             user: '',
             schoolBoardMembers: [],
-            spanishPage: false,
-            englishPage: false,
             term: '',
             searched: false,
             searchedschoolBoardMember: '',
             error: '',
             searching: false,
-            spanishPage: false,
-            englishPage: false,
-            khmerPage: false
         };
     }
 
@@ -32,21 +28,15 @@ class SchoolBoardMember extends Component {
             if (data.error) {
                 console.log(data.error);
             } else {
-                //console.log(data)
                 this.setState({ schoolBoardMembers: data });
-                
-
             }
         });
     };
 
-
     componentDidMount() {
         this.loadschoolBoardMembers(this.state.schoolBoardMembers)
         this.renderUser()
-        console.log(this.state.schoolBoardMembers)
     }
-
 
     componentWillReceiveProps() {
         this.renderUser()
@@ -63,136 +53,10 @@ class SchoolBoardMember extends Component {
             if (staff.name === this.state.term) {
                 this.setState({searched: true, searchedschoolBoardMember: staff})
             } else {
-                this.setState({searching: true, error: 'Staff member not found'})
+                this.setState({searching: true, error: 'Membro da equipe não encontrado'})
             }
         })
 
-    }
-
-    translateSpanish = () => {
-        this.setState({spanishPage: true, englishPage: false, khmerPage: false})
-    }
-
-    translateEnglish = () => {
-        this.setState({englishPage: true, spanishPage: false, khmerPage: false})
-    }
-
-    translateKhmer = () => {
-        this.setState({khmerPage: true, spanishPage: false, englishPage: false,})
-    }
-
-    renderTopHeader = () => {
-        return (
-            <div>
-                <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto " >
-                    <DropdownButton id="dropdown-basic-button" title="translator"  >
-                                <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
-                                </Dropdown.Item>
-                                <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
-                                </Dropdown.Item>
-                                <Dropdown.Item><a>Hmong</a></Dropdown.Item>
-
-                                <Dropdown.Item><a onClick={this.translateEnglish}>English</a></Dropdown.Item>
-
-                                <Dropdown.Item><a>Portuguese</a></Dropdown.Item>
-                            
-                            </DropdownButton>
-                        
-                        {
-                            !this.state.user && (
-                               <nav className='row'>
-                                <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
-                                        Sign In 
-                                    </Link>
-                                </Nav.Link>
-                                <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/signup' >
-                                        Sign Up
-                                    </Link>
-                                </Nav.Link>
-                               </nav>
-                            )
-                        }
-                        
-                        {
-                            this.state.user && (
-                                <Nav.Link>
-                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
-                                        this.props.history.push('/')
-                                    })}>
-                                        Sign Out
-                                    </a>
-                                </Nav.Link>
-                            )
-                        }
-
-{
-                            isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
-                                        Applications
-                                    </Link>
-                                </Nav.Link>
-                            )
-                        }
-                      
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-            </div>
-        )
-    }
-
-    renderMenu = () => {
-        return (
-            <div style={{border: 'solid black 2px'}}>
-                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                <Navbar.Collapse id="responsive-navbar-nav">
-                    
-                    <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
-                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
-                        </div>
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/about'>About Us</Link></Nav.Link>
-                        </div>
-
-                       <div id='link'>                
-                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
-                        </div>
-                        <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
-                        
-                        
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
-                        </div>
-                    
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-            </div>
-        )
     }
 
     renderschoolBoardMembers = schoolBoardMembers => {
@@ -200,21 +64,8 @@ class SchoolBoardMember extends Component {
         return (
             <div  id='event' className='row container'>
                 {schoolBoardMembers.map((schoolBoardMember, i) => {
-                    const posterId = schoolBoardMember.postedBy
-                        ? `/user/${schoolBoardMember.postedBy._id}`
-                        : "";
-                    const posterName = schoolBoardMember.postedBy
-                        ? schoolBoardMember.postedBy.name
-                        : " Unknown";
-
-                        const photoUrl = schoolBoardMember.postedBy
-                        ? `/user/photo/${
-                            event.postedBy._id
-                          }?${new Date().getTime()}`
-                        : ''
-
                         const schoolBoardMemberPhoto = schoolBoardMember._id
-                        ? `/schoolBoardMember/photo/${
+                        ? `/portschoolBoardMember/photo/${
                             schoolBoardMember._id
                           }?${new Date().getTime()}`
                         : ''
@@ -233,10 +84,10 @@ class SchoolBoardMember extends Component {
                                     {schoolBoardMember.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/schoolBoardMember/${schoolBoardMember._id}`}
+                                        to={`/port/schoolBoardMember/${schoolBoardMember._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
+                                        Consulte Mais informação
                                     </Link>
                             </Card.Body>
                             </Card>
@@ -248,38 +99,24 @@ class SchoolBoardMember extends Component {
     };
 
     render() {
-        const { user, schoolBoardMembers, searched, spanishPage, khmerPage, englishPage, searchedschoolBoardMember, error } = this.state;
-        if(spanishPage) {
-            return <Redirect to={`/spanish/schoolBoardMember`} />
-         } else if (englishPage) {
-             return <Redirect to={'/schoolBoardMember'} />
-         } else if (khmerPage) {
-            return <Redirect to={'/khmer/schoolBoardMember'} />
-        } 
+        const { schoolBoardMembers, searched, searchedschoolBoardMember, error } = this.state;
 
-        if (searched) { return <Redirect to={`schoolBoardMember/${searchedschoolBoardMember._id}`}/> } 
+        if (searched) { return <Redirect to={`port/schoolBoardMember/${searchedschoolBoardMember._id}`}/> } 
 
         return (
             <div>
-                {this.renderTopHeader()}
-                <div className="text-center">
-                        <img 
-                            style={{height: '150px', width: '600px', backgroundColor: 'blue'}}
-                            src={require("../../images/logo.png")}
-                        />
-                    </div>
-                {this.renderMenu()}
+                <Header history={this.props.history} />
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6">
-                            School Board Members
-                            {!schoolBoardMembers.length ? "Loading..." : ""}
+                            Membros do Conselho Escolar
+                            {!schoolBoardMembers.length ? "Carregando..." : ""}
                         </h2>
                         <br/>
 
                         <form className="col-md-6 text-center" onSubmit={this.search}>
-                            <input placeholder='by schoolBoardMember name' type='text' value={this.state.term} onChange={this.handleChange} />
-                            <Button onClick={this.search}>Search</Button>
+                            <input placeholder='por nome do membro do conselho escolar' type='text' value={this.state.term} onChange={this.handleChange} />
+                            <Button onClick={this.search}>Procurar</Button>
                             {"  "}{error}
                         </form>
                         <hr/>
@@ -287,7 +124,7 @@ class SchoolBoardMember extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/new/schoolBoardMember'>Add schoolBoardMember</Link>
+                                <Link className='mb-5' to='/port/new/schoolBoardMember'>Add schoolBoardMember</Link>
                             </div>
                         )
                     }

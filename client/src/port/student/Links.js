@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import { isAuthenticated } from "../../auth";
 import { ListGroup} from 'react-bootstrap';
 
-
-
 class Links extends Component {
     constructor() {
         super();

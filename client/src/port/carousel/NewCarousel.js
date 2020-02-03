@@ -171,7 +171,7 @@ class NewCarousel extends Component {
         } = this.state;
 
         if (redirectToHome) {
-            return <Redirect to='/' />;
+            return <Redirect to='/port' />;
         }
 
         return (

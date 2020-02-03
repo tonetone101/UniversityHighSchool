@@ -127,7 +127,7 @@ class EditPartners extends Component {
         const {id, name, about, redirectTopartners, error, loading} = this.state
 
         if (redirectTopartners) {
-            return <Redirect to={`/partners/${id}`} />;
+            return <Redirect to={`/port/partners/${id}`} />;
         }
 
         return (

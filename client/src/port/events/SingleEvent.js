@@ -52,7 +52,7 @@ class SingleEvent extends Component {
 
     renderEvent = (event) => {
         const photoUrl = event._id
-        ? `/event/photo/${
+        ? `/portEvent/photo/${
             event._id
           }?${new Date().getTime()}`
         : '';

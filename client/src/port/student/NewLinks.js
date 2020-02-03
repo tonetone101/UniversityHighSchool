@@ -124,7 +124,7 @@ class NewLink extends Component {
        
 
         if (redirectToLinks) {
-            return <Redirect to={'/student'} />;
+            return <Redirect to={'/port/student'} />;
             
         }
 
