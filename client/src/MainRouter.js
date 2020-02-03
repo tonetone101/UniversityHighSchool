@@ -7,8 +7,8 @@ import Signin from './user/SignIn'
 import SpanishSignup from './user/SpanishSignUp'
 import SpanishSignin from './user/SpanishSignin'
 
-import PortSignup from './user/portSignUp'
-import PortSignin from './user/portSignin'
+import PortSignUp from './user/portSignUp'
+import PortSignIn from './user/portSignIn'
 
 import khmerSignUp from './user/khmerSignUp'
 import khmerSignIn from './user/khmerSignIn'
