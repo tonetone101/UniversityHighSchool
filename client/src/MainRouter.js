@@ -7,6 +7,9 @@ import Signin from './user/SignIn'
 import SpanishSignup from './user/SpanishSignUp'
 import SpanishSignin from './user/SpanishSignin'
 
+import PortSignup from './user/portSignUp'
+import PortSignin from './user/portSignin'
+
 import khmerSignUp from './user/khmerSignUp'
 import khmerSignIn from './user/khmerSignIn'
 
@@ -332,8 +335,8 @@ const MainRouter = () => (
             {
             // port          
             }
-            <Route exact path="/port/signup" component={portSignUp}></Route>
-            <Route exact path="/port/signin" component={portSignIn}></Route>
+            <Route exact path="/port/signup" component={PortSignUp}></Route>
+            <Route exact path="/port/signin" component={PortSignIn}></Route>
             <Route exact path="/port" component={Carolport}></Route>
             <Route exact path="/port/new/carousel" component={NewportCarousel}></Route>
             <Route exact path="/port/edit/carousel/:carouselId" component={EditportCarousel}></Route>
