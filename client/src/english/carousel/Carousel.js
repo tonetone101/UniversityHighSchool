@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Carousel } from 'react-bootstrap';
-import {list} from './apiCarousel'
+import {list, read} from './apiCarousel'
 import {Link } from 'react-router-dom'
 import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
@@ -9,12 +9,25 @@ import Header from '../header/Header'
 class Carol extends Component {
     state = {
         user: '',
-        carousel: []
+        carousel: [],
+        redirectToSignin: false
     }
 
+    init = userId => {
+        const token = isAuthenticated().token;
+        read(userId, token).then(data => {
+          if (data.error) {
+            this.setState({ redirectToSignin: true });
+          } else {
+            this.setState({ user: data });
+            console.log(data)
+          }
+        });
+      };
+
     renderUser = () => {
-        this.setState({user: isAuthenticated().user })
-        console.log(isAuthenticated().user)
+        const userId = isAuthenticated().user._id;
+        this.init(userId);
     }
 
     componentDidMount() {
@@ -209,7 +222,7 @@ class Carol extends Component {
                             }
 
                             {
-                                isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                this.state.user.code === '2609' && (
                                     <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update for principle</Link>
                                 )
                             }
