@@ -33,6 +33,6 @@ router.get('/portLink/photo/:portLinkId', photo, userPhoto);
 // any route containing :userId, our app will first execute userById()
 router.param('userId', userById);
 // any route containing :uploadId, our app will first execute uploadById()
-router.param('portLinkId', portLinksById);
+router.param('linkId', portLinksById);
 
 module.exports = router;

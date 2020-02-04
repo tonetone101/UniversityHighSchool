@@ -124,7 +124,7 @@ exports.updatekhmerLink = (req, res, next) => {
 };
 
 exports.deletekhmerLink = (req, res) => {
-    let link = req.link;
+    let link = req.khmerLinks;
     link.remove((err, link) => {
         if (err) {
             return res.status(400).json({

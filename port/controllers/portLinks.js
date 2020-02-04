@@ -124,7 +124,7 @@ exports.updateportLink = (req, res, next) => {
 };
 
 exports.deleteportLink = (req, res) => {
-    let link = req.link;
+    let link = req.portLinks;
     link.remove((err, link) => {
         if (err) {
             return res.status(400).json({
