@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const jwt = require("jsonwebtoken"); // to generate signed token
-require('dotenv').config();
+// require('dotenv').config();
 const expressJwt = require("express-jwt"); // for authorization check
 const _ = require('lodash')
 const {sendEmail} = require('../../helper/dbErrorHandler');

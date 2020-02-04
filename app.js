@@ -5,7 +5,7 @@ const cors = require('cors')
 const expressValidator = require('express-validator')
 const app = express()
 const morgan = require('morgan')
-//require('dotenv').config();
+// require('dotenv').config();
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
