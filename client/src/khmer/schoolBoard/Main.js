@@ -66,6 +66,13 @@ class Main extends Component {
                           </div> 
                           ) : ( null)
                          }
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/khmer/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting in khmers</Link>
+                          </div> 
+                          ) : ( null)
+                         }
                          <Link to={`/khmer/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members in khmer</Link>
 
                       </div>
@@ -86,6 +93,12 @@ class Main extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/khmer/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>មើល</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
                                                 <Link to={`/khmer/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>មើល</Link>
                                             ) : (null)
                                         }

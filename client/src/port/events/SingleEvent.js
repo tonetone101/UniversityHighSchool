@@ -112,7 +112,26 @@ class SingleEvent extends Component {
                             <div className='mt-5'>
                                 <div >
                                     <Link
-                                        to={`/edit/event/${event._id}`}
+                                        to={`/port/edit/event/${event._id}`}
+                                        className='btn btn-raised btn-warning'
+                                    >
+                                        Update Event in portuguese
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-5'
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div className='mt-5'>
+                                <div >
+                                    <Link
+                                        to={`/port/edit/event/${event._id}`}
                                         className='btn btn-raised btn-warning'
                                     >
                                         Update Event in portuguese
@@ -134,7 +153,7 @@ class SingleEvent extends Component {
     render() {
         const {event, redirectToEvents} = this.state
         if(redirectToEvents) {
-            return <Redirect  to={'/events'} />
+            return <Redirect  to={'/port/events'} />
         }
         
         return (

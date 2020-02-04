@@ -101,6 +101,14 @@ class Partners extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.role === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/spanish/new/partners'>Agregar nuevo socio</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderPartners(partners)}

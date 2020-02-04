@@ -109,6 +109,20 @@ class AdmissionNews extends React.Component {
                                     </div>
                                 )
                             }
+
+{
+                                isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                    <div>
+                                        <form onSubmit={this.addComment}>
+                                            <div className='form-group col-md-6 '>
+                                                <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                                <input style={{ width: "950px" }} type='text' placeholder='google link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
+                                                <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement in khmer</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                )
+                            }
                            
                             <div className='alert alert-danger' style={{display: error ? "" : "none"}}>
                                 {error}
@@ -133,6 +147,19 @@ class AdmissionNews extends React.Component {
                                                     <div >{new Date(comment.created).toDateString()}</div>
                                                     {   
                                                         isAuthenticated() && isAuthenticated().user.role === 'admin' &&  
+                                                        (
+                                                            
+                                                            <span onClick={() => this.deleteConfirm(comment)} className='text-danger '>
+                                                                Remove
+                                                            </span>
+                                                            
+                                                        
+                                                        )
+                                                        
+                                                    }
+
+{   
+                                                        isAuthenticated() && isAuthenticated().user.code === 2609 &&  
                                                         (
                                                             
                                                             <span onClick={() => this.deleteConfirm(comment)} className='text-danger '>

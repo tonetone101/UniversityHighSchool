@@ -65,6 +65,13 @@ class Main extends Component {
                           </div> 
                           ) : ( null)
                          }
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/port/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
+                          </div> 
+                          ) : ( null)
+                         }
                          <Link to={`/port/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Membros do Conselho</Link>
 
                       </div>
@@ -85,6 +92,12 @@ class Main extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/port/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>Visão</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
                                                 <Link to={`/port/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>Visão</Link>
                                             ) : (null)
                                         }

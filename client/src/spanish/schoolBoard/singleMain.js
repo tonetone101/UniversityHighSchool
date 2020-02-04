@@ -71,6 +71,19 @@ class SingleschoolBoardMeeting extends Component {
                         </div>
                         
                         }
+
+{isAuthenticated().user && 
+                        isAuthenticated().user.code === 2609 &&  
+                        <div>
+                             <Link to={`/spanish/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                                Actualización de la reunión de la Junta Escolar
+                            </Link>
+                            <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
+                                Eliminar reunión
+                            </button>
+                        </div>
+                        
+                        }
                     </div>
                 </div>
         );

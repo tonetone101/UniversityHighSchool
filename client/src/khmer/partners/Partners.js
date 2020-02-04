@@ -102,6 +102,14 @@ class Partners extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/khmer/new/partners'>បន្ថែមដៃគូថ្មី</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderPartners(partners)}

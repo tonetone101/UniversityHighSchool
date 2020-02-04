@@ -70,6 +70,13 @@ class Links extends Component {
                           ) : ( null)
                          }
 
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/spanish/newlink`} className='btn btn-raised btn-primary'>Añadir enlace</Link>
+                          </div> 
+                          ) : ( null)
+                         }
+
                       </div>
                       <hr />
                       
@@ -89,6 +96,12 @@ class Links extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/spanish/link/${link._id}`} className='ml-2 text-danger'>ver</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
                                                 <Link to={`/spanish/link/${link._id}`} className='ml-2 text-danger'>ver</Link>
                                             ) : (null)
                                         }

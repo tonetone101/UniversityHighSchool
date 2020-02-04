@@ -82,7 +82,7 @@ class SchoolBoardMember extends Component {
                         : ''
 
                         const schoolBoardMemberPhoto = schoolBoardMember._id
-                        ? `/schoolBoardMember/photo/${
+                        ? `/khmerschoolBoardMember/photo/${
                             schoolBoardMember._id
                           }?${new Date().getTime()}`
                         : ''
@@ -101,7 +101,7 @@ class SchoolBoardMember extends Component {
                                     {schoolBoardMember.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/schoolBoardMember/${schoolBoardMember._id}`}
+                                        to={`/khmerschoolBoardMember/${schoolBoardMember._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         អាន​បន្ថែម
@@ -142,6 +142,14 @@ class SchoolBoardMember extends Component {
                     </div>
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                            <div>
+                                <Link className='mb-5' to='/khmer/new/schoolBoardMember'>Add schoolBoardMember in khmer</Link>
+                            </div>
+                        )
+                    }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
                             <div>
                                 <Link className='mb-5' to='/khmer/new/schoolBoardMember'>Add schoolBoardMember in khmer</Link>
                             </div>

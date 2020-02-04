@@ -70,6 +70,19 @@ class SingleLink extends Component {
                         </div>
                         
                         }
+
+{isAuthenticated().user && 
+                        isAuthenticated().user.code === 2609 &&  
+                        <div>
+                             <Link to={`/khmer/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                             តំណភ្ជាប់ទាន់សម័យ
+                            </Link>
+                            <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
+                            លុបតំណ
+                            </button>
+                        </div>
+                        
+                        }
                     </div>
                 </div>
         );

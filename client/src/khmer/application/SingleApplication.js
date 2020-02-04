@@ -81,6 +81,18 @@ class SingleApplication extends Component {
                                     </button>
                             </div>
                         )}
+
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

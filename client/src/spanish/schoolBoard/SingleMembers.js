@@ -99,6 +99,26 @@ class SingleschoolBoardMember extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/spanish/edit/schoolBoardMember/${schoolBoardMember._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        Actualizar miembro del consejo escolar
+
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Eliminar 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

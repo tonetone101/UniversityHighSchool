@@ -70,6 +70,13 @@ class Links extends Component {
                           ) : ( null)
                          }
 
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/khmer/newlink`} className='btn btn-raised btn-primary'>បន្ថែមតំណ</Link>
+                          </div> 
+                          ) : ( null)
+                         }
+
                       </div>
                       <hr />
                       
@@ -89,6 +96,13 @@ class Links extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/khmer/link/${link._id}`} className='ml-2 text-danger'>សូមមើល
+                                                </Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
                                                 <Link to={`/khmer/link/${link._id}`} className='ml-2 text-danger'>សូមមើល
                                                 </Link>
                                             ) : (null)

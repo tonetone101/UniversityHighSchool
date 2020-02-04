@@ -74,7 +74,7 @@ class Application extends Component {
 
                         <div  className='col-md-4 mb-5' key={i}>
                             <Link
-                                to={`/application/${application._id}`}
+                                to={`/khmer/application/${application._id}`}
                                 className="mb-4 ml-5"
                                 >
                                 {application.name}

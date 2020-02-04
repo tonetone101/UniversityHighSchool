@@ -133,7 +133,7 @@ class NewStudent extends Component {
             </button>
 
             <Link
-                            to={`/spanish/admission`}
+                            to={`/khmer/admission`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >

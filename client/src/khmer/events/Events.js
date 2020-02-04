@@ -143,6 +143,14 @@ class Events extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/khmer/new/event'>បន្ថែមព្រឹត្តិការណ៍</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderEvents(events)}

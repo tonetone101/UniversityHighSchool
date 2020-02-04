@@ -131,6 +131,14 @@ class SchoolBoardMember extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/spanish/new/schoolBoardMember'>Agregar miembro del consejo escolar</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderschoolBoardMembers(schoolBoardMembers)}

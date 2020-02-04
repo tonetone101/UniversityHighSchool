@@ -190,7 +190,13 @@ class Carol extends Component {
                         <div className='text-center' >
                             {
                                 isAuthenticated() && isAuthenticated().user.role === 'admin' && (
-                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in portuguese</Link>
+                                    <Link to={`/port/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in portuguese</Link>
+                                )
+                            }
+
+{
+                                isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                    <Link to={`/port/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in portuguese</Link>
                                 )
                             }
                         </div>

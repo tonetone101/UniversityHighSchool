@@ -207,6 +207,12 @@ class Carol extends Component {
                                     <Link to={`/khmer/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in Khmer</Link>
                                 )
                             }
+
+{
+                                isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                    <Link to={`/khmer/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in Khmer</Link>
+                                )
+                            }
                         </div>
 
                         <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>

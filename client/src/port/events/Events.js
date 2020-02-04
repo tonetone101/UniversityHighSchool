@@ -133,7 +133,7 @@ class Events extends Component {
                                 
                                     <Card.Link >
                                         <Link
-                                                to={`/event/${event._id}`}
+                                                to={`/port/event/${event._id}`}
                                                 className="btn btn-raised btn-primary btn-sm mb-4"
                                         >
                                                 Consulte Mais informação
@@ -162,7 +162,15 @@ class Events extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.role === 'admin' && (
                             <div>
-                                <Link className='mb-5' to='/new/event'>Add Event in portuguese</Link>
+                                <Link className='mb-5' to='/port/new/event'>Add Event in portuguese</Link>
+                            </div>
+                        )
+                    }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/port/new/event'>Add Event in portuguese</Link>
                             </div>
                         )
                     }

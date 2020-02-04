@@ -108,6 +108,25 @@ class SinglePartners extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/spanish/edit/partner/${partners._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                       Actualizar socios
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Eliminar 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

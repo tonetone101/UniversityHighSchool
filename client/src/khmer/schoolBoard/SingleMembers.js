@@ -50,7 +50,7 @@ class SingleschoolBoardMember extends Component {
         : " Unknown";
 
         const photoUrl = schoolBoardMember._id
-        ? `/schoolBoardMember/photo/${
+        ? `/khmerschoolBoardMember/photo/${
             schoolBoardMember._id
           }?${new Date().getTime()}`
         : '';
@@ -88,6 +88,25 @@ class SingleschoolBoardMember extends Component {
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/khmer/edit/schoolBoardMember/${schoolBoardMember._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        Update schoolBoardMember
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
                             <div >
                                 <div >
                                     <Link

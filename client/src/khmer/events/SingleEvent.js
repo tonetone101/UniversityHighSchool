@@ -119,6 +119,25 @@ class SingleEvent extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div className='mt-5'>
+                                <div >
+                                    <Link
+                                        to={`/khmer/edit/event/${event._id}`}
+                                        className='btn btn-raised btn-warning'
+                                    >
+                                        ព្រឹត្តិការណ៍បច្ចុប្បន្នភាព
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-5'
+                                    >
+                                        យកចេញ
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

@@ -128,6 +128,14 @@ class SchoolBoardMember extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/port/new/schoolBoardMember'>Add schoolBoardMember</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderschoolBoardMembers(schoolBoardMembers)}

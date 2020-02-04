@@ -73,7 +73,7 @@ class SingleFaculty extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/faculty`}
+                            to={`/port/faculty`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -84,7 +84,26 @@ class SingleFaculty extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/faculty/${faculty._id}`}
+                                        to={`/port/edit/faculty/${faculty._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        Update Faculty
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/port/edit/faculty/${faculty._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update Faculty
@@ -107,9 +126,9 @@ class SingleFaculty extends Component {
         const {faculty, redirectToFaculties, redirectToSignIn} = this.state
         
         if(redirectToFaculties) {
-            return <Redirect to={`/faculty`} />
+            return <Redirect to={`/port/faculty`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (

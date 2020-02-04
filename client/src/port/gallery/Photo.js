@@ -95,6 +95,14 @@ class Photo extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/port/new/image'>Add New Photo</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderImages(images)}

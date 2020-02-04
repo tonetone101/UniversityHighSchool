@@ -70,6 +70,13 @@ class Links extends Component {
                           ) : ( null)
                          }
 
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/port/newlink`} className='btn btn-raised btn-primary'>Add Link</Link>
+                          </div> 
+                          ) : ( null)
+                         }
+
                       </div>
                       <hr />
                       
@@ -88,6 +95,12 @@ class Links extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/port/link/${link._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
                                                 <Link to={`/port/link/${link._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }

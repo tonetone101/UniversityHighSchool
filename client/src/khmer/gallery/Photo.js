@@ -98,6 +98,14 @@ class Photo extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/khmer/new/image'>បញ្ចូលរូបថតថ្មី</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderImages(images)}

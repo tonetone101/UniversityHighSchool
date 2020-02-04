@@ -133,6 +133,14 @@ class Faculty extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/khmer/new/faculty'>បន្ថែមមហាវិទ្យាល័យ</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderFaculties(faculties)}

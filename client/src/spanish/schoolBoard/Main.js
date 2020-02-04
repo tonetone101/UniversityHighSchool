@@ -63,6 +63,13 @@ class Main extends Component {
                           </div> 
                           ) : ( null)
                          }
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/spanish/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Añadir Reunión de la junta escolar</Link>
+                          </div> 
+                          ) : ( null)
+                         }
                          <Link to={`/spanish/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Miembros de la Junta</Link>
 
                       </div>

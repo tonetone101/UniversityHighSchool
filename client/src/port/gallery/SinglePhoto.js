@@ -65,7 +65,7 @@ class SinglePhoto extends Component {
 
                         <div className=' text-center'>
                                 <Link
-                                    to={`/images`}
+                                    to={`/port/images`}
                                     className="btn btn-raised btn-primary btn-sm mb-2"
                                     style={{marginLeft: '30px'}}
                                 >
@@ -76,7 +76,7 @@ class SinglePhoto extends Component {
                                     <div >
                                         <div >
                                             <Link
-                                                to={`/edit/image/${image._id}`}
+                                                to={`/port/edit/image/${image._id}`}
                                                 className='btn btn-raised btn-warning ml-3'
                                             >
                                                 Edit Photo
@@ -104,9 +104,9 @@ class SinglePhoto extends Component {
         const {image, redirectToGallery, redirectToSignIn} = this.state
         
         if(redirectToGallery) {
-            return <Redirect to={`/images`} />
+            return <Redirect to={`/port/images`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (

@@ -96,6 +96,25 @@ class SinglePhoto extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/khmer/edit/image/${image._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        កែរូបថត
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        យកចេញ
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

@@ -130,6 +130,14 @@ class Faculty extends Component {
                             </div>
                         )
                     }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/port/new/faculty'>Add Faculty in portuguese</Link>
+                            </div>
+                        )
+                    }
                 
                     <div>               
                         {this.renderFaculties(faculties)}

@@ -98,6 +98,25 @@ class SingleFaculty extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/khmer/edit/faculty/${faculty._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        ធ្វើឱ្យទាន់សម័យមហាវិទ្យាល័យ
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        យកចេញ
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

@@ -72,7 +72,7 @@ class Application extends Component {
 
                         <div  className='col-md-4 mb-5' key={i}>
                             <Link
-                                to={`/application/${application._id}`}
+                                to={`/port/application/${application._id}`}
                                 className="mb-4 ml-5"
                                 >
                                 {application.name}
@@ -87,7 +87,7 @@ class Application extends Component {
     render() {
         const { applications, searched, searchedApplication, error } = this.state;
 
-        if (searched) { return <Redirect to={`application/${searchedApplication._id}`}/> } 
+        if (searched) { return <Redirect to={`port/application/${searchedApplication._id}`}/> } 
 
         return (
             <div>
