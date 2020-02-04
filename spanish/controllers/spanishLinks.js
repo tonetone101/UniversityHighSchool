@@ -124,7 +124,7 @@ exports.updatespanishLink = (req, res, next) => {
 };
 
 exports.deletespanishLink = (req, res) => {
-    let link = req.link;
+    let link = req.spanishLinks;
     link.remove((err, link) => {
         if (err) {
             return res.status(400).json({
