@@ -210,8 +210,8 @@ class Carol extends Component {
                                 )
                             }
 
-                            {
-                                this.state.user && this.state.user.code === 2609 && (
+{
+                                isAuthenticated() && isAuthenticated().user.role === 'principle' && (
                                     <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update for principle</Link>
                                 )
                             }
