@@ -43,8 +43,7 @@ const userSchema = new mongoose.Schema({
         default: 'student'
     },
     code: {
-        type: Number,
-        default: 8290
+        type: Number
     }
 
 }, 

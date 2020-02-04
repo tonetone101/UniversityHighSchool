@@ -37,6 +37,24 @@ class Signup extends Component {
         signup(user)
         .then(data => {
             if(data.error) this.setState({ error: data.error })
+            else if (data.code === '2609') this.setState({
+                error: '',
+                name: '',
+                email: '',
+                role: 'principle',
+                code: '',
+                password: '',
+                open: true
+            }) 
+            else if (data.code === '1017') this.setState({
+                error: '',
+                name: '',
+                email: '',
+                role: 'directors of operation',
+                code: '',
+                password: '',
+                open: true
+            }) 
                 else this.setState({
                     error: '',
                     name: '',
@@ -68,6 +86,20 @@ class Signup extends Component {
             </div>
 
             {code === '8290' ? (
+                <div className='form-group'>
+                    <label className='text-muted'>Role</label>
+                    <input onChange={this.handleChange('role')} type='text' className='form-control' value={role} />
+                </div>
+            ) : (null)}
+
+            {code === '2609' ? (
+                <div className='form-group'>
+                    <label className='text-muted'>Role</label>
+                    <input onChange={this.handleChange('role')} type='text' className='form-control' value={role} />
+                </div>
+            ) : (null)}
+
+            {code === '1017' ? (
                 <div className='form-group'>
                     <label className='text-muted'>Role</label>
                     <input onChange={this.handleChange('role')} type='text' className='form-control' value={role} />
