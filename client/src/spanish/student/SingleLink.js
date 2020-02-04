@@ -53,7 +53,7 @@ class SingleLink extends Component {
 
                     <div className='d-inline-block mb-5'>
                         <Link
-                            to={`/student`}
+                            to={`/spanish/student`}
                             className="btn btn-raised btn-primary btn-sm"
                         >
                             Back to links

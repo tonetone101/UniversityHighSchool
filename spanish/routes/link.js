@@ -22,13 +22,13 @@ router.get('/spanishLinks', getspanishLinks)
 // upload routes
 router.post('/spanishLink/new/:userId', createspanishLink);
 router.get('/spanishLinks/by/:userId', spanishLinksByUser);
-router.get('/spanishLink/:linkId', singlespanishLink);
-router.put('/spanishLink/:spanishLinkId', updatespanishLink);
-router.delete('/spanishLink/:spanishLinkId',  deletespanishLink)
+router.get('/spanishLink/:spanishlinkId', singlespanishLink);
+router.put('/spanishLink/:spanishlinkId', updatespanishLink);
+router.delete('/spanishLink/:spanishlinkId',  deletespanishLink)
 
 
 // photo
-router.get('/spanishLink/photo/:spanishLinkId', photo, userPhoto);
+router.get('/spanishLink/photo/:spanishlinkId', photo, userPhoto);
 
 // any route containing :userId, our app will first execute userById()
 router.param('userId', userById);
