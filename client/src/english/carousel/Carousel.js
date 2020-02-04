@@ -34,6 +34,7 @@ class Carol extends Component {
             }
         }) 
         this.renderUser()
+        console.log(isAuthenticated().user)
     }
 
     componentWillReceiveProps() {
