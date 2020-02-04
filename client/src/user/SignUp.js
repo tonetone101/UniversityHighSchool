@@ -77,14 +77,14 @@ class Signup extends Component {
             {code === '2609' ? (
                 <div className='form-group'>
                     <label className='text-muted'>Role</label>
-                    <input onChange={this.handleChange('role')} type='text' className='form-control' value={this.setState({ role: 'principle'})} />
+                    <input onChange={this.handleChange('role')} type='text' className='form-control' value={role} />
                 </div>
             ) : (null)}
 
             {code === '1017' ? (
                 <div className='form-group'>
                     <label className='text-muted'>Role</label>
-                    <input onChange={this.handleChange('role')} type='text' className='form-control' value='director of operations' />
+                    <input onChange={this.handleChange('role')} type='text' className='form-control' value={role} />
                 </div>
             ) : (null)}
             
