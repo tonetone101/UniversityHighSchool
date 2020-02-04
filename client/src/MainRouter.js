@@ -201,11 +201,7 @@ const MainRouter = () => (
             <Route exact path="/signup" component={Signup}></Route>
             <Route exact path="/signin" component={Signin}></Route>
             <Route exact path="/forgot-password" component={ForgotPassword} />
-            <Route
-  exact
-  path="/reset-password/:resetPasswordToken"
-  component={ResetPassword}
-/>
+            <Route exact path="/reset-password/:resetPasswordToken" component={ResetPassword} />
             <Route exact path="/new/carousel" component={NewCarousel}></Route>
             <Route exact path="/edit/carousel/:carouselId" component={EditCarousel}></Route>
             <Route exact path="/events" component={Event}></Route>
