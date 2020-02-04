@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Carousel } from 'react-bootstrap';
-import {list, read} from './apiCarousel'
+import {list} from './apiCarousel'
 import {Link } from 'react-router-dom'
 import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
@@ -13,21 +13,10 @@ class Carol extends Component {
         redirectToSignin: false
     }
 
-    init = userId => {
-        const token = isAuthenticated().token;
-        read(userId, token).then(data => {
-          if (data.error) {
-            this.setState({ redirectToSignin: true });
-          } else {
-            this.setState({ user: data });
-            console.log(data)
-          }
-        });
-      };
-
     renderUser = () => {
-        const userId = this.props.match.params.userId;
-        this.init(userId);
+        this.setState({
+            user: isAuthenticated().user
+        })
     }
 
     componentDidMount() {
