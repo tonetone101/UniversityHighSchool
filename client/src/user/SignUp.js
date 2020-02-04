@@ -37,24 +37,6 @@ class Signup extends Component {
         signup(user)
         .then(data => {
             if(data.error) this.setState({ error: data.error })
-            else if (data.code === '2609') this.setState({
-                error: '',
-                name: '',
-                email: '',
-                role: 'principle',
-                code: '',
-                password: '',
-                open: true
-            }) 
-            else if (data.code === '1017') this.setState({
-                error: '',
-                name: '',
-                email: '',
-                role: 'directors of operation',
-                code: '',
-                password: '',
-                open: true
-            }) 
                 else this.setState({
                     error: '',
                     name: '',
