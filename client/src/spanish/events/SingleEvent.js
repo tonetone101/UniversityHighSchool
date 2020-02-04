@@ -101,7 +101,7 @@ class SingleEvent extends Component {
                         > Volver a los eventos
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div className='mt-5'>
                                 <div >
                                     <Link

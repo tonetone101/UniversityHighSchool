@@ -90,7 +90,7 @@ class Header extends React.Component {
                         }
 
                         {
-                             isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                 <Nav.Link>
                                     <Link style={{color: 'white', marginLeft: '1070px'}} to='/khmer/application' >
                                         ពាក្យសុំ

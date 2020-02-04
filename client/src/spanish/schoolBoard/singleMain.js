@@ -60,7 +60,7 @@ class SingleschoolBoardMeeting extends Component {
 
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/spanish/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Actualización de la reunión de la Junta Escolar

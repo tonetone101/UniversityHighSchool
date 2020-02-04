@@ -61,7 +61,7 @@ class Main extends Component {
                      <h1>Welcome to our schoolBoard Meeting section</h1>
                       <div  >
                         
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' ? ( 
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
                             <Link to={`/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
                           </div> 
@@ -101,7 +101,7 @@ class Main extends Component {
                                             {schoolBoardMeeting.body}
                                         </Link>
                                         {
-                                            isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                            isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
                                                 <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }

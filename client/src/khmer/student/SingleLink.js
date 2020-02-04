@@ -59,7 +59,7 @@ class SingleLink extends Component {
                             ត្រលប់ទៅតំណ
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/khmer/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                              តំណភ្ជាប់ទាន់សម័យ

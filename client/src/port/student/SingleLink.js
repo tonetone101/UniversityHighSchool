@@ -59,7 +59,7 @@ class SingleLink extends Component {
                             Voltar à página do aluno
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/port/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update Link

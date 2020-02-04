@@ -102,7 +102,7 @@ class SingleEvent extends Component {
                             Back to events
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div className='mt-5'>
                                 <div >
                                     <Link
@@ -122,25 +122,6 @@ class SingleEvent extends Component {
                         )}
 
 {isAuthenticated().user && isAuthenticated().user.code === 2609 && (
-                            <div className='mt-5'>
-                                <div >
-                                    <Link
-                                        to={`/edit/event/${event._id}`}
-                                        className='btn btn-raised btn-warning'
-                                    >
-                                        Update Event
-                                    </Link>
-                                    <button
-                                        onClick={this.deleteConfirm}
-                                        className='btn btn-raised btn-danger ml-5'
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-
-{isAuthenticated().user && isAuthenticated().user.code === 1017 && (
                             <div className='mt-5'>
                                 <div >
                                     <Link

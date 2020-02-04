@@ -94,7 +94,7 @@ class AdmissionNews extends React.Component {
         return (
             <div>
                         {
-                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <form onSubmit={this.addComment} >
                                         <div className='form-group col-md-6 '>
                                             <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
@@ -142,7 +142,7 @@ class AdmissionNews extends React.Component {
                                                 <span className='col-md-4' >
                                                     <div >{new Date(comment.created).toDateString()}</div>
                                                     {   
-                                                        isAuthenticated() && isAuthenticated().user.role === 'admin' &&  
+                                                        isAuthenticated() && isAuthenticated().user.code === 8290 &&  
                                                         (
                                                             
                                                             <span onClick={() => this.deleteConfirm(comment)} className='text-danger '>

@@ -90,7 +90,7 @@ class SinglePartners extends Component {
                             Back to partners
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link

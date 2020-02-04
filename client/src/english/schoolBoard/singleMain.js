@@ -59,7 +59,7 @@ class SingleschoolBoardMeeting extends Component {
                             Back to schoolBoardMeetings
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting
@@ -73,19 +73,6 @@ class SingleschoolBoardMeeting extends Component {
 
 {isAuthenticated().user && 
                         isAuthenticated().user.code === 2609 &&  
-                        <div>
-                             <Link to={`/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
-                                Update schoolBoardMeeting
-                            </Link>
-                            <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
-                                Delete Post
-                            </button>
-                        </div>
-                        
-                        }
-
-{isAuthenticated().user && 
-                        isAuthenticated().user.code === 1017 &&  
                         <div>
                              <Link to={`/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting

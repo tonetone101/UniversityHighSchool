@@ -63,7 +63,7 @@ class Links extends Component {
                      
                       <div  >
                         
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' ? ( 
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
                             <Link to={`/spanish/newlink`} className='btn btn-raised btn-primary'>Añadir enlace</Link>
                           </div> 
@@ -95,7 +95,7 @@ class Links extends Component {
                                             {link.body}
                                         </Link>
                                         {
-                                            isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                            isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
                                                 <Link to={`/spanish/link/${link._id}`} className='ml-2 text-danger'>ver</Link>
                                             ) : (null)
                                         }

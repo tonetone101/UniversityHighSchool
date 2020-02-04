@@ -206,7 +206,7 @@ class Carol extends Component {
 
                         <div className='text-center' >
                             {
-                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
                                 )
                             }
@@ -217,11 +217,7 @@ class Carol extends Component {
                                 )
                             }
 
-                            {
-                                isAuthenticated() && isAuthenticated().user.code === 1017 && (
-                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update for Director of Operations</Link>
-                                )
-                            }
+                           
                         </div>
                    
                     </div>

@@ -80,7 +80,7 @@ class SingleFaculty extends Component {
                             ត្រលប់ទៅមហាវិទ្យាល័យវិញ
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link

@@ -78,7 +78,7 @@ class SinglePhoto extends Component {
                             ត្រឡប់ទៅវិចិត្រសាលវិញ
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link

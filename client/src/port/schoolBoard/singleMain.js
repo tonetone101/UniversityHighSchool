@@ -57,7 +57,7 @@ class SingleschoolBoardMeeting extends Component {
                             Voltar às reuniões do conselho escolar
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/port/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting

@@ -59,7 +59,7 @@ class SingleschoolBoardMeeting extends Component {
                             ត្រលប់ទៅសាលារៀនប៊រឌីមេត្រេសវិញ
                         </Link>
                        {isAuthenticated().user && 
-                        isAuthenticated().user.role === 'admin' &&  
+                        isAuthenticated().user.code === 8290 &&  
                         <div>
                              <Link to={`/khmer/schoolBoardMeeting/edit/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting in khmer

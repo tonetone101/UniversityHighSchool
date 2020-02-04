@@ -73,7 +73,7 @@ class SinglePhoto extends Component {
                                     Back to gallery
                                 </Link>
 
-                                {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                                {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                                     <div >
                                         <div >
                                             <Link

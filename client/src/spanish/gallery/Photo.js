@@ -112,7 +112,7 @@ class Photo extends Component {
                         <hr/>
                     </div>
                     {
-                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                        isAuthenticated() && isAuthenticated().user.code === 8290 && (
                             <div>
                                 <Link className='mb-5' to='/spanish/new/image'>Añadir nueva foto</Link>
                             </div>

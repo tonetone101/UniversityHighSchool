@@ -80,7 +80,7 @@ class SingleFaculty extends Component {
                             Back to faculties
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link
@@ -118,24 +118,7 @@ class SingleFaculty extends Component {
                             </div>
                         )}
 
-{isAuthenticated().user && isAuthenticated().user.code === 1017 && (
-                            <div >
-                                <div >
-                                    <Link
-                                        to={`/edit/faculty/${faculty._id}`}
-                                        className='btn btn-raised btn-warning ml-3'
-                                    >
-                                        Update Faculty
-                                    </Link>
-                                    <button
-                                        onClick={this.deleteConfirm}
-                                        className='btn btn-raised btn-danger ml-3'
-                                    >
-                                        Delete 
-                                    </button>
-                                </div>
-                            </div>
-                        )}
+
                     </div>
                 </div>
         );

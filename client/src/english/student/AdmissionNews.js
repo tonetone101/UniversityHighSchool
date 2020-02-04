@@ -97,7 +97,7 @@ class AdmissionNews extends React.Component {
         return (
             <div>
                         {
-                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <div>
                                         <form onSubmit={this.addComment}>
                                             <div className='form-group col-md-6 '>
@@ -160,7 +160,7 @@ class AdmissionNews extends React.Component {
                                                 <span className='col-md-4' >
                                                     <div >{new Date(comment.created).toDateString()}</div>
                                                     {   
-                                                        isAuthenticated() && isAuthenticated().user.role === 'admin' &&  
+                                                        isAuthenticated() && isAuthenticated().user.code === 8290 &&  
                                                         (
                                                             
                                                             <span onClick={() => this.deleteConfirm(comment)} className='text-danger '>

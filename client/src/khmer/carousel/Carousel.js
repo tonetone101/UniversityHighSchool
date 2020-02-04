@@ -203,7 +203,7 @@ class Carol extends Component {
 
                         <div className='text-center' >
                             {
-                                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                                isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <Link to={`/khmer/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update in Khmer</Link>
                                 )
                             }

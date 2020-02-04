@@ -57,7 +57,7 @@ const Home = () => {
                 Nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
             </p>
             {
-                isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                isAuthenticated() && isAuthenticated().user.code === 8290 && (
                     <div className='text-center'>
                         <button className='btn btn-primary'>Update</button>
                     </div>

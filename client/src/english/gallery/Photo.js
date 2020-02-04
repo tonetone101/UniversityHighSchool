@@ -87,7 +87,7 @@ class Photo extends Component {
                         <hr/>
                     </div>
                     {
-                        isAuthenticated() && isAuthenticated().user.role === 'admin' && (
+                        isAuthenticated() && isAuthenticated().user.code === 8290 && (
                             <div>
                                 <Link className='mb-5' to='/new/image'>Add New Photo</Link>
                             </div>
@@ -102,13 +102,6 @@ class Photo extends Component {
                         )
                     }
 
-{
-                        isAuthenticated() && isAuthenticated().user.code === 1017 && (
-                            <div>
-                                <Link className='mb-5' to='/new/image'>Add New Photo</Link>
-                            </div>
-                        )
-                    }
                 
                     <div>               
                         {this.renderImages(images)}

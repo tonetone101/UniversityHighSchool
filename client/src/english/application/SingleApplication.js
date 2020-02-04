@@ -63,7 +63,18 @@ class SingleApplication extends Component {
                             Back to applications
                         </Link>
 
-                        {isAuthenticated().user && isAuthenticated().user.role === 'admin' && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
+                            <div >
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                            </div>
+                        )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
                             <div >
                                     <button
                                         onClick={this.deleteConfirm}
