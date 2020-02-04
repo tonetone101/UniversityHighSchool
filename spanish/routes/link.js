@@ -24,7 +24,7 @@ router.post('/spanishLink/new/:userId', createspanishLink);
 router.get('/spanishLinks/by/:userId', spanishLinksByUser);
 router.get('/spanishLink/:spanishlinkId', singlespanishLink);
 router.put('/spanishLink/:spanishlinkId', updatespanishLink);
-router.delete('/spanishLink/:spanishlinkId',  deletespanishLink)
+router.delete('/spanishLink/:spanishlinkId', deletespanishLink)
 
 
 // photo
