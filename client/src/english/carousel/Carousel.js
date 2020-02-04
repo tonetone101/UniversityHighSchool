@@ -26,7 +26,7 @@ class Carol extends Component {
       };
 
     renderUser = () => {
-        const userId = isAuthenticated().user._id;
+        const userId = this.props.match.params.userId;
         this.init(userId);
     }
 
