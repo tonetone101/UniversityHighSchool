@@ -99,6 +99,16 @@ class Header extends React.Component {
                             )
                         }
 
+{
+                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/spanish/application' >
+                                        Aplicaciones
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
+
                         
                       
                     </Nav>
