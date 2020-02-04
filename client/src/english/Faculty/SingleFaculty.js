@@ -98,6 +98,44 @@ class SingleFaculty extends Component {
                                 </div>
                             </div>
                         )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/edit/faculty/${faculty._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        Update Faculty
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 1017 && (
+                            <div >
+                                <div >
+                                    <Link
+                                        to={`/edit/faculty/${faculty._id}`}
+                                        className='btn btn-raised btn-warning ml-3'
+                                    >
+                                        Update Faculty
+                                    </Link>
+                                    <button
+                                        onClick={this.deleteConfirm}
+                                        className='btn btn-raised btn-danger ml-3'
+                                    >
+                                        Delete 
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
         );

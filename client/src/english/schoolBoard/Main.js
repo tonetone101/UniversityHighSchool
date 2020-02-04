@@ -67,6 +67,21 @@ class Main extends Component {
                           </div> 
                           ) : ( null)
                          }
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
+                          <div>
+                            <Link to={`/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
+                          </div> 
+                          ) : ( null)
+                         }
+
+{isAuthenticated().user && isAuthenticated().user.code === 1017 ? ( 
+                          <div>
+                            <Link to={`/newschoolBoardMeeting`} className='btn btn-raised btn-primary'>Add schoolBoardMeeting</Link>
+                          </div> 
+                          ) : ( null)
+                         }
+
                          <Link to={`/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
 
                       </div>
@@ -87,6 +102,18 @@ class Main extends Component {
                                         </Link>
                                         {
                                             isAuthenticated().user && isAuthenticated().user.role === 'admin' ? (
+                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
+                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 1017 ? (
                                                 <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }

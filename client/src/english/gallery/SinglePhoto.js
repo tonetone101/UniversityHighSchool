@@ -91,6 +91,44 @@ class SinglePhoto extends Component {
                                         </div>
                                     </div>
                                 )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                                    <div >
+                                        <div >
+                                            <Link
+                                                to={`/edit/image/${image._id}`}
+                                                className='btn btn-raised btn-warning ml-3'
+                                            >
+                                                Edit Photo
+                                            </Link>
+                                            <button
+                                                onClick={this.deleteConfirm}
+                                                className='btn btn-raised btn-danger ml-3'
+                                            >
+                                                Delete 
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
+
+{isAuthenticated().user && isAuthenticated().user.code === 1017 && (
+                                    <div >
+                                        <div >
+                                            <Link
+                                                to={`/edit/image/${image._id}`}
+                                                className='btn btn-raised btn-warning ml-3'
+                                            >
+                                                Edit Photo
+                                            </Link>
+                                            <button
+                                                onClick={this.deleteConfirm}
+                                                className='btn btn-raised btn-danger ml-3'
+                                            >
+                                                Delete 
+                                            </button>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
 

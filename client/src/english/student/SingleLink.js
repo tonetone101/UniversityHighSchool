@@ -70,6 +70,32 @@ class SingleLink extends Component {
                         </div>
                         
                         }
+
+{isAuthenticated().user && 
+                        isAuthenticated().user.code === 2609 &&  
+                        <div>
+                             <Link to={`/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                                Update Link
+                            </Link>
+                            <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
+                                Delete Post
+                            </button>
+                        </div>
+                        
+                        }
+
+{isAuthenticated().user && 
+                        isAuthenticated().user.code === 1017 &&  
+                        <div>
+                             <Link to={`/link/edit/${link._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
+                                Update Link
+                            </Link>
+                            <button onClick={this.deleteConfirm} className='btn btn-raised btn-warning btn-sm'>
+                                Delete Post
+                            </button>
+                        </div>
+                        
+                        }
                     </div>
                 </div>
         );

@@ -166,6 +166,21 @@ class Events extends Component {
                         )
                     }
                 
+                {
+                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                            <div>
+                                <Link className='mb-5' to='/new/event'>Add Event</Link>
+                            </div>
+                        )
+                    }
+
+{
+                        isAuthenticated() && isAuthenticated().user.code === 1017 && (
+                            <div>
+                                <Link className='mb-5' to='/new/event'>Add Event</Link>
+                            </div>
+                        )
+                    }
                     <div>               
                         {this.renderEvents(events)}
                     </div>   
