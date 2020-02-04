@@ -5,7 +5,7 @@ const fs = require('fs');
 
 exports.userById = (req, res, next, id) => {
     User.findById(id)
-        .select('_id name email created photo about role')
+        .select('_id name email created photo about code role')
         .exec((err, user) => {
             if (err || !user) {
                 return res.status(400).json({
@@ -42,7 +42,7 @@ exports.allUsers = (req, res) => {
             });
         }
         res.json(users)
-    }).select('name email about role photo created');
+    }).select('name email about role code photo created');
 };
 
 exports.getUser = (req, res) => {
@@ -118,6 +118,6 @@ exports.findPeople = (req, res) => {
             });
         }
         res.json(users);
-    }).select('name email about photo created');
+    }).select('name email about photo code created');
 };
 
