@@ -14,6 +14,7 @@ class Carol extends Component {
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
+        console.log(isAuthenticated().user)
     }
 
     componentDidMount() {
