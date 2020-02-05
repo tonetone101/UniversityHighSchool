@@ -91,41 +91,49 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/application' >
-                                       Submitted Applications
-                                    </Link>
-                                </Nav.Link>
+                                <nav>
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/application' >
+                                        Submitted Applications
+                                        </Link>
+                                    </Nav.Link>
+                                </nav>
                             )
                         }
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white' }} to='/application' >
+                                <nav>
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
-                                    </Link>
-                                </Nav.Link>
+                                        </Link>
+                                    </Nav.Link>
+                                </nav>
                             )
                         }     
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/applicants' >
-                                        Pre-registered Applicants
-                                    </Link>
-                                </Nav.Link>
+                                <nav>
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/applicants' >
+                                            Pre-registered Applicants
+                                        </Link>
+                                    </Nav.Link>
+                                </nav>
                             )
                         }
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/applicants' >
-                                        Pre-registered Applicants
-                                    </Link>
-                                </Nav.Link>
+                                <nav>
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/applicants' >
+                                            Pre-registered Applicants
+                                        </Link>
+                                    </Nav.Link>
+                                </nav>
                             )
                         }                     
 
