@@ -11,7 +11,7 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    birthday: {
+    email: {
         type: String,
         required: true,
     },

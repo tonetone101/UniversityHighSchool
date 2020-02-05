@@ -65,7 +65,7 @@ class NewStudent extends Component {
                         loading: false,
                         parent: "",
                         student: "",
-                        birthday: "",
+                        email: "",
                         contact: "",
                         redirectToProfile: true
                     });
@@ -106,7 +106,7 @@ class NewStudent extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Student Birthday</label>
+                <label className="text-muted">Parent's Email</label>
                 <input
                     onChange={this.handleChange("birthday")}
                     type="text"
@@ -116,7 +116,7 @@ class NewStudent extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Contact</label>
+                <label className="text-muted">Contact phone number</label>
                 <input
                     onChange={this.handleChange("contact")}
                     type="text"
@@ -154,6 +154,9 @@ class NewStudent extends Component {
             <div className='container' >
                 
                             <h2 className="mt-5 mb-5">Pre-Registeration form</h2>
+                            <p>
+                                Please fill out form to request more information
+                            </p>
                             <div
                                 className="alert alert-danger"
                                 style={{ display: error ? "" : "none" }}
@@ -169,13 +172,7 @@ class NewStudent extends Component {
                                 ""
                             )} 
 
-                            {
-                                isAuthenticated() && isAuthenticated().user ? (this.newStudentForm(parent, student, birthday, contact)) : (<div>
-                                    <p>In order to register your child, please create a user account by signing up and signing in. Once you are signed in, revisit this page. </p>
-                                </div>)
-                            }
-
-                            {/* {this.newStudentForm(parent, student, birthday, contact)} */}
+                            {this.newStudentForm(parent, student, email, contact)}
                
             </div>
         );

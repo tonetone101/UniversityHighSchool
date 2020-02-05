@@ -1,11 +1,31 @@
 export const create = (userId, token, student) => {
-    return fetch(`/student/new/${userId}`, {
+    return fetch(`/student/new`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             Authorization: `Bearer ${token}`
         },
         body: student
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const getApplicants = () => {
+    return fetch(`/student`, {
+        method: "GET"
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
+export const singleApplicant = (studentId) => {
+    return fetch(`/student/${studentId}`, {
+        method: "GET"
     })
         .then(response => {
             return response.json();

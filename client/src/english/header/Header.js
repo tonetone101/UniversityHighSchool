@@ -92,8 +92,8 @@ class Header extends React.Component {
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                 <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
-                                        Applications
+                                    <Link className='mr-3' style={{color: 'white', marginLeft: '1070px'}} to='/application' >
+                                       Submitted Applications
                                     </Link>
                                 </Nav.Link>
                             )
@@ -102,12 +102,32 @@ class Header extends React.Component {
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
                                 <Nav.Link>
-                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/application' >
-                                        Applications
+                                    <Link className='mr-3' style={{color: 'white', marginLeft: '1070px'}} to='/application' >
+                                        Submitted Applications
                                     </Link>
                                 </Nav.Link>
                             )
-                        }                       
+                        }     
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.code === 8290 && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/applicants' >
+                                        Pre-registered Applicants
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                <Nav.Link>
+                                    <Link style={{color: 'white', marginLeft: '1070px'}} to='/applicants' >
+                                        Pre-registered Applicants
+                                    </Link>
+                                </Nav.Link>
+                            )
+                        }                     
 
                         
                       
