@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {singleApplicant, remove} from './apiStudent'
+import {singleApplicant, removeApplicant} from './apiStudent'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
@@ -25,7 +25,7 @@ class SingleApplicant extends Component {
     deleteapplicant = () => {
         const applicantId = this.props.match.params.applicantId
         const token = isAuthenticated().token
-        remove(applicantId, token).then(data => {
+        removeApplicant(applicantId, token).then(data => {
             if(data.error) {
                 console.log(data.error)
             } else {

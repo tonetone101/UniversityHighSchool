@@ -33,7 +33,7 @@ export const singleApplicant = (studentId) => {
         .catch(err => console.log(err));
 };
 
-export const remove = (studentId, token) => {
+export const removeApplicant = (studentId, token) => {
     return fetch(`/student/delete/${studentId}`, {
         method: "DELETE",
         headers: {
