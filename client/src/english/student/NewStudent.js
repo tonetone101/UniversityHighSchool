@@ -130,11 +130,11 @@ class NewStudent extends Component {
             <div className="form-group">
                 <label className="text-muted">Message</label>
                 <textarea
-                    onChange={this.handleChange("contact")}
+                    onChange={this.handleChange("message")}
                     type="text"
                     placeholder='optional'
                     className="form-control"
-                    value={contact}
+                    value={message}
                 />
             </div>
 
