@@ -109,7 +109,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <nav className='row float-right'>
+                                <nav className='row'>
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
