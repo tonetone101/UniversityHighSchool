@@ -91,7 +91,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <nav className='row ' style={{marginLeft: '800px'}}>
+                                <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
@@ -109,7 +109,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <nav className='row ' style={{marginLeft: '800px'}}>
+                                <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
