@@ -45,20 +45,20 @@ class SingleApplicant extends Component {
 
         return (
                 <div  className='text-center'>
-                     <div style={{color: 'black'}} className='col-md-6 mt-5'>
+                     <div style={{color: 'black'}} className='mt-5'>
                         <h4 className="card-text">
-                           {applicant.parent}
+                           Parent's name: {applicant.parent}
                         </h4>
                         <p style={{color: 'black'}} className="card-text">
-                            {applicant.student}
+                            Student's name: {applicant.student}
                         </p>
 
                         <p style={{color: 'black'}} className="card-text">
-                            {applicant.email}
+                            Email: {applicant.email}
                         </p>
 
                         <p style={{color: 'black'}} className="card-text">
-                            {applicant.contact}
+                            Contact Number: {applicant.contact}
                         </p>
                     </div>
 
@@ -66,7 +66,7 @@ class SingleApplicant extends Component {
                         <Link
                             to={`/applicants`}
                             className="btn btn-raised btn-primary btn-sm "
-                            style={{marginLeft: '30px'}}
+                            // style={{marginLeft: '30px'}}
                         >
                             Back to applicants
                         </Link>
@@ -82,7 +82,7 @@ class SingleApplicant extends Component {
                             </div>
                         )}
 
-{isAuthenticated().user && isAuthenticated().user.code === 2609 && (
+                        {isAuthenticated().user && isAuthenticated().user.code === 2609 && (
                             <div >
                                     <button
                                         onClick={this.deleteConfirm}
