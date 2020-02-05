@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getApplicants } from "./apiStudents";
+import { getApplicants } from "./apiStudent";
 import { Link, Redirect } from "react-router-dom";
 import {isAuthenticated} from '../../auth'
 import { Card, Button } from 'react-bootstrap';
