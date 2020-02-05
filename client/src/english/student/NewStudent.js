@@ -9,7 +9,7 @@ class NewStudent extends Component {
         this.state = {
             parent: "",
             student: "",
-            birthday: "",
+            email: "",
             contact: "",
             error: "",
             user: {},
@@ -25,7 +25,7 @@ class NewStudent extends Component {
     }
 
     isValid = () => {
-        const { parent, student, birthday, contact, fileSize } = this.state;
+        const { parent, student, email, contact, fileSize } = this.state;
         if (fileSize > 1000000) {
             this.setState({
                 error: "File size should be less than 100kb",
@@ -33,7 +33,7 @@ class NewStudent extends Component {
             });
             return false;
         }
-        if (parent.length === 0 || student.length === 0 || birthday.length === 0 || contact.length === 0) {
+        if (parent.length === 0 || student.length === 0 || email.length === 0 || contact.length === 0) {
             this.setState({ error: "All fields are required", loading: false });
             return false;
         }
@@ -74,7 +74,7 @@ class NewStudent extends Component {
         }
     };
 
-    newStudentForm = (parent, student, birthday, contact) => (
+    newStudentForm = (parent, student, email, contact) => (
         <form>
             {/* <div className="form-group">
                 <label className="text-muted">Post Photo</label>
@@ -108,10 +108,10 @@ class NewStudent extends Component {
             <div className="form-group">
                 <label className="text-muted">Parent's Email</label>
                 <input
-                    onChange={this.handleChange("birthday")}
+                    onChange={this.handleChange("email")}
                     type="text"
                     className="form-control"
-                    value={birthday}
+                    value={email}
                 />
             </div>
 
@@ -138,7 +138,7 @@ class NewStudent extends Component {
         const {
             parent,
             student,
-            birthday,
+            email,
             contact,
             user,
             error,
