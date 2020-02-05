@@ -77,7 +77,7 @@ class Admission extends Component {
 
     renderAppLinks = () => {
         return (
-            <div>
+            <div style={{background: '#b7b7b7'}}>
                 <h4 style={{fontWeight: 'bold'}}>
                     Registration
                 </h4>
