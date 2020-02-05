@@ -97,6 +97,12 @@ class Header extends React.Component {
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
+
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/applicants' >
+                                            Pre-registered Applicants
+                                        </Link>
+                                    </Nav.Link>
                                 </nav>
                             )
                         }
@@ -109,34 +115,15 @@ class Header extends React.Component {
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
+
+                                    <Nav.Link>
+                                        <Link style={{color: 'white'}} to='/applicants' >
+                                            Pre-registered Applicants
+                                        </Link>
+                                    </Nav.Link>
                                 </nav>
                             )
                         }     
-
-                        {
-                            isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <nav>
-                                    <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/applicants' >
-                                            Pre-registered Applicants
-                                        </Link>
-                                    </Nav.Link>
-                                </nav>
-                            )
-                        }
-
-                        {
-                            isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <nav>
-                                    <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/applicants' >
-                                            Pre-registered Applicants
-                                        </Link>
-                                    </Nav.Link>
-                                </nav>
-                            )
-                        }                     
-
                         
                       
                     </Nav>
