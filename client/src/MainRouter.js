@@ -41,7 +41,6 @@ import SingleApplicant from './english/student/SingleApplicant'
 
 import Bully from './english/student/Bully'
 import Student from './english/student/Student'
-import Applicants from './english/student/Applicants'
 import GenderPolicy from './english/student/GenderPolicy'
 import NewLinks from './english/student/NewLinks'
 import SingleLink from './english/student/SingleLink'
