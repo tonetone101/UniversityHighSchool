@@ -36,7 +36,7 @@ class Student extends Component {
     render() {
 
         return (
-            <div>
+            <div style={{background: '#b7b7b7'}}>
                 <Header history={this.props.history} />
                 <div className='container' >
                     <h3 className='text-center mt-4'>Welcome to our Student section</h3>
