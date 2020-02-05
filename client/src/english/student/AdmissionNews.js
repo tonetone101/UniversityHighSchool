@@ -36,6 +36,11 @@ class AdmissionNews extends React.Component {
         return true
     }
 
+    renderEdit = () => {
+        this.setState({
+            edit: true
+        })
+    }
 
     addComment = e => {
         e.preventDefault()
@@ -59,6 +64,36 @@ class AdmissionNews extends React.Component {
                     } else {
                         this.setState({text: ''})
                         this.setState({url: ''})
+                        // push up data to parent component
+                        this.props.updateComments(data.comments)
+                    }
+                })
+         }
+    }
+
+    editComment = e => {
+        e.preventDefault()
+
+        if(!isAuthenticated()) {
+            this.setState({error: 'Please sign in to leave an announcement'})
+            return false
+        }
+
+        if(this.isValid()) {
+            const userId = isAuthenticated().user._id
+            const admissionId = this.props.admissionId
+            const token = isAuthenticated().token
+            
+
+            edit(userId, token, admissionId, {text: this.state.text, url: this.state.url})
+                .then(data => {
+                    console.log(data)
+                    if(data.error) {
+                        console.log(data.error)
+                    } else {
+                        this.setState({text: ''})
+                        this.setState({url: ''})
+                        this.setState({edit: false})
                         // push up data to parent component
                         this.props.updateComments(data.comments)
                     }
@@ -150,6 +185,25 @@ class AdmissionNews extends React.Component {
                                     <div key={i}>
                                        
                                             <div className='row'>
+                                                {
+                                                    this.state.edit ? (
+                                                        <form onSubmit={this.editComment}>
+                                                            <div className='form-group col-md-6 '>
+                                                                <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                                                <input style={{ width: "950px" }} type='text' placeholder='google doc link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
+                                                                <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                                            </div>
+                                                        </form>
+                                                    ) : (
+                                                        <Link onClick={() => { 
+                                                            window.open(comment.url) 
+                                                            }}>
+                                                            <p className='col-md-8'>
+                                                                {comment.text}
+                                                            </p>
+                                                        </Link>
+                                                    )
+                                                }
                                                     <Link onClick={() => { 
                                                         window.open(comment.url) 
                                                         }}>
@@ -173,6 +227,7 @@ class AdmissionNews extends React.Component {
                                                         )
                                                         
                                                     }
+                                                    
 
 {   
                                                         isAuthenticated() && isAuthenticated().user.code === 2609 &&  
@@ -187,7 +242,7 @@ class AdmissionNews extends React.Component {
                                                         
                                                     }
 
-                                                {/* {
+                                                {
                                                     isAuthenticated() && isAuthenticated().user.code === 8290 &&  
                                                         (
                                                             
@@ -197,7 +252,7 @@ class AdmissionNews extends React.Component {
                                                             
                                                         
                                                         )
-                                                } */}
+                                                }
 
                                                 </span>
                                             </div>

@@ -87,6 +87,12 @@ class About extends Component {
             <div>
                <Header history={this.props.history} />             
                 <div>
+                    <div>
+                        <Link to='/partners'>
+                                Our Partners
+                        </Link>
+                    </div>
+                    
                     <div className='text-center'>
                         {!about ? ( 
                                 <div className='jumbotron text-center '>
