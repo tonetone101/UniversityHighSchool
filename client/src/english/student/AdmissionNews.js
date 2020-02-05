@@ -1,6 +1,6 @@
 import React from 'react'
 import { isAuthenticated } from "../../auth";
-import {comment, uncomment} from './apiStudent'
+import {comment, uncomment, edit} from './apiStudent'
 import { Link } from "react-router-dom";
 
 class AdmissionNews extends React.Component {
@@ -227,7 +227,7 @@ class AdmissionNews extends React.Component {
                                                         )
                                                         
                                                     }
-                                                    
+
 
 {   
                                                         isAuthenticated() && isAuthenticated().user.code === 2609 &&  
