@@ -71,8 +71,8 @@ class AdmissionNews extends React.Component {
          }
     }
 
-    editComment = () => {
-
+    editComment = e => {
+        e.preventDefault()
         if(!isAuthenticated()) {
             this.setState({error: 'Please sign in to edit an announcement'})
             return false
