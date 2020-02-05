@@ -187,11 +187,11 @@ class AdmissionNews extends React.Component {
                                                        
                                                             {
                                                                 this.state.edit ? (
-                                                                    <form onSubmit={this.addComment}>
+                                                                    <form onSubmit={this.editComment}>
                                                                         <div className='form-group col-md-6 '>
-                                                                            <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                                                            <textarea style={{ width: "950px" }} type='text' value={this.state.text} onChange={this.handleChange} className='form-control'/>
                                                                             <input style={{ width: "950px" }} type='text' placeholder='google doc link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
-                                                                            <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                                                            <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Edit announcement</button>
                                                                         </div>
                                                                     </form>
                                                                 ) : (
