@@ -125,6 +125,21 @@ export const uncomment = (userId, token, admissionId, comment) => {
         .catch(err => console.log(err));
 };
 
+export const edit = (userId, admissionId, token, comment) => {
+    return fetch(`/admission/updatecomment`, {
+        method: "PUT",
+        headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({userId, admissionId, comment})
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
 export const getAdmission = () => {
     return fetch(`/admission/5e2b09817bec634f51efacd8`, {
         method: "GET",

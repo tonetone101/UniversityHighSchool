@@ -1,12 +1,13 @@
 import React from 'react'
 import { isAuthenticated } from "../../auth";
-import {comment, uncomment} from './apiStudent'
+import {comment, uncomment, edit} from './apiStudent'
 import { Link } from "react-router-dom";
 
 class AdmissionNews extends React.Component {
     state = {
         text: '',
         url: '',
+        edit: false,
         error: ''
     }
 
@@ -35,6 +36,13 @@ class AdmissionNews extends React.Component {
         return true
     }
 
+    renderEdit = (e) => {
+        e.preventDefault()
+        this.setState({
+            edit: true
+        })
+    }
+
     addComment = e => {
         e.preventDefault()
 
@@ -56,6 +64,35 @@ class AdmissionNews extends React.Component {
                         console.log(data.error)
                     } else {
                         this.setState({text: ''})
+                        this.setState({url: ''})
+                        // push up data to parent component
+                        this.props.updateComments(data.comments)
+                    }
+                })
+         }
+    }
+
+    editComment = e => {
+        e.preventDefault()
+
+        if(!isAuthenticated()) {
+            this.setState({error: 'Please sign in to edit an announcement'})
+            return false
+        }
+
+        if(this.isValid()) {
+            const userId = isAuthenticated().user._id
+            const admissionId = this.props.admissionId
+            const token = isAuthenticated().token
+            
+
+            edit(userId, token, admissionId, {text: this.state.text, url: this.state.url})
+                .then(data => {
+                    console.log(data)
+                    if(data.error) {
+                        console.log(data.error)
+                    } else {
+                        this.setState({text: '', edit: false})
                         this.setState({url: ''})
                         // push up data to parent component
                         this.props.updateComments(data.comments)
@@ -152,7 +189,18 @@ class AdmissionNews extends React.Component {
                                                         window.open(comment.url) 
                                                         }}>
                                                         <p className='col-md-8'>
-                                                            {comment.text}
+                                                            {
+                                                                this.state.edit ? (
+                                                                    <form onSubmit={this.addComment}>
+                                                                        <div className='form-group col-md-6 '>
+                                                                            <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                                                            <input style={{ width: "950px" }} type='text' placeholder='google doc link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
+                                                                            <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
+                                                                        </div>
+                                                                    </form>
+                                                                ) : (comment.text)
+                                                            }
+                                                            
                                                         </p>
                                                     </Link>
                                                
@@ -185,18 +233,18 @@ class AdmissionNews extends React.Component {
                                                         
                                                     }
 
-{   
-                                                        isAuthenticated() && isAuthenticated().user.code === 1017 &&  
+                                                {
+                                                    isAuthenticated() && isAuthenticated().user.code === 8290 &&  
                                                         (
                                                             
-                                                            <span onClick={() => this.deleteConfirm(comment)} className='text-danger '>
-                                                                Remove
+                                                            <span onClick={() => this.renderEdit(comment)} className='text-danger '>
+                                                                Edit
                                                             </span>
                                                             
                                                         
                                                         )
-                                                        
-                                                    }
+                                                }
+
                                                 </span>
                                             </div>
                                        
