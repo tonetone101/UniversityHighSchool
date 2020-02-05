@@ -183,10 +183,8 @@ class AdmissionNews extends React.Component {
                                     <div key={i}>
                                        
                                             <div className='row'>
-                                                    <Link onClick={() => { 
-                                                        window.open(comment.url) 
-                                                        }}>
-                                                        <p className='col-md-8'>
+                                                  
+                                                       
                                                             {
                                                                 this.state.edit ? (
                                                                     <form onSubmit={this.addComment}>
@@ -196,11 +194,16 @@ class AdmissionNews extends React.Component {
                                                                             <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
                                                                         </div>
                                                                     </form>
-                                                                ) : (comment.text)
+                                                                ) : (
+                                                                    <Link onClick={() => { 
+                                                                        window.open(comment.url) 
+                                                                        }}>
+                                                                            <p className='col-md-8'>
+                                                                                {comment.text}
+                                                                            </p>
+                                                                    </Link>
+                                                                    )
                                                             }
-                                                            
-                                                        </p>
-                                                    </Link>
                                                
                                                
                                                 <span className='col-md-4' >
