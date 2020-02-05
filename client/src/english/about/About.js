@@ -87,7 +87,7 @@ class About extends Component {
             <div>
                <Header history={this.props.history} />             
                 <div>
-                    <div>
+                    <div className='container'>
                         <Link to='/partners'>
                                 Our Partners
                         </Link>
