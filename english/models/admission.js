@@ -17,6 +17,10 @@ const admissionSchema = new mongoose.Schema({
                 type: Date,
                 default: Date.now
             },
+            updated: {
+                type: Date,
+                default: Date.now
+            },
             uploadedBy: {
                 type: ObjectId,
                 ref: 'User'
