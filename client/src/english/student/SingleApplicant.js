@@ -60,6 +60,10 @@ class SingleApplicant extends Component {
                         <p style={{color: 'black'}} className="card-text">
                             Contact Number: {applicant.contact}
                         </p>
+
+                        <p style={{color: 'black'}} className="card-text">
+                            Message from parent: {applicant.message}
+                        </p>
                     </div>
 
                     <div className='row'>
