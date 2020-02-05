@@ -36,9 +36,6 @@ class AdmissionNews extends React.Component {
         return true
     }
 
-    // renderEdit = () => {
-    //     this
-    // }
 
     addComment = e => {
         e.preventDefault()
@@ -190,7 +187,7 @@ class AdmissionNews extends React.Component {
                                                         
                                                     }
 
-                                                {
+                                                {/* {
                                                     isAuthenticated() && isAuthenticated().user.code === 8290 &&  
                                                         (
                                                             
@@ -200,7 +197,7 @@ class AdmissionNews extends React.Component {
                                                             
                                                         
                                                         )
-                                                }
+                                                } */}
 
                                                 </span>
                                             </div>
