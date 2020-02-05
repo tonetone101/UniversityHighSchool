@@ -36,8 +36,7 @@ class AdmissionNews extends React.Component {
         return true
     }
 
-    renderEdit = (e) => {
-        e.preventDefault()
+    renderEdit = () => {
         this.setState({
             edit: true
         })
