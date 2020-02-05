@@ -11,6 +11,7 @@ class NewStudent extends Component {
             student: "",
             email: "",
             contact: "",
+            message: "",
             error: "",
             user: {},
             fileSize: 0,
@@ -25,7 +26,7 @@ class NewStudent extends Component {
     }
 
     isValid = () => {
-        const { parent, student, email, contact, fileSize } = this.state;
+        const { parent, student, email, contact, message, fileSize } = this.state;
         if (fileSize > 1000000) {
             this.setState({
                 error: "File size should be less than 100kb",
@@ -67,6 +68,7 @@ class NewStudent extends Component {
                         student: "",
                         email: "",
                         contact: "",
+                        message: "",
                         redirectToProfile: true
                     });
                 }
@@ -74,7 +76,7 @@ class NewStudent extends Component {
         }
     };
 
-    newStudentForm = (parent, student, email, contact) => (
+    newStudentForm = (parent, student, email, contact, message) => (
         <form>
             {/* <div className="form-group">
                 <label className="text-muted">Post Photo</label>
@@ -125,6 +127,17 @@ class NewStudent extends Component {
                 />
             </div>
 
+            <div className="form-group">
+                <label className="text-muted">Message</label>
+                <textarea
+                    onChange={this.handleChange("contact")}
+                    type="text"
+                    placeholder='optional'
+                    className="form-control"
+                    value={contact}
+                />
+            </div>
+
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
@@ -140,6 +153,7 @@ class NewStudent extends Component {
             student,
             email,
             contact,
+            message,
             user,
             error,
             loading,
@@ -172,7 +186,7 @@ class NewStudent extends Component {
                                 ""
                             )} 
 
-                            {this.newStudentForm(parent, student, email, contact)}
+                            {this.newStudentForm(parent, student, email, contact, message)}
                
             </div>
         );

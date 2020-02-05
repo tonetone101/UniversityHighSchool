@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 exports.getStudents = (req, res, next) => {
    const student = Student.find()
-        .select("_id parent student email contact created")
+        .select("_id parent student email contact message created")
         .sort({ created: -1 })
         .then(student => {
            res.json(student)
@@ -16,7 +16,7 @@ exports.getStudents = (req, res, next) => {
 
 exports.studentById = (req, res, next, id) => {
     Student.findById(id)
-   .select("_id parent student email contact created")
+   .select("_id parent student email contact message created")
    .exec((err, student) => {
             if (err || !student) {
                 return res.status(400).json({

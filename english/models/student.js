@@ -19,6 +19,10 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    message: {
+        type: String,
+        required: true,
+    },
     created: {
         type: Date,
         default: Date.now
