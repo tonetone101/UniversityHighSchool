@@ -136,7 +136,7 @@ class AdmissionNews extends React.Component {
                                     <div>
                                         <form onSubmit={this.addComment}>
                                             <div className='form-group col-md-6 '>
-                                                <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={this.state.text} onChange={this.handleChange} className='form-control'/>
+                                                <textarea style={{ width: "950px" }} type='text' placeholder='Leave an announcement' value={comment.text} onChange={this.handleChange} className='form-control'/>
                                                 <input style={{ width: "950px" }} type='text' placeholder='google doc link' value={this.state.url} onChange={this.handleUrlChange} className='form-control'/>
                                                 <button  className="btn btn-raised btn-primary btn-sm mt-3" style={{color: 'white'}} >Add announcement</button>
                                             </div>

@@ -125,7 +125,7 @@ export const uncomment = (userId, token, admissionId, comment) => {
         .catch(err => console.log(err));
 };
 
-export const edit = (userId, admissionId, token, comment) => {
+export const edit = (userId, token, admissionId, comment) => {
     return fetch(`/admission/updatecomment`, {
         method: "PUT",
         headers: {
