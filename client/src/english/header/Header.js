@@ -148,10 +148,6 @@ class Header extends React.Component {
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/partners'>Our Partners</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
