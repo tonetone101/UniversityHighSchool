@@ -64,7 +64,7 @@ class SingleApplicant extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/applicant`}
+                            to={`/applicants`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -101,7 +101,7 @@ class SingleApplicant extends Component {
         const {applicant, redirectToApplicants, redirectToSignIn} = this.state
         
         if(redirectToApplicants) {
-            return <Redirect to={`/applicant`} />
+            return <Redirect to={`/applicants`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }
