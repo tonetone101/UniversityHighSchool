@@ -246,7 +246,7 @@ class Carol extends Component {
                         <footer >
                             
                             <div className="container row ml-5">
-                                <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/banner.png")} /> 
+                                <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/uhsBannerLogo.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
                                     <div >
                                         <p>1 Empire Plaza | Providence, RI 02903</p>
