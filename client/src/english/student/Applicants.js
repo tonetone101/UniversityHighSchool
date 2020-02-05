@@ -72,7 +72,7 @@ class Applicants extends Component {
                     return (
 
                         <div  className='col-md-4' key={i}>
-                            <Link to={`/applicant/${applicant._id}`}>
+                            <Link to={`/applicants/${applicant._id}`}>
                                 <p>
                                     {applicant.student}
                                 </p>
@@ -87,7 +87,7 @@ class Applicants extends Component {
     render() {
         const { applicants, searched, searchedApplicants, error } = this.state;
 
-        if (searched) { return <Redirect to={`applicant/${searchedApplicants._id}`}/> } 
+        if (searched) { return <Redirect to={`applicants/${searchedApplicants._id}`}/> } 
 
         return (
             <div>

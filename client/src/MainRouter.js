@@ -36,6 +36,9 @@ import EditFaculty from './english/Faculty/EditFaculty'
 import NewStudent from './english/student/NewStudent'
 import Admission from './english/student/Admission'
 
+import Applicants from './english/student/Applicants'
+import SingleApplicant from './english/student/SingleApplicant'
+
 import Bully from './english/student/Bully'
 import Student from './english/student/Student'
 import Applicants from './english/student/Applicants'
@@ -218,6 +221,7 @@ const MainRouter = () => (
             <Route exact path="/bully" component={Bully}></Route>
             <Route exact path="/student" component={Student}></Route>
             <Route exact path="/applicants" component={Applicants}></Route>
+            <Route exact path="/applicants/:applicantId" component={Applicants}></Route>
 
             <Route exact path="/genderpolicy" component={GenderPolicy}></Route>
             <Route exact path="/newlink" component={NewLinks}></Route>

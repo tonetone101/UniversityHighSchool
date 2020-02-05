@@ -33,6 +33,21 @@ export const singleApplicant = (studentId) => {
         .catch(err => console.log(err));
 };
 
+export const remove = (studentId, token) => {
+    return fetch(`/student/delete/${studentId}`, {
+        method: "DELETE",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`
+        }
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};
+
 export const createLink = (userId, token, link) => {
     return fetch(`/link/new/${userId}`, {
         method: "POST",
