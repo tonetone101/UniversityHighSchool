@@ -107,29 +107,6 @@ class Applicants extends Component {
                         </form>
                         <hr/>
                     </div>
-                    {
-                        isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                            <div>
-                                <Link className='mb-5' to='/new/student'>Add applicant</Link>
-                            </div>
-                        )
-                    }
-
-{
-                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                            <div>
-                                <Link className='mb-5' to='/new/student'>Add applicant</Link>
-                            </div>
-                        )
-                    }
-
-{
-                        isAuthenticated() && isAuthenticated().user.code === 1017 && (
-                            <div>
-                                <Link className='mb-5' to='/new/applicant'>Add applicant</Link>
-                            </div>
-                        )
-                    }
                 
                     <div>               
                         {this.renderapplicants(applicants)}
