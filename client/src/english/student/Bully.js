@@ -2,7 +2,7 @@ import React from "react";
 import { isAuthenticated } from "../../auth";
 import Header from '../header/Header'
 
-class Bully extends Component {
+class Bully extends React.Component {
     constructor() {
         super();
         this.state = {
