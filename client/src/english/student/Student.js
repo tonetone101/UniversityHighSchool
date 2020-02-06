@@ -36,13 +36,13 @@ class Student extends Component {
     render() {
 
         return (
-            <div style={{background: '#b7b7b7'}}>
+            <div id='studentList' >
                 <Header history={this.props.history} />
                 <div className='container' >
                     <h3 className='text-center mt-4'>Welcome to our Student section</h3>
                     <p className='text-center'>Below you'll find a list of content about our policies and other important links we believe will benefit our students</p>
 
-                    <ListGroup variant="flush" style={{background: '#b7b7b7'}}>
+                    <ListGroup variant="flush" id='studentList'>
                         <ListGroup.Item>
                             <Link to='/bully'>
                                 Bullying policy
