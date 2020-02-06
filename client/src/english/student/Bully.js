@@ -1,8 +1,28 @@
 import React from "react";
+import { isAuthenticated } from "../../auth";
 import Header from '../header/Header'
 
-const Bully = () => {
+class Bully extends Component {
+    constructor() {
+        super();
+        this.state = {
+            user: {},
+        };
+    }
 
+    renderUser = () => {
+        this.setState({user: isAuthenticated().user })
+    }
+
+    componentDidMount() {
+        this.renderUser()
+    }
+
+    componentWillReceiveProps() {
+        this.renderUser()
+    }
+
+    render() {
     return (
         <div>
            <Header history={this.props.history} />
@@ -129,6 +149,7 @@ const Bully = () => {
             </div>
         </div>
     );
+                }
 }
 
 export default Bully;
