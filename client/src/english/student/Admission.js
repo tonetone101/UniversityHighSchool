@@ -82,7 +82,7 @@ class Admission extends Component {
                     Registration
                 </h4>
                  <ListGroup variant="flush">
-                        <ListGroup.Item> 
+                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
                             <Link onClick={() => { 
                                             window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
                                             }} >
@@ -90,7 +90,7 @@ class Admission extends Component {
                             </Link>
                         </ListGroup.Item>
 
-                        <ListGroup.Item> 
+                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
                             <Link onClick={() => { 
                                             window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
                                             }} >
@@ -98,7 +98,7 @@ class Admission extends Component {
                             </Link>
                         </ListGroup.Item>
 
-                        <ListGroup.Item> 
+                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
                             <Link onClick={() => { 
                                             window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
                                             }} >
@@ -106,7 +106,7 @@ class Admission extends Component {
                             </Link>
                         </ListGroup.Item>
 
-                        <ListGroup.Item>
+                        <ListGroup.Item style={{background: '#b7b7b7'}} >
                             <Link to='/new/application'>
                                 Submit Student application
                             </Link>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { isAuthenticated } from "../../auth";
 import { create } from "./apiStudent";
 import { Redirect } from "react-router-dom";
+import Header from '../header/Header'
 
 class NewStudent extends Component {
     constructor() {
@@ -166,7 +167,7 @@ class NewStudent extends Component {
 
         return (
             <div className='container' >
-                
+                            <Header history={this.props.history} />
                             <h2 className="mt-5 mb-5">Pre-Registeration form</h2>
                             <p>
                                 Please fill out form to request more information
