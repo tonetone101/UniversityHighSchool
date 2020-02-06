@@ -35,7 +35,7 @@ class NewschoolBoardMeeting extends Component {
             });
             return false;
         }
-        if (body.length === 0 || url.length === 0) {
+        if (body.length === 0) {
             this.setState({ error: "All fields are required", loading: false });
             return false;
         }
