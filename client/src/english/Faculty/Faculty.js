@@ -76,7 +76,7 @@ class Faculty extends Component {
                         
                     return (
                         <div  className='col-md-4 mb-5' key={i}>
-                            <Card style={{ width: '18rem' }}>
+                            <Card style={{ border='solid black 2px', width: '18rem' }}>
                             <Card.Img variant="top" src={facultyPhoto} />
                             <Card.Body>
                                 <Card.Title>{faculty.name.substring(0, 100)}</Card.Title>
