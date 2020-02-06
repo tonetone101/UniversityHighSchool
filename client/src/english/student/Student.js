@@ -42,8 +42,8 @@ class Student extends Component {
                     <h3 className='text-center mt-4'>Welcome to our Student section</h3>
                     <p className='text-center'>Below you'll find a list of content about our policies and other important links we believe will benefit our students</p>
 
-                    <ListGroup variant="flush" id='studentList'>
-                        <ListGroup.Item>
+                    <ListGroup variant="flush" id='studentList' style={{background: '#b7b7b7'}}>
+                        <ListGroup.Item style={{background: '#b7b7b7'}}>
                             <Link to='/bully'>
                                 Bullying policy
                             </Link>
