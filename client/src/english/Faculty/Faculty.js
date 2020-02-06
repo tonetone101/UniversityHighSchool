@@ -111,7 +111,7 @@ class Faculty extends Component {
                <Header history={this.props.history} />
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
-                        <h2 className="col-md-6" style={{color: '#F6E303'}}>
+                        <h2 className="col-md-6" >
                             Our Team
                             {!faculties.length ? "Loading..." : ""}
                         </h2>
