@@ -166,29 +166,30 @@ class NewStudent extends Component {
         }
 
         return (
-            <div className='container' >
-                            <Header history={this.props.history} />
-                            <h2 className="mt-5 mb-5">Pre-Registeration form</h2>
-                            <p>
-                                Please fill out form to request more information
-                            </p>
-                            <div
-                                className="alert alert-danger"
-                                style={{ display: error ? "" : "none" }}
-                            >
-                                {error}
-                            </div>
+            <div >
+                <Header history={this.props.history} />
+                <div className='container'>
+                    <h2 className="mt-5 mb-5">Pre-Registeration form</h2>
+                    <p>
+                        Please fill out form to request more information
+                    </p>
+                    <div
+                        className="alert alert-danger"
+                        style={{ display: error ? "" : "none" }}
+                    >
+                        {error}
+                    </div>
 
-                            {loading ? (
-                                <div className="jumbotron text-center">
-                                    <h2>Loading...</h2>
-                                </div>
-                            ) : (
-                                ""
-                            )} 
+                    {loading ? (
+                        <div className="jumbotron text-center">
+                            <h2>Loading...</h2>
+                        </div>
+                    ) : (
+                        ""
+                    )} 
 
-                            {this.newStudentForm(parent, student, email, contact, message)}
-               
+                    {this.newStudentForm(parent, student, email, contact, message)}
+               </div>
             </div>
         );
     }
