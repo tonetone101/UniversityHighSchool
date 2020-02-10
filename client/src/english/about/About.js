@@ -91,9 +91,15 @@ class About extends Component {
                <Header history={this.props.history} />
                 <div className='row container'>
                     <div className='col-md-4 text-center mt-5'>
-                        <Link to='/partners'>
-                                Our Partners
-                        </Link>
+                        <div className='column'>
+                          <Link to='/partners'>
+                                  Our Partners
+                          </Link>
+
+                          <Link className='mt-4' to='/about'>
+                                  About us
+                          </Link>
+                        </div>
                     </div>
 
                     <div className='col-md-8 text-center'>
