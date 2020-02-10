@@ -22,13 +22,13 @@ class About extends Component {
         this.setState({user: isAuthenticated().user })
     }
 
-    isActive = (history, path) => {
-      if (this.props.history.location.pathname === path) return {
-        color: '#ff9900'
-      } else {
-        color: '#ffffff'
-      }
-    }
+    // isActive = (history, path) => {
+    //   if (this.props.history.location.pathname === path) return {
+    //     color: '#ff9900'
+    //   } else {
+    //     color: '#ffffff'
+    //   }
+    // }
 
     componentDidMount() {
         list().then(data => {
@@ -102,12 +102,20 @@ class About extends Component {
                 <div className='row container'>
                     <div className='col-md-4 column text-center mt-5'>
                         <div>
-                          <Link style={this.isActive(history, '/partners')} to='/partners'>
+                          <Link style={(history, '/partners') => {
+                              if(this.props.history.pathname === 'partners') {
+                                color: '#ff9900'
+                              }
+                          }} to='/partners'>
                                   Our Partners
                           </Link>
                         </div>
                         <div>
-                          <Link style={this.isActive(history, '/about')} className='mt-4' to='/about'>
+                          <Link style={(history, '/about') => {
+                              if(this.props.history.pathname === 'about') {
+                                color: '#ff9900'
+                              }
+                          }}  className='mt-4' to='/about'>
                                   About us
                           </Link>
                         </div>
