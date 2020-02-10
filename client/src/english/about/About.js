@@ -8,9 +8,7 @@ import Header from '../header/Header'
 const isActive = (history, path) => {
   if (history.location.pathname === path) return {
     color: '#ff9900'
-  } else return {
-    color: '#ffffff'
-  }
+  } 
 }
 
 class About extends Component {
