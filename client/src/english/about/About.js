@@ -6,7 +6,7 @@ import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 
 const isActive = (history, path) => {
-  is (history.location.pathname === path) return {
+  if (history.location.pathname === path) return {
     color: '#ff9900'
   } else return {
     color: '#ffffff'
