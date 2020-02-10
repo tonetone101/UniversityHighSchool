@@ -107,7 +107,7 @@ class About extends Component {
                           </Link>
                         </div>
                         <div>
-                          <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
+                          <Link style={this.isActive(history, '/about')} className='mt-4' to='/about'>
                                   About us
                           </Link>
                         </div>
