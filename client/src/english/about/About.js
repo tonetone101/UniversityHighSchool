@@ -29,11 +29,11 @@ class About extends Component {
                     if (d._id == "5e22433d06576302afeda501") {
                         return d
                     }
-                }) 
+                })
               })
-              
+
             }
-        }) 
+        })
         this.renderUser()
     }
 
@@ -53,7 +53,7 @@ class About extends Component {
                 <Card border='dark' >
                     <Card.Body>
                         <Card.Title>About Us</Card.Title>
-                        
+
                         <Card.Text>
                             {about.body}
                         </Card.Text>
@@ -73,7 +73,7 @@ class About extends Component {
                         <Card.Text>
                             {about.paragraph5}
                         </Card.Text>
-                    
+
                     </Card.Body>
                 </Card>
             </div>
@@ -85,24 +85,24 @@ class About extends Component {
 
         return (
             <div>
-               <Header history={this.props.history} />             
-                <div>
+               <Header history={this.props.history} />
+                <div className='row'>
                     <div className='container'>
                         <Link to='/partners'>
                                 Our Partners
                         </Link>
                     </div>
-                    
-                    <div className='text-center'>
-                        {!about ? ( 
+
+                    <div className='col-md-6'>
+                        {!about ? (
                                 <div className='jumbotron text-center '>
                                     <h2>Loading....</h2>
                                 </div>
                                 ) : (
                                     this.renderAbout(about)
-                                    
+
                                 )
-                            } 
+                            }
 
                         <div className='text-center' >
                             {
@@ -111,7 +111,7 @@ class About extends Component {
                                 )
                             }
                         </div>
-                    </div>               
+                    </div>
                 </div>
             </div>
         )
