@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {list} from './apiAbout'
-import {Link, Redirect } from 'react-router-dom'
+import {Link, Redirect, withRouter } from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
@@ -85,7 +85,7 @@ class About extends Component {
 
     render() {
         const {about} = this.state
-
+        console.log(this.props.history)
         return (
             <div>
                <Header history={this.props.history} />
@@ -128,4 +128,4 @@ class About extends Component {
     }
 }
 
-export default About
+export default withRouter(About)
