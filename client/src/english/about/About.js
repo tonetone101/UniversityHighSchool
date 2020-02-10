@@ -102,7 +102,7 @@ class About extends Component {
                 <div className='row container'>
                     <div className='col-md-4 column text-center mt-5'>
                         <div>
-                          <Link style={isActive(history, '/partners')} to='/partners'>
+                          <Link style={this.isActive(history, '/partners')} to='/partners'>
                                   Our Partners
                           </Link>
                         </div>
