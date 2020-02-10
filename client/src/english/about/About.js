@@ -23,8 +23,7 @@ class About extends Component {
     }
 
     isActive = (history, path) => {
-      let history = this.props.history
-      if (history.location.pathname === path) {
+      if (this.props.history.location.pathname === path) {
         color: '#ff9900'
       } else {
         color: '#ffffff'
