@@ -86,14 +86,14 @@ class About extends Component {
         return (
             <div>
                <Header history={this.props.history} />
-                <div className='row'>
-                    <div className='col-md-4'>
+                <div className='row container'>
+                    <div className='col-md-4 text-center'>
                         <Link to='/partners'>
                                 Our Partners
                         </Link>
                     </div>
 
-                    <div className='col-md-8'>
+                    <div className='col-md-8 text-center'>
                         {!about ? (
                                 <div className='jumbotron text-center '>
                                     <h2>Loading....</h2>
