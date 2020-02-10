@@ -87,13 +87,13 @@ class About extends Component {
             <div>
                <Header history={this.props.history} />
                 <div className='row'>
-                    <div className='container'>
+                    <div className='col-md-4'>
                         <Link to='/partners'>
                                 Our Partners
                         </Link>
                     </div>
 
-                    <div className='col-md-6'>
+                    <div className='col-md-8'>
                         {!about ? (
                                 <div className='jumbotron text-center '>
                                     <h2>Loading....</h2>
