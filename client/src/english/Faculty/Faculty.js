@@ -30,7 +30,7 @@ class Faculty extends Component {
             } else {
                 //console.log(data)
                 this.setState({ faculties: data });
-                
+
 
             }
         });
@@ -73,10 +73,10 @@ class Faculty extends Component {
                             faculty._id
                           }?${new Date().getTime()}`
                         : ''
-                        
+
                     return (
                         <div  className='col-md-4 mb-5' key={i}>
-                            <Card style={{ border='solid black 2px', width: '18rem' }}>
+                            <Card style={{ border: 'solid black 2px', width: '18rem' }}>
                             <Card.Img variant="top" src={facultyPhoto} />
                             <Card.Body>
                                 <Card.Title>{faculty.name.substring(0, 100)}</Card.Title>
@@ -104,7 +104,7 @@ class Faculty extends Component {
     render() {
         const { faculties, searched, searchedFaculty, error } = this.state;
 
-        if (searched) { return <Redirect to={`faculty/${searchedFaculty._id}`}/> } 
+        if (searched) { return <Redirect to={`faculty/${searchedFaculty._id}`}/> }
 
         return (
             <div>
@@ -139,11 +139,11 @@ class Faculty extends Component {
                             </div>
                         )
                     }
-                
-                    <div>               
+
+                    <div>
                         {this.renderFaculties(faculties)}
-                    </div>   
-                
+                    </div>
+
                 </div>
             </div>
         );
