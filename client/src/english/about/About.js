@@ -5,6 +5,14 @@ import {isAuthenticated} from '../../auth'
 import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 
+const isActive = (history, path) => {
+  is (history.location.pathname === path) return {
+    color: '#ff9900'
+  } else return {
+    color: '#ffffff'
+  }
+}
+
 class About extends Component {
     state = {
         user: '',
@@ -92,12 +100,12 @@ class About extends Component {
                 <div className='row container'>
                     <div className='col-md-4 column text-center mt-5'>
                         <div>
-                          <Link to='/partners'>
+                          <Link style={isActive(history, '/partners')} to='/partners'>
                                   Our Partners
                           </Link>
                         </div>
                         <div>
-                          <Link className='mt-4' to='/about'>
+                          <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
                                   About us
                           </Link>
                         </div>
