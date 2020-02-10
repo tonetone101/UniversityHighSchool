@@ -5,13 +5,7 @@ import {isAuthenticated} from '../../auth'
 import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 
-const isActive = (history, path) => {
-  if (history.location.pathname === path) return {
-    color: '#ff9900'
-  } else {
-    color: '#ffffff'
-  }
-}
+
 
 class About extends Component {
     state = {
@@ -26,6 +20,14 @@ class About extends Component {
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
+    }
+
+    isActive = (history, path) => {
+      if (history.location.pathname === path) {
+        color: '#ff9900'
+      } else {
+        color: '#ffffff'
+      }
     }
 
     componentDidMount() {
