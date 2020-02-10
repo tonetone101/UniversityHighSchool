@@ -6,7 +6,7 @@ import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 
 const isActive = (history, path) => {
-  if (this.props.history.location.pathname === path) return {
+  if (history.location.pathname === path) return {
     color: '#ff9900'
   } else return {
     color: '#ffffff'
@@ -93,7 +93,8 @@ class About extends Component {
 
     render() {
         const {about} = this.state
-        console.log(this.props.history)
+        const {history} = this.props
+
         return (
             <div>
                <Header history={this.props.history} />
