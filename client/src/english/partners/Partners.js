@@ -83,7 +83,7 @@ class Partners extends Component {
                             <div className='row'>
                                 <div>
                                     <h4>{partner.name.substring(0, 100)}</h4>
-                                    <img src={partnersPhoto} />
+                                    <img src={partnersPhoto} style={{height: '100px', width: '100px'}} />
                                 </div>
 
                                 <div>
