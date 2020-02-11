@@ -88,7 +88,7 @@ class Partners extends Component {
 
                                 <div>
                                     <p>
-                                        {partners.about}
+                                        {partner.about}
                                     </p>
 
                                     <Link
