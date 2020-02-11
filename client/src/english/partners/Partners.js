@@ -53,7 +53,7 @@ class Partners extends Component {
     renderPartners = partners => {
 
         return (
-            <div  className='row container'>
+            <div  className='column container'>
                 {partners.map((partner, i) => {
 
                         const partnersPhoto = partner._id
@@ -63,22 +63,44 @@ class Partners extends Component {
                         : ''
                         
                     return (
-                        <div  className='text-center col-md-4 mr-2 mb-5' key={i}>
-                            <Card >
+                        <div  className='col-md-8 mb-5' key={i}>
+                            {/* <Card >
                             <Card.Img variant="top" src={partnersPhoto} />
                             <Card.Body>
                                 <Card.Title>{partner.name.substring(0, 100)}</Card.Title>
                                 <Card.Text>
                                     {partner.about.substring(0, 100)}
                                 </Card.Text>
-                                <Link
+                                    <Link
                                         to={`/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
                                     </Link>
                             </Card.Body>
-                            </Card>
+                            </Card> */}
+
+                            <div className='row'>
+                                <div>
+                                    <h4>{partner.name.substring(0, 100)}</h4>
+                                    <img src={partnersPhoto} />
+                                </div>
+
+                                <div>
+                                    <p>
+                                        {partners.about}
+                                    </p>
+
+                                    <Link
+                                        to={`/partners/${partner._id}`}
+                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                    >
+                                        Read more
+                                    </Link>
+                                </div>
+
+                            </div>
+
                         </div>
                     );
                 })}
