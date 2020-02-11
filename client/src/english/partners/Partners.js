@@ -63,7 +63,7 @@ class Partners extends Component {
                         : ''
                         
                     return (
-                        <div  className='col-md-4 mr-2 mb-5' key={i}>
+                        <div  className='text-center col-md-4 mr-2 mb-5' key={i}>
                             <Card >
                             <Card.Img variant="top" src={partnersPhoto} />
                             <Card.Body>
