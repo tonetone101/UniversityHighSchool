@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { list } from "./apiPartners";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+
+const isActive = (history, path) => {
+    if (history.location.pathname === path) return {
+      color: '#ff9900'
+    } 
+  }
 
 class Partners extends Component {
     constructor() {
@@ -82,6 +88,7 @@ class Partners extends Component {
 
     render() {
         const { partners } = this.state;
+        const {history} = this.props
 
         return (
             <div>
@@ -144,4 +151,4 @@ class Partners extends Component {
     }
 }
 
-export default Partners
+export default withRouter(Partners)
