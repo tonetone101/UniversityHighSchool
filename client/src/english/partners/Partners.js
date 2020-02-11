@@ -86,42 +86,57 @@ class Partners extends Component {
         return (
             <div>
                 <Header history={this.props.history} />
-                <div className="container">
-                    <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
-                        <h2 >
-                            Our Partners
-                            {!partners.length ? "Loading..." : ""}
-                        </h2>
-
-                        <hr/>
+                <div className="container row">
+                <div className='col-md-4 column text-center mt-5'>
+                        <div>
+                          <Link style={isActive(history, '/partners')} to='/partners'>
+                                  Our Partners
+                          </Link>
+                        </div>
+                        <div>
+                          <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
+                                  About us
+                          </Link>
+                        </div>
                     </div>
-                    {
-                        isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                            <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
-                            </div>
-                        )
-                    }
 
-                    {
-                        isAuthenticated() && isAuthenticated().user.code === 1017 && (
-                            <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
-                            </div>
-                        )
-                    }
+                    <div className='col-md-8 text-center'>
+                        <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                            <h2 >
+                                Our Partners
+                                {!partners.length ? "Loading..." : ""}
+                            </h2>
 
-{
-                        isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                            <div>
-                                <Link className='mb-5' to='/new/partners'>Add new partner</Link>
-                            </div>
-                        )
-                    }
+                            <hr/>
+                        </div>
+                        {
+                            isAuthenticated() && isAuthenticated().user.code === 8290 && (
+                                <div>
+                                    <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                                </div>
+                            )
+                        }
+
+                        {
+                            isAuthenticated() && isAuthenticated().user.code === 1017 && (
+                                <div>
+                                    <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                                </div>
+                            )
+                        }
+
+    {
+                            isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                <div>
+                                    <Link className='mb-5' to='/new/partners'>Add new partner</Link>
+                                </div>
+                            )
+                        }
                 
-                    <div>               
-                        {this.renderPartners(partners)}
-                    </div>   
+                        <div>               
+                            {this.renderPartners(partners)}
+                        </div>  
+                    </div> 
                 
                 </div>
             </div>
