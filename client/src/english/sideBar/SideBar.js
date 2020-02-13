@@ -10,13 +10,7 @@ const isActive = (history, path) => {
 
 class SideBar extends Component {
     state = {
-        user: '',
-        about: [],
-        redirectToHome: false,
-        redirectToSignIn: false,
-        spanishPage: false,
-        englishPage: false,
-        khmerPage: false
+        user: ''
     }
 
     renderUser = () => {

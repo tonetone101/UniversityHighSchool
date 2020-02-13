@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { list } from "./apiPartners";
 import { Link, withRouter } from "react-router-dom";
-import { Card } from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+import SideBar from '../sideBar/SideBar'
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) return {
@@ -116,19 +116,7 @@ class Partners extends Component {
             <div>
                 <Header history={this.props.history} />
                 <div className="container row">
-                    <div className='col-md-4 column text-center mt-5'>
-                        <div>
-                            <Link style={isActive(history, '/partners')} to='/partners'>
-                                    Our Partners
-                            </Link>
-                        </div>
-                        
-                        <div>
-                            <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
-                                    About us
-                            </Link>
-                         </div>
-                    </div>
+                    <SideBar />
 
                     <div className='col-md-8 text-center'>
                             <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
