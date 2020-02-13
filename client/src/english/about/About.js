@@ -55,7 +55,7 @@ class About extends Component {
         : ''
 
         return (
-            <div className='container mt-5' style={{textIndent: '50px'}}>
+            <div className='container mt-5' style={{textIndent: '50px', borderRadius: '90%'}}>
                 <Card border='dark' >
                     <Card.Body>
                     <Card.Header className="font-italic mark">
