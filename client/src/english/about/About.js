@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {list} from './apiAbout'
-import {Link, Redirect, withRouter } from 'react-router-dom'
+import {Link, withRouter } from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
+import SideBar from '../sideBar/SideBar'
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) return {
@@ -17,9 +18,6 @@ class About extends Component {
         about: [],
         redirectToHome: false,
         redirectToSignIn: false,
-        spanishPage: false,
-        englishPage: false,
-        khmerPage: false
     }
 
     renderUser = () => {
@@ -97,18 +95,7 @@ class About extends Component {
             <div>
                <Header history={this.props.history} />
                 <div className='row container'>
-                    <div className='col-md-4 column text-center mt-5'>
-                        <div>
-                          <Link style={isActive(history, '/partners')} to='/partners'>
-                                  Our Partners
-                          </Link>
-                        </div>
-                        <div>
-                          <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
-                                  About us
-                          </Link>
-                        </div>
-                    </div>
+                    <SideBar />
 
                     <div className='col-md-8 text-center'>
                         {!about ? (
