@@ -90,20 +90,20 @@ class Main extends Component {
                       
                       <div id='title'>
                          <h3>Upcoming Meetings:</h3> 
-                        {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
+                        {schoolBoardMeeting.reverse().map((meeting,  i) => (
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                           schoolBoardMeeting.url !== 'undefined' ? (
+                                           meeting.url == 'undefined' ? (
                                                <p>
-                                                   {schoolBoardMeeting.body}
+                                                   {meeting.body}
                                                </p>
                                            ) : (
                                             <Link onClick={() => { 
-                                                window.open(`${schoolBoardMeeting.url}`) 
+                                                window.open(`${meeting.url}`) 
                                                 }}  
                                             >
-                                                {schoolBoardMeeting.body}
+                                                {meeting.body}
                                             </Link> 
                                            )
                                         }
