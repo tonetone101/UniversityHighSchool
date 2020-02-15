@@ -110,19 +110,19 @@ class Main extends Component {
                                    
                                         {
                                             isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
-                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                                <Link to={`/schoolBoardMeeting/${meeting._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }
 
 {
                                             isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
-                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                                <Link to={`/schoolBoardMeeting/${meeting._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }
 
 {
                                             isAuthenticated().user && isAuthenticated().user.code === 1017 ? (
-                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                                <Link to={`/schoolBoardMeeting/${meeting._id}`} className='ml-2 text-danger'>view</Link>
                                             ) : (null)
                                         }
                                 </div>
