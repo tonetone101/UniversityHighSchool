@@ -30,6 +30,7 @@ mongoose.connect(process.env.MONGO_URI, {
  const applicationRoutes = require('./english/routes/application');
  const aboutRoutes = require('./english/routes/about');
  const admissionRoutes = require('./english/routes/admission');
+ const hrRoutes = require('./english/routes/hr');
 
 
  // bringing in my spanish routes
@@ -106,6 +107,7 @@ app.use('/', schoolBoardMeetingRoutes);
 app.use('/', aboutRoutes)
 app.use('/', applicationRoutes)
 app.use('/', admissionRoutes)
+app.use('/', hrRoutes)
 
 
 // spanish routes

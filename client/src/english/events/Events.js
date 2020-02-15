@@ -11,9 +11,6 @@ class Events extends Component {
         this.state = {
             user: '',
             events: [],
-            spanishPage: false,
-            englishPage: false,
-            khmerPage: false
         };
     }
 

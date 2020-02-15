@@ -65,6 +65,12 @@ import Applications from './english/application/Application'
 import NewApplication from './english/application/NewApplication'
 import SingleApplication from './english/application/SingleApplication'
 
+import HR from './english/humanResource/Hr'
+import NewHr from './english/humanResource/newHr'
+import SingleHr from './english/humanResource/singleHr'
+import EditHr from './english/humanResource/editHr'
+
+
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
 import EditSpanishCarousel from './spanish/carousel/EditCarousel'
@@ -245,6 +251,11 @@ const MainRouter = () => (
             <Route exact path="/application" component={Applications}></Route>
             <Route exact path="/new/application" component={NewApplication}></Route>
             <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
+
+            <Route exact path="/edit/hr/:hrId" component={EditHr}></Route>
+            <Route exact path="/hr" component={HR}></Route>
+            <Route exact path="/new/hr" component={NewHr}></Route>
+            <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
 
             {

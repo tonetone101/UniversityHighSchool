@@ -42,6 +42,12 @@ class SideBar extends Component {
                                 About us
                         </Link>
                     </div>
+
+                    <div>
+                        <Link style={isActive(history, '/hr')} className='mt-4' to='/hr'>
+                                Human Resource
+                        </Link>
+                    </div>
                 </div>
         )
     }
