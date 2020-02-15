@@ -50,6 +50,8 @@ class Main extends Component {
         const { schoolBoardMeeting, url, redirectToSignIn } = this.state
         let meeting;
 
+        console.log(url)
+
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
