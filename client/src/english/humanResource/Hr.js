@@ -47,21 +47,21 @@ class Hr extends Component {
     conditionalRender = hr => {
 
         if (hr.docUrl !== undefined) {
-             <Link onClick={() => { 
+            return <Link onClick={() => { 
                 window.open(`${hr.docUrl}`) 
                 }}  
             >
                 {hr.title}
             </Link> 
         } else if(hr.url !== undefined) {
-             <Link onClick={() => { 
+             return <Link onClick={() => { 
                 window.open(`http://${hr.url}`) 
                 }}  
             >
                 {hr.title}
             </Link> 
         } else if (hr.url == undefined && hr.docUrl == undefined) {
-            <Link to={`/hr/${hr._id}`} >{hr.title}</Link>   
+           return <Link to={`/hr/${hr._id}`} >{hr.title}</Link>   
         }
     }
 
@@ -70,13 +70,6 @@ class Hr extends Component {
         return (
             <div  className='column container'>
                 {hr.map((hr, i) => {
-
-                        const hrPhoto = hr._id
-                        ? `/hr/photo/${
-                            hr._id
-                          }?${new Date().getTime()}`
-                        : ''
-                        
                     return (
                         <div  className='col-md-8 mb-5' key={i}>
 
