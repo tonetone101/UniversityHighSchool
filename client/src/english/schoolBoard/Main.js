@@ -91,8 +91,35 @@ class Main extends Component {
                          <h3>Upcoming Meetings:</h3> 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
-                            <div key={i} style={{backgroundColor: '#b7b7b7'}} >
-                                <ListGroup >
+                            <div key={i} >
+                                <div className='row'>
+                                    <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                                            window.open(`${schoolBoardMeeting.url}`) 
+                                            }}  
+                                        >
+                                            {schoolBoardMeeting.body}
+                                    </Link>
+                                        {
+                                            isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
+                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 2609 ? (
+                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+
+{
+                                            isAuthenticated().user && isAuthenticated().user.code === 1017 ? (
+                                                <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
+                                            ) : (null)
+                                        }
+                                </div>
+
+
+                                {/* <ListGroup >
                                     <ListGroup.Item> 
                                         <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
                                             window.open(`${schoolBoardMeeting.url}`) 
@@ -119,7 +146,7 @@ class Main extends Component {
                                         }
                                     </ListGroup.Item>
                                     <ListGroup.Item></ListGroup.Item>
-                                </ListGroup>
+                                </ListGroup> */}
                           
                             </div>
                         ))}
