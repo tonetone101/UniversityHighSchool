@@ -62,7 +62,9 @@ class Main extends Component {
                 {schoolBoardMeeting.body}
             </Link>
          } else {
-            meeting = <p>{schoolBoardMeeting.body}</p>
+            meeting = <div>
+                {schoolBoardMeeting.body}
+            </div>
          }
         
         return (
