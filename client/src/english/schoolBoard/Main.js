@@ -45,24 +45,26 @@ class Main extends Component {
         this.renderUser()
     }
 
+    renderConditionalLink = (schoolBoardMeeting) => {
+        if(schoolBoardMeeting.url === '') {
+            <p>
+                {schoolBoardMeeting.body}
+            </p>
+        } else {
+            <Link onClick={() => { 
+                window.open(`${schoolBoardMeeting.url}`) 
+                }}  
+            >
+                {schoolBoardMeeting.body}
+            </Link>
+        }
+    }
+
 
     render() {
         const { schoolBoardMeeting, redirectToSignIn } = this.state;
         
-        renderConditionalLink = () => {
-            if(schoolBoardMeeting.url === '') {
-                <p>
-                    {schoolBoardMeeting.body}
-                </p>
-            } else {
-                <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
-                    window.open(`${schoolBoardMeeting.url}`) 
-                    }}  
-                >
-                    {schoolBoardMeeting.body}
-                </Link>
-            }
-        }
+        
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
