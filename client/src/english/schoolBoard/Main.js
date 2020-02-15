@@ -47,7 +47,7 @@ class Main extends Component {
 
 
     render() {
-        const { schoolBoardMeeting, url, redirectToSignIn } = this.state;
+        const { schoolBoardMeeting, url, redirectToSignIn } = this.state
         
         
 
