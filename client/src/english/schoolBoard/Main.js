@@ -48,11 +48,22 @@ class Main extends Component {
 
     render() {
         const { schoolBoardMeeting, url, docUrl, redirectToSignIn } = this.state
-
+        let meeting;
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
+
+         if (url) {
+             meeting =  <Link onClick={() => { 
+                window.open(`${schoolBoardMeeting.url}`) 
+                }}  
+            >
+                {schoolBoardMeeting.body}
+            </Link>
+         } else {
+            meeting = <p>{schoolBoardMeeting.body}</p>
+         }
         
         return (
             <div>
@@ -93,18 +104,7 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                            url || docUrl === '' ? (
-                                                <p>{schoolBoardMeeting.body}</p>
-                                                
-                                            ) : (
-                                                <Link onClick={() => { 
-                                                    window.open(`${schoolBoardMeeting.url}`) 
-                                                    }}  
-                                                >
-                                                    {schoolBoardMeeting.body}
-                                                </Link>
-                                                
-                                            )
+                                           meeting
                                         }
                                    
                                         {
