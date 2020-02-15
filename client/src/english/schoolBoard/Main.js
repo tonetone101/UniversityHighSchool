@@ -93,12 +93,21 @@ class Main extends Component {
                         
                             <div key={i} >
                                 <div className='row'>
-                                    <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
-                                            window.open(`${schoolBoardMeeting.url}`) 
-                                            }}  
-                                        >
-                                            {schoolBoardMeeting.body}
-                                    </Link>
+                                    {
+                                        schoolBoardMeeting && schoolBoardMeeting.url === '' ? (
+                                            <p>
+                                                {schoolBoardMeeting.body}
+                                            </p>
+                                        ) : (
+                                            <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                                                window.open(`${schoolBoardMeeting.url}`) 
+                                                }}  
+                                            >
+                                                {schoolBoardMeeting.body}
+                                        </Link>
+                                        )
+                                    }
+                                   
                                         {
                                             isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
                                                 <Link to={`/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='ml-2 text-danger'>view</Link>
