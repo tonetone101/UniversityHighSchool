@@ -47,14 +47,14 @@ class Main extends Component {
 
 
     render() {
-        const { schoolBoardMeeting, url, docUrl, redirectToSignIn } = this.state
+        const { schoolBoardMeeting, url, redirectToSignIn } = this.state
         let meeting;
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
 
-         if (url) {
+         if (!url) {
              meeting =  <Link onClick={() => { 
                 window.open(`${schoolBoardMeeting.url}`) 
                 }}  
