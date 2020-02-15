@@ -49,7 +49,7 @@ class Main extends Component {
     render() {
         const { schoolBoardMeeting, url, redirectToSignIn } = this.state
 
-        console.log(schoolBoardMeeting)
+        console.log(schoolBoardMeeting.url)
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
@@ -94,7 +94,7 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                           schoolBoardMeeting.url === 'undefined' ? (
+                                           schoolBoardMeeting.url !== 'undefined' ? (
                                                <p>
                                                    {schoolBoardMeeting.body}
                                                </p>
