@@ -94,7 +94,7 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                           meeting.url == 'undefined' ? (
+                                           meeting.url == undefined ? (
                                                <p>
                                                    {meeting.body}
                                                </p>
