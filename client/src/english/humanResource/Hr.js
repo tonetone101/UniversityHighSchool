@@ -60,7 +60,7 @@ class Hr extends Component {
             >
                 {hr.title}
             </Link> 
-        } else {
+        } else if (hr.url == undefined && hr.docUrl == undefined) {
             <Link to={`/hr/${hr._id}`} >{hr.title}</Link>   
         }
     }
