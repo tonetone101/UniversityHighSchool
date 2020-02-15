@@ -45,24 +45,9 @@ class Main extends Component {
         this.renderUser()
     }
 
-    renderConditionalLink = (schoolBoardMeeting) => {
-        if(this.state.url == null) {
-            <p>
-                {schoolBoardMeeting.body}
-            </p>
-        } else {
-            <Link onClick={() => { 
-                window.open(`${schoolBoardMeeting.url}`) 
-                }}  
-            >
-                {schoolBoardMeeting.body}
-            </Link>
-        }
-    }
-
 
     render() {
-        const { schoolBoardMeeting, redirectToSignIn } = this.state;
+        const { schoolBoardMeeting, url, redirectToSignIn } = this.state;
         
         
 
@@ -108,9 +93,18 @@ class Main extends Component {
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
                             <div key={i} >
-                                <div className='row'>
+                                <div className='row'> 
                                         {
-                                            this.renderConditionalLink(schoolBoardMeeting)
+                                            url == null ? (
+                                            <p>{schoolBoardMeeting.body}</p>
+                                            ) : (
+                                                <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                                                    window.open(`${schoolBoardMeeting.url}`) 
+                                                    }}  
+                                                >
+                                                    {schoolBoardMeeting.body}
+                                                </Link>
+                                            )
                                         }
                                    
                                         {
