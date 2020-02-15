@@ -46,7 +46,7 @@ exports.createhr = (req, res, next) => {
         // req.profile.salt = undefined;
         hr.postedBy = req.profile;
         if (files.photo) {
-            hr.photo.data = fs.readFileSync(files.photo.path, 'utf8');
+            hr.photo.data = fs.readFileSync(files.photo.path);
             hr.photo.contentType = files.photo.type;
         }
         hr.save((err, result) => {

@@ -119,11 +119,11 @@ class Edithr extends Component {
             <div className="form-group">
                 <label className="text-muted">Google Doc Url</label>
                 <textarea
-                    onChange={this.handleChange("url")}
+                    onChange={this.handleChange("docUrl")}
                     placeholder='optional'
                     type="text"
                     className="form-control"
-                    value={url}
+                    value={docUrl}
                 />
             </div>
 

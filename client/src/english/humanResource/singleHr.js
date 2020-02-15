@@ -17,7 +17,6 @@ class Singlehr extends Component {
 
     componentDidMount = () => {
         const hrId = this.props.match.params.hrId
-        console.log(this.props.match.params)
         singlehr(hrId).then(data => {
             if (data.error) {
                 console.log(data.error)

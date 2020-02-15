@@ -5,12 +5,6 @@ import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
 
-const isActive = (history, path) => {
-    if (history.location.pathname === path) return {
-      color: '#ff9900'
-    } 
-  }
-
 class Hr extends Component {
     constructor() {
         super();
