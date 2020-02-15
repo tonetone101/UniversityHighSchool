@@ -48,26 +48,12 @@ class Main extends Component {
 
     render() {
         const { schoolBoardMeeting, url, redirectToSignIn } = this.state
-        let meeting;
 
         console.log(schoolBoardMeeting)
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          } 
-
-         if (schoolBoardMeeting.url !== 'undefined') {
-             meeting =  <Link onClick={() => { 
-                window.open(`${schoolBoardMeeting.url}`) 
-                }}  
-            >
-                {schoolBoardMeeting.body}
-            </Link>
-         } else {
-            meeting = <div>
-                {schoolBoardMeeting.body}
-            </div>
-         }
         
         return (
             <div>
@@ -108,7 +94,18 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                           meeting
+                                           schoolBoardMeeting.url === 'undefined' ? (
+                                               <p>
+                                                   {schoolBoardMeeting.body}
+                                               </p>
+                                           ) : (
+                                            <Link onClick={() => { 
+                                                window.open(`${schoolBoardMeeting.url}`) 
+                                                }}  
+                                            >
+                                                {schoolBoardMeeting.body}
+                                            </Link> 
+                                           )
                                         }
                                    
                                         {
