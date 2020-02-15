@@ -35,7 +35,7 @@ exports.createadmission = (req, res, next) => {
         // req.profile.salt = undefined;
         admission.postedBy = req.profile;
         if (files.photo) {
-            admission.photo.data = fs.readFileSync(files.photo.path, 'utf8');
+            admission.photo.data = fs.readFileSync(files.photo.path);
             admission.photo.contentType = files.photo.type;
         }
         admission.save((err, result) => {

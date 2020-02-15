@@ -46,7 +46,7 @@ exports.createschoolBoardMeeting = (req, res, next) => {
         // req.profile.salt = undefined;
         schoolBoardMeeting.postedBy = req.profile;
         if (files.photo) {
-            schoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path, 'utf8');
+            schoolBoardMeeting.photo.data = fs.readFileSync(files.photo.path);
             schoolBoardMeeting.photo.contentType = files.photo.type;
         }
         schoolBoardMeeting.save((err, result) => {
