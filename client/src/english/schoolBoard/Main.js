@@ -47,9 +47,8 @@ class Main extends Component {
 
 
     render() {
-        const { schoolBoardMeeting, url, redirectToSignIn } = this.state
-        
-        
+        const { schoolBoardMeeting, url, docUrl, redirectToSignIn } = this.state
+
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
@@ -91,11 +90,10 @@ class Main extends Component {
                       <div id='title'>
                          <h3>Upcoming Meetings:</h3> 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
-                        
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                            url == ' ' ? (
+                                            url || docUrl === '' ? (
                                                 <p>{schoolBoardMeeting.body}</p>
                                                 
                                             ) : (
