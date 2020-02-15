@@ -95,16 +95,17 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                            url == null ? (
+                                            url ? (
+                                                <p>{schoolBoardMeeting.body}</p>
+                                                
+                                            ) : (
                                                 <Link onClick={() => { 
                                                     window.open(`${schoolBoardMeeting.url}`) 
                                                     }}  
                                                 >
                                                     {schoolBoardMeeting.body}
                                                 </Link>
-                                            ) : (
                                                 
-                                                 <p>{schoolBoardMeeting.body}</p>
                                             )
                                         }
                                    
