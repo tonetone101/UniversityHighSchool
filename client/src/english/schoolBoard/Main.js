@@ -105,7 +105,7 @@ class Main extends Component {
                                             >
                                                 {meeting.body}
                                             </Link> 
-                                           )
+                                           ) 
                                         }
                                    
                                         {

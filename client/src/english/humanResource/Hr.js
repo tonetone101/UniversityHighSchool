@@ -46,14 +46,14 @@ class Hr extends Component {
 
     conditionalRender = hr => {
 
-        if (hr.docUrl) {
+        if (hr.docUrl !== undefined) {
              <Link onClick={() => { 
                 window.open(`${hr.docUrl}`) 
                 }}  
             >
                 {hr.title}
             </Link> 
-        } else if(hr.url) {
+        } else if(hr.url !== undefined) {
              <Link onClick={() => { 
                 window.open(`http://${hr.url}`) 
                 }}  
