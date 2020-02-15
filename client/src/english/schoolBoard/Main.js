@@ -11,7 +11,7 @@ class Main extends Component {
         this.state = {
             user: '',
             schoolBoardMeeting: [],
-            url: null,
+            url: '',
             docUrl: '',
             redirectToschoolBoardMeeting: false,
             redirectToSignIn: false
@@ -95,7 +95,7 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'> 
                                         {
-                                            url ? (
+                                            url == ' ' ? (
                                                 <p>{schoolBoardMeeting.body}</p>
                                                 
                                             ) : (
