@@ -80,15 +80,33 @@ class Hr extends Component {
                                         }
                                    
                                 </div>
+                                {
+                                    isAuthenticated() && isAuthenticated().user.code === 8290 && (
+                                        <div>
+                                            <Link
+                                                to={`/hr/${hr._id}`}
+                                                className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                            >
+                                                View
+                                            </Link>
+                                        </div>
+                                        )
+                                }
 
-                                <div>
-                                    <Link
-                                        to={`/hr/${hr._id}`}
-                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                                    >
-                                        View
-                                    </Link>
-                                </div>
+{
+                                    isAuthenticated() && isAuthenticated().user.code === 2609 && (
+                                        <div>
+                                            <Link
+                                                to={`/hr/${hr._id}`}
+                                                className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                            >
+                                                View
+                                            </Link>
+                                        </div>
+                                        )
+                                }
+
+                               
 
                             </div>
 
