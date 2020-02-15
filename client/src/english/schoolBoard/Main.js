@@ -56,7 +56,7 @@ class Main extends Component {
             return <Redirect to={`/signin`} />
          } 
 
-         if (schoolBoardMeeting.url) {
+         if (schoolBoardMeeting.url !== 'undefined') {
              meeting =  <Link onClick={() => { 
                 window.open(`${schoolBoardMeeting.url}`) 
                 }}  
