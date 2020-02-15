@@ -94,8 +94,8 @@ class Main extends Component {
                             <div key={i} >
                                 <div className='row'>
                                     {
-                                        schoolBoardMeeting && schoolBoardMeeting.url === '' ? (
-                                            <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                                        schoolBoardMeeting.url === '' ? (
+                                            <Link onClick={() => { 
                                                 window.open(`${schoolBoardMeeting.url}`) 
                                                 }}  
                                             >
