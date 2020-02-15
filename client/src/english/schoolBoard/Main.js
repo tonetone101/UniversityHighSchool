@@ -11,7 +11,7 @@ class Main extends Component {
         this.state = {
             user: '',
             schoolBoardMeeting: [],
-            url: '',
+            url: null,
             docUrl: '',
             redirectToschoolBoardMeeting: false,
             redirectToSignIn: false
@@ -46,7 +46,7 @@ class Main extends Component {
     }
 
     renderConditionalLink = (schoolBoardMeeting) => {
-        if(schoolBoardMeeting.url === '') {
+        if(this.state.url == null) {
             <p>
                 {schoolBoardMeeting.body}
             </p>
