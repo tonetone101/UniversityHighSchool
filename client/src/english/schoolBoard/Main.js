@@ -91,8 +91,8 @@ class Main extends Component {
                          <h3>Upcoming Meetings:</h3> 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
-                            <div key={i} >
-                                <ListGroup variant="flush">
+                            <div id='boardList' key={i} >
+                                <ListGroup id='boardList' variant="flush">
                                     <ListGroup.Item id='boardList'> 
                                         <Link onClick={() => { 
                                             window.open(`${schoolBoardMeeting.url}`) 
