@@ -51,26 +51,24 @@ class Hr extends Component {
     }
 
     conditionalRender = hr => {
-        let link;
 
         if (hr.url && hr.docUrl == undefined) {
-            link = <Link to={`/hr/${hr._id}`} >{hr.title}</Link>
+             <Link to={`/hr/${hr._id}`} >{hr.title}</Link>
         } else if (hr.docUrl) {
-            link = <Link onClick={() => { 
+             <Link onClick={() => { 
                 window.open(`${hr.docUrl}`) 
                 }}  
             >
                 {hr.title}
             </Link> 
         } else if(hr.url) {
-            link = <Link onClick={() => { 
+             <Link onClick={() => { 
                 window.open(`http://${hr.url}`) 
                 }}  
             >
                 {hr.title}
             </Link> 
         }
-        return link
     }
 
     renderhr = hr => {
@@ -93,16 +91,16 @@ class Hr extends Component {
                                         {
                                            this.conditionalRender(hr)
                                         }
-                                    <h5>{hr.title.substring(0, 100)}</h5>
+                                   
                                 </div>
 
                                 <div>
-                                    {/* <Link
+                                    <Link
                                         to={`/hr/${hr._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
-                                    </Link> */}
+                                        View
+                                    </Link>
                                 </div>
 
                             </div>
@@ -117,6 +115,7 @@ class Hr extends Component {
     render() {
         const { hr } = this.state;
         const {history} = this.props
+        console.log(hr)
 
         return (
             <div>
