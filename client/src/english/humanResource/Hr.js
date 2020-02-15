@@ -46,9 +46,7 @@ class Hr extends Component {
 
     conditionalRender = hr => {
 
-        if (hr.url && hr.docUrl == undefined) {
-             <Link to={`/hr/${hr._id}`} >{hr.title}</Link>
-        } else if (hr.docUrl) {
+        if (hr.docUrl) {
              <Link onClick={() => { 
                 window.open(`${hr.docUrl}`) 
                 }}  
@@ -62,6 +60,8 @@ class Hr extends Component {
             >
                 {hr.title}
             </Link> 
+        } else {
+            <Link to={`/hr/${hr._id}`} >{hr.title}</Link>   
         }
     }
 
