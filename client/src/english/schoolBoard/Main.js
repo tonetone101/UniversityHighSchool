@@ -91,7 +91,7 @@ class Main extends Component {
                          <h3>Upcoming Meetings:</h3> 
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
-                            <div key={i}>
+                            <div key={i} id='boardList'>
                                 <ListGroup variant="flush">
                                     <ListGroup.Item> 
                                         <Link onClick={() => { 
