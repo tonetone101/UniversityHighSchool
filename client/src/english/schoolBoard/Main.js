@@ -49,6 +49,20 @@ class Main extends Component {
     render() {
         const { schoolBoardMeeting, redirectToSignIn } = this.state;
         
+        renderConditionalLink = () => {
+            if(schoolBoardMeeting.url === '') {
+                <p>
+                    {schoolBoardMeeting.body}
+                </p>
+            } else {
+                <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                    window.open(`${schoolBoardMeeting.url}`) 
+                    }}  
+                >
+                    {schoolBoardMeeting.body}
+                </Link>
+            }
+        }
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
@@ -93,21 +107,9 @@ class Main extends Component {
                         
                             <div key={i} >
                                 <div className='row'>
-                                    {
-                                        schoolBoardMeeting.url === '' ? (
-                                            <Link onClick={() => { 
-                                                window.open(`${schoolBoardMeeting.url}`) 
-                                                }}  
-                                            >
-                                                {schoolBoardMeeting.body}
-                                        </Link>
-                                        ) : (
-                                           
-                                        <p>
-                                        {schoolBoardMeeting.body}
-                                    </p>
-                                        )
-                                    }
+                                        {
+                                            this.renderConditionalLink(schoolBoardMeeting)
+                                        }
                                    
                                         {
                                             isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
