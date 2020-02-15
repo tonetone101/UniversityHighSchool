@@ -92,7 +92,7 @@ class Main extends Component {
                         {schoolBoardMeeting.reverse().map((schoolBoardMeeting,  i) => (
                         
                             <div key={i} >
-                                <ListGroup variant="flush">
+                                <ListGroup style={{backgroundColor: '#b7b7b7'}} >
                                     <ListGroup.Item> 
                                         <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
                                             window.open(`${schoolBoardMeeting.url}`) 
