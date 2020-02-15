@@ -91,7 +91,7 @@ class Main extends Component {
                       <div id='title'>
                          <h3>Upcoming Meetings:</h3> 
                         {schoolBoardMeeting.reverse().map((meeting,  i) => (
-                            <div key={i} >
+                            <div key={i} className='mt-4 ml-4'>
                                 <div className='row'> 
                                         {
                                            meeting.url == undefined ? (
