@@ -96,14 +96,15 @@ class Main extends Component {
                                 <div className='row'> 
                                         {
                                             url == null ? (
-                                            <p>{schoolBoardMeeting.body}</p>
-                                            ) : (
-                                                <Link style={{backgroundColor: '#b7b7b7'}}  onClick={() => { 
+                                                <Link onClick={() => { 
                                                     window.open(`${schoolBoardMeeting.url}`) 
                                                     }}  
                                                 >
                                                     {schoolBoardMeeting.body}
                                                 </Link>
+                                            ) : (
+                                                
+                                                 <p>{schoolBoardMeeting.body}</p>
                                             )
                                         }
                                    
