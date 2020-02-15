@@ -204,13 +204,6 @@ class AdmissionNews extends React.Component {
                                                         </Link>
                                                     )
                                                 }
-                                                    <Link onClick={() => { 
-                                                        window.open(comment.url) 
-                                                        }}>
-                                                        <p className='col-md-8'>
-                                                            {comment.text}
-                                                        </p>
-                                                    </Link>
                                                
                                                
                                                 <span className='col-md-4' >
@@ -241,18 +234,6 @@ class AdmissionNews extends React.Component {
                                                         )
                                                         
                                                     }
-
-                                                {
-                                                    isAuthenticated() && isAuthenticated().user.code === 8290 &&  
-                                                        (
-                                                            
-                                                            <span onClick={() => this.renderEdit(comment)} className='text-danger '>
-                                                                Edit
-                                                            </span>
-                                                            
-                                                        
-                                                        )
-                                                }
 
                                                 </span>
                                             </div>
