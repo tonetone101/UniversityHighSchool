@@ -61,6 +61,7 @@ const khmerschoolBoardMemberRoutes = require('./khmer/routes/schoolBoardMember')
 const khmerschoolBoardMeetingRoutes = require('./khmer/routes/schoolBoardMeeting');
 const khmerapplicationRoutes = require('./khmer/routes/application');
 const khmeradmissionRoutes = require('./khmer/routes/admission');
+const khmerhrRoutes = require('./khmer/routes/hr');
 
 // // bringing in my hmong routes
 // const hmongfacultyRoutes = require('./hmong/routes/faculty');
@@ -83,6 +84,7 @@ const portschoolBoardMemberRoutes = require('./port/routes/schoolBoardMember');
 const portschoolBoardMeetingRoutes = require('./port/routes/schoolBoardMeeting');
 const portapplicationRoutes = require('./port/routes/application');
 const portadmissionRoutes = require('./port/routes/admission');
+const porthrRoutes = require('./port/routes/hr');
 
 // general route
 const authRoutes = require('./general/routes/auth');
@@ -137,6 +139,7 @@ app.use('/', khmerschoolBoardMemberRoutes);
 app.use('/', khmerschoolBoardMeetingRoutes)
 app.use('/', khmerapplicationRoutes)
 app.use('/', khmeradmissionRoutes)
+app.use('/', khmerhrRoutes)
 
 // // hmong routes
 // app.use('/', hmongimageRoutes)
@@ -159,6 +162,7 @@ app.use('/', portschoolBoardMemberRoutes);
 app.use('/', portschoolBoardMeetingRoutes)
 app.use('/', portapplicationRoutes)
 app.use('/', portadmissionRoutes)
+app.use('/', porthrRoutes)
 
 // general routes
 app.use('/', authRoutes)
