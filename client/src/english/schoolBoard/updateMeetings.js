@@ -23,14 +23,15 @@ class UpdatechoolBoardMeeting extends Component {
 
     componentDidMount() {
         this.schoolBoardMeetingData = new FormData();
-        const schoolBoardMeetingId = this.props.match.params.schoolBoardMeetingId
-        singleschoolBoardMeeting(schoolBoardMeetingId).then(data => {
-            if (data.error) {
-                console.log(data.error)
-            } else {
-                this.setState({id: data._id, body: data.body, url: data.url, error: ''})
-            }
-        }) 
+        console.log(this.props.match.params)
+        // const schoolBoardMeetingId = this.props.match.params.schoolBoardMeetingId
+        // singleschoolBoardMeeting(schoolBoardMeetingId).then(data => {
+        //     if (data.error) {
+        //         console.log(data.error)
+        //     } else {
+        //         this.setState({id: data._id, body: data.body, url: data.url, error: ''})
+        //     }
+        // }) 
         this.setState({ user: isAuthenticated().user});
     }
 
