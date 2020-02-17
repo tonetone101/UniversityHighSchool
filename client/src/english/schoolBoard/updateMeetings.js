@@ -69,7 +69,7 @@ class UpdatechoolBoardMeeting extends Component {
         this.setState({ loading: true });
 
         if (this.isValid()) {
-            const schoolBoardMeetingId = this.state.id;
+            const schoolBoardMeetingId = this.props.match.params.schoolBoardMeetingId
             const token = isAuthenticated().token;
 
             update(schoolBoardMeetingId, token, this.schoolBoardMeetingData).then(data => {
