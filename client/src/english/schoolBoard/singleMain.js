@@ -44,7 +44,7 @@ class SingleschoolBoardMeeting extends Component {
     renderschoolBoardMeeting = (schoolBoardMeeting) => {
 
         return (
-                <div className='card'>
+                <div className='card' style={{marginTop: '50px'}}>
                     
                     <p className="card-text">
                         {schoolBoardMeeting.body}
