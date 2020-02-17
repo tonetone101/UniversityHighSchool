@@ -44,12 +44,18 @@ class SingleschoolBoardMeeting extends Component {
     renderschoolBoardMeeting = (schoolBoardMeeting) => {
 
         return (
-                <div className='card' style={{marginTop: '50px'}}>
+                <div className='card container' id='singleMeeting' style={{marginTop: '50px'}}>
                     
-                    <p className="card-text">
-                        {schoolBoardMeeting.body}
-                        {schoolBoardMeeting.url}
-                    </p>
+                    <div>
+                        <p className="card-text">
+                            {schoolBoardMeeting.body}
+                        </p>
+
+                        <p className="card-text">
+                            {schoolBoardMeeting.url}
+                        </p>
+                    </div>
+                    
 
                     <div className='d-inline-block mb-5'>
                         <Link
