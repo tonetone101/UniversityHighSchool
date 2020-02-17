@@ -52,12 +52,17 @@ import NewPartners from './english/partners/NewPartners'
 import Partners from './english/partners/Partners'
 import SinglePartners from './english/partners/SinglePartner'
 import EditPartners from './english/partners/EditPartners'
+
 import SchoolBoardMeeting from './english/schoolBoard/Main'
 import NewBoardMeeting from './english/schoolBoard/NewBoardMeeting'
 import SingleBoardMeeting from './english/schoolBoard/singleMain'
+import UpdateBoardMeeting from './english/schoolBoard/updateMeetings'
+
+
 import SchoolBoardMember from './english/schoolBoard/Members'
 import NewSchoolBoardMember from './english/schoolBoard/NewMembers'
 import SingleSchoolBoardMember from './english/schoolBoard/SingleMembers'
+
 import About from './english/about/About'
 import EditAbout from './english/about/EditAbout'
 
@@ -240,14 +245,19 @@ const MainRouter = () => (
             <Route exact path="/partner" component={SinglePartners}></Route>
             <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
             <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
+            
             <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
             <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
             <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
+            <Route exact path="/edit/schoolBoardMeeting/:schoolBoardMeetingsId" component={UpdateBoardMeeting}></Route>
+
             <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
             <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
             <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
+            
             <Route exact path="/about" component={About}></Route>
             <Route exact path="/edit/about/:aboutId" component={EditAbout}></Route>
+            
             <Route exact path="/application" component={Applications}></Route>
             <Route exact path="/new/application" component={NewApplication}></Route>
             <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
