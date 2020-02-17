@@ -66,7 +66,7 @@ class SingleschoolBoardMeeting extends Component {
                         </Link>
                        {isAuthenticated().user && 
                         isAuthenticated().user.code === 8290 &&  
-                        <div>
+                        <div className='mt-5'>
                              <Link to={`/edit/schoolBoardMeeting/${schoolBoardMeeting._id}`} className='btn btn-raised btn-warning ml-4 btn-sm mr-4'>
                                 Update schoolBoardMeeting
                             </Link>
