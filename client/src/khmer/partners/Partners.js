@@ -58,7 +58,7 @@ class Partners extends Component {
                         
                     return (
                         <div className='col-md-8 mb-5' key={i}>
-                              <div className='row'>
+                            <div className='row'>
                                 <div>
                                     <img src={partnersPhoto} style={{height: '150px', width: '150px'}} />
                                     <h5>{partner.name.substring(0, 100)}</h5>
