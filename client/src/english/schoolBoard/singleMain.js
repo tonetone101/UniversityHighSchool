@@ -44,7 +44,7 @@ class SingleschoolBoardMeeting extends Component {
     renderschoolBoardMeeting = (schoolBoardMeeting) => {
 
         return (
-                <div  >
+                <div className='card'>
                     
                     <p className="card-text">
                         {schoolBoardMeeting.body}
