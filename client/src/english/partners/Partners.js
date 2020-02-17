@@ -5,12 +5,6 @@ import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
 
-const isActive = (history, path) => {
-    if (history.location.pathname === path) return {
-      color: '#ff9900'
-    } 
-  }
-
 class Partners extends Component {
     constructor() {
         super();
@@ -40,7 +34,6 @@ class Partners extends Component {
         });
     };
 
-
     componentDidMount() {
         this.loadPartners(this.state.partners)
         this.renderUser()
@@ -64,22 +57,6 @@ class Partners extends Component {
                         
                     return (
                         <div  className='col-md-8 mb-5' key={i}>
-                            {/* <Card >
-                            <Card.Img variant="top" src={partnersPhoto} />
-                            <Card.Body>
-                                <Card.Title>{partner.name.substring(0, 100)}</Card.Title>
-                                <Card.Text>
-                                    {partner.about.substring(0, 100)}
-                                </Card.Text>
-                                    <Link
-                                        to={`/partners/${partner._id}`}
-                                        className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                                    >
-                                        Read more
-                                    </Link>
-                            </Card.Body>
-                            </Card> */}
-
                             <div className='row'>
                                 <div>
                                     <img src={partnersPhoto} style={{height: '150px', width: '150px'}} />

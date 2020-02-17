@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '..//header/Header'
+import SideBar from '../sideBar/SideBar'
 
 class Partners extends Component {
     constructor() {

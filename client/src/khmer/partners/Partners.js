@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+import SideBar from '../sideBar/SideBar'
 
 class Partners extends Component {
     constructor() {
@@ -56,22 +57,27 @@ class Partners extends Component {
                         : ''
                         
                     return (
-                        <div  className='col-md-4' key={i}>
-                            <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={partnersPhoto} />
-                            <Card.Body>
-                                <Card.Title>{partner.name.substring(0, 100)}</Card.Title>
-                                <Card.Text>
-                                    {partner.about.substring(0, 100)}
-                                </Card.Text>
-                                <Link
+                        <div className='col-md-8 mb-5' key={i}>
+                              <div className='row'>
+                                <div>
+                                    <img src={partnersPhoto} style={{height: '150px', width: '150px'}} />
+                                    <h5>{partner.name.substring(0, 100)}</h5>
+                                </div>
+
+                                <div>
+                                    <p>
+                                        {partner.about}
+                                    </p>
+
+                                    <Link
                                         to={`/khmer/partners/${partner._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                          សូមមើល
+                                        សូមមើល
                                     </Link>
-                            </Card.Body>
-                            </Card>
+                                </div>
+
+                            </div>
                         </div>
                     );
                 })}
@@ -86,7 +92,10 @@ class Partners extends Component {
             <div>
                  <Header history={this.props.history} />
                
-                <div className="container">
+                 <div className="container row">
+                    <SideBar />
+
+                    <div className='col-md-8 text-center'>
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                         <h2 >
                         ដៃគូរបស់យើង
@@ -113,8 +122,8 @@ class Partners extends Component {
                 
                     <div>               
                         {this.renderPartners(partners)}
-                    </div>   
-                
+                    </div>  
+                    </div> 
                 </div>
             </div>
         );
