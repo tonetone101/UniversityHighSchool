@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {list} from './apiAbout'
-import {Link, Redirect } from 'react-router-dom'
+import {Link, withRouter } from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 import { Card } from 'react-bootstrap';
 import Header from '../header/Header'
@@ -11,9 +11,6 @@ class PortAbout extends Component {
         about: [],
         redirectToHome: false,
         redirectToSignIn: false,
-        spanishPage: false,
-        englishPage: false,
-        khmerPage: false
     }
 
     renderUser = () => {
@@ -45,7 +42,7 @@ class PortAbout extends Component {
 
         return (
             <div className='container mt-5' style={{textIndent: '50px'}}>
-                <Card border='dark' >
+                <Card border='dark' style={{borderRadius: '15%'}}>
                     <Card.Body>
                         <Card.Title>About Us</Card.Title>
                         
@@ -77,18 +74,15 @@ class PortAbout extends Component {
     }
 
     render() {
-        const {about,redirectToSignIn } = this.state
-        
-        if(redirectToSignIn) {
-            return <Redirect to={`/port/signin`} />
-         } 
+        const {about} = this.state
 
         return (
             <div>
                 <Header history={this.props.history} />
                 
-                <div>
-                    <div className='text-center'>
+                <div className='row container'>
+                    <SideBar />
+                    <div className='col-md-8 text-center'>
                         {!about ? ( 
                                 <div className='jumbotron text-center '>
                                     <h2>Carregando....</h2>
@@ -113,4 +107,4 @@ class PortAbout extends Component {
     }
 }
 
-export default PortAbout
+export default withRouter(PortAbout)

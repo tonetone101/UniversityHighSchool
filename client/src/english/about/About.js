@@ -6,12 +6,6 @@ import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
 
-const isActive = (history, path) => {
-  if (history.location.pathname === path) return {
-    color: '#ff9900'
-  } 
-}
-
 class About extends Component {
     state = {
         user: '',

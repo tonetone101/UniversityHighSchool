@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {list} from './apiAbout'
-import {Link } from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 import { Card } from 'react-bootstrap';
 import Header from '../header/Header'
+import SideBar from '../sideBar/SideBar'
 
 class About extends Component {
     state = {
@@ -46,8 +47,8 @@ class About extends Component {
         : ''
 
         return (
-            <div className='container mt-5'>
-                <Card border='dark' >
+            <div className='container mt-5' style={{textIndent: '50px'}}>
+                <Card border='dark' style={{borderRadius: '15%'}}>
                     <Card.Body>
                         <Card.Title>Sobre nosotros</Card.Title>
                         
@@ -86,8 +87,9 @@ class About extends Component {
             <div>
                 <Header history={this.props.history} />
                 
-                <div>
-                    <div className='text-center'>
+                <div className='row container'>
+                    <SideBar />
+                    <div className='col-md-8 text-center'>
                         {!about ? ( 
                                 <div className='jumbotron text-center '>
                                     <h2>Carregando....</h2>
@@ -112,4 +114,4 @@ class About extends Component {
     }
 }
 
-export default About
+export default withRouter(About)
