@@ -165,4 +165,4 @@ class UpdatechoolBoardMeeting extends Component {
     }
 }
 
-export default UpdateschoolBoardMeeting;
+export default UpdatechoolBoardMeeting;
