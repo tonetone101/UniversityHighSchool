@@ -179,7 +179,7 @@ class Header extends React.Component {
         return <Redirect to={'/port'} />
     }
          else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/spanish/signin`} />
          } 
 
       return (
