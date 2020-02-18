@@ -61,7 +61,7 @@ class Hr extends Component {
                 {hr.title}
             </Link> 
         } else if (hr.url == undefined && hr.docUrl == undefined) {
-           return <Link to={`/hr/${hr._id}`} >{hr.title}</Link>   
+           return <Link to={`/khmer/hr/${hr._id}`} >{hr.title}</Link>   
         }
     }
 
@@ -84,7 +84,7 @@ class Hr extends Component {
                                     isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                         <div>
                                             <Link
-                                                to={`/hr/${hr._id}`}
+                                                to={`/khmer/hr/${hr._id}`}
                                                 className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                             >
                                                 View
@@ -97,7 +97,7 @@ class Hr extends Component {
                                     isAuthenticated() && isAuthenticated().user.code === 2609 && (
                                         <div>
                                             <Link
-                                                to={`/hr/${hr._id}`}
+                                                to={`/khmer/hr/${hr._id}`}
                                                 className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                             >
                                                 View
@@ -131,8 +131,8 @@ class Hr extends Component {
                     <div className='col-md-8 text-center'>
                             <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                                 <h2 >
-                                    Human Resource
-                                    {!hr.length ? "Loading..." : ""}
+                                    ធនធានមនុស្ស
+                                    {!hr.length ? "កំពុងផ្ទុក..." : ""}
                                 </h2>
 
                                 <hr/>
@@ -140,7 +140,7 @@ class Hr extends Component {
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <div>
-                                        <Link className='mb-5' to='/new/hr'>Add new hr</Link>
+                                        <Link className='mb-5' to='/khmer/new/hr'>Add new hr</Link>
                                     </div>
                                 )
                             }
@@ -148,7 +148,7 @@ class Hr extends Component {
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 1017 && (
                                     <div>
-                                        <Link className='mb-5' to='/new/hr'>Add new hr</Link>
+                                        <Link className='mb-5' to='/khmer/new/hr'>Add new hr</Link>
                                     </div>
                                 )
                             }
@@ -156,7 +156,7 @@ class Hr extends Component {
         {
                                 isAuthenticated() && isAuthenticated().user.code === 2609 && (
                                     <div>
-                                        <Link className='mb-5' to='/new/hr'>Add new hr</Link>
+                                        <Link className='mb-5' to='/khmer/new/hr'>Add new hr</Link>
                                     </div>
                                 )
                             }

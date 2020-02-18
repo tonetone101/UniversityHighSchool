@@ -52,7 +52,7 @@ class Singlehr extends Component {
 
     renderhr = (hr) => {  
         const photoUrl = hr._id
-        ? `/hr/photo/${
+        ? `/spanishhr/photo/${
             hr._id
           }?${new Date().getTime()}`
         : '';
@@ -79,27 +79,27 @@ class Singlehr extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/hr`}
+                            to={`/spanish/hr`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
-                            Back to hr
+                            atrás
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/hr/${hr._id}`}
+                                        to={`/spanish/edit/hr/${hr._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
-                                        Update hr
+                                        Actualizar
                                     </Link>
                                     <button
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
-                                        Delete 
+                                        Eliminar 
                                     </button>
                                 </div>
                             </div>
@@ -109,16 +109,16 @@ class Singlehr extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/hr/${hr._id}`}
+                                        to={`/spanish/edit/hr/${hr._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
-                                        Update hr
+                                        atrás
                                     </Link>
                                     <button
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
-                                        Delete 
+                                        Actualizar 
                                     </button>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@ class Singlehr extends Component {
                                         onClick={this.deleteConfirm}
                                         className='btn btn-raised btn-danger ml-3'
                                     >
-                                        Delete 
+                                        Eliminar 
                                     </button>
                                 </div>
                             </div>
@@ -151,9 +151,9 @@ class Singlehr extends Component {
         const {hr, redirectToFaculties, redirectToSignIn} = this.state
 
         if(redirectToFaculties) {
-            return <Redirect to={`/hr`} />
+            return <Redirect to={`/spanish/hr`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/spanish/signin`} />
          }
 
         return (
@@ -166,7 +166,7 @@ class Singlehr extends Component {
                     
                     {!hr ? ( 
                             <div className='jumbotron text-center '>
-                                <h2>Loading....</h2>
+                                <h2>Cargando....</h2>
                             </div>
                             ) : (
                                 this.renderhr(hr)

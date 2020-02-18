@@ -52,7 +52,7 @@ class Singlehr extends Component {
 
     renderhr = (hr) => {  
         const photoUrl = hr._id
-        ? `/hr/photo/${
+        ? `/porthr/photo/${
             hr._id
           }?${new Date().getTime()}`
         : '';
@@ -79,18 +79,18 @@ class Singlehr extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/hr`}
+                            to={`/port/hr`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
-                            Back to hr
+                            Costas
                         </Link>
 
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 && (
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/hr/${hr._id}`}
+                                        to={`/port/edit/hr/${hr._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update hr
@@ -109,7 +109,7 @@ class Singlehr extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/hr/${hr._id}`}
+                                        to={`/port/edit/hr/${hr._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update hr
@@ -128,7 +128,7 @@ class Singlehr extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/hr/${hr._id}`}
+                                        to={`/port/edit/hr/${hr._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update hr
@@ -151,9 +151,9 @@ class Singlehr extends Component {
         const {hr, redirectToFaculties, redirectToSignIn} = this.state
 
         if(redirectToFaculties) {
-            return <Redirect to={`/hr`} />
+            return <Redirect to={`/port/hr`} />
          } else if(redirectToSignIn) {
-            return <Redirect to={`/signin`} />
+            return <Redirect to={`/port/signin`} />
          }
 
         return (
@@ -166,7 +166,7 @@ class Singlehr extends Component {
                     
                     {!hr ? ( 
                             <div className='jumbotron text-center '>
-                                <h2>Loading....</h2>
+                                <h2>Carregando....</h2>
                             </div>
                             ) : (
                                 this.renderhr(hr)
