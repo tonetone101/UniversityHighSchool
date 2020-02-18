@@ -78,7 +78,7 @@ class SchoolBoardMember extends Component {
 
                         <div  className='col-md-4 mb-5' key={i}>
                             <Card style={{ border: 'solid black 2px', width: '18rem' }} id='readStaff'>
-                            <Card.Img variant="top" src={schoolBoardMemberPhoto} />
+                            <Card.Img variant="top" style={{height: '50px'}} src={schoolBoardMemberPhoto} />
                             <Card.Body>
                                 <Card.Title>{schoolBoardMember.name.substring(0, 100)}</Card.Title>
                                 <Card.Text>
