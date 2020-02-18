@@ -228,6 +228,7 @@ class Carol extends Component {
                         <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
                            
                             <img 
+                                id='homeImage'
                                 style={{ height: "300px", width: "200px" }}
                                 className="mt-4 col-sm-6"
                                 src={require("../../images/uhsMission.png")}
@@ -235,6 +236,7 @@ class Carol extends Component {
                                 
                             />   
                             <img 
+                                id='homeImage'
                                 style={{ height: "300px", width: "200px" }}
                                 className="mt-4 col-sm-6"
                                 src={require("../../images/uhsVision.png")}
