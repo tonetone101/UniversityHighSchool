@@ -65,12 +65,12 @@ class Header extends React.Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
+                                    <Link className='ml-3' to='/port/signin' style={{color: 'white'}}>
                                         Assinar em
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/signup' >
+                                    <Link style={{color: 'white'}} to='/port/signup' >
                                     Inscrever-se
                                     </Link>
                                 </Nav.Link>

@@ -88,6 +88,7 @@ class Faculty extends Component {
                                 </Card.Text>
                                 <Link
                                         to={`/faculty/${faculty._id}`}
+                                        id='readButton'
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
