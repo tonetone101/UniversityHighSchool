@@ -30,7 +30,7 @@ class SideBar extends Component {
         const {history} = this.props
 
         return (
-                <div className='col-md-4 column text-center mt-5' style={{opacity: '0.5'}}>
+                <div className='col-md-4 column text-center mt-5'>
                     <div>
                         <Link style={isActive(history, '/partners')} to='/partners'>
                                 Our Partners
