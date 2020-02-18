@@ -116,6 +116,10 @@ import SpanishApplication from './spanish/application/Application'
 import SpanishNewApplication from './spanish/application/NewApplication'
 import SpanishSingleApplication from './spanish/application/SingleApplication'
 
+import SpanishHR from './spanish/humanResource/Hr'
+import SpanishNewHr from './spanish/humanResource/newHr'
+import SpanishSingleHr from './spanish/humanResource/singleHr'
+import SpanishEditHr from './spanish/humanResource/editHr'
 
 // khmer
 import NewkhmerCarousel from './khmer/carousel/NewCarousel'
@@ -160,6 +164,11 @@ import KhmerApplication from './khmer/application/Application'
 import KhmerNewApplication from './khmer/application/NewApplication'
 import KhmerSingleApplication from './khmer/application/SingleApplication'
 
+import KhmerHR from './khmer/humanResource/Hr'
+import KhmerNewHr from './khmer/humanResource/newHr'
+import KhmerSingleHr from './khmer/humanResource/singleHr'
+import KhmerEditHr from './khmer/humanResource/editHr'
+
 // port
 import NewportCarousel from './port/carousel/NewCarousel'
 import EditportCarousel from './port/carousel/EditCarousel'
@@ -202,6 +211,11 @@ import NewportSchoolBoardMember from './port/schoolBoard/NewMembers'
 import portApplication from './port/application/Application'
 import portNewApplication from './port/application/NewApplication'
 import portSingleApplication from './port/application/SingleApplication'
+
+import PortHR from './port/humanResource/Hr'
+import PortNewHr from './port/humanResource/newHr'
+import PortSingleHr from './port/humanResource/singleHr'
+import PortEditHr from './port/humanResource/editHr'
 
 const MainRouter = () => (
     <div >
@@ -316,6 +330,11 @@ const MainRouter = () => (
             <Route exact path="/application" component={SpanishApplication}></Route>
             <Route exact path="/spanish/application/:applicationId" component={SpanishSingleApplication}></Route>
 
+            <Route exact path="/spanish/edit/hr/:hrId" component={SpanishEditHr}></Route>
+            <Route exact path="/spanish/hr" component={SpanishHR}></Route>
+            <Route exact path="/spanish/new/hr" component={SpanishNewHr}></Route>
+            <Route exact path="/spanish/hr/:hrId" component={SpanishSingleHr}></Route>
+
 
             {
             // khmer          
@@ -362,6 +381,11 @@ const MainRouter = () => (
             <Route exact path="/khmer/application" component={KhmerApplication}></Route>
             <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
 
+            <Route exact path="/khmer/edit/hr/:hrId" component={KhmerEditHr}></Route>
+            <Route exact path="/khmer/hr" component={KhmerHR}></Route>
+            <Route exact path="/khmer/new/hr" component={KhmerNewHr}></Route>
+            <Route exact path="/khmer/hr/:hrId" component={KhmerSingleHr}></Route> 
+
             {
             // port          
             }
@@ -406,6 +430,12 @@ const MainRouter = () => (
             <Route exact path="/port/new/application" component={portNewApplication}></Route>
             <Route exact path="/port/application" component={portApplication}></Route>
             <Route exact path="/port/application/:applicationId" component={portSingleApplication}></Route>
+
+            <Route exact path="/port/edit/hr/:hrId" component={PortEditHr}></Route>
+            <Route exact path="/port/hr" component={PortHR}></Route>
+            <Route exact path="/port/new/hr" component={PortNewHr}></Route>
+            <Route exact path="/port/hr/:hrId" component={PortSingleHr}></Route> 
+
         </Switch>
         
     </div>
