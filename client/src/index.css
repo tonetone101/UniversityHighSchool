@@ -38,8 +38,9 @@ body {
 }
 
 #readButton:hover {
-  height: 15%;
-  width: 15%;;
+  transform: scale(3);
+  transition: all 2s ease;
+  border-radius: 0%;
 }
 
 /* #announcements {
