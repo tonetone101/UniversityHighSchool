@@ -37,7 +37,7 @@ body {
   background-color:#b7b7b7;
 }
 
-#readButton:hover {
+#readStaff:hover {
   transform: scale(3);
   transition: all 2s ease;
   border-radius: 0%;

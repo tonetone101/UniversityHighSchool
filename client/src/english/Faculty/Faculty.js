@@ -76,7 +76,7 @@ class Faculty extends Component {
 
                     return (
                         <div  className='col-md-4 mb-5' key={i}>
-                            <Card style={{ border: 'solid black 2px', width: '18rem' }}>
+                            <Card style={{ border: 'solid black 2px', width: '18rem' }}id='readStaff' >
                             <Card.Img variant="top" src={facultyPhoto} />
                             <Card.Body>
                                 <Card.Title>{faculty.name.substring(0, 100)}</Card.Title>
@@ -88,7 +88,6 @@ class Faculty extends Component {
                                 </Card.Text>
                                 <Link
                                         to={`/faculty/${faculty._id}`}
-                                        id='readButton'
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
