@@ -222,7 +222,8 @@ import PortEditHr from './port/humanResource/editHr'
 const MainRouter = () => (
     <div >
         <Route render={({location}) => {
-            <TransitionGroup>
+            return <div>
+                <TransitionGroup>
                 <CSSTransition
                     key={location.key}
                     timeout={300}
@@ -446,6 +447,7 @@ const MainRouter = () => (
                     </Switch>
                 </CSSTransition>
             </TransitionGroup>
+            </div>
         
         }} />
     </div>
