@@ -1,5 +1,7 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
+
 import ForgotPassword from "./user/ForgotPassword";
 import ResetPassword from "./user/ResetPassword";
 
@@ -219,224 +221,229 @@ import PortEditHr from './port/humanResource/editHr'
 
 const MainRouter = () => (
     <div >
-        {/* <TopHeader/> */}
-        {/* <Menu /> */}
-        <Switch>
-            {
-            //english          
-            }
-            <Route exact path="/" component={Carol}></Route>
-            <Route exact path="/signup" component={Signup}></Route>
-            <Route exact path="/signin" component={Signin}></Route>
-            <Route exact path="/forgot-password" component={ForgotPassword} />
-            <Route exact path="/reset-password/:resetPasswordToken" component={ResetPassword} />
-            <Route exact path="/new/carousel" component={NewCarousel}></Route>
-            <Route exact path="/edit/carousel/:carouselId" component={EditCarousel}></Route>
-            <Route exact path="/events" component={Event}></Route>
-            <Route exact path="/new/event" component={NewEvent}></Route>
-            <Route exact path="/edit/event/:eventId" component={EditEvent}></Route>
-            <Route exact path="/event/:eventId" component={SingleEvent}></Route>
-            <Route exact path="/new/faculty" component={NewFaculty}></Route>
-            <Route exact path="/faculty" component={Faculty}></Route>
-            <Route exact path="/faculty/:facultyId" component={SingleFaculty}></Route>
-            <Route exact path="/edit/faculty/:facultyId" component={EditFaculty}></Route>
-            <Route exact path="/new/student" component={NewStudent}></Route>
-            <Route exact path="/admission" component={Admission}></Route>
-            <Route exact path="/bully" component={Bully}></Route>
-            <Route exact path="/student" component={Student}></Route>
-            <Route exact path="/applicants" component={Applicants}></Route>
-            <Route exact path="/applicants/:applicantId" component={SingleApplicant}></Route>
+        <TransitionGroup className="todo-list">
+            <CSSTransition
+                timeout={300}
+                classNames="fade"
+                >
+                <Switch>
+                    {
+                    //english          
+                    }
+                    <Route exact path="/" component={Carol}></Route>
+                    <Route exact path="/signup" component={Signup}></Route>
+                    <Route exact path="/signin" component={Signin}></Route>
+                    <Route exact path="/forgot-password" component={ForgotPassword} />
+                    <Route exact path="/reset-password/:resetPasswordToken" component={ResetPassword} />
+                    <Route exact path="/new/carousel" component={NewCarousel}></Route>
+                    <Route exact path="/edit/carousel/:carouselId" component={EditCarousel}></Route>
+                    <Route exact path="/events" component={Event}></Route>
+                    <Route exact path="/new/event" component={NewEvent}></Route>
+                    <Route exact path="/edit/event/:eventId" component={EditEvent}></Route>
+                    <Route exact path="/event/:eventId" component={SingleEvent}></Route>
+                    <Route exact path="/new/faculty" component={NewFaculty}></Route>
+                    <Route exact path="/faculty" component={Faculty}></Route>
+                    <Route exact path="/faculty/:facultyId" component={SingleFaculty}></Route>
+                    <Route exact path="/edit/faculty/:facultyId" component={EditFaculty}></Route>
+                    <Route exact path="/new/student" component={NewStudent}></Route>
+                    <Route exact path="/admission" component={Admission}></Route>
+                    <Route exact path="/bully" component={Bully}></Route>
+                    <Route exact path="/student" component={Student}></Route>
+                    <Route exact path="/applicants" component={Applicants}></Route>
+                    <Route exact path="/applicants/:applicantId" component={SingleApplicant}></Route>
 
-            <Route exact path="/genderpolicy" component={GenderPolicy}></Route>
-            <Route exact path="/newlink" component={NewLinks}></Route>
-            <Route exact path="/link/:linkId" component={SingleLink}></Route>
-            <Route exact path="/new/image" component={NewPhoto}></Route>
-            <Route exact path="/images" component={Photo}></Route>
-            <Route exact path="/image/:imageId" component={SinglePhoto}></Route>
-            <Route exact path="/edit/image/:imageId" component={EditPhoto}></Route>
-            <Route exact path="/partners" component={Partners}></Route>
-            <Route exact path="/new/partners" component={NewPartners}></Route>
-            <Route exact path="/partner" component={SinglePartners}></Route>
-            <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
-            <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
-            
-            <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
-            <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
-            <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
-            <Route exact path="/edit/schoolBoardMeeting/:schoolBoardMeetingsId" component={UpdatechoolBoardMeeting}></Route>
+                    <Route exact path="/genderpolicy" component={GenderPolicy}></Route>
+                    <Route exact path="/newlink" component={NewLinks}></Route>
+                    <Route exact path="/link/:linkId" component={SingleLink}></Route>
+                    <Route exact path="/new/image" component={NewPhoto}></Route>
+                    <Route exact path="/images" component={Photo}></Route>
+                    <Route exact path="/image/:imageId" component={SinglePhoto}></Route>
+                    <Route exact path="/edit/image/:imageId" component={EditPhoto}></Route>
+                    <Route exact path="/partners" component={Partners}></Route>
+                    <Route exact path="/new/partners" component={NewPartners}></Route>
+                    <Route exact path="/partner" component={SinglePartners}></Route>
+                    <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
+                    <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
+                    
+                    <Route exact path="/schoolBoardMeeting" component={SchoolBoardMeeting}></Route>
+                    <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
+                    <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
+                    <Route exact path="/edit/schoolBoardMeeting/:schoolBoardMeetingsId" component={UpdatechoolBoardMeeting}></Route>
 
-            <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
-            <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
-            <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
-            
-            <Route exact path="/about" component={About}></Route>
-            <Route exact path="/edit/about/:aboutId" component={EditAbout}></Route>
-            
-            <Route exact path="/application" component={Applications}></Route>
-            <Route exact path="/new/application" component={NewApplication}></Route>
-            <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
+                    <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
+                    <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
+                    <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
+                    
+                    <Route exact path="/about" component={About}></Route>
+                    <Route exact path="/edit/about/:aboutId" component={EditAbout}></Route>
+                    
+                    <Route exact path="/application" component={Applications}></Route>
+                    <Route exact path="/new/application" component={NewApplication}></Route>
+                    <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
 
-            <Route exact path="/edit/hr/:hrId" component={EditHr}></Route>
-            <Route exact path="/hr" component={HR}></Route>
-            <Route exact path="/new/hr" component={NewHr}></Route>
-            <Route exact path="/hr/:hrId" component={SingleHr}></Route>
-
-
-            {
-            // spanish          
-            }
-            <Route exact path="/spanish/signup" component={SpanishSignup}></Route>
-            <Route exact path="/spanish/signin" component={SpanishSignin}></Route>
-            <Route exact path="/spanish" component={CarolSpanish}></Route>
-            <Route exact path="/spanish/new/carousel" component={NewSpanishCarousel}></Route>
-            <Route exact path="/spanish/edit/carousel/:carouselId" component={EditSpanishCarousel}></Route>
-            <Route exact path="/spanishevents" component={EventSpanish}></Route>
-            <Route exact path="/spanish/new/event" component={NewSpanishEvent}></Route>
-            <Route exact path="/spanish/edit/event/:eventId" component={EditSpanishEvent}></Route>
-            <Route exact path="/spanish/event/:eventId" component={SingleSpanishEvent}></Route>
-            <Route exact path="/spanish/new/faculty" component={NewSpanishFaculty}></Route>
-            <Route exact path="/spanish/faculty" component={FacultySpanish}></Route>
-            <Route exact path="/spanish/faculty/:facultyId" component={SingleSpanishFaculty}></Route>
-            <Route exact path="/spanish/edit/faculty/:facultyId" component={EditSpanishFaculty}></Route>
-            <Route exact path="/spanish/new/student" component={NewSpanishStudent}></Route>
-            <Route exact path="/spanish/admission" component={AdmissionSpanish}></Route>
-            <Route exact path="/spanish/bully" component={BullySpanish}></Route>
-            <Route exact path="/spanish/student" component={StudentSpanish}></Route>
-            <Route exact path="/spanish/genderpolicy" component={GenderSpanishPolicy}></Route>
-            <Route exact path="/spanish/newlink" component={NewSpanishLinks}></Route>
-            <Route exact path="/spanish/link/:linkId" component={SingleSpanishLink}></Route>
-            <Route exact path="/spanish/new/image" component={NewSpanishPhoto}></Route>
-            <Route exact path="/spanish/images" component={PhotoSpanish}></Route>
-            <Route exact path="/spanish/image/:imageId" component={SingleSpanishPhoto}></Route>
-            <Route exact path="/spanish/edit/image/:imageId" component={EditSpanishPhoto}></Route>
-            <Route exact path="/spanish/partners" component={SpanishPartners}></Route>
-            <Route exact path="/spanish/new/partners" component={NewSpanishPartners}></Route>
-            <Route exact path="/spanish/partner" component={SingleSpanishPartners}></Route>
-            <Route exact path="/spanish/edit/partner/:partnersId" component={EditSpanishPartners}></Route>
-            <Route exact path="/spanish/partners/:partnersId" component={SingleSpanishPartners}></Route>
-            
-            <Route exact path="/spanish/schoolBoardMeeting" component={SpanishSchoolBoardMeeting}></Route>
-            <Route exact path="/spanish/newschoolBoardMeeting" component={NewSpanishBoardMeeting}></Route>
-            <Route exact path="/spanish/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleSpanishBoardMeeting}></Route>
-            
-            <Route exact path="/spanish/schoolBoardMember" component={SpanishSchoolBoardMember}></Route>
-            <Route exact path="/spanish/new/schoolBoardMember" component={NewSpanishSchoolBoardMember}></Route>
-            <Route exact path="/spanish/schoolBoardMember/:schoolBoardMemberId" component={SingleSpanishSchoolBoardMember}></Route>
-            
-            <Route exact path="/spanish/about" component={SpanishAbout}></Route>
-            <Route exact path="/spanish/edit/about/:aboutId" component={EditSpanishAbout}></Route>
-
-            <Route exact path="/spanish/new/application" component={SpanishNewApplication}></Route>
-            <Route exact path="/application" component={SpanishApplication}></Route>
-            <Route exact path="/spanish/application/:applicationId" component={SpanishSingleApplication}></Route>
-
-            <Route exact path="/spanish/edit/hr/:hrId" component={SpanishEditHr}></Route>
-            <Route exact path="/spanish/hr" component={SpanishHR}></Route>
-            <Route exact path="/spanish/new/hr" component={SpanishNewHr}></Route>
-            <Route exact path="/spanish/hr/:hrId" component={SpanishSingleHr}></Route>
+                    <Route exact path="/edit/hr/:hrId" component={EditHr}></Route>
+                    <Route exact path="/hr" component={HR}></Route>
+                    <Route exact path="/new/hr" component={NewHr}></Route>
+                    <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
 
-            {
-            // khmer          
-            }
-            <Route exact path="/khmer/signup" component={khmerSignUp}></Route>
-            <Route exact path="/khmer/signin" component={khmerSignIn}></Route>
-            <Route exact path="/khmer" component={Carolkhmer}></Route>
-            <Route exact path="/khmer/new/carousel" component={NewkhmerCarousel}></Route>
-            <Route exact path="/khmer/edit/carousel/:carouselId" component={EditkhmerCarousel}></Route>
-            <Route exact path="/khmerevents" component={Eventkhmer}></Route>
-            <Route exact path="/khmer/new/event" component={NewkhmerEvent}></Route>
-            <Route exact path="/khmer/edit/event/:eventId" component={EditkhmerEvent}></Route>
-            <Route exact path="/khmer/event/:eventId" component={SinglekhmerEvent}></Route>
-            <Route exact path="/khmer/new/faculty" component={NewkhmerFaculty}></Route>
-            <Route exact path="/khmer/faculty" component={Facultykhmer}></Route>
-            <Route exact path="/khmer/faculty/:facultyId" component={SinglekhmerFaculty}></Route>
-            <Route exact path="/khmer/edit/faculty/:facultyId" component={EditkhmerFaculty}></Route>
-            <Route exact path="/khmer/new/student" component={NewkhmerStudent}></Route>
-            <Route exact path="/khmer/admission" component={Admissionkhmer}></Route>
-            <Route exact path="/khmer/bully" component={Bullykhmer}></Route>
-            <Route exact path="/khmer/student" component={Studentkhmer}></Route>
-            <Route exact path="/khmer/genderpolicy" component={GenderkhmerPolicy}></Route>
-            <Route exact path="/khmer/newlink" component={NewkhmerLinks}></Route>
-            <Route exact path="/khmer/link/:linkId" component={SinglekhmerLink}></Route>
-            <Route exact path="/khmer/new/image" component={NewkhmerPhoto}></Route>
-            <Route exact path="/khmer/images" component={Photokhmer}></Route>
-            <Route exact path="/khmer/image/:imageId" component={SinglekhmerPhoto}></Route>
-            <Route exact path="/khmer/edit/image/:imageId" component={EditkhmerPhoto}></Route>
-            <Route exact path="/khmer/partners" component={khmerPartners}></Route>
-            <Route exact path="/khmer/new/partners" component={NewkhmerPartners}></Route>
-            <Route exact path="/khmer/partner" component={SinglekhmerPartners}></Route>
-            <Route exact path="/khmer/edit/partner/:partnersId" component={EditkhmerPartners}></Route>
-            <Route exact path="/khmer/partners/:partnersId" component={SinglekhmerPartners}></Route>
-            <Route exact path="/khmer/about" component={KhmerAbout}></Route>
-            <Route exact path="/khmer/edit/about/:aboutId" component={EditkhmerAbout}></Route>
-            <Route exact path="/khmer/schoolBoardMeeting" component={KhmerSchoolBoardMeeting}></Route>
-            <Route exact path="/khmer/newschoolBoardMeeting" component={NewKhmerBoardMeeting}></Route>
-            <Route exact path="/khmer/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleKhmerBoardMeeting}></Route>
-            
-            <Route exact path="/khmer/schoolBoardMember" component={KhmerSchoolBoardMember}></Route>
-            <Route exact path="/khmer/new/schoolBoardMember" component={NewKhmerSchoolBoardMember}></Route>
-            <Route exact path="/khmer/schoolBoardMember/:schoolBoardMemberId" component={SingleKhmerSchoolBoardMember}></Route>
-            <Route exact path="/khmer/new/application" component={KhmerNewApplication}></Route>
-            <Route exact path="/khmer/application" component={KhmerApplication}></Route>
-            <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
+                    {
+                    // spanish          
+                    }
+                    <Route exact path="/spanish/signup" component={SpanishSignup}></Route>
+                    <Route exact path="/spanish/signin" component={SpanishSignin}></Route>
+                    <Route exact path="/spanish" component={CarolSpanish}></Route>
+                    <Route exact path="/spanish/new/carousel" component={NewSpanishCarousel}></Route>
+                    <Route exact path="/spanish/edit/carousel/:carouselId" component={EditSpanishCarousel}></Route>
+                    <Route exact path="/spanishevents" component={EventSpanish}></Route>
+                    <Route exact path="/spanish/new/event" component={NewSpanishEvent}></Route>
+                    <Route exact path="/spanish/edit/event/:eventId" component={EditSpanishEvent}></Route>
+                    <Route exact path="/spanish/event/:eventId" component={SingleSpanishEvent}></Route>
+                    <Route exact path="/spanish/new/faculty" component={NewSpanishFaculty}></Route>
+                    <Route exact path="/spanish/faculty" component={FacultySpanish}></Route>
+                    <Route exact path="/spanish/faculty/:facultyId" component={SingleSpanishFaculty}></Route>
+                    <Route exact path="/spanish/edit/faculty/:facultyId" component={EditSpanishFaculty}></Route>
+                    <Route exact path="/spanish/new/student" component={NewSpanishStudent}></Route>
+                    <Route exact path="/spanish/admission" component={AdmissionSpanish}></Route>
+                    <Route exact path="/spanish/bully" component={BullySpanish}></Route>
+                    <Route exact path="/spanish/student" component={StudentSpanish}></Route>
+                    <Route exact path="/spanish/genderpolicy" component={GenderSpanishPolicy}></Route>
+                    <Route exact path="/spanish/newlink" component={NewSpanishLinks}></Route>
+                    <Route exact path="/spanish/link/:linkId" component={SingleSpanishLink}></Route>
+                    <Route exact path="/spanish/new/image" component={NewSpanishPhoto}></Route>
+                    <Route exact path="/spanish/images" component={PhotoSpanish}></Route>
+                    <Route exact path="/spanish/image/:imageId" component={SingleSpanishPhoto}></Route>
+                    <Route exact path="/spanish/edit/image/:imageId" component={EditSpanishPhoto}></Route>
+                    <Route exact path="/spanish/partners" component={SpanishPartners}></Route>
+                    <Route exact path="/spanish/new/partners" component={NewSpanishPartners}></Route>
+                    <Route exact path="/spanish/partner" component={SingleSpanishPartners}></Route>
+                    <Route exact path="/spanish/edit/partner/:partnersId" component={EditSpanishPartners}></Route>
+                    <Route exact path="/spanish/partners/:partnersId" component={SingleSpanishPartners}></Route>
+                    
+                    <Route exact path="/spanish/schoolBoardMeeting" component={SpanishSchoolBoardMeeting}></Route>
+                    <Route exact path="/spanish/newschoolBoardMeeting" component={NewSpanishBoardMeeting}></Route>
+                    <Route exact path="/spanish/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleSpanishBoardMeeting}></Route>
+                    
+                    <Route exact path="/spanish/schoolBoardMember" component={SpanishSchoolBoardMember}></Route>
+                    <Route exact path="/spanish/new/schoolBoardMember" component={NewSpanishSchoolBoardMember}></Route>
+                    <Route exact path="/spanish/schoolBoardMember/:schoolBoardMemberId" component={SingleSpanishSchoolBoardMember}></Route>
+                    
+                    <Route exact path="/spanish/about" component={SpanishAbout}></Route>
+                    <Route exact path="/spanish/edit/about/:aboutId" component={EditSpanishAbout}></Route>
 
-            <Route exact path="/khmer/edit/hr/:hrId" component={KhmerEditHr}></Route>
-            <Route exact path="/khmer/hr" component={KhmerHR}></Route>
-            <Route exact path="/khmer/new/hr" component={KhmerNewHr}></Route>
-            <Route exact path="/khmer/hr/:hrId" component={KhmerSingleHr}></Route> 
+                    <Route exact path="/spanish/new/application" component={SpanishNewApplication}></Route>
+                    <Route exact path="/application" component={SpanishApplication}></Route>
+                    <Route exact path="/spanish/application/:applicationId" component={SpanishSingleApplication}></Route>
 
-            {
-            // port          
-            }
-            <Route exact path="/port/signup" component={PortSignUp}></Route>
-            <Route exact path="/port/signin" component={PortSignIn}></Route>
-            <Route exact path="/port" component={Carolport}></Route>
-            <Route exact path="/port/new/carousel" component={NewportCarousel}></Route>
-            <Route exact path="/port/edit/carousel/:carouselId" component={EditportCarousel}></Route>
-            <Route exact path="/port/events" component={Eventport}></Route>
-            <Route exact path="/port/new/event" component={NewportEvent}></Route>
-            <Route exact path="/port/edit/event/:eventId" component={EditportEvent}></Route>
-            <Route exact path="/port/event/:eventId" component={SingleportEvent}></Route>
-            <Route exact path="/port/new/faculty" component={NewportFaculty}></Route>
-            <Route exact path="/port/faculty" component={Facultyport}></Route>
-            <Route exact path="/port/faculty/:facultyId" component={SingleportFaculty}></Route>
-            <Route exact path="/port/edit/faculty/:facultyId" component={EditportFaculty}></Route>
-            <Route exact path="/port/new/student" component={NewportStudent}></Route>
-            <Route exact path="/port/admission" component={Admissionport}></Route>
-            <Route exact path="/port/bully" component={Bullyport}></Route>
-            <Route exact path="/port/student" component={Studentport}></Route>
-            <Route exact path="/port/genderpolicy" component={GenderportPolicy}></Route>
-            <Route exact path="/port/newlink" component={NewportLinks}></Route>
-            <Route exact path="/port/link/:linkId" component={SingleportLink}></Route>
-            <Route exact path="/port/new/image" component={NewportPhoto}></Route>
-            <Route exact path="/port/images" component={Photoport}></Route>
-            <Route exact path="/port/image/:imageId" component={SingleportPhoto}></Route>
-            <Route exact path="/port/edit/image/:imageId" component={EditportPhoto}></Route>
-            <Route exact path="/port/partners" component={portPartners}></Route>
-            <Route exact path="/port/new/partners" component={NewportPartners}></Route>
-            <Route exact path="/port/partner" component={SingleportPartners}></Route>
-            <Route exact path="/port/edit/partner/:partnersId" component={EditportPartners}></Route>
-            <Route exact path="/port/partners/:partnersId" component={SingleportPartners}></Route>
-            <Route exact path="/port/about" component={PortAbout}></Route>
-            <Route exact path="/port/edit/about/:aboutId" component={EditportAbout}></Route>
-            <Route exact path="/port/schoolBoardMeeting" component={portSchoolBoardMeeting}></Route>
-            <Route exact path="/port/newschoolBoardMeeting" component={NewportBoardMeeting}></Route>
-            <Route exact path="/port/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleportBoardMeeting}></Route>
-            
-            <Route exact path="/port/schoolBoardMember" component={portSchoolBoardMember}></Route>
-            <Route exact path="/port/new/schoolBoardMember" component={NewportSchoolBoardMember}></Route>
-            <Route exact path="/port/schoolBoardMember/:schoolBoardMemberId" component={SingleportSchoolBoardMember}></Route>
-            <Route exact path="/port/new/application" component={portNewApplication}></Route>
-            <Route exact path="/port/application" component={portApplication}></Route>
-            <Route exact path="/port/application/:applicationId" component={portSingleApplication}></Route>
+                    <Route exact path="/spanish/edit/hr/:hrId" component={SpanishEditHr}></Route>
+                    <Route exact path="/spanish/hr" component={SpanishHR}></Route>
+                    <Route exact path="/spanish/new/hr" component={SpanishNewHr}></Route>
+                    <Route exact path="/spanish/hr/:hrId" component={SpanishSingleHr}></Route>
 
-            <Route exact path="/port/edit/hr/:hrId" component={PortEditHr}></Route>
-            <Route exact path="/port/hr" component={PortHR}></Route>
-            <Route exact path="/port/new/hr" component={PortNewHr}></Route>
-            <Route exact path="/port/hr/:hrId" component={PortSingleHr}></Route> 
 
-        </Switch>
+                    {
+                    // khmer          
+                    }
+                    <Route exact path="/khmer/signup" component={khmerSignUp}></Route>
+                    <Route exact path="/khmer/signin" component={khmerSignIn}></Route>
+                    <Route exact path="/khmer" component={Carolkhmer}></Route>
+                    <Route exact path="/khmer/new/carousel" component={NewkhmerCarousel}></Route>
+                    <Route exact path="/khmer/edit/carousel/:carouselId" component={EditkhmerCarousel}></Route>
+                    <Route exact path="/khmerevents" component={Eventkhmer}></Route>
+                    <Route exact path="/khmer/new/event" component={NewkhmerEvent}></Route>
+                    <Route exact path="/khmer/edit/event/:eventId" component={EditkhmerEvent}></Route>
+                    <Route exact path="/khmer/event/:eventId" component={SinglekhmerEvent}></Route>
+                    <Route exact path="/khmer/new/faculty" component={NewkhmerFaculty}></Route>
+                    <Route exact path="/khmer/faculty" component={Facultykhmer}></Route>
+                    <Route exact path="/khmer/faculty/:facultyId" component={SinglekhmerFaculty}></Route>
+                    <Route exact path="/khmer/edit/faculty/:facultyId" component={EditkhmerFaculty}></Route>
+                    <Route exact path="/khmer/new/student" component={NewkhmerStudent}></Route>
+                    <Route exact path="/khmer/admission" component={Admissionkhmer}></Route>
+                    <Route exact path="/khmer/bully" component={Bullykhmer}></Route>
+                    <Route exact path="/khmer/student" component={Studentkhmer}></Route>
+                    <Route exact path="/khmer/genderpolicy" component={GenderkhmerPolicy}></Route>
+                    <Route exact path="/khmer/newlink" component={NewkhmerLinks}></Route>
+                    <Route exact path="/khmer/link/:linkId" component={SinglekhmerLink}></Route>
+                    <Route exact path="/khmer/new/image" component={NewkhmerPhoto}></Route>
+                    <Route exact path="/khmer/images" component={Photokhmer}></Route>
+                    <Route exact path="/khmer/image/:imageId" component={SinglekhmerPhoto}></Route>
+                    <Route exact path="/khmer/edit/image/:imageId" component={EditkhmerPhoto}></Route>
+                    <Route exact path="/khmer/partners" component={khmerPartners}></Route>
+                    <Route exact path="/khmer/new/partners" component={NewkhmerPartners}></Route>
+                    <Route exact path="/khmer/partner" component={SinglekhmerPartners}></Route>
+                    <Route exact path="/khmer/edit/partner/:partnersId" component={EditkhmerPartners}></Route>
+                    <Route exact path="/khmer/partners/:partnersId" component={SinglekhmerPartners}></Route>
+                    <Route exact path="/khmer/about" component={KhmerAbout}></Route>
+                    <Route exact path="/khmer/edit/about/:aboutId" component={EditkhmerAbout}></Route>
+                    <Route exact path="/khmer/schoolBoardMeeting" component={KhmerSchoolBoardMeeting}></Route>
+                    <Route exact path="/khmer/newschoolBoardMeeting" component={NewKhmerBoardMeeting}></Route>
+                    <Route exact path="/khmer/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleKhmerBoardMeeting}></Route>
+                    
+                    <Route exact path="/khmer/schoolBoardMember" component={KhmerSchoolBoardMember}></Route>
+                    <Route exact path="/khmer/new/schoolBoardMember" component={NewKhmerSchoolBoardMember}></Route>
+                    <Route exact path="/khmer/schoolBoardMember/:schoolBoardMemberId" component={SingleKhmerSchoolBoardMember}></Route>
+                    <Route exact path="/khmer/new/application" component={KhmerNewApplication}></Route>
+                    <Route exact path="/khmer/application" component={KhmerApplication}></Route>
+                    <Route exact path="/khmer/application/:applicationId" component={KhmerSingleApplication}></Route>
+
+                    <Route exact path="/khmer/edit/hr/:hrId" component={KhmerEditHr}></Route>
+                    <Route exact path="/khmer/hr" component={KhmerHR}></Route>
+                    <Route exact path="/khmer/new/hr" component={KhmerNewHr}></Route>
+                    <Route exact path="/khmer/hr/:hrId" component={KhmerSingleHr}></Route> 
+
+                    {
+                    // port          
+                    }
+                    <Route exact path="/port/signup" component={PortSignUp}></Route>
+                    <Route exact path="/port/signin" component={PortSignIn}></Route>
+                    <Route exact path="/port" component={Carolport}></Route>
+                    <Route exact path="/port/new/carousel" component={NewportCarousel}></Route>
+                    <Route exact path="/port/edit/carousel/:carouselId" component={EditportCarousel}></Route>
+                    <Route exact path="/port/events" component={Eventport}></Route>
+                    <Route exact path="/port/new/event" component={NewportEvent}></Route>
+                    <Route exact path="/port/edit/event/:eventId" component={EditportEvent}></Route>
+                    <Route exact path="/port/event/:eventId" component={SingleportEvent}></Route>
+                    <Route exact path="/port/new/faculty" component={NewportFaculty}></Route>
+                    <Route exact path="/port/faculty" component={Facultyport}></Route>
+                    <Route exact path="/port/faculty/:facultyId" component={SingleportFaculty}></Route>
+                    <Route exact path="/port/edit/faculty/:facultyId" component={EditportFaculty}></Route>
+                    <Route exact path="/port/new/student" component={NewportStudent}></Route>
+                    <Route exact path="/port/admission" component={Admissionport}></Route>
+                    <Route exact path="/port/bully" component={Bullyport}></Route>
+                    <Route exact path="/port/student" component={Studentport}></Route>
+                    <Route exact path="/port/genderpolicy" component={GenderportPolicy}></Route>
+                    <Route exact path="/port/newlink" component={NewportLinks}></Route>
+                    <Route exact path="/port/link/:linkId" component={SingleportLink}></Route>
+                    <Route exact path="/port/new/image" component={NewportPhoto}></Route>
+                    <Route exact path="/port/images" component={Photoport}></Route>
+                    <Route exact path="/port/image/:imageId" component={SingleportPhoto}></Route>
+                    <Route exact path="/port/edit/image/:imageId" component={EditportPhoto}></Route>
+                    <Route exact path="/port/partners" component={portPartners}></Route>
+                    <Route exact path="/port/new/partners" component={NewportPartners}></Route>
+                    <Route exact path="/port/partner" component={SingleportPartners}></Route>
+                    <Route exact path="/port/edit/partner/:partnersId" component={EditportPartners}></Route>
+                    <Route exact path="/port/partners/:partnersId" component={SingleportPartners}></Route>
+                    <Route exact path="/port/about" component={PortAbout}></Route>
+                    <Route exact path="/port/edit/about/:aboutId" component={EditportAbout}></Route>
+                    <Route exact path="/port/schoolBoardMeeting" component={portSchoolBoardMeeting}></Route>
+                    <Route exact path="/port/newschoolBoardMeeting" component={NewportBoardMeeting}></Route>
+                    <Route exact path="/port/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleportBoardMeeting}></Route>
+                    
+                    <Route exact path="/port/schoolBoardMember" component={portSchoolBoardMember}></Route>
+                    <Route exact path="/port/new/schoolBoardMember" component={NewportSchoolBoardMember}></Route>
+                    <Route exact path="/port/schoolBoardMember/:schoolBoardMemberId" component={SingleportSchoolBoardMember}></Route>
+                    <Route exact path="/port/new/application" component={portNewApplication}></Route>
+                    <Route exact path="/port/application" component={portApplication}></Route>
+                    <Route exact path="/port/application/:applicationId" component={portSingleApplication}></Route>
+
+                    <Route exact path="/port/edit/hr/:hrId" component={PortEditHr}></Route>
+                    <Route exact path="/port/hr" component={PortHR}></Route>
+                    <Route exact path="/port/new/hr" component={PortNewHr}></Route>
+                    <Route exact path="/port/hr/:hrId" component={PortSingleHr}></Route> 
+
+                </Switch>
+            </CSSTransition>
+        </TransitionGroup>
         
     </div>
 )
