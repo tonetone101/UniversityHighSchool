@@ -43,7 +43,7 @@ class Events extends Component {
                 {events.map((event, i) => {
                     return (
                        <div className='col-md-4 mb-5' key={i}>
-                            <Card border='dark' style={{ border: 'solid black 2px', width: '18rem', height: '375px'}}>
+                            <Card border='dark' style={{ border: 'solid black 2px', width: '18rem', height: '375px'}} id='readEvent'>
                                 <Card.Header className="font-italic mark mt-4">
                                     Event Posted{" "}
                                     on{' '}
