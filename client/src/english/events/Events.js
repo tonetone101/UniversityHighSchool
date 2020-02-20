@@ -152,8 +152,8 @@ class Events extends Component {
                 <Header history={this.props.history} />
                 <div className="container">
                     <h2 className="mt-5 mb-5">
-                        Upcoming Events
-                        {!events.length ? "Loading..." : ""}
+                        Upcoming Events {' '}
+                        {!events.length ? "page is Loading..." : ""}
                     </h2>
                     {
                         isAuthenticated() && isAuthenticated().user.code === 8290 && (

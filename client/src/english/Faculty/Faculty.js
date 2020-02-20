@@ -112,8 +112,8 @@ class Faculty extends Component {
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6" >
-                            Our Team
-                            {!faculties.length ? "Loading..." : ""}
+                            Our Team {' '}
+                            {!faculties.length ? "page is Loading..." : ""}
                         </h2>
                         <br/>
 

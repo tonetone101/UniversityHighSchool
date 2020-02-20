@@ -113,8 +113,7 @@ class SchoolBoardMember extends Component {
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6">
-                            School Board Members
-                            {!schoolBoardMembers.length ? "Loading..." : ""}
+                            {!schoolBoardMembers.length ? "Loading..." : "School Board Members"}
                         </h2>
                         <br/>
 

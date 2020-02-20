@@ -98,8 +98,7 @@ class Partners extends Component {
                     <div className='col-md-8 text-center'>
                             <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                                 <h2 >
-                                    Our Partners
-                                    {!partners.length ? "Loading..." : ""}
+                                   {!partners.length ? "Loading..." : " Our Partners"}
                                 </h2>
 
                                 <hr/>

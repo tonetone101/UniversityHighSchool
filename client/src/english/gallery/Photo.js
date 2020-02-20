@@ -80,8 +80,8 @@ class Photo extends Component {
                 <div className="container">
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                         <h2 className="col-md-6" >
-                            Captured Moments
-                            {!images.length ? "Loading..." : ""}
+                            Captured Moments {' '}
+                            {!images.length ? " page is Loading..." : ""}
                         </h2>
 
                         <hr/>

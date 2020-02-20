@@ -131,8 +131,8 @@ class Hr extends Component {
                     <div className='col-md-8 text-center'>
                             <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
                                 <h2 >
-                                    Human Resource
-                                    {!hr.length ? "Loading..." : ""}
+                                    Human Resource {' '}
+                                    {!hr.length ? "page is Loading..." : ""}
                                 </h2>
 
                                 <hr/>
