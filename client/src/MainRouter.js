@@ -229,7 +229,7 @@ const MainRouter = () => (
                     timeout={300}
                     classNames="fade"
                     >
-                    <Switch>
+                    <Switch location={location}>
                         {
                         //english          
                         }
