@@ -227,7 +227,7 @@ const MainRouter = () => (
                 <CSSTransition
                     key={location.key}
                     timeout={300}
-                    classNames="fade"
+                    className="fade"
                     >
                     <Switch location={location}>
                         {
