@@ -43,7 +43,7 @@ class Header extends React.Component {
 
     renderTopHeader = () => {
         return (
-            <div style={{width: '100%'}}>
+            <div style={{width: '100%', height: '30px'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
