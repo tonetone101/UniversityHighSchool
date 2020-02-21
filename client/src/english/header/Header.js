@@ -64,12 +64,12 @@ class Header extends React.Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
+                                    <Link className='ml-3' to='/signin' style={{color: 'rgb(11, 14, 179)'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/signup' >
+                                    <Link style={{color: 'rgb(11, 14, 179)'}} to='/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -80,7 +80,7 @@ class Header extends React.Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'rgb(11, 14, 179)'}}  onClick={() => signout(() => {
                                         this.props.history.push('/')
                                     })}>
                                         Sign Out
@@ -93,13 +93,13 @@ class Header extends React.Component {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                 <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/application' >
+                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/application' >
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
 
                                     <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/applicants' >
+                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/applicants' >
                                             Pre-registered Applicants
                                         </Link>
                                     </Nav.Link>
@@ -111,13 +111,13 @@ class Header extends React.Component {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
                                 <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/application' >
+                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/application' >
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
 
                                     <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/applicants' >
+                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/applicants' >
                                             Pre-registered Applicants
                                         </Link>
                                     </Nav.Link>
@@ -142,36 +142,36 @@ class Header extends React.Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                          <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/'>Home</Link></Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/about'>About Us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/about'>About Us</Link></Nav.Link>
                         </div>
 
                        <div id='link'>                
-                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                           <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/faculty'>Faculty</Link></Nav.Link>
                         </div>
-                        <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                        <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/student'>Students</Link></Nav.Link>
                         
                         
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/admission'>Admission</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/new/student'>Contact us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/new/student'>Contact us</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'rgb(11, 14, 179)'}} to='/events'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
