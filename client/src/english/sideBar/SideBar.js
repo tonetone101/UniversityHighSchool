@@ -31,26 +31,23 @@ class SideBar extends Component {
 
         return (
                 <div className='col-md-4 column text-center mt-5'>
-                    <ul>
-                        <li>
-                            <Link style={isActive(history, '/partners')} to='/partners'>
-                                    Our Partners
-                            </Link>
-                        </li>
+                    <div>
+                        <Link style={isActive(history, '/partners')} to='/partners'>
+                                Our Partners
+                        </Link>
+                    </div>
 
-                        <li>
-                            <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
-                                    About us
-                            </Link>
-                        </li>
+                    <div>
+                        <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
+                                About us
+                        </Link>
+                    </div>
 
-                        <li>
-                            <Link style={isActive(history, '/hr')} className='mt-4' to='/hr'>
-                                    Human Resource
-                            </Link>
-                        </li>
-                    </ul>
-                    
+                    <div>
+                        <Link style={isActive(history, '/hr')} className='mt-4' to='/hr'>
+                                Human Resource
+                        </Link>
+                    </div>
                 </div>
         )
     }
