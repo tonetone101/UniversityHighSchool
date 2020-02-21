@@ -201,6 +201,7 @@ class Header extends React.Component {
               {this.renderTopHeader()}
                 <div className="text-center" id='header'>
                         <img 
+                            className='mt-5 mb-5'
                             style={{height: '150px', width: '600px'}}
                             src={require("../../images/uhsBanner.png")}
                         />
