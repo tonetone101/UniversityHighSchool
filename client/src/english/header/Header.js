@@ -202,7 +202,7 @@ class Header extends React.Component {
                 <div className="text-center" id='header'>
                         <img 
                             className='mt-5 mb-5'
-                            style={{height: '150px', width: '600px'}}
+                            style={{height: '200px', width: '650px'}}
                             src={require("../../images/uhsBanner.png")}
                         />
                     </div>
