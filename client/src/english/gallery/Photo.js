@@ -54,16 +54,18 @@ class Photo extends Component {
                     return (
                         <div  className="col-md-4 mb-4" key={i} id='galleryImage'>
                             <Image src={imagePhoto} fluid />
-                            <p >
-                                {image.caption.substring(0, 100)}{' '}
-                            </p> 
-                           
-                            <Link
-                                to={`/image/${image._id}`}
-                                className="btn btn-raised btn-primary btn-sm mb-4 "
-                            >
-                                View
-                            </Link>
+                            <div className='text-center'>
+                                <p >
+                                    {image.caption.substring(0, 100)}{' '}
+                                </p> 
+                            
+                                <Link
+                                    to={`/image/${image._id}`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 "
+                                >
+                                    View
+                                </Link>
+                            </div>
                         </div>
                     );
                 })}
