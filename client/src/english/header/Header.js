@@ -43,7 +43,7 @@ class Header extends React.Component {
 
     renderTopHeader = () => {
         return (
-            <div style={{width: '100%', height: '30px'}}>
+            <div style={{width: '100%', height: '20px'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -201,7 +201,7 @@ class Header extends React.Component {
               {this.renderTopHeader()}
                 <div className="text-center" style={{height: '200px'}} id='header'>
                         <img 
-                            style={{height: '150px', width: '600px'}}
+                            style={{height: '150px', width: '600px', marginTop: '50px'}}
                             src={require("../../images/uhsBanner.png")}
                         />
                     </div>
