@@ -43,7 +43,7 @@ class Header extends React.Component {
 
     renderTopHeader = () => {
         return (
-            <div style={{width: '100%', height: '10px'}}>
+            <div style={{width: '100%'}}>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -64,12 +64,12 @@ class Header extends React.Component {
                             !this.state.user && (
                                <nav className='row'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'rgb(11, 14, 179)'}}>
+                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'rgb(11, 14, 179)'}} to='/signup' >
+                                    <Link style={{color: 'white'}} to='/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -80,7 +80,7 @@ class Header extends React.Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'rgb(11, 14, 179)'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
                                         this.props.history.push('/')
                                     })}>
                                         Sign Out
@@ -93,13 +93,13 @@ class Header extends React.Component {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                 <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
-                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/application' >
+                                        <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
 
                                     <Nav.Link>
-                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/applicants' >
+                                        <Link style={{color: 'white'}} to='/applicants' >
                                             Pre-registered Applicants
                                         </Link>
                                     </Nav.Link>
@@ -111,13 +111,13 @@ class Header extends React.Component {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
                                 <nav className='row ' style={{marginLeft: '850px'}}>
                                     <Nav.Link>
-                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/application' >
+                                        <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
 
                                     <Nav.Link>
-                                        <Link style={{color: 'rgb(11, 14, 179)'}} to='/applicants' >
+                                        <Link style={{color: 'white'}} to='/applicants' >
                                             Pre-registered Applicants
                                         </Link>
                                     </Nav.Link>
@@ -199,9 +199,9 @@ class Header extends React.Component {
       return (
           <div>
               {this.renderTopHeader()}
-                <div className="text-center" style={{height: '260px'}} id='header'>
+                <div className="text-center" id='header'>
                         <img 
-                            style={{height: '150px', width: '600px', marginTop: '50px', marginBottom: '50px'}}
+                            style={{height: '150px', width: '600px'}}
                             src={require("../../images/uhsBanner.png")}
                         />
                     </div>
