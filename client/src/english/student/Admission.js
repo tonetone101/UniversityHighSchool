@@ -142,7 +142,7 @@ class Admission extends Component {
 
                             
 
-                        <div className='col-md-6'>
+                        <div className='col-md-9'>
                             {this.renderRequirements(admission)}
                            
                         </div>
