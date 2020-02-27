@@ -85,11 +85,8 @@ class Academics extends Component {
                         {academics.reverse().map((academic,  i) => (
                             <div key={i} className='mt-4 ml-4'>
                                 <div> 
-                                    <p>{academic.intro}</p>
-                                    <p>{academic.paragraph1}</p>
-                                    <p>{academic.paragraph2}</p>
-                                    <p>{academic.paragraph3}</p>
-                                    <p>{academic.paragraph4}</p>
+                                    <p>{academic.grade12Expect}</p>
+                                    <p>{academic.grade12Curric}</p>
                                 </div>
                             </div>
                         ))}
