@@ -57,6 +57,7 @@ class Grade11 extends Component {
 
     render() {
         const { academics, redirectToSignIn } = this.state
+        const {history} = this.props
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
