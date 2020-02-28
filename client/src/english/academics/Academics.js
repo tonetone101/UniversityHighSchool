@@ -66,14 +66,14 @@ class Academics extends Component {
                         
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
-                            <Link to={`/update/academics`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
                           </div> 
                           ) : ( null)
                          }
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
                           <div>
-                            <Link to={`/update/academics`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
                           </div> 
                           ) : ( null)
                          }

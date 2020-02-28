@@ -78,6 +78,7 @@ import SingleHr from './english/humanResource/singleHr'
 import EditHr from './english/humanResource/editHr'
 
 import Academics from './english/academics/Academics'
+import EditAcademics from './english/academics/EditAcademics'
 import Grade9 from './english/academics/grade9'
 import Grade10 from './english/academics/grade10'
 import Grade11 from './english/academics/grade11'
@@ -299,6 +300,7 @@ const MainRouter = () => (
                         <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
                         <Route exact path="/academics" component={Academics}></Route>
+                        <Route exact path="/update/academics/:academicsId" component={EditAcademics}></Route>
                         <Route exact path="/grade9" component={Grade9}></Route>
                         <Route exact path="/grade10" component={Grade10}></Route>
                         <Route exact path="/grade11" component={Grade11}></Route>
