@@ -116,7 +116,7 @@ class Academics extends Component {
                                 </div>
                             </div>
 
-                            {
+                            
                             <div className='col-md-8 mt-4 ml-4'>
 
                                     <p>{academics.intro}</p>
@@ -126,7 +126,7 @@ class Academics extends Component {
                                     <p>{academics.paragraph4}</p>
                                 
                             </div>
-                            }
+                            
                          
                       </div>
                       

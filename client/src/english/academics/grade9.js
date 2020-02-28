@@ -89,7 +89,7 @@ class Grade9 extends Component {
                       <hr />
                       
                       <div id='title' className='row container'>
-                        <div className='col-md-4 column text-center mt-5'>
+                            <div className='col-md-4 column text-center mt-5'>
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                                             Grade 9
@@ -115,17 +115,15 @@ class Grade9 extends Component {
                                 </div>
                             </div>
 
-                        {
+                        
                             <div className='col-md-8 mt-4'>
-                                <div> 
                                     <h3 className='mb-3'>Our Goal</h3>
                                     <p className='mb-3'>{academics.grade9Expect}</p>
 
                                     <h3 className='mb-3'>Our Curriculum</h3>
                                     <p className='mb-3'>{academics.grade9Curric}</p>
-                                </div>
                             </div>
-                        }
+                        
                          
                       </div>
                       
