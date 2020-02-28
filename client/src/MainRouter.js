@@ -77,6 +77,15 @@ import NewHr from './english/humanResource/newHr'
 import SingleHr from './english/humanResource/singleHr'
 import EditHr from './english/humanResource/editHr'
 
+import Academics from './english/academics/academics'
+import Grade9 from './english/academics/grade9'
+import Grade10 from './english/academics/grade10'
+import Grade11 from './english/academics/grade11'
+import Grade12 from './english/academics/grade12'
+
+// import Newacademics from './english/academics/newacademics'
+// import Singleacademics from './english/academics/singleacademics'
+// import Editacademics from './english/academics/editacademics'
 
 // spanish
 import NewSpanishCarousel from './spanish/carousel/NewCarousel'
@@ -288,6 +297,12 @@ const MainRouter = () => (
                         <Route exact path="/hr" component={HR}></Route>
                         <Route exact path="/new/hr" component={NewHr}></Route>
                         <Route exact path="/hr/:hrId" component={SingleHr}></Route>
+
+                        <Route exact path="/academics" component={Academics}></Route>
+                        <Route exact path="/grade9" component={Grade9}></Route>
+                        <Route exact path="/grade10" component={Grade10}></Route>
+                        <Route exact path="/grade11" component={Grade11}></Route>
+                        <Route exact path="/grade12" component={Grade12}></Route>
 
 
                         {

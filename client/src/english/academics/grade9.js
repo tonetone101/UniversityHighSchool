@@ -5,7 +5,7 @@ import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 
-class Academics extends Component {
+class Grade9 extends Component {
     constructor() {
         super();
         this.state = {
@@ -85,8 +85,8 @@ class Academics extends Component {
                         {academics.reverse().map((academic,  i) => (
                             <div key={i} className='mt-4 ml-4'>
                                 <div> 
-                                    <p>{academic.grade11Expect}</p>
-                                    <p>{academic.grade11Curric}</p>
+                                    <p>{academic.grade9Expect}</p>
+                                    <p>{academic.grade9Curric}</p>
                                 </div>
                             </div>
                         ))}
@@ -102,6 +102,6 @@ class Academics extends Component {
     }
 }
 
-export default Academics;
+export default Grade9;
 
 

@@ -5,7 +5,7 @@ import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 
-class Academics extends Component {
+class grade12 extends Component {
     constructor() {
         super();
         this.state = {
@@ -102,6 +102,6 @@ class Academics extends Component {
     }
 }
 
-export default Academics;
+export default Grade12;
 
 
