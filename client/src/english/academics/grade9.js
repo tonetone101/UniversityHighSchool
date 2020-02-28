@@ -118,10 +118,10 @@ class Grade9 extends Component {
                             <div className='col-md-8 mt-4'>
                                 <div> 
                                     <h3 className='mb-3'>Our Goal</h3>
-                                    <p className='mb-3'>{academic.grade9Expect}</p>
+                                    <p className='mb-3'>{academics.grade9Expect}</p>
 
                                     <h3 className='mb-3'>Our Curriculum</h3>
-                                    <p className='mb-3'>{academic.grade9Curric}</p>
+                                    <p className='mb-3'>{academics.grade9Curric}</p>
                                 </div>
                             </div>
                         }
