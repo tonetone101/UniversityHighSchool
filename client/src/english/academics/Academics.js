@@ -51,6 +51,7 @@ class Academics extends Component {
 
     render() {
         const { academics, redirectToSignIn } = this.state
+        console.log(academics)
 
         if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
