@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { list } from "./apiAcademics";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+
+const isActive = (history, path) => {
+    if (history.location.pathname === path) return {
+      color: '#ff9900'
+    } 
+  }
 
 class Academics extends Component {
     constructor() {
@@ -82,10 +88,36 @@ class Academics extends Component {
                       </div>
                       <hr />
                       
-                      <div id='title'>
-                        {
-                            <div className='mt-4 ml-4'>
-                                
+                      <div id='title' className='row container'>
+                            <div className='col-md-4 column text-center mt-5'>
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade9')} to='/grade9'>
+                                            Grade 9
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
+                                           Grade 10
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
+                                            Grade 11
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade12')} className='mt-4' to='/grade12'>
+                                            Grade 12
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {
+                            <div className='col-md-8 mt-4 ml-4'>
+
                                     <p>{academics.intro}</p>
                                     <p>{academics.paragraph1}</p>
                                     <p>{academics.paragraph2}</p>
@@ -106,6 +138,6 @@ class Academics extends Component {
     }
 }
 
-export default Academics;
+export default withRouter(Academics);
 
 

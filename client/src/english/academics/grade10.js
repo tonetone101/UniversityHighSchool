@@ -1,9 +1,15 @@
 import React, { Component } from "react";
 import { list } from "./apiAcademics";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+
+const isActive = (history, path) => {
+    if (history.location.pathname === path) return {
+      color: '#ff9900'
+    } 
+  }
 
 class Grade10 extends Component {
     constructor() {
@@ -60,19 +66,19 @@ class Grade10 extends Component {
             <div>
                <Header history={this.props.history} />
                   <div className='container mt-4'>
-                     <h1>Academics at University High School</h1>
+                     <h1>10th Grade at University High School</h1>
                       <div  >
                         
-                        {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
+                      {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
-                            <Link to={`/update/academics`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
                           </div> 
                           ) : ( null)
                          }
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
                           <div>
-                            <Link to={`/update/academics`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
                           </div> 
                           ) : ( null)
                          }
@@ -81,15 +87,44 @@ class Grade10 extends Component {
                       </div>
                       <hr />
                       
-                      <div id='title'>
-                        {academics.reverse().map((academic,  i) => (
-                            <div key={i} className='mt-4 ml-4'>
-                                <div> 
-                                    <p>{academic.grade10Expect}</p>
-                                    <p>{academic.grade10Curric}</p>
+                      <div id='title' className='row container'>
+                        <div className='col-md-4 column text-center mt-5'>
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade9')} to='/grade9'>
+                                            Grade 9
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
+                                           Grade 10
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
+                                            Grade 11
+                                    </Link>
+                                </div>
+
+                                <div className='mb-2'>
+                                    <Link style={isActive(history, '/grade12')} className='mt-4' to='/grade12'>
+                                            Grade 12
+                                    </Link>
                                 </div>
                             </div>
-                        ))}
+
+                        {
+                            <div className='col-md-8 mt-4'>
+                                <div> 
+                                    <h3 className='mb-3'>Our Goal</h3>
+                                    <p className='mb-3'>{academic.grade10Expect}</p>
+                                    
+                                    <h3 className='mb-3'>Our Curriculum</h3>
+                                    <p className='mb-3'>{academic.grade10Curric}</p>
+                                </div>
+                            </div>
+                        }
                          
                       </div>
                       
@@ -102,6 +137,6 @@ class Grade10 extends Component {
     }
 }
 
-export default Grade10;
+export default withRouter(Grade10);
 
 
