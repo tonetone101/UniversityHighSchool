@@ -77,7 +77,7 @@ import NewHr from './english/humanResource/newHr'
 import SingleHr from './english/humanResource/singleHr'
 import EditHr from './english/humanResource/editHr'
 
-import Academics from './english/academics/academics'
+import Academics from './english/academics/Academics'
 import Grade9 from './english/academics/grade9'
 import Grade10 from './english/academics/grade10'
 import Grade11 from './english/academics/grade11'
