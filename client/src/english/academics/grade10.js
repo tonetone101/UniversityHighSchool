@@ -29,7 +29,7 @@ class Grade10 extends Component {
                 console.log(data.error)
             } else {
                 this.setState({academics: data.find(d => {
-                    if (d._id == "5e21c9ab9195bc7dc99dcfb3") {
+                    if (d._id == "5e59194d4465c2d4a3afa744") {
                         return d
                     }
                 }) 

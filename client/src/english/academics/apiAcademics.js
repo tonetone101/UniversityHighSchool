@@ -1,6 +1,6 @@
 
 export const create = (userId, token, about) => {
-    return fetch(`/academics/new/${userId}`, {
+    return fetch(`/academics/new`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -24,8 +24,8 @@ export const list = () => {
         .catch(err => console.log(err));
 };
 
-export const update = (aboutId, token, about) => {
-    return fetch(`/academics/edit/${aboutId}`, {
+export const update = (academicsId, token, about) => {
+    return fetch(`/academics/edit/${academicsId}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -39,8 +39,8 @@ export const update = (aboutId, token, about) => {
         .catch(err => console.log(err));
 };
 
-export const singleAcademics = (aboutId) => {
-    return fetch(`/academics/${aboutId}`, {
+export const singleAcademics = (academicsId) => {
+    return fetch(`/academics/${academicsId}`, {
         method: "GET"
     })
         .then(response => {
