@@ -5,7 +5,7 @@ import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 
-class grade12 extends Component {
+class Grade12 extends Component {
     constructor() {
         super();
         this.state = {
