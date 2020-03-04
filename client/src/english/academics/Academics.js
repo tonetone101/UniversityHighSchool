@@ -90,7 +90,7 @@ class Academics extends Component {
                       <hr />
                       
                       <div id='title' className='row container'>
-                            <div className='col-md-4 column text-center mt-5'>
+                            <div className='col-md-4 column mt-5'>
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                                             Grade 9
