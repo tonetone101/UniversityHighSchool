@@ -177,7 +177,7 @@ class Carol extends Component {
                                 </div>
                                 ) : (
                                     <div>
-                                        <iframe src="https://www.youtube.com/embed/Y3K1rtw5omA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="auto" height="315" src="https://www.youtube.com/embed/Y3K1rtw5omA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                     
                                 )
