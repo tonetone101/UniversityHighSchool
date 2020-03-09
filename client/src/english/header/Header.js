@@ -165,7 +165,7 @@ class Header extends React.Component {
                         <div id='link'>                        
                             <Nav.Link>
                                 <Link style={{color: 'white'}} to='/'>
-                                    <img  src={require("../../images/uhSchool.png")} />
+                                    <img  style={{height: '100px'}} src={require("../../images/uhSchool.png")} />
                                 </Link>
                             </Nav.Link>
                         </div>
