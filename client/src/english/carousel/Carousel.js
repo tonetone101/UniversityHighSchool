@@ -174,8 +174,7 @@ class Carol extends Component {
                             <Card.Title>RISER</Card.Title>
                             <Card.Text>
                                 A RISER's main focus, is to figure who your are as a learner, an individual,
-                                as part of a collective (family, community, etc), a professional and interest, 
-                                while working towards achieving traditional 9th grade credits.          
+                                as part of a collective (family, community, etc), a professional and interest.     
                             </Card.Text>
                             <Link
                                     to={`/grade9`}
@@ -213,8 +212,7 @@ class Carol extends Component {
                             <Card.Title>NAVIGATOR</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
-                                RISER and INVESTIGATOR. Must build compacity for self an others. Must have impacted the 
-                                community and be ready to develop and implement a cohesive post secondary plan. 
+                                RISER and INVESTIGATOR. Must build compacity for self an others.
 
                             </Card.Text>
                             <Link
