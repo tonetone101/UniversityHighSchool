@@ -197,7 +197,7 @@ class Carol extends Component {
                         <Card.Body>
                             <Card.Title>INVESTIGATORS</Card.Title>
                             <Card.Text>
-                               An INVESTIGATOR'S main focus, is continueing to hone in on the understandings
+                               An INVESTIGATOR is about continueing to hone in on the understandings
                                gained from being a RISER and dive deeper and more rigorously into interest through inquiry     
                             </Card.Text>
                             <Link
