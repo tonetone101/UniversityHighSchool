@@ -168,7 +168,7 @@ class Carol extends Component {
         return (
             <div className='row mt-5'>
                 <div className='col-md-4'>
-                    <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='homeCards' >
                         <Card.Header>                        
                             <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/risers.png")} />
                         </Card.Header>
@@ -190,7 +190,7 @@ class Carol extends Component {
                 </div>
 
                 <div className='col-md-4'>
-                    <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='homeCards' >
                     <Card.Header>                        
                         <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/investigators.png")} />
                     </Card.Header>
@@ -211,7 +211,7 @@ class Carol extends Component {
                 </div>
 
                 <div className='col-md-4'>
-                    <Card style={{ border: 'solid black 2px', width: '18rem'}} id='homeCards' >
+                    <Card style={{ width: '18rem'}} id='homeCards' >
                     <Card.Header>                        
                         <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navigators.png")} />
                     </Card.Header>
