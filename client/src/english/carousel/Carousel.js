@@ -237,8 +237,8 @@ class Carol extends Component {
         return (
             <div>
                 <Header history={this.props.history} />
-                <div className='container'>
-                    <div className='text-center'>
+                <div>
+                    <div>
                         {!carousel ? ( 
                                 <div className='jumbotron text-center '>
                                     <h2>Loading....</h2>
@@ -250,8 +250,10 @@ class Carol extends Component {
                                     
                                 )
                             } 
-
-                            {this.renderCards()}
+                            <div className='container'>
+                                {this.renderCards()}
+                            </div>
+                            
                          
                         {/* <div  id='stats' style={{height: '100px', }} className='container mt-3'>
                             <div style={{borderBottom: 'solid black 1px'}}>
