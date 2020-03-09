@@ -163,7 +163,11 @@ class Header extends React.Component {
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
+                            <Nav.Link>
+                                <Link style={{color: 'white'}} to='/'>
+                                    <img  src={require("../../images/uhSchool.png")} />
+                                </Link>
+                            </Nav.Link>
                         </div>
                         <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white'}} to='/about'>About Us</Link></Nav.Link>
