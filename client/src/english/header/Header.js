@@ -43,7 +43,7 @@ class Header extends React.Component {
 
     renderTopHeader = () => {
         return (
-            <div style={{width: '100%',}}>
+            <div>
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -59,8 +59,19 @@ class Header extends React.Component {
                                 <Dropdown.Item><a onClick={this.translatePort}>Portuguese</a></Dropdown.Item>
                             
                     </DropdownButton>
+
                         
-                        {
+                           
+                                <div id='link'>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+
+                                </div>
+                                <div id='link'>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+
+                                </div>
+
+                                {
                             !this.state.user && (
                                <div className='row'>
                                 <Nav.Link >
@@ -90,19 +101,7 @@ class Header extends React.Component {
                                 </Nav.Link>
                             )
                         }
-
-                        {
-                            <div className='row'>
-                                <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
-
-                                </div>
-                                <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
-
-                                </div>
-                            </div>
-                        }
+                        
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
