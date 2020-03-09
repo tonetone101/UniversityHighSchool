@@ -62,7 +62,7 @@ class Header extends React.Component {
                         
                         {
                             !this.state.user && (
-                               <div id='link'>
+                               <div className='row'>
                                 <Nav.Link >
                                     <Link to='/signin' style={{color: 'white'}}>
                                         Sign In 
@@ -92,7 +92,7 @@ class Header extends React.Component {
                         }
 
                         {
-                            <div >
+                            <div className='row'>
                                 <div id='link'>
                                     <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
 
@@ -106,7 +106,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <div >
+                                <div className='row'>
                                     <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
@@ -127,7 +127,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <div >
+                                <div className='row'>
                                     <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
