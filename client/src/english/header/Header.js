@@ -93,8 +93,14 @@ class Header extends React.Component {
 
                         {
                             <div className='row'>
-                                <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                                <div id='link'>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+
+                                </div>
+                                <div id='link'>
                                 <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+
+                                </div>
                             </div>
                         }
 
