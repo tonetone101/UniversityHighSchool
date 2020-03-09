@@ -169,7 +169,10 @@ class Carol extends Component {
             <div className='row mt-5'>
                 <div className='col-md-4'>
                     <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
-                        <Card.Img variant="top" style={{height: '200px'}} src={require("../../images/risers.png")} />
+                        <Card.Header>                        
+                            <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/risers.png")} />
+                        </Card.Header>
+                       
                         <Card.Body>
                             <Card.Title>RISER</Card.Title>
                             <Card.Text>
@@ -188,7 +191,9 @@ class Carol extends Component {
 
                 <div className='col-md-4'>
                     <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
-                        <Card.Img variant="top" style={{height: '200px'}} src={require("../../images/investigators.png")} />
+                    <Card.Header>                        
+                        <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/investigators.png")} />
+                    </Card.Header>
                         <Card.Body>
                             <Card.Title>INVESTIGATORS</Card.Title>
                             <Card.Text>
