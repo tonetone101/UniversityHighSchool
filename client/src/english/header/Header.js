@@ -73,7 +73,7 @@ class Header extends React.Component {
 
                                 {
                             !this.state.user && (
-                                <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
+                                <Nav >
 
                                 <Nav.Link >
                                     <Link to='/signin' style={{color: 'white'}}>
@@ -106,7 +106,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
+                                <Nav>
                                 <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
