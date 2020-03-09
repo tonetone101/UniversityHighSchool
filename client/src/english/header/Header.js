@@ -73,7 +73,8 @@ class Header extends React.Component {
 
                                 {
                             !this.state.user && (
-                               <div className='row'>
+                                <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
+
                                 <Nav.Link >
                                     <Link to='/signin' style={{color: 'white'}}>
                                         Sign In 
@@ -84,7 +85,7 @@ class Header extends React.Component {
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
-                               </div>
+                               </Nav>
                             )
                         }
 
@@ -105,8 +106,8 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <div className='row'>
-                                    <div id='link' >
+                                <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
+                                <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
                                             Submitted Applications
@@ -120,14 +121,14 @@ class Header extends React.Component {
                                             </Link>
                                         </Nav.Link>
                                     </div>
-                                </div>
+                                </Nav>
                             )
                         }
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <div className='row'>
-                                    <div id='link' >
+                                <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
+                                <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
                                             Submitted Applications
@@ -141,7 +142,7 @@ class Header extends React.Component {
                                             </Link>
                                         </Nav.Link>
                                     </div>
-                                </div>
+                                </Nav>
                             )
                         }     
                         
