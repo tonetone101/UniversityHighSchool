@@ -47,7 +47,7 @@ class Header extends React.Component {
                 <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="mr-auto " >
+                    <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                     <DropdownButton id="dropdown-basic-button" title="translator"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
@@ -64,7 +64,7 @@ class Header extends React.Component {
                             !this.state.user && (
                                <div id='link'>
                                 <Nav.Link >
-                                    <Link className='ml-3' to='/signin' style={{color: 'white'}}>
+                                    <Link to='/signin' style={{color: 'white'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
@@ -92,13 +92,13 @@ class Header extends React.Component {
                         }
 
                         {
-                            <div className='row mr-5 ml-5'>
+                            <div >
                                 <div id='link'>
                                     <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
 
                                 </div>
                                 <div id='link'>
-                                <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
 
                                 </div>
                             </div>
@@ -106,7 +106,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <div className='row'>
+                                <div >
                                     <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
@@ -127,7 +127,7 @@ class Header extends React.Component {
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <div className='row'>
+                                <div >
                                     <div id='link' >
                                         <Nav.Link>
                                             <Link style={{color: 'white'}} to='/application' >
