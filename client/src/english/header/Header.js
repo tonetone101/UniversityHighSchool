@@ -92,47 +92,51 @@ class Header extends React.Component {
                         }
 
                         {
-                            <nav className='row ' >
+                            <div >
                                 <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
                                 <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
-                            </nav>
+                            </div>
                         }
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <nav className='row ' >
-                                                           
-                                    
+                                <div>
+                                <div id='link' >
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
                                         </Link>
                                     </Nav.Link>
-
+                                </div>
+                                <div id='link' >
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/applicants' >
                                             Pre-registered Applicants
                                         </Link>
                                     </Nav.Link>
-                                </nav>
+                                </div>
+                            </div>
                             )
                         }
 
                         {
                             isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                <nav className='row ' style={{marginLeft: '850px'}}>
-                                    <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/application' >
-                                        Submitted Applications
-                                        </Link>
-                                    </Nav.Link>
-
-                                    <Nav.Link>
-                                        <Link style={{color: 'white'}} to='/applicants' >
-                                            Pre-registered Applicants
-                                        </Link>
-                                    </Nav.Link>
-                                </nav>
+                                <div>
+                                    <div id='link' >
+                                        <Nav.Link>
+                                            <Link style={{color: 'white'}} to='/application' >
+                                            Submitted Applications
+                                            </Link>
+                                        </Nav.Link>
+                                    </div>
+                                    <div id='link' >
+                                        <Nav.Link>
+                                            <Link style={{color: 'white'}} to='/applicants' >
+                                                Pre-registered Applicants
+                                            </Link>
+                                        </Nav.Link>
+                                    </div>
+                                </div>
                             )
                         }     
                         
