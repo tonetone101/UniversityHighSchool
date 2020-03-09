@@ -174,7 +174,7 @@ class Carol extends Component {
                         </Card.Header>
                        
                         <Card.Body>
-                            <Card.Title>RISER</Card.Title>
+                            <Card.Title>RISERS</Card.Title>
                             <Card.Text>
                                 A RISER's main focus, is to figure who your are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
@@ -217,7 +217,7 @@ class Carol extends Component {
                     </Card.Header>
                         {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
                         <Card.Body>
-                            <Card.Title>NAVIGATOR</Card.Title>
+                            <Card.Title>NAVIGATORS</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
                                 RISER and INVESTIGATOR. Must build compacity for self an others.
