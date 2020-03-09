@@ -4,6 +4,7 @@ import {list} from './apiCarousel'
 import {Link } from 'react-router-dom'
 import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
+import { Card, Button } from 'react-bootstrap';
 import Header from '../header/Header'
 
 class Carol extends Component {
@@ -163,6 +164,73 @@ class Carol extends Component {
         )
     }
 
+    renderCards = () => {
+        return (
+            <div className='row'>
+                <div className='col-md-4'>
+                    <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
+                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Body>
+                            <Card.Title>RISER</Card.Title>
+                            <Card.Text>
+                                A RISER's main focus, is to figure who your are as a learner, an individual,
+                                as part of a collective (family, community, etc), a professional and interest, 
+                                while working towards achieving traditional 9th grade credits.          
+                            </Card.Text>
+                            <Link
+                                    to={`/grade9`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+
+                <div className='col-md-4'>
+                    <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
+                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Body>
+                            <Card.Title>INVESTIGATORS</Card.Title>
+                            <Card.Text>
+                               An INVESTIGATOR'S main focus, is continueing to hone in on the understandings
+                               gained from being a RISER and dive deeper and more rigorously into interest through inquiry     
+                            </Card.Text>
+                            <Link
+                                    to={`/grade10`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+
+                <div className='col-md-4'>
+                    <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
+                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Body>
+                            <Card.Title>NAVIGATOR</Card.Title>
+                            <Card.Text>
+                                A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
+                                RISER and INVESTIGATOR. Must build compacity for self an others. Must have impacted the 
+                                community and be ready to develop and implement a cohesive post secondary plan. 
+
+                            </Card.Text>
+                            <Link
+                                    to={`/grade11`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+                 
+            </div>
+        )
+    }
+
     render() {
         const {carousel } = this.state
 
@@ -182,8 +250,10 @@ class Carol extends Component {
                                     
                                 )
                             } 
+
+                            {this.renderCards()}
                          
-                        <div  id='stats' style={{height: '100px', }} className='container mt-3'>
+                        {/* <div  id='stats' style={{height: '100px', }} className='container mt-3'>
                             <div style={{borderBottom: 'solid black 1px'}}>
                                 <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true} style={{color:'black'}} >
                                     <h4  >{carousel.caption1}</h4>
@@ -204,7 +274,7 @@ class Carol extends Component {
                                     <h5 style={{ marginTop: '10px'}} className='mb-5'>{carousel.caption3}</h5>
                                 
                             </div>              
-                        </div>
+                        </div> */}
 
                         <div className='text-center' >
                             {
