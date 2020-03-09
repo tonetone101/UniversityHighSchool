@@ -166,7 +166,7 @@ class Carol extends Component {
 
     renderCards = () => {
         return (
-            <div className='row mb-5'>
+            <div className='row mt-5'>
                 <div className='col-md-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
                         <Card.Header>                        
