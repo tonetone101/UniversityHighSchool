@@ -169,7 +169,7 @@ class Carol extends Component {
             <div className='row'>
                 <div className='col-md-4'>
                     <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
-                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Img variant="top" style={{height: '200px'}} src={require("../../images/UHS_research.JPG")} />
                         <Card.Body>
                             <Card.Title>RISER</Card.Title>
                             <Card.Text>
@@ -189,7 +189,7 @@ class Carol extends Component {
 
                 <div className='col-md-4'>
                     <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
-                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Img variant="top" style={{height: '200px'}} src={require("../../images/uhsStudents.JPG")} />
                         <Card.Body>
                             <Card.Title>INVESTIGATORS</Card.Title>
                             <Card.Text>
@@ -208,7 +208,7 @@ class Carol extends Component {
 
                 <div className='col-md-4'>
                     <Card style={{ border: 'solid black 2px', width: '18rem' }} id='homeCards' >
-                        <Card.Img variant="top" style={{height: '200px'}} src={} />
+                        <Card.Img variant="top" style={{height: '200px'}} src={require("../../images/uhsProfile.png")} />
                         <Card.Body>
                             <Card.Title>NAVIGATOR</Card.Title>
                             <Card.Text>
