@@ -76,6 +76,8 @@ class Header extends React.Component {
                                </nav>
                             )
                         }
+
+                        
                         
                         {
                             this.state.user && (
@@ -90,8 +92,17 @@ class Header extends React.Component {
                         }
 
                         {
+                            <nav className='row ' >
+                                <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                                <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                            </nav>
+                        }
+
+                        {
                             isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                <nav className='row ' style={{marginLeft: '850px'}}>
+                                <nav className='row ' >
+                                                           
+                                    
                                     <Nav.Link>
                                         <Link style={{color: 'white'}} to='/application' >
                                         Submitted Applications
@@ -136,12 +147,12 @@ class Header extends React.Component {
     renderMenu = () => {
         return (
             <div>
-                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
+                <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
-                         <div id='link'>                        
+                        <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white'}} to='/'>Home</Link></Nav.Link>
                         </div>
                         <div id='link'>                        
@@ -151,10 +162,8 @@ class Header extends React.Component {
                             <Nav.Link><Link style={{color: 'white'}} to='/academics'>Academics</Link></Nav.Link>
                         </div>
 
-                       <div id='link'>                
-                           <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
-                        </div>
-                        <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link>
+                       
+                        {/* <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link> */}
                         
                         
                         <div id='link'>                        
@@ -163,11 +172,7 @@ class Header extends React.Component {
 
                         <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white'}} to='/new/student'>Contact us</Link></Nav.Link>
-                        </div>
-
-                        <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
-                        </div>
+                        </div>                     
 
                         <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
