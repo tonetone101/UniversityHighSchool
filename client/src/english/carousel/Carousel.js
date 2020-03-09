@@ -237,7 +237,7 @@ class Carol extends Component {
         return (
             <div>
                 <Header history={this.props.history} />
-                <div>
+                <div className='container'>
                     <div className='text-center'>
                         {!carousel ? ( 
                                 <div className='jumbotron text-center '>
@@ -297,7 +297,7 @@ class Carol extends Component {
                    
                 </div>
                         
-                        <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
+                        {/* <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
                            
                             <img 
                                 id='homeImage'
@@ -316,7 +316,7 @@ class Carol extends Component {
                                 
                             />  
                            
-                        </div>
+                        </div> */}
                         
                         <div>
                             {this.renderAnnouncements(carousel)}
