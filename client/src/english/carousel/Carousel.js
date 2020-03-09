@@ -198,7 +198,7 @@ class Carol extends Component {
                             <Card.Title>INVESTIGATORS</Card.Title>
                             <Card.Text>
                                An INVESTIGATOR is about continueing to hone in on the understandings
-                               gained from being a RISER and dive deeper and more rigorously into interest through inquiry     
+                               gained from being a RISER and dive deeper into interest through inquiry     
                             </Card.Text>
                             <Link
                                     to={`/grade10`}
