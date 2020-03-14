@@ -320,7 +320,7 @@ class Carol extends Component {
                                         <div className='title-underline text-center'></div>                              
                                 </div>
 
-                                <div className='row text-center'>
+                                <div className='row text-center mt-5'>
                                     <img 
                                         id='homeImage'
                                         style={{ height: "300px", width: "200px" }}
