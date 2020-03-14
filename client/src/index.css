@@ -93,7 +93,7 @@ body {
 #vision {
   background-color: white;
   height: 60vh;
-  clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0 100%)
+  clip-path: polygon(0 20%, 100% 0%, 100% 90%, 0 100%)
 
 }
 
