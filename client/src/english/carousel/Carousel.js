@@ -306,7 +306,7 @@ class Carol extends Component {
                    
                 </div>
                         
-                        {/* <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
+                        <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
                            
                             <img 
                                 id='homeImage'
@@ -325,11 +325,11 @@ class Carol extends Component {
                                 
                             />  
                            
-                        </div> */}
-                        
-                        <div>
-                            {this.renderAnnouncements(carousel)}
                         </div>
+                        
+                        {/* <div>
+                            {this.renderAnnouncements(carousel)}
+                        </div> */}
                                 
                                 
                         <footer className='mt-5'>
