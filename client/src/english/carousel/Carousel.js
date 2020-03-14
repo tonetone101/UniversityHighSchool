@@ -311,7 +311,7 @@ class Carol extends Component {
                         <div id='vision'>
                             <div className='container goals' >
                                 <div className='text-center' >
-                                    <h3>
+                                    <h3 style={{fontWeight: 'bold'}}>
                                         OUR MISSION AND VISION
                                     </h3>
                                         <div className='icon'>
