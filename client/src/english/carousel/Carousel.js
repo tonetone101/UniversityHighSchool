@@ -307,7 +307,7 @@ class Carol extends Component {
                 </div>
                     
                         <div id='vision'>
-                            <div className='container' style={{marginTop: '100px'}}>
+                            <div className='container' >
                                 <div className='text-center' >
                                     <h4 >
                                         OUR MISSION AND VISION
