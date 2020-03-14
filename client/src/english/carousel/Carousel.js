@@ -4,7 +4,7 @@ import {list} from './apiCarousel'
 import {Link } from 'react-router-dom'
 import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
-import { Card, Button } from 'react-bootstrap';
+import { Card, Button } from 'react-bootstrap'
 import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
