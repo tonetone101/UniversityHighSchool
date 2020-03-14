@@ -315,6 +315,7 @@ class Carol extends Component {
                                         OUR MISSION AND VISION
                                     </h4>
                                    <FontAwesomeIcon icon ={faCheckSquare} />
+                                   <div className="title-underline"></div>
                                 </div>
                                 <div className='row text-center'>
                                     <img 
