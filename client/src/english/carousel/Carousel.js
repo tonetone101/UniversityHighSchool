@@ -7,7 +7,7 @@ import {Animated} from 'react-animated-css'
 import { Card, Button } from 'react-bootstrap';
 import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faRocket } from '@fortawesome/free-solid-svg-icons'
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 
 class Carol extends Component {
     state = {
@@ -44,72 +44,72 @@ class Carol extends Component {
         this.renderUser()
     }
     
-    renderCarousel = (carousel) => {
-        const posterId = carousel.postedBy
-        ? `/user/${carousel.postedBy._id}`
-        : "";
+    // renderCarousel = (carousel) => {
+    //     const posterId = carousel.postedBy
+    //     ? `/user/${carousel.postedBy._id}`
+    //     : "";
         
-        const posterName = carousel.postedBy
-        ? carousel.postedBy.name
-        : " Unknown";
+    //     const posterName = carousel.postedBy
+    //     ? carousel.postedBy.name
+    //     : " Unknown";
 
-        const photoUrl = carousel.postedBy
-        ? `${process.env.REACT_APP_API_URL}/user/photo/${
-            carousel.postedBy._id
-          }?${new Date().getTime()}`
-        : ''
+    //     const photoUrl = carousel.postedBy
+    //     ? `${process.env.REACT_APP_API_URL}/user/photo/${
+    //         carousel.postedBy._id
+    //       }?${new Date().getTime()}`
+    //     : ''
 
-        const photoOne = carousel.photo1
-        ? `${process.env.REACT_APP_API_URL}/carousel/photo/${
-            carousel.photo1
-          }?${new Date().getTime()}`
-        : ''
+    //     const photoOne = carousel.photo1
+    //     ? `${process.env.REACT_APP_API_URL}/carousel/photo/${
+    //         carousel.photo1
+    //       }?${new Date().getTime()}`
+    //     : ''
 
 
-        return (
-            <div >
-                <Carousel style={{background: 'black'}}>
-                    <Carousel.Item style={{background: 'black'}}>
-                        <img
-                        style={{ height: "450px"}}
-                        // className="d-block w-100"
-                        src={require("../../images/UHS_research.JPG")}
-                        alt="First slide"
-                        />
-                        <Carousel.Caption>
+    //     return (
+    //         <div >
+    //             <Carousel style={{background: 'black'}}>
+    //                 <Carousel.Item style={{background: 'black'}}>
+    //                     <img
+    //                     style={{ height: "450px"}}
+    //                     // className="d-block w-100"
+    //                     src={require("../../images/UHS_research.JPG")}
+    //                     alt="First slide"
+    //                     />
+    //                     <Carousel.Caption>
                        
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item style={{background: 'black'}}>
-                        <img
-                        style={{ height: "450px"}}
-                        // className="d-block w-100"
-                        src={require("../../images/uhsStudents.JPG")}
-                        alt="Second slide"
-                        />
+    //                     </Carousel.Caption>
+    //                 </Carousel.Item>
+    //                 <Carousel.Item style={{background: 'black'}}>
+    //                     <img
+    //                     style={{ height: "450px"}}
+    //                     // className="d-block w-100"
+    //                     src={require("../../images/uhsStudents.JPG")}
+    //                     alt="Second slide"
+    //                     />
 
-                        <Carousel.Caption>
+    //                     <Carousel.Caption>
                      
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item style={{background: 'black'}}>
-                        <img
-                        style={{ height: "450px"}}
-                        // className="d-block w-100"
-                        src={require("../../images/uhsProfile.png")}
-                        alt="Third slide"
-                        />
+    //                     </Carousel.Caption>
+    //                 </Carousel.Item>
+    //                 <Carousel.Item style={{background: 'black'}}>
+    //                     <img
+    //                     style={{ height: "450px"}}
+    //                     // className="d-block w-100"
+    //                     src={require("../../images/uhsProfile.png")}
+    //                     alt="Third slide"
+    //                     />
 
-                        <Carousel.Caption>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>   
+    //                     <Carousel.Caption>
+    //                     </Carousel.Caption>
+    //                 </Carousel.Item>
+    //             </Carousel>   
 
                 
-            </div>    
+    //         </div>    
               
-        );
-    }
+    //     );
+    // }
 
     renderAnnouncements = (carousel) => {
         return (
@@ -222,7 +222,7 @@ class Carol extends Component {
                             <Card.Title>NAVIGATORS</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
-                                RISER and INVESTIGATOR. Must build compacity for self an others.
+                                RISER and INVESTIGATOR. Must build compacity for self and others.
 
                             </Card.Text>
                             <Link
@@ -314,7 +314,7 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-                                   <FontAwesomeIcon icon ={faRocket} />
+                                   <FontAwesomeIcon icon ={faCheckSquare} />
                                 </div>
                                 <div className='row text-center'>
                                     <img 
