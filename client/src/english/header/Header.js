@@ -164,36 +164,36 @@ class Header extends React.Component {
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                         <div id='link'>                        
                             <Nav.Link>
-                                <Link style={{color: 'white'}} to='/'>
+                                <Link style={{color: 'white', fontSize: '20px'}} to='/'>
                                     <img  style={{height: '100px'}} src={require("../../images/uhSchool.png")} />
                                 </Link>
                             </Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/about'>About Us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/about'>About Us</Link></Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/academics'>Academics</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/academics'>Academics</Link></Nav.Link>
                         </div>
 
                        
-                        {/* <Nav.Link><Link style={{color: 'white'}} to='/student'>Students</Link></Nav.Link> */}
+                        {/* <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/student'>Students</Link></Nav.Link> */}
                         
                         
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/admission'>Admission</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/admission'>Admission</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/new/student'>Contact us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/new/student'>Contact us</Link></Nav.Link>
                         </div>                     
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
