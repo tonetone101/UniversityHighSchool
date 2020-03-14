@@ -310,7 +310,7 @@ class Carol extends Component {
                     
                         <div id='vision'>
                             <div className='container' >
-                                <div className='text-center' >
+                                <div className='text-center mb-5' >
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
@@ -318,10 +318,6 @@ class Carol extends Component {
                                             <FontAwesomeIcon  icon ={faCheckSquare} />
                                         </div>
                                         <div className='title-underline text-center'></div>                              
-                                </div>
-
-                                <div className='row text-center'>
-                                        
                                 </div>
 
                                 <div className='row text-center'>
