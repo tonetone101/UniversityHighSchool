@@ -314,7 +314,9 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-                                    <div className='row'>
+                                </div>
+
+                                <div className='row text-center'>
                                         <div className="title-underline"></div>
 
                                         <div className='ml=1 mr-1'>
@@ -322,8 +324,8 @@ class Carol extends Component {
                                         </div>
 
                                         <div className="title-underline"></div>
-                                   </div>
                                 </div>
+
                                 <div className='row text-center'>
                                     <img 
                                         id='homeImage'
