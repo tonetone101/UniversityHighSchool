@@ -7,7 +7,7 @@ import {Animated} from 'react-animated-css'
 import { Card, Button } from 'react-bootstrap';
 import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { faRocket } from '@fortawesome/free-solid-svg-icons'
 
 class Carol extends Component {
     state = {
@@ -314,7 +314,7 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-                                   <FontAwesomeIcon icon ={faCoffee} />
+                                   <FontAwesomeIcon icon ={faRocket} />
                                 </div>
                                 <div className='row text-center'>
                                     <img 
