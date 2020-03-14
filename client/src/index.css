@@ -21,6 +21,8 @@ body {
 #menu{
   background-color:rgb(0, 84, 255);
   height: 100px;
+  transition: padding 2s ease;
+
 }
 
 #carol {
