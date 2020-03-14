@@ -314,10 +314,11 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-
+                                        <div className='title-underline'></div>
                                         <div className='ml=1 mr-1'>
                                             <FontAwesomeIcon  icon ={faCheckSquare} />
                                         </div>
+                                        <div className='title-underline'></div>
 
                                        
                                 </div>
