@@ -110,5 +110,12 @@ body {
   width: 200px;
   background: rgb(0, 84, 255);
   margin: -28px auto 0 auto; 
-  margin-top: 1px;
+}
+
+.icon {
+  color: rgb(0, 84, 255);
+  font-size: 30px;
+  padding: 0 10px;
+  display: inline-block;
+  background: #f1fffa;
 }
