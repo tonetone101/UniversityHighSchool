@@ -305,7 +305,11 @@ class Carol extends Component {
                                         
                    
                 </div>
-                        
+                        <div>
+                            <h4>
+                               OUR MISSION AND GOAL
+                            </h4>
+                        </div>
                         <div className='row container' style={{marginLeft: '150px', marginTop: '150px'}}>
                            
                             <img 
