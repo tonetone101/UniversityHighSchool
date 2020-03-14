@@ -316,17 +316,15 @@ class Carol extends Component {
                                 <img 
                                     id='homeImage'
                                     style={{ height: "300px", width: "200px" }}
-                                    className="mt-4 col-sm-6"
+                                    className="col-md-6"
                                     src={require("../../images/uhsMission.png")}
-                                    alt="Second slide" 
                                     
                                 />   
                                 <img 
                                     id='homeImage'
                                     style={{ height: "300px", width: "200px" }}
-                                    className="mt-4 col-sm-6"
+                                    className="col-md-6"
                                     src={require("../../images/uhsVision.png")}
-                                    alt="Second slide" 
                                     
                                 />  
                             </div>
