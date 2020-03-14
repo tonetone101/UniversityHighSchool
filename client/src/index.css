@@ -92,13 +92,13 @@ body {
 
 #vision {
   background-color: white;
-  height: 100vh;
+  height: 70vh;
   clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%)
 
 }
 
 #vision h4 {
-  padding-top: 300px;
+  padding-top: 120px;
 }
 
 #video {
@@ -118,8 +118,4 @@ body {
   padding: 0 10px;
   display: inline-block;
   background: white;
-}
-
-.goals {
-  margin-top: 50px;;
 }
