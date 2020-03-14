@@ -93,3 +93,7 @@ body {
 #vision {
   background-color: white;
 }
+
+#video {
+  position: relative;
+}
