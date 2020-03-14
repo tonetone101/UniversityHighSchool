@@ -93,7 +93,11 @@ body {
 #vision {
   background-color: white;
   height: 60vh;
+}
+
+#vision h4 {
   margin-top: 50px;
+
 }
 
 #video {
