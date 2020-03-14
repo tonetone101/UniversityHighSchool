@@ -176,7 +176,7 @@ class Carol extends Component {
                         </Card.Header>
                        
                         <Card.Body>
-                            <Card.Title>RISERS</Card.Title>
+                            <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text>
                                 A RISER's main focus, is to figure who your are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
@@ -197,7 +197,7 @@ class Carol extends Component {
                         <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header>
                         <Card.Body>
-                            <Card.Title>INVESTIGATORS</Card.Title>
+                            <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text>
                                An INVESTIGATOR is about continueing to hone in on the understandings
                                gained from being a RISER and dive deeper into interest through inquiry     
@@ -219,7 +219,7 @@ class Carol extends Component {
                     </Card.Header>
                         {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
                         <Card.Body>
-                            <Card.Title>NAVIGATORS</Card.Title>
+                            <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
                                 RISER and INVESTIGATOR. Must build compacity for self and others.
