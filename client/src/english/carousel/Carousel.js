@@ -314,12 +314,15 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
+                                    <div className='row'>
+                                        <div className="title-underline"></div>
 
-                                    <div className='mb-0' >
+                                        
                                         <FontAwesomeIcon  icon ={faCheckSquare} />
-                                   </div>
+                                       
 
-                                   <div className="title-underline"></div>
+                                        <div className="title-underline"></div>
+                                   </div>
                                 </div>
                                 <div className='row text-center'>
                                     <img 
