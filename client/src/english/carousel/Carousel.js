@@ -305,14 +305,14 @@ class Carol extends Component {
                                         
                    
                 </div>
-                    
+                        <div className='text-center' style={{marginTop: '10px'}}>
+                            <h4>
+                                OUR MISSION AND VISION
+                            </h4>
+                        </div>
+
                         <div id='vision'>
                             <div className='container'>
-                                <div className='text-center' style={{marginTop: '10px'}}>
-                                    <h4>
-                                    OUR MISSION AND VISION
-                                    </h4>
-                                </div>
                                 <div className='row text-center mb-5'>
                                     <img 
                                         id='homeImage'
