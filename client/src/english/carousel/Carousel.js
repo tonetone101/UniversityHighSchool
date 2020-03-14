@@ -317,9 +317,9 @@ class Carol extends Component {
                                     <div className='row text-center'>
                                         <div className="title-underline"></div>
 
-                                        
-                                        <FontAwesomeIcon  icon ={faCheckSquare} />
-                                       
+                                        <div className='ml=1 mr-1'>
+                                            <FontAwesomeIcon  icon ={faCheckSquare} />
+                                        </div>
 
                                         <div className="title-underline"></div>
                                    </div>
