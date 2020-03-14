@@ -6,6 +6,7 @@ import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
 import { Card, Button } from 'react-bootstrap';
 import Header from '../header/Header'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 class Carol extends Component {
