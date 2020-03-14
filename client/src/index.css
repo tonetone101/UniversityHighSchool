@@ -107,7 +107,7 @@ body {
 
 .title-underline {
   height: 5px;
-  width: 200px;
+  width: 300px;
   background: rgb(0, 84, 255);
   margin: -28px auto 0 auto; 
 }
@@ -117,5 +117,4 @@ body {
   font-size: 30px;
   padding: 0 10px;
   display: inline-block;
-  background: #f1fffa;
 }
