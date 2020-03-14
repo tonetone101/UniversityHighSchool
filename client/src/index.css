@@ -109,5 +109,5 @@ body {
   height: 5px;
   width: 250px;
   background: rgb(0, 84, 255);
-  margin: -28px auto 0 auto;
+  /* margin: -28px auto 0 auto; */
 }
