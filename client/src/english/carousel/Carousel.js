@@ -314,7 +314,7 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-                                    <div className='row'>
+                                    <div className='row text-center'>
                                         <div className="title-underline"></div>
 
                                         
