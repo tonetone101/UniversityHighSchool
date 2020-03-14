@@ -306,27 +306,29 @@ class Carol extends Component {
                    
                 </div>
                     
-                        <div className='container' id='vision'>
-                            <div className='text-center mt-5'>
-                                <h4>
-                                OUR MISSION AND VISION
-                                </h4>
-                            </div>
-                            <div className='row text-center mb-5'>
-                                <img 
-                                    id='homeImage'
-                                    style={{ height: "300px", width: "200px" }}
-                                    className="col-md-6"
-                                    src={require("../../images/uhsMission.png")}
-                                    
-                                />   
-                                <img 
-                                    id='homeImage'
-                                    style={{ height: "300px", width: "200px" }}
-                                    className="col-md-6"
-                                    src={require("../../images/uhsVision.png")}
-                                    
-                                />  
+                        <div id='vision'>
+                            <div className='container'>
+                                <div className='text-center mt-5'>
+                                    <h4>
+                                    OUR MISSION AND VISION
+                                    </h4>
+                                </div>
+                                <div className='row text-center mb-5'>
+                                    <img 
+                                        id='homeImage'
+                                        style={{ height: "300px", width: "200px" }}
+                                        className="col-md-6"
+                                        src={require("../../images/uhsMission.png")}
+                                        
+                                    />   
+                                    <img 
+                                        id='homeImage'
+                                        style={{ height: "300px", width: "200px" }}
+                                        className="col-md-6"
+                                        src={require("../../images/uhsVision.png")}
+                                        
+                                    />  
+                                </div>
                             </div>
                            
                         </div>
