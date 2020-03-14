@@ -108,6 +108,6 @@ body {
 .title-underline {
   height: 5px;
   width: 250px;
-  background: #2a9134;
+  background: rgb(0, 84, 255);
   margin: -28px auto 0 auto;
 }
