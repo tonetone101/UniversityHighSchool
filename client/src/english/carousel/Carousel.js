@@ -194,7 +194,7 @@ class Carol extends Component {
                 <div className='col-md-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
                     <Card.Header>                        
-                        <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/investigators.png")} />
+                        <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header>
                         <Card.Body>
                             <Card.Title>INVESTIGATORS</Card.Title>
