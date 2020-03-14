@@ -89,3 +89,8 @@ body {
   opacity: 0;
   transition: opacity 150ms linear;
 }
+
+#vision {
+  background-color: white;
+  clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0 100%)
+}
