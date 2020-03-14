@@ -306,8 +306,8 @@ class Carol extends Component {
                    
                 </div>
                     
-                        <div id='vision'>
-                            <div className='text-center mt-5'>
+                        <div className='text-center' id='vision'>
+                            <div className='mt-5'>
                                 <h4>
                                 OUR MISSION AND VISION
                                 </h4>
