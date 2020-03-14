@@ -312,7 +312,8 @@ class Carol extends Component {
                                     <h4 style={{marginTop: '100px'}}>
                                         OUR MISSION AND VISION
                                     </h4>
-                                    <i class='fas fa-globe'></i>
+                                    <p><i className='fas fa-globe'></i></p>
+                                    <div className="title-underline"></div>
                                 </div>
                                 <div className='row text-center mb-5'>
                                     <img 
