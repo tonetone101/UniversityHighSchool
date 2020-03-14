@@ -311,9 +311,9 @@ class Carol extends Component {
                         <div id='vision'>
                             <div className='container' >
                                 <div className='text-center mb-5' >
-                                    <h4 >
+                                    <h3>
                                         OUR MISSION AND VISION
-                                    </h4>
+                                    </h3>
                                         <div className='icon'>
                                             <FontAwesomeIcon  icon ={faCheckSquare} />
                                         </div>
