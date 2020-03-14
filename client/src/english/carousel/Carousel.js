@@ -6,6 +6,7 @@ import { isAuthenticated} from '../../auth'
 import {Animated} from 'react-animated-css'
 import { Card, Button } from 'react-bootstrap';
 import Header from '../header/Header'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 class Carol extends Component {
     state = {
@@ -312,8 +313,7 @@ class Carol extends Component {
                                     <h4 >
                                         OUR MISSION AND VISION
                                     </h4>
-                                    <p><i className='fas fa-globe'></i></p>
-                                    <div className="title-underline"></div>
+                                   <FontAwesomeIcon icon ={faCoffee} />
                                 </div>
                                 <div className='row text-center'>
                                     <img 
