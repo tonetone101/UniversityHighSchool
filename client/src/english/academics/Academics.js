@@ -4,6 +4,9 @@ import { Link, Redirect, withRouter } from "react-router-dom";
 import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
+import { Card, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
 
 const isActive = (history, path) => {
     if (history.location.pathname === path) return {
@@ -54,6 +57,79 @@ class Academics extends Component {
         this.renderUser()
     }
 
+    renderCards = () => {
+        return (
+            <div className='row mb-5' style={{backgroundColor: 'white'}}>
+                <div className='col-sm-4'>
+                    <Card style={{ width: '18rem' }} id='homeCards' >
+                        <Card.Header>                        
+                            <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
+                        </Card.Header>
+                       
+                        <Card.Body>
+                            <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
+                            <Card.Text>
+                                A RISER's main focus, is to figure who your are as a learner, an individual,
+                                as part of a collective (family, community, etc), a professional and interest.     
+                            </Card.Text>
+                            <Link
+                                    to={`/grade9`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+
+                <div className='col-md-4'>
+                    <Card style={{ width: '18rem' }} id='homeCards' >
+                    <Card.Header>                        
+                        <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
+                    </Card.Header>
+                        <Card.Body>
+                            <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
+                            <Card.Text>
+                               An INVESTIGATOR is about continueing to hone in on the understandings
+                               gained from being a RISER and dive deeper into interest through inquiry     
+                            </Card.Text>
+                            <Link
+                                    to={`/grade10`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+
+                <div className='col-md-4' >
+                    <Card style={{ width: '18rem'}} id='homeCards' >
+                    <Card.Header>                        
+                        <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
+                    </Card.Header>
+                        {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
+                        <Card.Body>
+                            <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
+                            <Card.Text>
+                                A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
+                                RISER and INVESTIGATOR. Must build compacity for self and others.
+
+                            </Card.Text>
+                            <Link
+                                    to={`/grade11`}
+                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                                >
+                                    Read more
+                            </Link>
+                        </Card.Body>
+                    </Card>
+                </div>
+                 
+            </div>
+        )
+    }
+
 
     render() {
         const { academics, redirectToSignIn } = this.state
@@ -91,8 +167,11 @@ class Academics extends Component {
 
                       </div>
                       <hr />
+                      <div className='container'>
+                        {this.renderCards()}
+                      </div>
                       
-                      <div id='title' className='row container'>
+                      {/* <div id='title' className='row container'>
                             <div className='col-md-4 column mt-5'>
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade9')} to='/grade9'>
@@ -125,7 +204,7 @@ class Academics extends Component {
                             </div>
                             
                          
-                      </div>
+                      </div> */}
                       
                   </div> 
                   
