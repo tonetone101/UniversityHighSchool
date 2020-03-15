@@ -84,15 +84,15 @@ class Admission extends Component {
                 
                 <div>
                     <div className='mb-5'>
-                        <iframe height='100' width='100' src='https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'/>
+                        <iframe height='500' width='500' src='https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'></iframe>
                     </div>
 
                     <div className='mb-5'>
-                        <iframe height='100' width='100' src='https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'/>
+                        <iframe height='500' width='500' src='https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'></iframe>
                     </div>
 
                     <div className='mb-5'>
-                        <iframe height='100' width='100' src='https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'/>
+                        <iframe height='500' width='500' src='https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'></iframe>
                     </div>
                     
                 </div>
