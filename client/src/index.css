@@ -1,6 +1,6 @@
 body {
     font-family: 'Titillium Web', sans-serif;
-    background-color: white;
+    background-color:white;
   }
   .heading {
     font-weight: 700;
@@ -91,7 +91,7 @@ body {
 }
 
 #vision {
-  background-color:#b7b7b7;
+  background-color: white;
   height: 90vh;
   clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%)
 
@@ -118,4 +118,8 @@ body {
   padding: 0 10px;
   display: inline-block;
   background: white;
+}
+
+#footer {
+  background-color:#b7b7b7;
 }

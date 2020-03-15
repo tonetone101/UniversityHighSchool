@@ -345,7 +345,7 @@ class Carol extends Component {
                         </div> */}
                                 
                                 
-                        <footer className='mt-5'>
+                        <footer id='footer' className='mt-5'>
                             <div class="container row ml-5">
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/uhsBannerLogo.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
