@@ -113,7 +113,7 @@ class SchoolBoardMember extends Component {
                 <div className="container">
                     <div style={{borderBottom: 'solid black 1px'}} className='row mt-4 mb-3'>
                         <h2 className="col-md-6">
-                            {!schoolBoardMembers.length ? "Loading..." : "School Board Members"}
+                            {!schoolBoardMembers.length ? "Loading..." : <p style={{fontWeight: 'bold'}}>School Board Members</p>}
                         </h2>
                         <br/>
 
