@@ -10,7 +10,7 @@ body {
   }
 
 #topHeader{
-  background-color:#b7b7b7;
+  background-color: rgb(247, 222, 75);
 }
 
 #homeCards{
@@ -76,7 +76,7 @@ body {
 }
 
 #imgCard:hover {
-  transform: scale(1);
+  transform: scale(1.1);
   transition: all 2s ease;
   border-radius: 0%;
 }
