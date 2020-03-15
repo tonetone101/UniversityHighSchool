@@ -212,7 +212,7 @@ class Carol extends Component {
                     </Card>
                 </div>
 
-                <div className='col-md-4'>
+                <div className='col-md-4' style={{backgroundColor: 'white'}}>
                     <Card style={{ width: '18rem'}} id='homeCards' >
                     <Card.Header>                        
                         <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
