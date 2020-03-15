@@ -287,7 +287,7 @@ class Carol extends Component {
                             </div>              
                         </div> */}
 
-                        <div className='text-center' >
+                        {/* <div className='text-center' >
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
                                     <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
@@ -301,7 +301,7 @@ class Carol extends Component {
                             }
 
                            
-                        </div>
+                        </div> */}
                    
                     </div>
                                         
