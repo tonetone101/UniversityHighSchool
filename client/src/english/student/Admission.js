@@ -76,6 +76,12 @@ class Admission extends Component {
     }
 
     renderAppLinks = () => {
+        const englishApp = 'https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'
+
+        const spanishApp = 'https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'
+
+        const portApp = 'https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'
+
         return (
             <div className='text-center'>
                 <h4 style={{fontWeight: 'bold'}} className='mb-5'>
@@ -84,15 +90,15 @@ class Admission extends Component {
                 
                 <div>
                     <div className='mb-5'>
-                        <iframe height='500' width='500' src='https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'></iframe>
+                        <iframe height='500' width='500' src={englishApp}></iframe>
                     </div>
 
                     <div className='mb-5'>
-                        <iframe height='500' width='500' src='https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'></iframe>
+                        <iframe height='500' width='500' src={spanishApp}></iframe>
                     </div>
 
                     <div className='mb-5'>
-                        <iframe height='500' width='500' src='https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'></iframe>
+                        <iframe height='500' width='500' src={portApp}></iframe>
                     </div>
                     
                 </div>
