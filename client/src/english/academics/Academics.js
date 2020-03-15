@@ -83,7 +83,7 @@ class Academics extends Component {
                 </div>
 
                 <div className='col-md-4'>
-                    <Card style={{ width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='academicCards' >
                     <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header>
@@ -104,7 +104,7 @@ class Academics extends Component {
                 </div>
 
                 <div className='col-md-4' >
-                    <Card style={{ width: '18rem'}} id='homeCards' >
+                    <Card style={{ width: '18rem'}} id='academicCards' >
                     <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header>
