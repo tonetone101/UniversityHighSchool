@@ -246,7 +246,7 @@ class Carol extends Component {
             <div>
                 <Header history={this.props.history} />
                 <div>
-                    <div style={{backgroundColor: 'white'}}>
+                    <div style={{backgroundColor: 'white', height: '1000vh'}}>
                         {!carousel ? ( 
                                 <div className='jumbotron text-center '>
                                     <h2>Loading....</h2>
