@@ -156,6 +156,8 @@ class Admission extends Component {
                         Welcome to our Admissions section. 
                         Here you can view and download a copy of our application as well as submit a completed form to us. 
                     </p>
+
+                    {this.renderAppLinks()}
                     
                     {/* <div className='row mt-5'>
                         <div className='col-md-3 mt-4'>
