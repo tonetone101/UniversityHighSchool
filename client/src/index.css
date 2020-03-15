@@ -122,5 +122,5 @@ body {
 
 #footer {
   background-color:#b7b7b7;
-  clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%)
+  clip-path: polygon(100% 20%, 100% 0%, 100% 85%, 0 100%)
 }
