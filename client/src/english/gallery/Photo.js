@@ -81,7 +81,7 @@ class Photo extends Component {
                 <Header history={this.props.history} />
                 <div className="container">
                     <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
-                        <h2 className="col-md-6" >
+                        <h2 className="col-md-6" style={{fontWeight: 'bold'}}>
                             Captured Moments {' '}
                             {!images.length ? " page is Loading..." : ""}
                         </h2>
