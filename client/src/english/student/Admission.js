@@ -88,17 +88,32 @@ class Admission extends Component {
                     Registration
                 </h4>
                 
-                <div>
-                    <div className='mb-5'>
-                        <iframe height='500' width='500' src={englishApp}></iframe>
+                <div className='container row'>
+                    <div className='mb-5 col-md-4'>
+                        <Link onClick={() => { 
+                                        window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
+                                        }} >
+                                English application form
+                        </Link>
+                        <iframe height='300' width='300' src={englishApp}></iframe>
                     </div>
 
-                    <div className='mb-5'>
-                        <iframe height='500' width='500' src={spanishApp}></iframe>
+                    <div className='mb-5 col-md-4'>
+                        <Link onClick={() => { 
+                                        window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
+                                        }} >
+                            Spanish application form
+                        </Link>
+                        <iframe height='300' width='300' src={spanishApp}></iframe>
                     </div>
 
-                    <div className='mb-5'>
-                        <iframe height='500' width='500' src={portApp}></iframe>
+                    <div className='mb-5 col-md-4'>
+                        <Link onClick={() => { 
+                                        window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
+                                        }} >
+                            Portuguese application form
+                        </Link>
+                        <iframe height='300' width='300' src={portApp}></iframe>
                     </div>
                     
                 </div>
