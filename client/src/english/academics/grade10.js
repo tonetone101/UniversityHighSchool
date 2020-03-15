@@ -67,7 +67,7 @@ class Grade10 extends Component {
             <div>
                <Header history={this.props.history} />
                   <div className='container mt-4'>
-                     <h1>10th Grade at University High School</h1>
+                     <h1 style={{fontWeight: 'bold'}}>Investigators</h1>
                       <div  >
                         
                       {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
@@ -89,28 +89,22 @@ class Grade10 extends Component {
                       <hr />
                       
                       <div id='title' className='row container'>
-                        <div className='col-md-4 column text-center mt-5'>
+                        <div className='col-md-4 column mt-5'>
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade9')} to='/grade9'>
-                                            Grade 9
+                                            Risers
                                     </Link>
                                 </div>
 
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
-                                           Grade 10
+                                           Investigators
                                     </Link>
                                 </div>
 
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
-                                            Grade 11
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade12')} className='mt-4' to='/grade12'>
-                                            Grade 12
+                                            Navigators
                                     </Link>
                                 </div>
                             </div>
