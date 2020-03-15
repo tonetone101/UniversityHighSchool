@@ -90,6 +90,9 @@ class Grade10 extends Component {
                       
                       <div id='title' className='row container'>
                         <div className='col-md-4 column mt-5'>
+                                <h3 className='mb-2' style={{fontWeight: 'bold'}}>
+                                    Stages
+                                </h3>
                                 <div className='mb-2'>
                                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                                             Risers
