@@ -168,7 +168,7 @@ class Carol extends Component {
 
     renderCards = () => {
         return (
-            <div className='row mb-5'>
+            <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
                         <Card.Header>                        
@@ -212,7 +212,7 @@ class Carol extends Component {
                     </Card>
                 </div>
 
-                <div className='col-md-4' style={{backgroundColor: 'white'}}>
+                <div className='col-md-4' >
                     <Card style={{ width: '18rem'}} id='homeCards' >
                     <Card.Header>                        
                         <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
