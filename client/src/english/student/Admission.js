@@ -117,6 +117,9 @@ class Admission extends Component {
                     </div>
                     
                 </div>
+                <Link to='/new/application'>
+                    Submit Student application
+                </Link>
             </div>
         )
     }
