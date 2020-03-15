@@ -90,7 +90,7 @@ class Grade9 extends Component {
                       
                       <div id='title' className='row container'>
                             <div className='col-md-4 column mt-5'>
-                                <h3 className='mb-2' style={{fontWeight: 'bold'}}>
+                                <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
                                     Stages
                                 </h3>
                                 <div className='mb-2'>
