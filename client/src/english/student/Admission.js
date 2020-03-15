@@ -77,44 +77,70 @@ class Admission extends Component {
 
     renderAppLinks = () => {
         return (
-            <div style={{background: '#b7b7b7'}}>
-                <h4 style={{fontWeight: 'bold'}}>
+            <div className='text-center'>
+                <h4 style={{fontWeight: 'bold'}} className='mb-5'>
                     Registration
                 </h4>
-                 <ListGroup variant="flush">
-                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
-                                            }} >
-                                    View English application form
-                            </Link>
-                        </ListGroup.Item>
+                
+                <div>
+                    <div className='mb-5'>
+                        <iframe height='100' width='100' src='https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'/>
+                    </div>
 
-                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
-                                            }} >
-                                View Spanish application form
-                            </Link>
-                        </ListGroup.Item>
+                    <div className='mb-5'>
+                        <iframe height='100' width='100' src='https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'/>
+                    </div>
 
-                        <ListGroup.Item style={{background: '#b7b7b7'}}> 
-                            <Link onClick={() => { 
-                                            window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
-                                            }} >
-                                View Portuguese application form
-                            </Link>
-                        </ListGroup.Item>
-
-                        <ListGroup.Item style={{background: '#b7b7b7'}} >
-                            <Link to='/new/application'>
-                                Submit Student application
-                            </Link>
-                        </ListGroup.Item>
-                    </ListGroup>
+                    <div className='mb-5'>
+                        <iframe height='100' width='100' src='https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'/>
+                    </div>
+                    
+                </div>
             </div>
         )
     }
+    
+
+    // renderAppLinks = () => {
+    //     return (
+    //         <div style={{background: '#b7b7b7'}}>
+    //             <h4 style={{fontWeight: 'bold'}}>
+    //                 Registration
+    //             </h4>
+    //              <ListGroup variant="flush">
+    //                     <ListGroup.Item style={{background: '#b7b7b7'}}> 
+    //                         <Link onClick={() => { 
+    //                                         window.open(`https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing`) 
+    //                                         }} >
+    //                                 View English application form
+    //                         </Link>
+    //                     </ListGroup.Item>
+
+    //                     <ListGroup.Item style={{background: '#b7b7b7'}}> 
+    //                         <Link onClick={() => { 
+    //                                         window.open(`https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing`) 
+    //                                         }} >
+    //                             View Spanish application form
+    //                         </Link>
+    //                     </ListGroup.Item>
+
+    //                     <ListGroup.Item style={{background: '#b7b7b7'}}> 
+    //                         <Link onClick={() => { 
+    //                                         window.open(`https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing`) 
+    //                                         }} >
+    //                             View Portuguese application form
+    //                         </Link>
+    //                     </ListGroup.Item>
+
+    //                     <ListGroup.Item style={{background: '#b7b7b7'}} >
+    //                         <Link to='/new/application'>
+    //                             Submit Student application
+    //                         </Link>
+    //                     </ListGroup.Item>
+    //                 </ListGroup>
+    //         </div>
+    //     )
+    // }
     
     render() {
         const {
@@ -131,7 +157,7 @@ class Admission extends Component {
                         Here you can view and download a copy of our application as well as submit a completed form to us. 
                     </p>
                     
-                    <div className='row mt-5'>
+                    {/* <div className='row mt-5'>
                         <div className='col-md-3 mt-4'>
                                 {this.renderAppLinks()}
                             
@@ -149,7 +175,7 @@ class Admission extends Component {
 
                                      
                         
-                    </div>
+                    </div> */}
                 </div>
             </div>
         );
