@@ -76,11 +76,11 @@ class Admission extends Component {
     }
 
     renderAppLinks = () => {
-        const englishApp = 'https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/view?usp=sharing'
+        const englishApp = 'https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/preview?usp=sharing'
 
-        const spanishApp = 'https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/view?usp=sharing'
+        const spanishApp = 'https://drive.google.com/file/d/17Vya9qqFuHaAbH5KrDdO0rRXZi9cbYQP/preview?usp=sharing'
 
-        const portApp = 'https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/view?usp=sharing'
+        const portApp = 'https://drive.google.com/file/d/14nIKl8FHPsXm3nq0D0hcAEmbAFP5EPbY/preview?usp=sharing'
 
         return (
             <div className='text-center'>
