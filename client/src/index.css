@@ -75,11 +75,9 @@ body {
   border-radius: 0%;
 }
 
-/* #imgCard:hover {
-  transform: scale(1.1);
-  transition: all 1s ease;
-  border-radius: 0%;
-} */
+#homeCards:hover {
+  filter: brightness(1.75)
+}
 #homeCards:hover #imgCard {
   transform: scale(1.1);
   transition: all 1s ease;
