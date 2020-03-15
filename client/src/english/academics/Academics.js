@@ -61,7 +61,7 @@ class Academics extends Component {
         return (
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
-                    <Card style={{ width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='academicCards' >
                         <Card.Header>                        
                             <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
                         </Card.Header>
