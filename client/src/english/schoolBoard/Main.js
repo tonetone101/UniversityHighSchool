@@ -59,7 +59,7 @@ class Main extends Component {
             <div>
                <Header history={this.props.history} />
                   <div className='container mt-4'>
-                     <h1 style={{fontWeight: 'bold'}}>Welcome to our schoolBoard Meeting section</h1>
+                     <h1 style={{fontWeight: 'bold'}}>Welcome to our School Board Meeting section</h1>
                       <div  >
                         
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
