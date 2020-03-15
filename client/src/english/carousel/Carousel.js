@@ -172,7 +172,7 @@ class Carol extends Component {
                 <div className='col-sm-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
                         <Card.Header>                        
-                            <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
+                            <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
                         </Card.Header>
                        
                         <Card.Body>
@@ -194,7 +194,7 @@ class Carol extends Component {
                 <div className='col-md-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
                     <Card.Header>                        
-                        <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
+                        <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header>
                         <Card.Body>
                             <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
@@ -215,7 +215,7 @@ class Carol extends Component {
                 <div className='col-md-4' >
                     <Card style={{ width: '18rem'}} id='homeCards' >
                     <Card.Header>                        
-                        <img className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
+                        <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header>
                         {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
                         <Card.Body>
