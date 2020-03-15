@@ -68,7 +68,10 @@ class Academics extends Component {
             <div>
                <Header history={this.props.history} />
                   <div className='container mt-4'>
-                     <h1 style={{fontWeight: 'bold'}}>Academics at University High School</h1>
+                     <h1 style={{fontWeight: 'bold'}} className='text-center'>Academics at University High School</h1>
+                     <h3>
+                         It's more than just surviving it's about <h2 id='thrive'>Thriving!</h2>
+                     </h3>
                       <div  >
                         
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
