@@ -80,6 +80,11 @@ body {
   transition: all 1s ease;
   border-radius: 0%;
 }
+#homeCards:hover #imgCard {
+  transform: scale(1.1);
+  transition: all 1s ease;
+  border-radius: 0%;
+}
 
 .fade-appear-active
 .fade-enter-active {
