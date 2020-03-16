@@ -11,6 +11,7 @@ body {
 
 #topHeader{
   background-color: rgb(247, 222, 75);
+  z-index: 1000;
 }
 
 #homeCards{
