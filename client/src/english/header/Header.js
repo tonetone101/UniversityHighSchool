@@ -175,7 +175,7 @@ class Header extends React.Component {
     renderMenu = () => {
         return (
             <Transition>
-            <StyledNavbar id='nav' className={this.state.show ? "active" : "hidden"}>
+            <div className={this.state.show ? "active" : "hidden"}>
                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -218,7 +218,7 @@ class Header extends React.Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            </StyledNavbar>
+            </div>
             </Transition>
         )
     }
@@ -246,12 +246,6 @@ class Header extends React.Component {
       )
   }
 }
-
-const StyledNavbar = styled.div`
-  position: fixed;
-  font-weight: bolder;
-  z-index: 1000;
-  `;
 
   const Transition = styled.div`
   .active {
