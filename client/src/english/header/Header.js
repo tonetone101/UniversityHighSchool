@@ -7,6 +7,8 @@ import {Link, Redirect } from 'react-router-dom'
 class Header extends React.Component {
     state = {
         user: '',
+        slide: 0,
+        lastScrollY: 0,
         redirectToSignIn: false,
         spanishPage: false,
         englishPage: false,
@@ -15,14 +17,30 @@ class Header extends React.Component {
 
     renderUser = () => {
         this.setState({user: isAuthenticated().user })
+
+    }
+
+    handleScroll = () => {
+        const {lastScrollY} = this.state
+        const currentScrollY = window.scrollY
+
+        if (currentScrollY > lastScrollY) {
+            this.setState({slide: '-48px'})
+        } else {
+            this.setState({lastScrollY: currentScrollY})
+        }
     }
 
     componentDidMount() {
         this.renderUser()
+        window.addEventListener('scroll', this.handleScroll);
+
     }
 
     componentWillReceiveProps(props) {
         this.renderUser()
+        window.removeEventListener('scroll', this.handleScroll);
+
     }
 
     translateSpanish = () => {
@@ -44,7 +62,7 @@ class Header extends React.Component {
     renderTopHeader = () => {
         return (
             <div>
-                <Navbar id='topHeader' collapseOnSelect expand="lg" variant="dark" >
+                <Navbar style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}} id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">

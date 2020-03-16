@@ -115,7 +115,7 @@ class Editacademics extends Component {
         }
     };
 
-    editacademicsForm = (intro, paragraph1, paragraph2, paragraph3, paragraph4, grade9Expect, grade9Curric, grade10Expect, grade10Curric, grade11Expect, grade11Curric, grade12Expect, grade12Curric ) => (
+    editacademicsForm = (intro, paragraph1, paragraph2, paragraph3, paragraph4, grade9Expect, grade9Curric, grade10Expect, grade10Curric, grade11Expect, grade11Curric) => (
         <form className='container'>
             <div>
                 <h3>Academics page</h3>
@@ -239,29 +239,6 @@ class Editacademics extends Component {
                 </div>
             </div>
 
-            <div>
-                <h3> 12th Grade</h3>
-                <div className="form-group" >
-                    <label className="text-muted">Grade12 Expectation</label>
-                    <textarea
-                        onChange={this.handleChange("grade12Expect")}
-                        type="text"
-                        className="form-control"
-                        value={grade12Expect}
-                    />
-                </div>
-
-                <div className="form-group" >
-                    <label className="text-muted">Grade12 Curriculum explanation</label>
-                    <textarea
-                        onChange={this.handleChange("grade12Curric")}
-                        type="text"
-                        className="form-control"
-                        value={grade12Curric}
-                    />
-                </div>
-            </div>
-
             <button
                 onClick={this.clickSubmit}
                 className="btn btn-raised btn-primary"
@@ -296,7 +273,7 @@ class Editacademics extends Component {
                     }
 
 
-                        {this.editacademicsForm(intro, paragraph1, paragraph2, paragraph3, paragraph4, grade9Expect, grade9Curric, grade10Expect, grade10Curric, grade11Expect, grade11Curric, grade12Expect, grade12Curric )}
+                        {this.editacademicsForm(intro, paragraph1, paragraph2, paragraph3, paragraph4, grade9Expect, grade9Curric, grade10Expect, grade10Curric, grade11Expect, grade11Curric )}
              
             </div>
         )

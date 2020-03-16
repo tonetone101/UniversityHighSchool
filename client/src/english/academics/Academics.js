@@ -69,7 +69,7 @@ class Academics extends Component {
                         <Card.Body>
                             <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text>
-                                A RISER's main focus, is to figure who your are as a learner, an individual,
+                                A RISER's main focus is to figure who you are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
                             </Card.Text>
                             <Link
