@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
 import {signout, isAuthenticated} from '../../auth'
 import {Link, Redirect } from 'react-router-dom'
+import styled from "styled-components";
 
 
 class Header extends React.Component {
@@ -173,7 +174,8 @@ class Header extends React.Component {
 
     renderMenu = () => {
         return (
-            <div id='nav' className={this.state.show ? "active" : "hidden"}>
+            <Transition>
+            <StyledNavbar id='nav' className={this.state.show ? "active" : "hidden"}>
                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -216,7 +218,8 @@ class Header extends React.Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            </div>
+            </StyledNavbar>
+            </Transition>
         )
     }
 
@@ -243,5 +246,33 @@ class Header extends React.Component {
       )
   }
 }
+
+const StyledNavbar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bolder;
+  background: cornflowerblue;
+  z-index: 1000;
+  `;
+
+  const Transition = styled.div`
+  .active {
+    visibility: visible;
+    transition: all 200ms ease-in;
+  }
+  .hidden {
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
+  }
+`;
 
 export default Header
