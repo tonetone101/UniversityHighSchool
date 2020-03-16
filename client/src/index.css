@@ -25,6 +25,7 @@ body {
 }
 
 #menu{
+  z-index: 1000;
   background-color:rgb(0, 84, 255);
   height: 100px;
 }
