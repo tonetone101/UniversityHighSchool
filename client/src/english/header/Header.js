@@ -252,12 +252,6 @@ const StyledNavbar = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  margin: 0 auto;
-  height: 3rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   font-weight: bolder;
   background: cornflowerblue;
   z-index: 1000;
