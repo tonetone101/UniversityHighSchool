@@ -56,20 +56,27 @@ class Grade9 extends Component {
 
     subMenu = () => {
         return (
-            <div>
-                <Nav variant="pills" defaultActiveKey="/home">
-                    <Nav.Item>
-                        <Nav.Link href="/home">Active</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-1">Option 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="disabled" disabled>
-                        Disabled
-                        </Nav.Link>
-                    </Nav.Item>
-                </Nav>
+            <div className='row container'>
+                <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
+                    Stages |
+                </h3>
+                <div className='mb-2'>
+                    <Link style={isActive(history, '/grade9')} to='/grade9'>
+                            Risers |
+                    </Link>
+                </div>
+
+                <div className='mb-2'>
+                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
+                            Investigators |
+                    </Link>
+                </div>
+
+                <div className='mb-2'>
+                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
+                            Navigators
+                    </Link>
+                </div>
             </div>
         )
     }
@@ -85,7 +92,7 @@ class Grade9 extends Component {
         return (
             <div>
                <Header history={this.props.history} />
-               {this.subMenu()}
+                {this.subMenu()}
                   <div className='container mt-4'>
                      <h1 style={{fontWeight: 'bold'}}>Risers</h1>
                       <div  >
