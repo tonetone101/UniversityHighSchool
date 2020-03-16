@@ -59,16 +59,16 @@ class Grade9 extends Component {
 
         return (
             <div className='row container'>
-                <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
+                <h3 className='mb-2 mr-5' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
                     Stages |
                 </h3>
-                <div className='mb-2'>
+                <div className='mb-2 mr-5'>
                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                             Risers |
                     </Link>
                 </div>
 
-                <div className='mb-2'>
+                <div className='mb-2 mr-5'>
                     <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
                             Investigators |
                     </Link>
