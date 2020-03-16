@@ -55,6 +55,8 @@ class Grade9 extends Component {
     }
 
     subMenu = () => {
+        const {history} = this.props
+
         return (
             <div className='row container'>
                 <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
