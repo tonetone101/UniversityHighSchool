@@ -127,7 +127,6 @@ body {
 
 #video {
   position: relative;
-  z-index: -1;
 }
 
 .title-underline {
