@@ -254,6 +254,7 @@ const StyledNavbar = styled.div`
 
   const Transition = styled.div`
   .active {
+    z-index: 1000;
     visibility: visible;
     transition: all 200ms ease-in;
   }
