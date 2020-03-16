@@ -59,9 +59,12 @@ class Grade9 extends Component {
 
         return (
             <div className='row container'>
-                <h3 className='mb-2 mr-5' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
-                    Stages |
-                </h3>
+                <div className='mb-2 mr-5'>
+                    <Link style={isActive(history, '/academics')} to='/academics'>
+                            Academic |
+                    </Link>
+                </div>
+
                 <div className='mb-2 mr-5'>
                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                             Risers |
@@ -117,32 +120,8 @@ class Grade9 extends Component {
                       </div>
                       <hr />
                       
-                      <div id='title' className='row container'>
-                            <div className='col-md-4 column mt-5'>
-                                <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
-                                    Stages
-                                </h3>
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade9')} to='/grade9'>
-                                            Risers
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
-                                           Investigators
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
-                                            Navigators
-                                    </Link>
-                                </div>
-                            </div>
-
-                        
-                            <div className='col-md-8 mt-4'>
+                      <div id='title' className='container'>
+                            <div className='mt-4'>
                                     <h3 className='mb-3' style={{fontStyle: 'oblique'}}>A Riser's Goal</h3>
                                     <p className='mb-3'>{academics.grade9Expect}</p>
 
