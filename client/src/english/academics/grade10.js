@@ -54,6 +54,50 @@ class Grade10 extends Component {
         this.renderUser()
     }
 
+    subMenu = () => {
+        const {history} = this.props
+
+        return (
+            <div className='row mt-5'>
+                <div className='mb-2 mr-3'>
+                    <Link style={isActive(history, '/academics')} to='/academics'>
+                            Academic{' '}
+                    </Link>
+                </div>
+
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
+
+                <div className='mb-2 mr-3'>
+                    <Link style={isActive(history, '/grade9')} to='/grade9'>
+                            Risers{' '}
+                    </Link>
+                </div>
+
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
+
+                <div className='mb-2 mr-3'>
+                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
+                            Investigators{' '}
+                    </Link>
+                </div>
+
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
+
+                <div className='mb-2'>
+                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
+                            Navigators
+                    </Link>
+                </div>
+            </div>
+        )
+    }
+
 
     render() {
         const { academics, redirectToSignIn } = this.state
@@ -66,6 +110,9 @@ class Grade10 extends Component {
         return (
             <div>
                <Header history={this.props.history} />
+               <div className='container'>
+                    {this.subMenu()}
+                </div>
                   <div className='container mt-4'>
                      <h1 style={{fontWeight: 'bold'}}>Investigators</h1>
                       <div  >
@@ -88,32 +135,10 @@ class Grade10 extends Component {
                       </div>
                       <hr />
                       
-                      <div id='title' className='row container'>
-                        <div className='col-md-4 column mt-5'>
-                                <h3 className='mb-2' style={{fontWeight: 'bold', fontStyle: 'italic'}}>
-                                    Stages
-                                </h3>
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade9')} to='/grade9'>
-                                            Risers
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
-                                           Investigators
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
-                                            Navigators
-                                    </Link>
-                                </div>
-                            </div>
+                      <div id='title' className='container'>
 
                         
-                            <div className='col-md-8 mt-4'>
+                            <div className='mt-4'>
                                 
                                     <h3 className='mb-3'>Our Goal</h3>
                                     <p className='mb-3'>{academics.grade10Expect}</p>
