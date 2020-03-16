@@ -249,6 +249,7 @@ class Header extends React.Component {
 
   const Transition = styled.div`
   .active {
+    position: fixed;
     visibility: visible;
     transition: all 200ms ease-in;
   }
