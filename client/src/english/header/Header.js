@@ -8,8 +8,6 @@ import styled from "styled-components";
 class Header extends React.Component {
     state = {
         user: '',
-        show: true,
-        scrollPos: 0,
         redirectToSignIn: false,
         spanishPage: false,
         englishPage: false,
@@ -21,22 +19,8 @@ class Header extends React.Component {
 
     }
 
-    handleScroll = () => {
-        const { scrollPos } = this.state;
-        this.setState({
-          scrollPos: document.body.getBoundingClientRect().top,
-          show: document.body.getBoundingClientRect().top > scrollPos
-        });
-      }
-
     componentDidMount() {
         this.renderUser()
-        window.addEventListener('scroll', this.handleScroll);
-
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
     }
 
     componentWillReceiveProps(props) {
@@ -174,8 +158,8 @@ class Header extends React.Component {
 
     renderMenu = () => {
         return (
-            <Transition>
-            <StyledNavbar className={this.state.show ? "active" : "hidden"}>
+           
+            <div >
                 <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -218,8 +202,8 @@ class Header extends React.Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            </StyledNavbar>
-            </Transition>
+            </div>
+            
         )
     }
 
@@ -247,22 +231,21 @@ class Header extends React.Component {
   }
 }
 
-const StyledNavbar = styled.div`
-  position: fixed;
-  z-index: 1000;
-  `;
+// const StyledNavbar = styled.div`
+//   position: fixed;
+//   z-index: 1000;
+//   `;
 
-  const Transition = styled.div`
-  .active {
-    z-index: 1000;
-    visibility: visible;
-    transition: all 200ms ease-in;
-  }
-  .hidden {
-    visibility: hidden;
-    transition: all 200ms ease-out;
-    transform: translate(0, -100%);
-  }
-`;
+//   const Transition = styled.div`
+//   .active {
+//     visibility: visible;
+//     transition: all 200ms ease-in;
+//   }
+//   .hidden {
+//     visibility: hidden;
+//     transition: all 200ms ease-out;
+//     transform: translate(0, -100%);
+//   }
+// `;
 
 export default Header
