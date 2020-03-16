@@ -7,8 +7,8 @@ import {Link, Redirect } from 'react-router-dom'
 class Header extends React.Component {
     state = {
         user: '',
-        slide: 0,
-        lastScrollY: 0,
+        show: true,
+        scrollPos: 0,
         redirectToSignIn: false,
         spanishPage: false,
         englishPage: false,
@@ -21,26 +21,25 @@ class Header extends React.Component {
     }
 
     handleScroll = () => {
-        const {lastScrollY} = this.state
-        const currentScrollY = window.scrollY
-
-        if (currentScrollY > lastScrollY) {
-            this.setState({slide: '-48px'})
-        } else {
-            this.setState({lastScrollY: currentScrollY})
-        }
-    }
+        const { scrollPos } = this.state;
+        this.setState({
+          scrollPos: document.body.getBoundingClientRect().top,
+          show: document.body.getBoundingClientRect().top > scrollPos
+        });
+      }
 
     componentDidMount() {
         this.renderUser()
-        window.addEventListener('scroll', this.handleScroll());
+        window.addEventListener('scroll', this.handleScroll);
 
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 
     componentWillReceiveProps(props) {
         this.renderUser()
-        window.removeEventListener('scroll', this.handleScroll());
-
     }
 
     translateSpanish = () => {
@@ -174,8 +173,8 @@ class Header extends React.Component {
 
     renderMenu = () => {
         return (
-            <div style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}}>
-                <Navbar  id='menu' collapseOnSelect expand="lg" variant="dark"  >
+            <div id='nav' className={this.state.show ? "active" : "hidden"}>
+                <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     
