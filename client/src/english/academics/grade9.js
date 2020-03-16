@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { list } from "./apiAcademics";
 import { Link, Redirect, withRouter } from "react-router-dom";
-import { ListGroup} from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 
@@ -54,6 +54,25 @@ class Grade9 extends Component {
         this.renderUser()
     }
 
+    subMenu = () => {
+        return (
+            <div>
+                <Nav variant="pills" defaultActiveKey="/home">
+                    <Nav.Item>
+                        <Nav.Link href="/home">Active</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <Nav.Link eventKey="disabled" disabled>
+                        Disabled
+                        </Nav.Link>
+                    </Nav.Item>
+                </Nav>
+            </div>
+        )
+    }
 
     render() {
         const { academics, redirectToSignIn } = this.state
