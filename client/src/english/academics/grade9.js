@@ -58,7 +58,7 @@ class Grade9 extends Component {
         const {history} = this.props
 
         return (
-            <div className='row container'>
+            <div className='row mt-5'>
                 <div className='mb-2 mr-5'>
                     <Link style={isActive(history, '/academics')} to='/academics'>
                             Academic |
@@ -97,7 +97,9 @@ class Grade9 extends Component {
         return (
             <div>
                <Header history={this.props.history} />
-                {this.subMenu(history)}
+                <div className='container'>
+                    {this.subMenu()}
+                </div>
                   <div className='container mt-4'>
                      <h1 style={{fontWeight: 'bold'}}>Risers</h1>
                       <div  >
