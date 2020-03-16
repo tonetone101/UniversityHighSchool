@@ -59,32 +59,35 @@ class Grade9 extends Component {
 
         return (
             <div className='row mt-5'>
-                <div className='mb-2 mr-3 row'>
+                <div className='mb-2 mr-3'>
                     <Link style={isActive(history, '/academics')} to='/academics'>
                             Academic{' '}
                     </Link>
-                    <p style={{color: 'black'}} className='mb-2' >
-                        |
-                    </p>
                 </div>
 
-                <div className='mb-2 mr-3 row'>
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
+
+                <div className='mb-2 mr-3'>
                     <Link style={isActive(history, '/grade9')} to='/grade9'>
                             Risers{' '}
                     </Link>
-                    <p style={{color: 'black'}} className='mb-2' >
-                        |
-                    </p>
                 </div>
 
-                <div className='mb-2 mr-3 row'>
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
+
+                <div className='mb-2 mr-3'>
                     <Link style={isActive(history, '/grade10')} className='mt-4' to='/grade10'>
                             Investigators{' '}
                     </Link>
-                    <p style={{color: 'black'}} className='mb-2' >
-                        |
-                    </p>
                 </div>
+
+                <p style={{color: 'black'}} className='mb-2 mr-3' >
+                        |
+                </p>
 
                 <div className='mb-2'>
                     <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
