@@ -33,13 +33,13 @@ class Header extends React.Component {
 
     componentDidMount() {
         this.renderUser()
-        window.addEventListener('scroll', this.handleScroll);
+        window.addEventListener('scroll', this.handleScroll());
 
     }
 
     componentWillReceiveProps(props) {
         this.renderUser()
-        window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('scroll', this.handleScroll());
 
     }
 
