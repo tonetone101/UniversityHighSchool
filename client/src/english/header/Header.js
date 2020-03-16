@@ -62,7 +62,7 @@ class Header extends React.Component {
     renderTopHeader = () => {
         return (
             <div  >
-                <Navbar style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}} id='topHeader' collapseOnSelect expand="lg" variant="dark" >
+                <Navbar  id='topHeader' collapseOnSelect expand="lg" variant="dark" >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
@@ -175,7 +175,7 @@ class Header extends React.Component {
     renderMenu = () => {
         return (
             <div>
-                <Navbar id='menu' collapseOnSelect expand="lg" variant="dark"  >
+                <Navbar style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}} id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     
