@@ -174,8 +174,8 @@ class Header extends React.Component {
 
     renderMenu = () => {
         return (
-            <div>
-                <Navbar style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}} id='menu' collapseOnSelect expand="lg" variant="dark"  >
+            <div style={{transform: `translate(0, ${this.state.slide})`, transition: 'transform 90ms linear'}}>
+                <Navbar  id='menu' collapseOnSelect expand="lg" variant="dark"  >
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     
