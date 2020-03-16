@@ -61,7 +61,7 @@ class Grade9 extends Component {
             <div className='row mt-5'>
                 <div className='mb-2 mr-3'>
                     <Link style={isActive(history, '/academics')} to='/academics'>
-                            Academic{' '}
+                            Academics{' '}
                     </Link>
                 </div>
 
