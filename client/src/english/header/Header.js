@@ -2,8 +2,6 @@ import React from 'react'
 import { Navbar, Nav, NavDropdown, Dropdown, DropdownButton} from 'react-bootstrap';
 import {signout, isAuthenticated} from '../../auth'
 import {Link, Redirect } from 'react-router-dom'
-import styled from "styled-components";
-
 
 class Header extends React.Component {
     state = {
@@ -230,22 +228,5 @@ class Header extends React.Component {
       )
   }
 }
-
-// const StyledNavbar = styled.div`
-//   position: fixed;
-//   z-index: 1000;
-//   `;
-
-//   const Transition = styled.div`
-//   .active {
-//     visibility: visible;
-//     transition: all 200ms ease-in;
-//   }
-//   .hidden {
-//     visibility: hidden;
-//     transition: all 200ms ease-out;
-//     transform: translate(0, -100%);
-//   }
-// `;
 
 export default Header
