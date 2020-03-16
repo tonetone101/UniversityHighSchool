@@ -249,10 +249,7 @@ class Header extends React.Component {
 
 const StyledNavbar = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
   font-weight: bolder;
-  background: cornflowerblue;
   z-index: 1000;
   `;
 
