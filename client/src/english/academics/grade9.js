@@ -85,6 +85,7 @@ class Grade9 extends Component {
         return (
             <div>
                <Header history={this.props.history} />
+               {this.subMenu()}
                   <div className='container mt-4'>
                      <h1 style={{fontWeight: 'bold'}}>Risers</h1>
                       <div  >
