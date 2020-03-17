@@ -93,12 +93,12 @@ class NewAcademics extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">body</label>
+                <label className="text-muted">Body</label>
                 <input
-                    onChange={this.handleChange("name")}
+                    onChange={this.handleChange("body")}
                     type="text"
                     className="form-control"
-                    value={name}
+                    value={body}
                 />
             </div>
 
