@@ -32,13 +32,13 @@ class SideBar extends Component {
         return (
                 <div className='col-md-4 column text-center mt-5'>
                     <div className='mb-2'>
-                        <Link style={isActive(history, '/partners')} to='/partners'>
+                        <Link style={isActive(history, '/part')} to='/partners'>
                                 Our Partners
                         </Link>
                     </div>
 
                     <div className='mb-2'>
-                        <Link style={isActive(history, '/about')} className='mt-4' to='/about'>
+                        <Link style={isActive(history, '/abo')} className='mt-4' to='/about'>
                                 About us
                         </Link>
                     </div>

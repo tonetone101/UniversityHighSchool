@@ -277,7 +277,7 @@ const MainRouter = () => (
                         <Route exact path="/image/:imageId" component={SinglePhoto}></Route>
                         <Route exact path="/edit/image/:imageId" component={EditPhoto}></Route>
                         
-                        <Route exact path="/partners" component={Partners}></Route>
+                        <Route exact path="/part" component={Partners}></Route>
                         <Route exact path="/new/partners" component={NewPartners}></Route>
                         <Route exact path="/partner" component={SinglePartners}></Route>
                         <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
