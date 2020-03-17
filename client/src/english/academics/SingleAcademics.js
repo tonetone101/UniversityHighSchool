@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {singleLink, remove} from './apiacademics'
+import {singleLink, remove} from './apiAcademics'
 import {Link, Redirect} from 'react-router-dom'
 import {isAuthenticated} from '../../auth'
 
