@@ -301,7 +301,7 @@ const MainRouter = () => (
                         <Route exact path="/new/hr" component={NewHr}></Route>
                         <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
-                        <Route exact path="/academics" component={Academics}></Route>
+                        <Route exact path="/aca" component={Academics}></Route>
                         <Route exact path="/content/new" component={NewAcademics}></Route>
                         <Route exact path="/update/content/:linkId" component={UpdateAcademicsContent}></Route>
 
