@@ -86,6 +86,11 @@ class Academics extends Component {
                            <div className='col-md-6 '>
                                 <h2>{link.title}</h2>
                                 <p>{link.body}</p>
+                                {
+                                    isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
+                                        <Link to={`/aca/${link._id}`}>View</Link>
+                                    ) : (null)
+                                }
                            </div>
 
                             <div className='col-md-6'>

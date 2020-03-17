@@ -87,7 +87,7 @@ import NewAcademics from './english/academics/NewAcademics'
 import UpdateAcademicsContent from './english/academics/UpdateAcademicsContent'
 
 // import Newacademics from './english/academics/newacademics'
-// import Singleacademics from './english/academics/singleacademics'
+import SingleAcademics from './english/academics/SingleAcademics'
 // import Editacademics from './english/academics/editacademics'
 
 // spanish
@@ -305,6 +305,8 @@ const MainRouter = () => (
                         <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
                         <Route exact path="/aca" component={Academics}></Route>
+                        <Route exact path="/aca/:linkId" component={SingleAcademics}></Route>
+
                         <Route exact path="/content/new" component={NewAcademics}></Route>
                         <Route exact path="/update/content/:linkId" component={UpdateAcademicsContent}></Route>
 
