@@ -74,22 +74,22 @@ class Academics extends Component {
     renderContent = contents => {
         return (
             <div className='container'>
-                {contents.map((content, i) => {
-                        const contentPhoto = content._id
+                {contents.map((link, i) => {
+                        const linkPhoto = link._id
                         ? `/link/photo/${
-                            content._id
+                            link._id
                           }?${new Date().getTime()}`
                         : ''
 
                     return (
                         <div className='row' key={i}>
                            <div className='col-md-6'>
-                                <h2>{content.title}</h2>
-                                <p>{content.body}</p>
+                                <h2>{link.title}</h2>
+                                <p>{link.body}</p>
                            </div>
 
                             <div className='col-md-6'>
-                                <img src={contentPhoto} height='100' width='100'/>
+                                <img src={linkPhoto} height='100' width='100'/>
                             </div>
                         </div>
                     );
