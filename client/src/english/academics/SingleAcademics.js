@@ -13,7 +13,7 @@ class SingleAcademics extends Component {
 
     componentDidMount = () => {
         console.log(this.props.match.params)
-        const academicsId = this.props.match.params.academicsId
+        const academicsId = this.props.match.params.linkId
         singleLink(academicsId).then(data => {
             if (data.error) {
                 console.log(data.error)
@@ -24,7 +24,7 @@ class SingleAcademics extends Component {
     }
 
     deleteacademics = () => {
-        const academicsId = this.props.match.params.academicsId
+        const academicsId = this.props.match.params.linkId
         const token = isAuthenticated().token
         remove(academicsId, token).then(data => {
             if(data.error) {
