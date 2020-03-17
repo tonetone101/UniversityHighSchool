@@ -78,12 +78,12 @@ class Academics extends Component {
                         const linkPhoto = link._id
                         ? `/link/photo/${
                             link._id
-                          }?${new Date().getTime()}`
+                          }`
                         : ''
 
                     return (
-                        <div className='row' key={i}>
-                           <div className='col-md-6'>
+                        <div className='row mb-5' key={i}>
+                           <div className='col-md-6 '>
                                 <h2>{link.title}</h2>
                                 <p>{link.body}</p>
                            </div>

@@ -138,9 +138,8 @@ exports.deleteLink = (req, res) => {
 };
 
 exports.photo = (req, res, next) => {
-    res.set('Content-Type', req.link.photo.contentType);
-    
-    return res.send(req.link.photo.data);
+    res.set('Content-Type', req.links.photo.contentType);
+    return res.send(req.links.photo.data);
 };
 
 exports.singleLink = (req, res) => {

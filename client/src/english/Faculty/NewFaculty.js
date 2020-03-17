@@ -76,7 +76,7 @@ class NewFaculty extends Component {
     newFacultyForm = (title, name, about) => (
         <form >
             <div className="form-group">
-                <label className="text-muted">Event Photo</label>
+                <label className="text-muted">Staff Photo</label>
                 <input
                     onChange={this.handleChange("photo")}
                     type="file"
