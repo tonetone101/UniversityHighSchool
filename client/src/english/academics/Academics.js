@@ -84,7 +84,7 @@ class Academics extends Component {
                     return (
                         <div className='row mb-5' key={i}>
                            <div className='col-md-6 '>
-                                <h2>{link.title}</h2>
+                                <h2 style={{fontWeight: 'bold'}}>{link.title}</h2>
                                 <p>{link.body}</p>
                                 {
                                     isAuthenticated().user && isAuthenticated().user.code === 8290 ? (
