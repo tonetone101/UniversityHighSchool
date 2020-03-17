@@ -84,7 +84,7 @@ class SingleFaculty extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/faculty/${faculty._id}`}
+                                        to={`/edit/faculty/ui/${faculty._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update Faculty
@@ -103,7 +103,7 @@ class SingleFaculty extends Component {
                             <div >
                                 <div >
                                     <Link
-                                        to={`/edit/faculty/${faculty._id}`}
+                                        to={`/edit/faculty/ui/${faculty._id}`}
                                         className='btn btn-raised btn-warning ml-3'
                                     >
                                         Update Faculty
@@ -128,7 +128,7 @@ class SingleFaculty extends Component {
         const {faculty, redirectToFaculties, redirectToSignIn} = this.state
         
         if(redirectToFaculties) {
-            return <Redirect to={`/faculty`} />
+            return <Redirect to={`/faculty/ui`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }

@@ -87,7 +87,7 @@ class Faculty extends Component {
                                     {faculty.about.substring(0, 100)}
                                 </Card.Text>
                                 <Link
-                                        to={`/faculty/${faculty._id}`}
+                                        to={`/faculty/ui/${faculty._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
                                         Read more
@@ -127,7 +127,7 @@ class Faculty extends Component {
                     {
                         isAuthenticated() && isAuthenticated().user.code === 8290 && (
                             <div>
-                                <Link className='mb-5' to='/new/faculty'>Add Faculty</Link>
+                                <Link className='mb-5' to='/new/faculty/ui'>Add Faculty</Link>
                             </div>
                         )
                     }
@@ -135,7 +135,7 @@ class Faculty extends Component {
 {
                         isAuthenticated() && isAuthenticated().user.code === 2609 && (
                             <div>
-                                <Link className='mb-5' to='/new/faculty'>Add Faculty</Link>
+                                <Link className='mb-5' to='/new/faculty/ui'>Add Faculty</Link>
                             </div>
                         )
                     }

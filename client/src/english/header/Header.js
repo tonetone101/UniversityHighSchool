@@ -63,11 +63,11 @@ class Header extends React.Component {
                         
                            
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting'>School Board</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting/ui'>School Board</Link></Nav.Link>
 
                                 </div>
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty'>Faculty</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty/ui'>Faculty</Link></Nav.Link>
 
                                 </div>
 
@@ -109,14 +109,14 @@ class Header extends React.Component {
                                 <Nav>
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/application' >
+                                            <Link style={{color: 'white'}} to='/application/ui' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants' >
+                                            <Link style={{color: 'white'}} to='/applicants/ui' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
@@ -130,14 +130,14 @@ class Header extends React.Component {
                                 <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/application' >
+                                            <Link style={{color: 'white'}} to='/application/ui' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants' >
+                                            <Link style={{color: 'white'}} to='/applicants/ui' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
@@ -171,7 +171,7 @@ class Header extends React.Component {
                             </Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/about'>About Us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/abo'>About Us</Link></Nav.Link>
                         </div>
                         <div id='link'>                        
                             <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/aca'>Academics</Link></Nav.Link>
@@ -182,19 +182,19 @@ class Header extends React.Component {
                         
                         
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/admission'>Admissions</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/admiss'>Admissions</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/new/student'>Contact us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/new/student/ui'>Contact us</Link></Nav.Link>
                         </div>                     
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images/ui'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events/ui'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
