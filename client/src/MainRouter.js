@@ -252,49 +252,52 @@ const MainRouter = () => (
                         <Route exact path="/reset-password/:resetPasswordToken" component={ResetPassword} />
                         <Route exact path="/new/carousel" component={NewCarousel}></Route>
                         <Route exact path="/edit/carousel/:carouselId" component={EditCarousel}></Route>
-                        <Route exact path="/events/ui" component={Event}></Route>
+                        
+                        <Route exact path="/events" component={Event}></Route>
                         <Route exact path="/new/event" component={NewEvent}></Route>
                         <Route exact path="/edit/event/:eventId" component={EditEvent}></Route>
                         <Route exact path="/event/:eventId" component={SingleEvent}></Route>
-                        <Route exact path="/new/faculty/ui" component={NewFaculty}></Route>
-                        <Route exact path="/faculty/ui" component={Faculty}></Route>
-                        <Route exact path="/faculty/ui/:facultyId" component={SingleFaculty}></Route>
-                        <Route exact path="/edit/faculty/ui/:facultyId" component={EditFaculty}></Route>
-                        <Route exact path="/new/student" component={NewStudent}></Route>
+                        
+                        <Route exact path="/new/faculty" component={NewFaculty}></Route>
+                        <Route exact path="/staff" component={Faculty}></Route>
+                        <Route exact path="/faculty/:facultyId" component={SingleFaculty}></Route>
+                        <Route exact path="/edit/faculty/:facultyId" component={EditFaculty}></Route>
+                        
+                        <Route exact path="/con" component={NewStudent}></Route>
                         <Route exact path="/admiss" component={Admission}></Route>
                         <Route exact path="/bully" component={Bully}></Route>
-                        <Route exact path="/student" component={Student}></Route>
+                       
                         <Route exact path="/applicants" component={Applicants}></Route>
                         <Route exact path="/applicants/:applicantId" component={SingleApplicant}></Route>
 
                         <Route exact path="/genderpolicy" component={GenderPolicy}></Route>
-                        <Route exact path="/newlink" component={NewLinks}></Route>
-                        <Route exact path="/link/:linkId" component={SingleLink}></Route>
+                       
                         <Route exact path="/new/image" component={NewPhoto}></Route>
                         <Route exact path="/images" component={Photo}></Route>
                         <Route exact path="/image/:imageId" component={SinglePhoto}></Route>
                         <Route exact path="/edit/image/:imageId" component={EditPhoto}></Route>
+                        
                         <Route exact path="/partners" component={Partners}></Route>
                         <Route exact path="/new/partners" component={NewPartners}></Route>
                         <Route exact path="/partner" component={SinglePartners}></Route>
                         <Route exact path="/edit/partner/:partnersId" component={EditPartners}></Route>
                         <Route exact path="/partners/:partnersId" component={SinglePartners}></Route>
                         
-                        <Route exact path="/schoolBoardMeeting/ui" component={SchoolBoardMeeting}></Route>
+                        <Route exact path="/boardmeeting" component={SchoolBoardMeeting}></Route>
                         <Route exact path="/newschoolBoardMeeting" component={NewBoardMeeting}></Route>
                         <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
                         <Route exact path="/edit/schoolBoardMeeting/:schoolBoardMeetingsId" component={UpdatechoolBoardMeeting}></Route>
 
-                        <Route exact path="/schoolBoardMember/ui" component={SchoolBoardMember}></Route>
+                        <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
                         <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
                         <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
                         
                         <Route exact path="/abo" component={About}></Route>
                         <Route exact path="/edit/about/:aboutId" component={EditAbout}></Route>
                         
-                        <Route exact path="/application/ui" component={Applications}></Route>
-                        <Route exact path="/new/application/ui" component={NewApplication}></Route>
-                        <Route exact path="/application/ui/:applicationId" component={SingleApplication}></Route>
+                        <Route exact path="/app" component={Applications}></Route>
+                        <Route exact path="/new/application" component={NewApplication}></Route>
+                        <Route exact path="/application/:applicationId" component={SingleApplication}></Route>
 
                         <Route exact path="/edit/hr/:hrId" component={EditHr}></Route>
                         <Route exact path="/hr" component={HR}></Route>
@@ -303,7 +306,7 @@ const MainRouter = () => (
 
                         <Route exact path="/aca" component={Academics}></Route>
                         <Route exact path="/content/new" component={NewAcademics}></Route>
-                        <Route exact path="/update/content/ui/:linkId" component={UpdateAcademicsContent}></Route>
+                        <Route exact path="/update/content/:linkId" component={UpdateAcademicsContent}></Route>
 
                         <Route exact path="/update/academics/:academicsId" component={EditAcademics}></Route>
                         <Route exact path="/grade9" component={Grade9}></Route>

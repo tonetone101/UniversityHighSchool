@@ -115,7 +115,6 @@ class NewAcademics extends Component {
         const {
             title,
             body,
-            user,
             error,
             loading,
             redirectToFaculties

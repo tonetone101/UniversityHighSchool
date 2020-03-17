@@ -63,11 +63,11 @@ class Header extends React.Component {
                         
                            
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/schoolBoardMeeting/ui'>School Board</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/boardmeeting'>School Board</Link></Nav.Link>
 
                                 </div>
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/faculty/ui'>Faculty</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'white'}} to='/staff'>Faculty</Link></Nav.Link>
 
                                 </div>
 
@@ -109,14 +109,14 @@ class Header extends React.Component {
                                 <Nav>
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/application/ui' >
+                                            <Link style={{color: 'white'}} to='/app' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants/ui' >
+                                            <Link style={{color: 'white'}} to='/applicants' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
@@ -130,14 +130,14 @@ class Header extends React.Component {
                                 <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/application/ui' >
+                                            <Link style={{color: 'white'}} to='/apps' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants/ui' >
+                                            <Link style={{color: 'white'}} to='/applicants' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
@@ -186,15 +186,15 @@ class Header extends React.Component {
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/new/student/ui'>Contact us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/con'>Contact us</Link></Nav.Link>
                         </div>                     
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images/ui'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events/ui'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
