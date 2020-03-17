@@ -25,7 +25,7 @@ class NewAcademics extends Component {
 
     isValid = () => {
         const { title, body, fileSize } = this.state;
-        if (fileSize > 1000000) {
+        if (fileSize > 100000000) {
             this.setState({
                 error: "File size should be less than 100kb",
                 loading: false
