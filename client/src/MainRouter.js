@@ -83,6 +83,8 @@ import Grade9 from './english/academics/grade9'
 import Grade10 from './english/academics/grade10'
 import Grade11 from './english/academics/grade11'
 import Grade12 from './english/academics/grade12'
+import NewAcademics from './english/academics/NewAcademics'
+import UpdateAcademicsContent from './english/academics/UpdateAcademicsContent'
 
 // import Newacademics from './english/academics/newacademics'
 // import Singleacademics from './english/academics/singleacademics'
@@ -300,6 +302,9 @@ const MainRouter = () => (
                         <Route exact path="/hr/:hrId" component={SingleHr}></Route>
 
                         <Route exact path="/academics" component={Academics}></Route>
+                        <Route exact path="/content/new" component={NewAcademics}></Route>
+                        <Route exact path="/update/content/:linkId" component={UpdateAcademicsContent}></Route>
+
                         <Route exact path="/update/academics/:academicsId" component={EditAcademics}></Route>
                         <Route exact path="/grade9" component={Grade9}></Route>
                         <Route exact path="/grade10" component={Grade10}></Route>

@@ -2,13 +2,15 @@ const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
 const linksSchema = new mongoose.Schema({
+    title: {
+        type: String,
+    },
     body: {
         type: String,
-      
     },
-    url: {
-        type: String,
-        require: true
+    photo: {
+        data: Buffer,
+        contentType: String
     },
     uploadedBy: {
         type: ObjectId,

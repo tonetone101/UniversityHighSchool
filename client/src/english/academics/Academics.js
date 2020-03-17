@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { list } from "./apiAcademics";
+import { list, listContent } from "./apiAcademics";
 import { Link, Redirect, withRouter } from "react-router-dom";
 import { ListGroup} from 'react-bootstrap';
 import {isAuthenticated} from '../../auth'
@@ -20,6 +20,7 @@ class Academics extends Component {
         this.state = {
             user: '',
             academics: [],
+            contents: [],
             url: '',
             docUrl: '',
             redirectToacademics: false,
@@ -48,7 +49,20 @@ class Academics extends Component {
         }) 
     };
 
+    loadContent = () => {
+        listContent().then(data => {
+            if (data.error) {
+                console.log(data.error)
+            } else {
+                this.setState({contents: data 
+              })
+              
+            }
+        }) 
+    };
+
     componentDidMount() {
+        this.loadContent()
         this.loadacademics()
         this.renderUser()
     }
@@ -56,6 +70,33 @@ class Academics extends Component {
     componentWillReceiveProps() {
         this.renderUser()
     }
+
+    renderContent = contents => {
+        return (
+            <div className='container'>
+                {contents.map((content, i) => {
+                        const contentPhoto = content._id
+                        ? `/link/photo/${
+                            content._id
+                          }?${new Date().getTime()}`
+                        : ''
+
+                    return (
+                        <div className='row' key={i}>
+                           <div className='col-md-6'>
+                                <h2>{content.title}</h2>
+                                <p>{content.body}</p>
+                           </div>
+
+                            <div className='col-md-6'>
+                                <img src={contentPhoto} height='100' width='100'/>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+        );
+    };
 
     renderCards = () => {
         return (
@@ -151,24 +192,40 @@ class Academics extends Component {
                       <div  >
                         
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
-                          <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
-                          </div> 
+                            <div>
+                                <div className='mb-3'>
+                                    <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                                </div> 
+
+                                <div className='mb-3'>
+                                    <Link to={`/content/new`} className='btn btn-raised btn-primary'>add content</Link>
+                                </div> 
+                            </div>
                           ) : ( null)
                          }
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
-                          <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
-                          </div> 
+                         <div>
+                            <div className='mb-3'>
+                                <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            </div> 
+
+                            <div className='mb-3'>
+                                <Link to={`/content/new`} className='btn btn-raised btn-primary'>add content</Link>
+                            </div> 
+                        </div> 
                           ) : ( null)
                          }
 
 
                       </div>
                       <hr />
-                      <div className='container'>
+                      <div className='container mb-5'>
                         {this.renderCards()}
+                      </div>
+
+                      <div className='container mt-5'>
+                          {this.renderContent()}
                       </div>
                       
                       {/* <div id='title' className='row container'>

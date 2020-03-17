@@ -171,9 +171,9 @@ class Editacademics extends Component {
             </div>
 
             <div>
-                <h3> 9th Grade</h3>
+                <h3> Risers</h3>
                 <div className="form-group" >
-                    <label className="text-muted">Grade9 Expectation</label>
+                    <label className="text-muted">Riser Expectation</label>
                     <textarea
                         onChange={this.handleChange("grade9Expect")}
                         type="text"
@@ -183,7 +183,7 @@ class Editacademics extends Component {
                 </div>
 
                 <div className="form-group" >
-                    <label className="text-muted">Grade9 Curriculum explanation</label>
+                    <label className="text-muted">Riser Curriculum explanation</label>
                     <textarea
                         onChange={this.handleChange("grade9Curric")}
                         type="text"
@@ -194,9 +194,9 @@ class Editacademics extends Component {
             </div>
 
             <div>
-                <h3> 10th Grade</h3>
+                <h3>Investigators</h3>
                 <div className="form-group" >
-                    <label className="text-muted">Grade10 Expectation</label>
+                    <label className="text-muted">Investigators Expectation</label>
                     <textarea
                         onChange={this.handleChange("grade10Expect")}
                         type="text"
@@ -206,7 +206,7 @@ class Editacademics extends Component {
                 </div>
 
                 <div className="form-group" >
-                    <label className="text-muted">Grade10 Curriculum explanation</label>
+                    <label className="text-muted">Investigators Curriculum explanation</label>
                     <textarea
                         onChange={this.handleChange("grade10Curric")}
                         type="text"
@@ -217,9 +217,9 @@ class Editacademics extends Component {
             </div>
 
             <div>
-                <h3> 11th Grade</h3>
+                <h3>Navigators</h3>
                 <div className="form-group" >
-                    <label className="text-muted">Grade11 Expectation</label>
+                    <label className="text-muted">Navigators Expectation</label>
                     <textarea
                         onChange={this.handleChange("grade11Expect")}
                         type="text"
@@ -229,7 +229,7 @@ class Editacademics extends Component {
                 </div>
 
                 <div className="form-group" >
-                    <label className="text-muted">Grade11 Curriculum explanation</label>
+                    <label className="text-muted">Navigators Curriculum explanation</label>
                     <textarea
                         onChange={this.handleChange("grade11Curric")}
                         type="text"

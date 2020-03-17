@@ -6,7 +6,7 @@ const _ = require('lodash');
 exports.linksById = (req, res, next, id) => {
     Links.findById(id)
         .populate('postedBy', '_id name role group')
-        .select('_id body url created')
+        .select('_id title body photo created')
         .exec((err, links) => {
             if (err || !links) {
                 return res.status(400).json({
@@ -22,7 +22,7 @@ exports.linksById = (req, res, next, id) => {
 exports.getLinks = (req, res) => {
     const links = Links.find()
         .populate("postedBy", "_id name photo group")
-        .select("_id url body created")
+        .select("_id title body photo created")
         .sort({ created: -1 })
         .then(links => {
             res.json(links);
@@ -64,7 +64,7 @@ exports.createLink = (req, res, next) => {
 exports.linksByUser = (req, res) => {
     Links.find({ postedBy: req.profile._id })
         .populate('postedBy', '_id name group')
-        .select('_id body url created')
+        .select('_id title body photo created')
         .sort('_created')
         .exec((err, links) => {
             if (err) {
@@ -132,7 +132,7 @@ exports.deleteLink = (req, res) => {
             });
         }
         res.json({
-            message: 'link deleted successfully'
+            message: 'content deleted successfully'
         });
     });
 };
