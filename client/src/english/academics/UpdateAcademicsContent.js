@@ -24,7 +24,7 @@ class UpdateAcademicsContent extends Component {
                 this.setState({redirectToHome: true})
             } else {
                 this.setState({
-                    id: data._id, 
+                    id: '', 
                     title: '',
                     body: '', 
                     error: ''
@@ -66,7 +66,7 @@ class UpdateAcademicsContent extends Component {
         this.setState({ loading: true });
 
         if (this.isValid()) {
-            const linkId = this.state.id
+            const linkId = this.props.match.params.linkId
             const token = isAuthenticated().token;
 
             edit(linkId, token, this.linkData).then(data => {
