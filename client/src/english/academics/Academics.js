@@ -198,9 +198,9 @@ class Academics extends Component {
                         
                         {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                             <div>
-                                <div className='mb-3'>
+                                {/* <div className='mb-3'>
                                     <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
-                                </div> 
+                                </div>  */}
 
                                 <div className='mb-3'>
                                     <Link to={`/content/new`} className='btn btn-raised btn-primary'>add content</Link>
@@ -211,9 +211,9 @@ class Academics extends Component {
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
                          <div>
-                            <div className='mb-3'>
+                            {/* <div className='mb-3'>
                                 <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
-                            </div> 
+                            </div>  */}
 
                             <div className='mb-3'>
                                 <Link to={`/content/new`} className='btn btn-raised btn-primary'>add content</Link>
