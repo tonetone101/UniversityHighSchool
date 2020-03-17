@@ -24,9 +24,9 @@ class UpdateAcademicsContent extends Component {
                 this.setState({redirectToHome: true})
             } else {
                 this.setState({
-                    id: '', 
-                    title: '',
-                    body: '', 
+                    id: data._id, 
+                    title: data.title,
+                    body: data.body, 
                     error: ''
                 })
             }
