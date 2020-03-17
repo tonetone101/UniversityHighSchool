@@ -173,7 +173,7 @@ class Academics extends Component {
 
 
     render() {
-        const { academics, redirectToSignIn } = this.state
+        const { academics, contents, redirectToSignIn } = this.state
         console.log(academics)
         const {history} = this.props
 
@@ -225,7 +225,7 @@ class Academics extends Component {
                       </div>
 
                       <div className='container mt-5'>
-                          {this.renderContent()}
+                          {this.renderContent(contents)}
                       </div>
                       
                       {/* <div id='title' className='row container'>
