@@ -83,7 +83,7 @@ class Main extends Component {
                           ) : ( null)
                          }
 
-                         <Link to={`/schoolBoardMember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
+                         <Link to={`/boardmember`} className='btn btn-raised btn-primary mt-4'>Board Members</Link>
 
                       </div>
                       <hr />

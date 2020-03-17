@@ -288,7 +288,7 @@ const MainRouter = () => (
                         <Route exact path="/schoolBoardMeeting/:schoolBoardMeetingId" component={SingleBoardMeeting}></Route>
                         <Route exact path="/edit/schoolBoardMeeting/:schoolBoardMeetingsId" component={UpdatechoolBoardMeeting}></Route>
 
-                        <Route exact path="/schoolBoardMember" component={SchoolBoardMember}></Route>
+                        <Route exact path="/boardmember" component={SchoolBoardMember}></Route>
                         <Route exact path="/new/schoolBoardMember" component={NewSchoolBoardMember}></Route>
                         <Route exact path="/schoolBoardMember/:schoolBoardMemberId" component={SingleSchoolBoardMember}></Route>
                         
