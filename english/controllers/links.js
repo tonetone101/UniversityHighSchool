@@ -103,7 +103,7 @@ exports.updateLink = (req, res, next) => {
             });
         }
         // save upload
-        let link = req.link;
+        let link = req.links;
         link = _.extend(link, fields);
         link.updated = Date.now();
 

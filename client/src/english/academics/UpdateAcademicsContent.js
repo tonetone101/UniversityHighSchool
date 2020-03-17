@@ -66,6 +66,7 @@ class UpdateAcademicsContent extends Component {
         this.setState({ loading: true });
 
         if (this.isValid()) {
+            console.log(this.props.match.params)
             const linkId = this.props.match.params.linkId
             const token = isAuthenticated().token;
 
