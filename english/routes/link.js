@@ -28,7 +28,7 @@ router.delete('/link/:linkId',  deleteLink)
 
 
 // photo
-router.get('/link/photo/:linkId', photo, userPhoto);
+router.get('/link/photo/:linkId', photo);
 
 // any route containing :userId, our app will first execute userById()
 router.param('userId', userById);

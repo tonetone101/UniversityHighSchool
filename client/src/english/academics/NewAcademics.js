@@ -121,7 +121,7 @@ class NewAcademics extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/academics`} />;
+            return <Redirect to={`/aca`} />;
         }
 
         return (
