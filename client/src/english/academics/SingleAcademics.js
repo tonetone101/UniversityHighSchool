@@ -12,6 +12,7 @@ class SingleAcademics extends Component {
     }
 
     componentDidMount = () => {
+        console.log(this.props.match.params)
         const academicsId = this.props.match.params.academicsId
         singleLink(academicsId).then(data => {
             if (data.error) {
