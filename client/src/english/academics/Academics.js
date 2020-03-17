@@ -89,7 +89,7 @@ class Academics extends Component {
                            </div>
 
                             <div className='col-md-6'>
-                                <img src={linkPhoto} height='100' width='100'/>
+                                <img src={linkPhoto} height='1000' width='1000'/>
                             </div>
                         </div>
                     );
