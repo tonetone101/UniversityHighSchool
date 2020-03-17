@@ -132,7 +132,7 @@ class UpdateAcademicsContent extends Component {
         const {title, body, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
-            return <Redirect to={`/link`} />;
+            return <Redirect to={`/aca`} />;
         }
 
         return (
