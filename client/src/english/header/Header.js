@@ -63,11 +63,11 @@ class Header extends React.Component {
                         
                            
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/boardmeeting'>School Board</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'black'}} to='/boardmeeting'>School Board</Link></Nav.Link>
 
                                 </div>
                                 <div id='link'>
-                                    <Nav.Link><Link style={{color: 'white'}} to='/staff'>Faculty</Link></Nav.Link>
+                                    <Nav.Link><Link style={{color: 'black'}} to='/staff'>Faculty</Link></Nav.Link>
 
                                 </div>
 
@@ -76,12 +76,12 @@ class Header extends React.Component {
                                 <Nav >
 
                                 <Nav.Link >
-                                    <Link to='/signin' style={{color: 'white'}}>
+                                    <Link to='/signin' style={{color: 'black'}}>
                                         Sign In 
                                     </Link>
                                 </Nav.Link>
                                 <Nav.Link>
-                                    <Link style={{color: 'white'}} to='/signup' >
+                                    <Link style={{color: 'black'}} to='/signup' >
                                         Sign Up
                                     </Link>
                                 </Nav.Link>
@@ -94,7 +94,7 @@ class Header extends React.Component {
                         {
                             this.state.user && (
                                 <Nav.Link>
-                                    <a style={{color: 'white'}}  onClick={() => signout(() => {
+                                    <a style={{color: 'black'}}  onClick={() => signout(() => {
                                         this.props.history.push('/')
                                     })}>
                                         Sign Out
@@ -109,14 +109,14 @@ class Header extends React.Component {
                                 <Nav>
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/app' >
+                                            <Link style={{color: 'black'}} to='/app' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants' >
+                                            <Link style={{color: 'black'}} to='/applicants' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
@@ -130,14 +130,14 @@ class Header extends React.Component {
                                 <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                                 <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/apps' >
+                                            <Link style={{color: 'black'}} to='/apps' >
                                             Submitted Applications
                                             </Link>
                                         </Nav.Link>
                                     </div>
                                     <div id='link' >
                                         <Nav.Link>
-                                            <Link style={{color: 'white'}} to='/applicants' >
+                                            <Link style={{color: 'black'}} to='/applicants' >
                                                 Pre-registered Applicants
                                             </Link>
                                         </Nav.Link>
