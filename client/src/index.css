@@ -10,7 +10,7 @@ body {
   }
 
 #topHeader{
-  background-color: #B7B7B7;
+  background-color: rgb(247, 222, 75);
   color: black;
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 #menu{
-  background-color:rgb(0, 84, 255);
+  background-color:#B7B7B7;
   height: 100px;
 }
 
