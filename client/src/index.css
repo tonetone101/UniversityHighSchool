@@ -10,7 +10,8 @@ body {
   }
 
 #topHeader{
-  background-color: rgb(247, 222, 75);
+  background-color: #B7B7B7;
+  color: black;
 }
 
 #homeCards{
