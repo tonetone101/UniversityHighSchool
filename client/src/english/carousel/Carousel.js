@@ -214,10 +214,10 @@ class Carol extends Component {
 
                 <div className='col-md-4' >
                     <Card style={{ width: '18rem'}} id='homeCards' >
-                    <Card.Header>                        
+                    {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
-                    </Card.Header>
-                        {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
+                    </Card.Header> */}
+                        <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
                         <Card.Body>
                             <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
                             <Card.Text>
