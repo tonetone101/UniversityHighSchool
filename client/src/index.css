@@ -17,13 +17,13 @@ body {
 #homeCards{
   margin-top: -40px;
   color: white;
-  background-color:rgb(0, 84, 255);
+  background-color:#B7B7B7;
 
 }
 
 #academicCards{
   color: white;
-  background-color:rgb(0, 84, 255);
+  background-color:#B7B7B7;
 
 }
 
@@ -96,13 +96,23 @@ body {
   filter: brightness(1.5);
 }
 
-/* #homeCards:hover #title #text {
-  opacity: 1;
+#homeCards #title {
+  background-color:rgb(0, 84, 255);
+
 }
 
-#academicCards:hover #title #text {
-  opacity: 1;
-} */
+#academicCards #title {
+  background-color:rgb(0, 84, 255);
+
+}
+
+#homeCards #text {
+  color: black;
+}
+
+#academicCards #text {
+  color: black;
+}
 
 #academicCards:hover #imgCard {
   transform: scale(1.1);
