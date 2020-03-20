@@ -81,7 +81,7 @@ body {
 }
 
 #homeCards:hover #body {
-  filter: brightness(1);
+  filter: brightness(1.25);
 }
 
 #homeCards:hover #imgCard {
@@ -91,7 +91,7 @@ body {
 }
 
 #academicCards:hover #body {
-  filter: brightness(1);
+  filter: brightness(1.25);
 }
 
 /* #homeCards:hover #title #text {
