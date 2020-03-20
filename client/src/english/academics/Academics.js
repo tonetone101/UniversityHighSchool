@@ -110,7 +110,7 @@ class Academics extends Component {
                 <Link
                             to={`/grade9`}
                         >
-                    <Card style={{ width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='academicCards' >
                    
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
 
@@ -140,7 +140,7 @@ class Academics extends Component {
                 <Link
                             to={`/grade10`}
                         >
-                    <Card style={{ width: '18rem' }} id='homeCards' >
+                    <Card style={{ width: '18rem' }} id='academicCards' >
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header> */}
@@ -170,7 +170,7 @@ class Academics extends Component {
                 <Link
                             to={`/grade11`}
                         >
-                    <Card style={{ width: '18rem'}} id='homeCards' >
+                    <Card style={{ width: '18rem'}} id='academicCards' >
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
