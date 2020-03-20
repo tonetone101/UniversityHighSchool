@@ -133,12 +133,12 @@ body {
 .title-underline {
   height: 5px;
   width: 300px;
-  background: rgb(0, 84, 255);
+  background: black;
   margin: -28px auto 0 auto; 
 }
 
 .icon {
-  color: black;
+  color: rgb(0, 84, 255);
   font-size: 30px;
   padding: 0 10px;
   display: inline-block;
