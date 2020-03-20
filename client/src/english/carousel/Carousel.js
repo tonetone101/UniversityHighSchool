@@ -185,7 +185,6 @@ class Carol extends Component {
                             </Card.Text>
                             <Link
                                     to={`/grade9`}
-                                    className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                 >
                                     Read more
                             </Link>
@@ -202,7 +201,6 @@ class Carol extends Component {
                 <div className='col-md-4'>
                 <Link
                             to={`/grade10`}
-                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                         >
                     <Card style={{ width: '18rem' }} id='homeCards' >
                     {/* <Card.Header>                        
@@ -233,7 +231,6 @@ class Carol extends Component {
                 <div className='col-md-4' >
                 <Link
                             to={`/grade11`}
-                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                         >
                     <Card style={{ width: '18rem'}} id='homeCards' >
                     {/* <Card.Header>                        
