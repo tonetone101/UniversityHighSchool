@@ -253,7 +253,7 @@ class Editacademics extends Component {
         const {id, intro, paragraph1, paragraph2, paragraph3, paragraph4, grade9Expect, grade9Curric, grade10Expect, grade10Curric, grade11Expect, grade11Curric, grade12Expect, grade12Curric , redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
-            return <Redirect to={`/academics`} />;
+            return <Redirect to={`/aca`} />;
         }
 
         return (
