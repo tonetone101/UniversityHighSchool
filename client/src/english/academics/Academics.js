@@ -108,14 +108,15 @@ class Academics extends Component {
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
                     <Card style={{ width: '18rem' }} id='academicCards' >
-                        <Card.Header>                        
+                        {/* <Card.Header>                        
                             <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
-                        </Card.Header>
-                       
-                        <Card.Body>
+                        </Card.Header> */}
+                        <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
+
+                        <Card.Body id='body' >
                             <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text>
-                                A RISER's main focus is to figure who you are as a learner, an individual,
+                                A RISER's main focus, is to figure who you are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
                             </Card.Text>
                             <Link
@@ -130,10 +131,12 @@ class Academics extends Component {
 
                 <div className='col-md-4'>
                     <Card style={{ width: '18rem' }} id='academicCards' >
-                    <Card.Header>                        
+                    {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
-                    </Card.Header>
-                        <Card.Body>
+                    </Card.Header> */}
+                    <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
+
+                        <Card.Body id='body'>
                             <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text>
                                An INVESTIGATOR is about continueing to hone in on the understandings
@@ -151,11 +154,11 @@ class Academics extends Component {
 
                 <div className='col-md-4' >
                     <Card style={{ width: '18rem'}} id='academicCards' >
-                    <Card.Header>                        
+                    {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
-                    </Card.Header>
-                        {/* <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navigators.png")} /> */}
-                        <Card.Body>
+                    </Card.Header> */}
+                        <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
+                        <Card.Body id='body'>
                             <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
