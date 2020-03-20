@@ -10,7 +10,7 @@ body {
   }
 
 #topHeader{
-  background-color: rgb(247, 222, 75);
+  background-color: #0033ff;
   color: black;
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 #vision {
-  background-color: rgb(247, 222, 75);
+  background-color: #0033ff;
   height: 90vh;
   clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%)
 
