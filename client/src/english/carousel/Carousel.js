@@ -168,11 +168,10 @@ class Carol extends Component {
 
     renderCards = () => {
         return (
-            <div className='row mb-5' style={{backgroundColor: 'rgb(0, 84, 255)'}}>
+            <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
                 <Link
                             to={`/grade9`}
-                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                         >
                     <Card style={{ width: '18rem' }} id='homeCards' >
                    
