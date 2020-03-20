@@ -170,11 +170,12 @@ class Carol extends Component {
         return (
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
-                    <Card style={{ width: '18rem' }} id='homeCards' >
-                    <Link
+                <Link
                             to={`/grade9`}
                             className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                         >
+                    <Card style={{ width: '18rem' }} id='homeCards' >
+                   
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
 
                         <Card.Body id='body' >
@@ -190,23 +191,25 @@ class Carol extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
-                    </Link>
                         {/* <Card.Header>                        
                             <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
                         </Card.Header> */}
                         
                     </Card>
+                    </Link>
+
                 </div>
 
                 <div className='col-md-4'>
+                <Link
+                            to={`/grade10`}
+                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                        >
                     <Card style={{ width: '18rem' }} id='homeCards' >
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header> */}
-                    <Link
-                            to={`/grade10`}
-                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                        >
+                    
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
 
                         <Card.Body id='body'>
@@ -222,20 +225,22 @@ class Carol extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
-                    </Link>
+                   
                    
                     </Card>
+                    </Link>
                 </div>
 
                 <div className='col-md-4' >
+                <Link
+                            to={`/grade11`}
+                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                        >
                     <Card style={{ width: '18rem'}} id='homeCards' >
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
-                    <Link
-                            to={`/grade11`}
-                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                        >
+                   
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
                         <Card.Body id='body'>
                             <Card.Title id='title' style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
@@ -251,9 +256,10 @@ class Carol extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
-                    </Link>
+                    
                         
                     </Card>
+                    </Link>
                 </div>
                  
             </div>
