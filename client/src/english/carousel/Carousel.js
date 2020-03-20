@@ -171,10 +171,11 @@ class Carol extends Component {
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
-                        <Card.Header>                        
+                        {/* <Card.Header>                        
                             <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
-                        </Card.Header>
-                       
+                        </Card.Header> */}
+                        <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
+
                         <Card.Body>
                             <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text>
@@ -193,9 +194,11 @@ class Carol extends Component {
 
                 <div className='col-md-4'>
                     <Card style={{ width: '18rem' }} id='homeCards' >
-                    <Card.Header>                        
+                    {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
-                    </Card.Header>
+                    </Card.Header> */}
+                    <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
+
                         <Card.Body>
                             <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text>
@@ -217,8 +220,8 @@ class Carol extends Component {
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
-                        <Card.Img variant="top" style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
-                        <Card.Body>
+                        <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
+                        <Card.Body id='body'>
                             <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
                             <Card.Text>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 

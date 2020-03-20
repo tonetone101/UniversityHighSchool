@@ -80,7 +80,7 @@ body {
   border-radius: 0%;
 }
 
-#homeCards:hover {
+#homeCards:hover #body {
   opacity: 0.5;
 }
 
@@ -90,7 +90,7 @@ body {
   border-radius: 0%;
 }
 
-#academicCards:hover {
+#academicCards:hover #body {
   opacity: 0.5;
 }
 
