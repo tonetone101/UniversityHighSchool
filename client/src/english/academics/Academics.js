@@ -108,9 +108,10 @@ class Academics extends Component {
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
                 <div className='col-sm-4'>
                     <Card style={{ width: '18rem' }} id='academicCards' >
-                        {/* <Card.Header>                        
-                            <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
-                        </Card.Header> */}
+                    <Link
+                            to={`/grade9`}
+                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                        >
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
 
                         <Card.Body id='body' >
@@ -126,6 +127,11 @@ class Academics extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
+                    </Link>
+                        {/* <Card.Header>                        
+                            <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
+                        </Card.Header> */}
+                        
                     </Card>
                 </div>
 
@@ -134,13 +140,17 @@ class Academics extends Component {
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header> */}
-                    <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
+                    <Link
+                            to={`/grade10`}
+                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                        >
+                        <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
 
                         <Card.Body id='body'>
                             <Card.Title id='title' style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text id='text'>
-                               An INVESTIGATOR is about continueing to hone in on the understandings
-                               gained from being a RISER and dive deeper into interest through inquiry     
+                            An INVESTIGATOR is about continueing to hone in on the understandings
+                            gained from being a RISER and dive deeper into interest through inquiry     
                             </Card.Text>
                             <Link
                                     to={`/grade10`}
@@ -149,6 +159,8 @@ class Academics extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
+                    </Link>
+                   
                     </Card>
                 </div>
 
@@ -157,6 +169,10 @@ class Academics extends Component {
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
+                    <Link
+                            to={`/grade11`}
+                            className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+                        >
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
                         <Card.Body id='body'>
                             <Card.Title id='title' style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
@@ -172,13 +188,14 @@ class Academics extends Component {
                                     Read more
                             </Link>
                         </Card.Body>
+                    </Link>
+                        
                     </Card>
                 </div>
                  
             </div>
         )
     }
-
 
     render() {
         const { academics, contents, redirectToSignIn } = this.state
