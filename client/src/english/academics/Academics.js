@@ -113,9 +113,9 @@ class Academics extends Component {
                     <Card style={{ width: '18rem' }} id='academicCards' >
                    
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
+                        <Card.Header id='title' className="font-italic mark mt-4" style={{fontWeight: 'bold'}}>RISERS</Card.Header>
 
                         <Card.Body id='body' >
-                            <Card.Title id='title' className="font-italic mark mt-4" style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text id='text'>
                                 A RISER's main focus, is to figure who you are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
@@ -123,6 +123,7 @@ class Academics extends Component {
                             <Link
                                     to={`/grade9`}
                                     className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
+
                                 >
                                     Read more
                             </Link>
@@ -146,9 +147,8 @@ class Academics extends Component {
                     </Card.Header> */}
                     
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
-
+                        <Card.Header id='title' className="font-italic mark mt-4"  style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Header>
                         <Card.Body id='body'>
-                            <Card.Title id='title' className="font-italic mark mt-4" style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text id='text'>
                             An INVESTIGATOR is about continueing to hone in on the understandings
                             gained from being a RISER and dive deeper into interest through inquiry     
@@ -174,10 +174,11 @@ class Academics extends Component {
                     {/* <Card.Header>                        
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
-                   
+
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
+                        <Card.Header id='title' className="font-italic mark mt-4" style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Header>
+
                         <Card.Body id='body'>
-                            <Card.Title id='title' className="font-italic mark mt-4" style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
                             <Card.Text id='text'>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
                                 RISER and INVESTIGATOR. Must build compacity for self and others.
@@ -199,7 +200,7 @@ class Academics extends Component {
             </div>
         )
     }
-    
+
     render() {
         const { academics, contents, redirectToSignIn } = this.state
         console.log(academics)
