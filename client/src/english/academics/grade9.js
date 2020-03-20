@@ -136,10 +136,10 @@ class Grade9 extends Component {
                       
                       <div id='title' className='container'>
                             <div className='mt-4'>
-                                    <h3 className='mb-3' style={{fontStyle: 'oblique'}}>Goal</h3>
+                                    <h3 className='mb-3' style={{fontWeight: 'bold'}}>Goal</h3>
                                     <p className='mb-3'>{academics.grade9Expect}</p>
 
-                                    <h3 className='mb-3' style={{fontStyle: 'oblique'}} >The Curriculum</h3>
+                                    <h3 className='mb-3' style={{fontWeight: 'bold'}} >The Curriculum</h3>
                                     <p className='mb-3'>{academics.grade9Curric}</p>
                             </div>
                         

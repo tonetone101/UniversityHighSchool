@@ -140,10 +140,10 @@ class Grade10 extends Component {
                         
                             <div className='mt-4'>
                                 
-                                    <h3 className='mb-3'>Our Goal</h3>
+                                    <h3 className='mb-3' style={{fontWeight: 'bold'}}>Our Goal</h3>
                                     <p className='mb-3'>{academics.grade10Expect}</p>
                                     
-                                    <h3 className='mb-3'>Our Curriculum</h3>
+                                    <h3 className='mb-3' style={{fontWeight: 'bold'}}>Our Curriculum</h3>
                                     <p className='mb-3'>{academics.grade10Curric}</p>
                                 
                             </div>
