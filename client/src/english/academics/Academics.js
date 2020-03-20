@@ -114,8 +114,8 @@ class Academics extends Component {
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
 
                         <Card.Body id='body' >
-                            <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
-                            <Card.Text>
+                            <Card.Title id='title' style={{fontWeight: 'bold'}}>RISERS</Card.Title>
+                            <Card.Text id='text'>
                                 A RISER's main focus, is to figure who you are as a learner, an individual,
                                 as part of a collective (family, community, etc), a professional and interest.     
                             </Card.Text>
@@ -137,8 +137,8 @@ class Academics extends Component {
                     <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
 
                         <Card.Body id='body'>
-                            <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
-                            <Card.Text>
+                            <Card.Title id='title' style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
+                            <Card.Text id='text'>
                                An INVESTIGATOR is about continueing to hone in on the understandings
                                gained from being a RISER and dive deeper into interest through inquiry     
                             </Card.Text>
@@ -159,8 +159,8 @@ class Academics extends Component {
                     </Card.Header> */}
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/navi.png")} />
                         <Card.Body id='body'>
-                            <Card.Title style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
-                            <Card.Text>
+                            <Card.Title id='title' style={{fontWeight: 'bold'}}>NAVIGATORS</Card.Title>
+                            <Card.Text id='text'>
                                 A NAVIGATOR's main focus is to continue honing in on understandings gained from being a 
                                 RISER and INVESTIGATOR. Must build compacity for self and others.
 
