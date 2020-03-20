@@ -81,7 +81,7 @@ body {
 }
 
 #homeCards:hover #body {
-  opacity: 0.3;
+  filter: brightness(1);
 }
 
 #homeCards:hover #imgCard {
@@ -91,16 +91,16 @@ body {
 }
 
 #academicCards:hover #body {
-  opacity: 0.3;
+  filter: brightness(1);
 }
 
-#homeCards:hover #title #text {
+/* #homeCards:hover #title #text {
   opacity: 1;
 }
 
 #academicCards:hover #title #text {
   opacity: 1;
-}
+} */
 
 #academicCards:hover #imgCard {
   transform: scale(1.1);
