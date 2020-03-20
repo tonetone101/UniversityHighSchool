@@ -105,7 +105,7 @@ class Academics extends Component {
 
     renderCards = () => {
         return (
-            <div className='row mb-5' >
+            <div className='row mb-5' style={{backgroundColor: 'rgb(0, 84, 255)'}}>
                 <div className='col-sm-4'>
                 <Link
                             to={`/grade9`}
@@ -202,7 +202,7 @@ class Academics extends Component {
             </div>
         )
     }
-
+    
     render() {
         const { academics, contents, redirectToSignIn } = this.state
         console.log(academics)
