@@ -176,7 +176,7 @@ class Carol extends Component {
                         </Card.Header> */}
                         <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/RISERLOGO.png")} />
 
-                        <Card.Body>
+                        <Card.Body id='body' >
                             <Card.Title style={{fontWeight: 'bold'}}>RISERS</Card.Title>
                             <Card.Text>
                                 A RISER's main focus, is to figure who you are as a learner, an individual,
@@ -199,7 +199,7 @@ class Carol extends Component {
                     </Card.Header> */}
                     <Card.Img variant="top" id='imgCard' style={{height: '200px', width: ''}} src={require("../../images/invest.png")} />
 
-                        <Card.Body>
+                        <Card.Body id='body'>
                             <Card.Title style={{fontWeight: 'bold'}}>INVESTIGATORS</Card.Title>
                             <Card.Text>
                                An INVESTIGATOR is about continueing to hone in on the understandings

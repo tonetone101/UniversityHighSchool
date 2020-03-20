@@ -81,7 +81,7 @@ body {
 }
 
 #homeCards:hover #body {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #homeCards:hover #imgCard {
@@ -91,7 +91,7 @@ body {
 }
 
 #academicCards:hover #body {
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 #academicCards:hover #imgCard {
