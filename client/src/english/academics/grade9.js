@@ -113,19 +113,19 @@ class Grade9 extends Component {
                     {this.subMenu()}
                 </div>
                   <div className='container mt-4'>
-                     <h1 style={{fontWeight: 'bold'}}>Risers</h1>
+                     <h1 style={{fontWeight: 'bold'}}>Learning Stage: <h1 style={{color: 'red'}}>Riser</h1></h1>
                       <div  >
                         
                       {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update Learning Stages</Link>
                           </div> 
                           ) : ( null)
                          }
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
                           <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update Learning Stages</Link>
                           </div> 
                           ) : ( null)
                          }
@@ -136,7 +136,7 @@ class Grade9 extends Component {
                       
                       <div id='title' className='container'>
                             <div className='mt-4'>
-                                    <h3 className='mb-3' style={{fontStyle: 'oblique'}}>A Riser's Goal</h3>
+                                    <h3 className='mb-3' style={{fontStyle: 'oblique'}}>Goal</h3>
                                     <p className='mb-3'>{academics.grade9Expect}</p>
 
                                     <h3 className='mb-3' style={{fontStyle: 'oblique'}} >The Curriculum</h3>

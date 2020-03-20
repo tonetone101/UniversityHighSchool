@@ -114,19 +114,19 @@ class Grade11 extends Component {
                     {this.subMenu()}
                 </div>
                   <div className='container mt-4'>
-                     <h1 style={{fontWeight: 'bold'}}>Navigators</h1>
+                  <h1 style={{fontWeight: 'bold'}}>Learning Stage: <h1 style={{color: 'red'}}>Navigators</h1></h1>
                       <div  >
                         
                       {isAuthenticated().user && isAuthenticated().user.code === 8290 ? ( 
                           <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update Learning Stages</Link>
                           </div> 
                           ) : ( null)
                          }
 
                         {isAuthenticated().user && isAuthenticated().user.code === 2609 ? ( 
                           <div>
-                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update academics</Link>
+                            <Link to={`/update/academics/${academics._id}`} className='btn btn-raised btn-primary'>Update Learning Stages</Link>
                           </div> 
                           ) : ( null)
                          }
