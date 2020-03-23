@@ -165,36 +165,36 @@ class Header extends React.Component {
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
                         <div id='link'>                        
                             <Nav.Link>
-                                <Link style={{color: 'white', fontSize: '20px'}} to='/'>
+                                <Link style={{color: 'black', fontSize: '20px'}} to='/'>
                                     <img  style={{height: '100px'}} src={require("../../images/uhsBannerLogo.png")} />
                                 </Link>
                             </Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/abo'>About Us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/abo'>About Us</Link></Nav.Link>
                         </div>
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/aca'>Academics</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/aca'>Academics</Link></Nav.Link>
                         </div>
 
                        
-                        {/* <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/student'>Students</Link></Nav.Link> */}
+                        {/* <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/student'>Students</Link></Nav.Link> */}
                         
                         
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/admiss'>Admissions</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/admiss'>Admissions</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/con'>Contact us</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/con'>Contact us</Link></Nav.Link>
                         </div>                     
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/images'>Gallery</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/images'>Gallery</Link></Nav.Link>
                         </div>
 
                         <div id='link'>                        
-                            <Nav.Link><Link style={{color: 'white', fontSize: '20px'}} to='/events'>Upcoming Events</Link></Nav.Link>
+                            <Nav.Link><Link style={{color: 'black', fontSize: '20px'}} to='/events'>Upcoming Events</Link></Nav.Link>
                         </div>
                     
                     </Nav>
