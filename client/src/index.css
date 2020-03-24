@@ -206,7 +206,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4rem;
-  color: #2a9134;
+  color: #0033ff;
   transition: margin 2s ease-in-out, color 0.5s ease-in-out, opacity 0.75s ease-in-out;
   margin-top: -50%;
   opacity: 0;
