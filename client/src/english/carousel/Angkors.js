@@ -59,23 +59,23 @@ class Angkors extends Component {
 
             <div className="row grid projects" id="grid-container">
                 
-                <div className="col-sm-6 col-md-4 my-3 restorative" >
-                  <div className="img-container grid-item">
+                <div className="col-sm-6 col-md-4 my-3 grid-item restorative" >
+                  <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
                     <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 compatencyBased" >
-                  <div className="img-container grid-item">
+                <div className="col-sm-6 col-md-4 my-3 grid-item compatencyBased" >
+                  <div className="img-container ">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
                     <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
                  
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 languageAcquisition" >
-                  <div className="img-container grid-item">
+                <div className="col-sm-6 col-md-4 my-3 grid-item languageAcquisition" >
+                  <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
                     <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
