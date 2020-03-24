@@ -12,16 +12,11 @@ class Angkors extends Component {
     }
 
     onFilterChange = (newFilter) => {
-        if (this.iso === undefined) {
+
           this.iso = new Isotope('#grid-container', {
             itemSelector: '.grid-item',
             layoutMode: "fitRows",
-            percentPosition: true,
-            fitRows: {
-              gutter: '.gutter-sizer'
-            }
           });
-        }
         if(newFilter === '*') {
           this.iso.arrange({ filter: `*` });
         } else {
