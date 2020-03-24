@@ -3,6 +3,7 @@ import Isotope from 'isotope-layout/js/isotope'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 import {Link } from 'react-router-dom'
+var classNames = require('classnames');
 
 class Angkors extends Component {
     constructor(props) {
