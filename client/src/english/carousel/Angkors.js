@@ -33,7 +33,7 @@ class Angkors extends Component {
             <div className='container' id='projects'>
                 <div className="row title mb-5">
                 <div className="col text-center">
-                  <h1 className="text-uppercase">Anchors</h1>
+                  <h1 className="text-uppercase" style={{fontWeight: 'bold'}}>Anchors</h1>
                   <div className='icon'>
                     <FontAwesomeIcon  icon ={faAnchor} />
                   </div>                  
