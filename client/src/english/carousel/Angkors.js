@@ -105,14 +105,14 @@ class Angkors extends Component {
             </div>
 
             <div className="row grid projects">
-                <div className="col-sm-6 col-md-4 my-3 restorative" style={this.hiderCB}>
+                <div className="col-sm-6 col-md-4 my-3 restorative" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
                     <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 compatencyBased" style={this.hiderLA}>
+                <div className="col-sm-6 col-md-4 my-3 compatencyBased" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
                     <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
@@ -120,7 +120,7 @@ class Angkors extends Component {
                  
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 languageAcquisition" style={this.hiderRestorative}>
+                <div className="col-sm-6 col-md-4 my-3 languageAcquisition" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
                     <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
