@@ -2,15 +2,16 @@ import React, {Component} from 'react'
 import Isotope from 'isotope-layout/js/isotope'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
+import {Link } from 'react-router-dom'
 
 class Angkors extends Component {
     constructor(props) {
         super(props);
         this.onFilterChange = this.onFilterChange.bind(this);
         this.state = {
-            isClickedAll: true,
-            isClickedTech: false,
-            isClickedPersonal: false
+            laText: false,
+            cbText: false,
+            resText: false
           };
       }
     
@@ -26,6 +27,16 @@ class Angkors extends Component {
           this.iso.arrange({ filter: `*` });
         } else {
           this.iso.arrange({ filter: `.${newFilter}` });
+        }
+
+        if(`.${newFilter}` === 'restorative') {
+            this.setState({resText: true})
+        } else if (`.${newFilter}` === '.compatencyBased') {
+            this.setState({cbText: true})
+        } else if (`.${newFilter}` === '.languageAcquisition') {
+            this.setState({
+                laText: true
+            })
         }
       }
 
@@ -57,25 +68,42 @@ class Angkors extends Component {
             <div className="row grid projects" id="filter-container">
                 
                 <div className="col-sm-6 col-md-4 my-3 filter-item restorative" >
-                  <div className="img-container">
-                    <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
+                  <div className="img-container row">
+                    <img src="https://i.imgur.com/YYcwrfXm.png" className={this.state.resText ? className(img-fluid, rounded, project-image, col-md-6) : img-fluid, rounded, project-image} />
                     <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+                    {
+                        this.state.resText && this.state.resText === true(
+                            <p className='col-md-6'>
+                                something
+                            </p>
+                        )
+                    }
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container ">
-                    <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
-                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
-                  </div>
+                    <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? className(img-fluid, rounded, project-image, col-md-6) : img-fluid, rounded, project-image} />
+                    {
+                        this.state.cbText && this.state.cbText === true(
+                            <p className='col-md-6'>
+                                nothing
+                            </p>
+                        )
+                    }                  </div>
                  
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container">
-                    <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
-                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
-                  </div>
+                    <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? className(img-fluid, rounded, project-image, col-md-6) : img-fluid, rounded, project-image} />
+                    {
+                        this.state.laText && this.state.laText === true(
+                            <p className='col-md-6'>
+                                anything
+                            </p>
+                        )
+                    }                  </div>
                 </div>
                 
             </div>
@@ -87,6 +115,7 @@ class Angkors extends Component {
 
 
     render() {
+        console.log(this.state)
 
         return (
             <div>             
