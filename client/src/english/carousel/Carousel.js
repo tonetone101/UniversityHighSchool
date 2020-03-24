@@ -166,6 +166,63 @@ class Carol extends Component {
         )
     }
 
+    renderAnkors = () => {
+        return (
+            <div className='container' id='prjects'>
+                <div className="row title mb-5">
+                <div className="col text-center">
+                  <h1 className="text-uppercase">Ankors</h1>
+                  <a href="#" className="mb-0"><i className="fas fa-camera"></i></a>
+                  <div className="title-underline"></div>
+        
+                </div>
+            </div>
+
+            <div className="row">
+                <div className="col text-center">
+                  <div className="btn-group btn-group-lg mb-5 button-group filter-button-group" role="group">
+                    <button type="button" className="btn text-uppercase" data-filter="*">all</button>
+                    <button type="button" className="btn text-uppercase" data-filter=".restorative">Restorative</button>
+                    <button type="button" className="btn text-uppercase" data-filter=".compatencyBased">Compatency Based</button>
+                    <button type="button" className="btn text-uppercase" data-filter=".languageAcquisition">Language Acquisition</button>
+                  </div>
+                </div>
+            </div>
+
+            <div className="row grid projects">
+                <div className="col-sm-6 col-md-4 my-3 tictactoe">
+                  <div className="img-container">
+                    <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
+                    <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><i className="fas fa-search"></i></a>
+                  </div>
+                  <figcaption>You and a friend have some time to spare? Here's a tic tac toe game I coded using javascript, html and css. May the better player win!</figcaption>
+                </div>
+
+                <div className="col-sm-6 col-md-4 my-3 emailer">
+                  <div className="img-container">
+                    <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
+                    <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><i className="fas fa-search"></i></a>
+                  </div>
+                  <figcaption>
+                      Here is an app that will allow you to email surveys to anyone you want and as many recipients you want. 
+                      Sign in with a google account, buy credits and use them to send out a surveys of your own question. created with React, Redux and Express
+                  </figcaption>
+                </div>
+
+                <div className="col-sm-6 col-md-4 my-3 e-comerce">
+                  <div className="img-container">
+                    <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
+                    <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><i className="fas fa-search"></i></a>
+                  </div>
+                  <figcaption>An E-comerce website, created with jQuery, html, bootstrap, stripe and express. You can sign up and start shopping online!!(Not actual store)</figcaption>
+                </div>
+                
+            </div>
+
+            </div>
+        )
+    }
+
     renderCards = () => {
         return (
             <div className='row mb-5' style={{backgroundColor: 'white'}}>
