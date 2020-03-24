@@ -16,7 +16,7 @@ class Angkors extends Component {
 
     onFilterChange = (newFilter) => {
         if (this.iso === undefined) {
-          this.iso = new Isotope('.grid', {
+          this.iso = new Isotope(`.${grid}`, {
             itemSelector: '.grid-item',
             layoutMode: "fitRows",
             percentPosition: true,
