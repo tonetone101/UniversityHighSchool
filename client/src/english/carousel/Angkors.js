@@ -4,26 +4,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 
 class Angkors extends Component {
-    state = {
-        showRestorive: true,
-        showCB: true,
-        showLa: true,
-        hide: false
-    }
+    constructor(props) {
+        super(props);
+        this.onFilterChange = this.onFilterChange.bind(this);
+      }
 
     onFilterChange = (newFilter) => {
-        var elem = document.querySelector('.grid-container');
-
-          this.iso = new Isotope(elem, {
+        if (this.iso === undefined) {
+          this.iso = new Isotope('#grid-container', {
             itemSelector: '.grid-item',
             layoutMode: "fitRows",
+            percentPosition: true,
+            fitRows: {
+              gutter: '.gutter-sizer'
+            }
           });
-
-        // if(newFilter === '*') {
-        //   this.iso.arrange({ filter: `*` });
-        // } else {
-        //   this.iso.arrange({ filter: `.${newFilter}` });
-        // }
+        }
+        if(newFilter === '*') {
+          this.iso.arrange({ filter: `*` });
+        } else {
+          this.iso.arrange({ filter: `.${newFilter}` });
+        }
       }
 
     renderAnkors = () => {
@@ -51,7 +52,7 @@ class Angkors extends Component {
                 </div>
             </div>
 
-            <div className="row grid projects grid-container" >
+            <div className="row grid projects" id="grid-container">
                 <div className="col-sm-6 col-md-4 my-3 restorative" >
                   <div className="img-container grid-item">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
