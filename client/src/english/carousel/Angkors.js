@@ -51,7 +51,7 @@ class Angkors extends Component {
         }
         else if (`.${newFilter}` === '*') {
             this.setState({
-                laText: true,
+                laText: false,
                 cbText: false,
                 resText: false
             })
