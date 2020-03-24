@@ -86,7 +86,7 @@ class Carol extends Component {
                 <div className="col text-center">
                   <h1 className="text-uppercase">Anchors</h1>
                   <div className='icon'>
-                    <FontAwesomeIcon  icon ={faAngkor} />
+                    <FontAwesomeIcon  icon ={faAnchor} />
                   </div>                  
                   <div className="title-underline"></div>
         
