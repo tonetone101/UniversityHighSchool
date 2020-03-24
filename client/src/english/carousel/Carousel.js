@@ -190,7 +190,7 @@ class Carol extends Component {
             </div>
 
             <div className="row grid projects">
-                <div className="col-sm-6 col-md-4 my-3 tictactoe">
+                <div className="col-sm-6 col-md-4 my-3 restorative">
                   <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
                     <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><i className="fas fa-search"></i></a>
@@ -198,7 +198,7 @@ class Carol extends Component {
                   <figcaption>You and a friend have some time to spare? Here's a tic tac toe game I coded using javascript, html and css. May the better player win!</figcaption>
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 emailer">
+                <div className="col-sm-6 col-md-4 my-3 compatencyBased">
                   <div className="img-container">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
                     <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><i className="fas fa-search"></i></a>
@@ -209,7 +209,7 @@ class Carol extends Component {
                   </figcaption>
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 e-comerce">
+                <div className="col-sm-6 col-md-4 my-3 languageAcquisition">
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
                     <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><i className="fas fa-search"></i></a>
