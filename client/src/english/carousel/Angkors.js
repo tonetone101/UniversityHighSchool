@@ -69,7 +69,7 @@ class Angkors extends Component {
                 
                 <div className="col-sm-6 col-md-4 my-3 filter-item restorative" >
                   <div className="img-container row">
-                    <img src="https://i.imgur.com/YYcwrfXm.png" className={this.state.resText ? className("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
+                    <img src="https://i.imgur.com/YYcwrfXm.png" className={this.state.resText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                     {
                         this.state.resText && this.state.resText === true(
@@ -83,7 +83,7 @@ class Angkors extends Component {
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container ">
-                    <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? className("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
+                    <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     {
                         this.state.cbText && this.state.cbText === true(
                             <p className='col-md-6'>
@@ -96,7 +96,7 @@ class Angkors extends Component {
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container">
-                    <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? className("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
+                    <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     {
                         this.state.laText && this.state.laText === true(
                             <p className='col-md-6'>
