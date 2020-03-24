@@ -111,68 +111,70 @@ class Carol extends Component {
     //     );
     // }
 
-    renderAnnouncements = (carousel) => {
-        return (
-            <div className='container mt-4' style={{color: 'black'}}>
-                <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>Announcements</h4>
-                <h5>
-                    <Link onClick={() => { 
-                            window.open(carousel.doc1) 
-                            }} >
-                        {!carousel.doc1 ? ''  : carousel.linkTitle1 }
-                    </Link>
-                    <Link onClick={() => { 
-                            window.open(`https://${carousel.link1}`) 
-                            }} >
-                    {!carousel.link1 ? ''  : carousel.linkTitle1 }
-                    </Link>
-                    <div className='ml-4'>
-                        {carousel.caption4}
-                    </div>
-                </h5>
+    // renderAnnouncements = (carousel) => {
+    //     return (
+    //         <div className='container mt-4' style={{color: 'black'}}>
+    //             <h4 id='announcements' style={{borderBottom: 'solid black 1px'}}>Announcements</h4>
+    //             <h5>
+    //                 <Link onClick={() => { 
+    //                         window.open(carousel.doc1) 
+    //                         }} >
+    //                     {!carousel.doc1 ? ''  : carousel.linkTitle1 }
+    //                 </Link>
+    //                 <Link onClick={() => { 
+    //                         window.open(`https://${carousel.link1}`) 
+    //                         }} >
+    //                 {!carousel.link1 ? ''  : carousel.linkTitle1 }
+    //                 </Link>
+    //                 <div className='ml-4'>
+    //                     {carousel.caption4}
+    //                 </div>
+    //             </h5>
                 
-                <h5>
-                <Link onClick={() => { 
-                            window.open(carousel.doc2) 
-                            }} >
-                        {!carousel.doc2 ? ''  : carousel.linkTitle2 }
-                    </Link>
-                    <Link onClick={() => { 
-                            window.open(`https://${carousel.link2}`) 
-                            }} >
-                    {!carousel.link2 ? ''  : carousel.linkTitle2 }
-                    </Link>
-                    <div className='ml-4'>
-                        {carousel.caption5}
-                    </div>
-                </h5>
+    //             <h5>
+    //             <Link onClick={() => { 
+    //                         window.open(carousel.doc2) 
+    //                         }} >
+    //                     {!carousel.doc2 ? ''  : carousel.linkTitle2 }
+    //                 </Link>
+    //                 <Link onClick={() => { 
+    //                         window.open(`https://${carousel.link2}`) 
+    //                         }} >
+    //                 {!carousel.link2 ? ''  : carousel.linkTitle2 }
+    //                 </Link>
+    //                 <div className='ml-4'>
+    //                     {carousel.caption5}
+    //                 </div>
+    //             </h5>
                 
-                <h5>
-                <Link onClick={() => { 
-                            window.open(carousel.doc3) 
-                            }} >
-                        {!carousel.doc3 ? ''  : carousel.linkTitle3 }
-                    </Link>
-                    <Link onClick={() => { 
-                            window.open(`https://${carousel.link3}`) 
-                            }} >
-                    {!carousel.link3 ? ''  : carousel.linkTitle3 }
-                    </Link>
-                    <div className='ml-4'>
-                        {carousel.caption6}
-                    </div>
-                </h5>
-            </div>
-        )
-    }
+    //             <h5>
+    //             <Link onClick={() => { 
+    //                         window.open(carousel.doc3) 
+    //                         }} >
+    //                     {!carousel.doc3 ? ''  : carousel.linkTitle3 }
+    //                 </Link>
+    //                 <Link onClick={() => { 
+    //                         window.open(`https://${carousel.link3}`) 
+    //                         }} >
+    //                 {!carousel.link3 ? ''  : carousel.linkTitle3 }
+    //                 </Link>
+    //                 <div className='ml-4'>
+    //                     {carousel.caption6}
+    //                 </div>
+    //             </h5>
+    //         </div>
+    //     )
+    // }
 
     renderAnkors = () => {
         return (
-            <div className='container' id='prjects'>
+            <div className='container' id='projects'>
                 <div className="row title mb-5">
                 <div className="col text-center">
-                  <h1 className="text-uppercase">Ankors</h1>
-                  <a href="#" className="mb-0"><i className="fas fa-camera"></i></a>
+                  <h1 className="text-uppercase">Angkors</h1>
+                  <div className='icon'>
+                    <FontAwesomeIcon  icon ={faAngkor} />
+                  </div>                  
                   <div className="title-underline"></div>
         
                 </div>
@@ -193,28 +195,23 @@ class Carol extends Component {
                 <div className="col-sm-6 col-md-4 my-3 restorative">
                   <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
-                    <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><i className="fas fa-search"></i></a>
+                    <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
-                  <figcaption>You and a friend have some time to spare? Here's a tic tac toe game I coded using javascript, html and css. May the better player win!</figcaption>
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 compatencyBased">
                   <div className="img-container">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
-                    <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><i className="fas fa-search"></i></a>
+                    <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
-                  <figcaption>
-                      Here is an app that will allow you to email surveys to anyone you want and as many recipients you want. 
-                      Sign in with a google account, buy credits and use them to send out a surveys of your own question. created with React, Redux and Express
-                  </figcaption>
+                 
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 languageAcquisition">
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
-                    <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><i className="fas fa-search"></i></a>
+                    <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
-                  <figcaption>An E-comerce website, created with jQuery, html, bootstrap, stripe and express. You can sign up and start shopping online!!(Not actual store)</figcaption>
                 </div>
                 
             </div>
@@ -423,9 +420,9 @@ class Carol extends Component {
                            
                         </div>
 
-                        {/* {
+                        {
                             this.renderAnkors()
-                        } */}
+                        }
                         
                         {/* <div>
                             {this.renderAnnouncements(carousel)}
