@@ -369,7 +369,7 @@ class Carol extends Component {
                            
                         </div>
 
-                        {/* <Angkor /> */}
+                        <Angkor />
                         
                         {/* <div>
                             {this.renderAnnouncements(carousel)}
