@@ -16,8 +16,8 @@ class Angkors extends Component {
 
     onFilterChange = (newFilter) => {
         if (this.iso === undefined) {
-          this.iso = new Isotope('#grid-container', {
-            itemSelector: '.grid-item',
+          this.iso = new Isotope('#filter-container', {
+            itemSelector: '.filter-item',
             layoutMode: "fitRows"
           });
         }
@@ -45,24 +45,24 @@ class Angkors extends Component {
             <div className="row">
                 <div className="col text-center">
                   <div className="btn-group btn-group-lg mb-5 button-group filter-button-group" role="group">
-                    <button type="button" onClick={this.onFilterChange('*')} className="btn text-uppercase" data-filter="*">all</button>
-                    <button type="button" onClick={this.onFilterChange('restorative')} className="btn text-uppercase" data-filter=".restorative">Restorative</button>
-                    <button type="button" onClick={this.onFilterChange('compatencyBased')} className="btn text-uppercase" data-filter=".compatencyBased">Compatency Based</button>
-                    <button type="button" onClick={this.onFilterChange('languageAcquisition')} className="btn text-uppercase" data-filter=".languageAcquisition">Language Acquisition</button>
+                    <button type="button" onClick={() => {this.onFilterChange('*')}} className="btn text-uppercase" data-filter="*">all</button>
+                    <button type="button" onClick={() => {this.onFilterChange('restorative')}} className="btn text-uppercase" data-filter=".restorative">Restorative</button>
+                    <button type="button" onClick={() => {this.onFilterChange('compatencyBased')}} className="btn text-uppercase" data-filter=".compatencyBased">Compatency Based</button>
+                    <button type="button" onClick={() => {this.onFilterChange('languageAcquisition')}} className="btn text-uppercase" data-filter=".languageAcquisition">Language Acquisition</button>
                   </div>
                 </div>
             </div>
 
-            <div className="row grid projects" id="grid-container">
+            <div className="row grid projects" id="filter-container">
                 
-                <div className="col-sm-6 col-md-4 my-3 grid-item restorative" >
+                <div className="col-sm-6 col-md-4 my-3 filter-item restorative" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
                     <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
                   </div>
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 grid-item compatencyBased" >
+                <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container ">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
                     <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
@@ -70,7 +70,7 @@ class Angkors extends Component {
                  
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 grid-item languageAcquisition" >
+                <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
                     <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
