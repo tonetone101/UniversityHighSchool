@@ -103,6 +103,8 @@ class Angkors extends Component {
                 <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container row">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
+                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+
                     {
                         this.state.cbText &&
                             <p className='col-md-6' style={{color: 'black'}}>
@@ -116,6 +118,8 @@ class Angkors extends Component {
                 <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container row">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
+                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+
                     {
                         this.state.laText &&
                             <p className='col-md-6' style={{color: 'black'}}>
