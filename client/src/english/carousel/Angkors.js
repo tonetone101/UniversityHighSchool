@@ -49,6 +49,13 @@ class Angkors extends Component {
                 resText: false
             })
         }
+        else if (`.${newFilter}` === '*') {
+            this.setState({
+                laText: true,
+                cbText: false,
+                resText: false
+            })
+        }
       }
 
     renderAnkors = () => {
