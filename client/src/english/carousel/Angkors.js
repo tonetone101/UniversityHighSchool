@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Isotope from 'isotope-layout'
+import Isotope from 'isotope-layout/js/isotope'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,11 +7,16 @@ class Angkors extends Component {
     constructor(props) {
         super(props);
         this.onFilterChange = this.onFilterChange.bind(this);
+        this.state = {
+            isClickedAll: true,
+            isClickedTech: false,
+            isClickedPersonal: false
+          };
       }
 
     onFilterChange = (newFilter) => {
         if (this.iso === undefined) {
-          this.iso = new Isotope('#grid-container', {
+          this.iso = new Isotope('.grid', {
             itemSelector: '.grid-item',
             layoutMode: "fitRows",
             percentPosition: true,
@@ -53,6 +58,7 @@ class Angkors extends Component {
             </div>
 
             <div className="row grid projects" id="grid-container">
+                
                 <div className="col-sm-6 col-md-4 my-3 restorative" >
                   <div className="img-container grid-item">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
