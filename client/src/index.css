@@ -187,7 +187,7 @@ body {
 .img-container {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(rgba(181, 181, 14, 0.9), rgba(181, 181, 14, 0.9));
+  background: linear-gradient(#0033ff, #0033ff);
 }
 
 .img-container img {
