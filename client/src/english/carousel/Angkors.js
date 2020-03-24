@@ -13,7 +13,8 @@ class Angkors extends Component {
             isClickedPersonal: false
           };
       }
-
+    
+      // isotope
     onFilterChange = (newFilter) => {
         if (this.iso === undefined) {
           this.iso = new Isotope('#filter-container', {
@@ -58,14 +59,14 @@ class Angkors extends Component {
                 <div className="col-sm-6 col-md-4 my-3 filter-item restorative" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
-                    <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
+                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container ">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
-                    <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
+                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                   </div>
                  
                 </div>
@@ -73,7 +74,7 @@ class Angkors extends Component {
                 <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
-                    <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
+                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                   </div>
                 </div>
                 
