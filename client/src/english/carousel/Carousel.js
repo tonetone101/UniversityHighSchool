@@ -8,6 +8,7 @@ import { Card, Button } from 'react-bootstrap'
 import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+import Angkor from './Angkors'
 
 class Carol extends Component {
     state = {
@@ -166,59 +167,7 @@ class Carol extends Component {
     //     )
     // }
 
-    renderAnkors = () => {
-        return (
-            <div className='container' id='projects'>
-                <div className="row title mb-5">
-                <div className="col text-center">
-                  <h1 className="text-uppercase">Angkors</h1>
-                  <div className='icon'>
-                    <FontAwesomeIcon  icon ={faAngkor} />
-                  </div>                  
-                  <div className="title-underline"></div>
-        
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col text-center">
-                  <div className="btn-group btn-group-lg mb-5 button-group filter-button-group" role="group">
-                    <button type="button" className="btn text-uppercase" data-filter="*">all</button>
-                    <button type="button" className="btn text-uppercase" data-filter=".restorative">Restorative</button>
-                    <button type="button" className="btn text-uppercase" data-filter=".compatencyBased">Compatency Based</button>
-                    <button type="button" className="btn text-uppercase" data-filter=".languageAcquisition">Language Acquisition</button>
-                  </div>
-                </div>
-            </div>
-
-            <div className="row grid projects">
-                <div className="col-sm-6 col-md-4 my-3 restorative">
-                  <div className="img-container">
-                    <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
-                    <a href="https://antkeo1.github.io/myTicTacToe/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
-                  </div>
-                </div>
-
-                <div className="col-sm-6 col-md-4 my-3 compatencyBased">
-                  <div className="img-container">
-                    <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image" />
-                    <a href="https://floating-gorge-22160.herokuapp.com/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
-                  </div>
-                 
-                </div>
-
-                <div className="col-sm-6 col-md-4 my-3 languageAcquisition">
-                  <div className="img-container">
-                    <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
-                    <a href="https://pvd04-squad06.github.io/Squad-project-client/" className="search-link"><FontAwesomeIcon  icon ={faSearch} /></a>
-                  </div>
-                </div>
-                
-            </div>
-
-            </div>
-        )
-    }
+   
 
     renderCards = () => {
         return (
@@ -420,9 +369,7 @@ class Carol extends Component {
                            
                         </div>
 
-                        {
-                            this.renderAnkors()
-                        }
+                        <Angkor />
                         
                         {/* <div>
                             {this.renderAnnouncements(carousel)}
