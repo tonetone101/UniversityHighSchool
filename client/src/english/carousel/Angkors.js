@@ -9,7 +9,7 @@ import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 
-class Carol extends Component {
+class Angkors extends Component {
     state = {
         showRestorive: true,
         showCB: true,
@@ -151,5 +151,5 @@ class Carol extends Component {
     }
 }
 
-export default Carol
+export default Angkors
 
