@@ -423,9 +423,9 @@ class Carol extends Component {
                            
                         </div>
 
-                        {
+                        {/* {
                             this.renderAnkors()
-                        }
+                        } */}
                         
                         {/* <div>
                             {this.renderAnnouncements(carousel)}
