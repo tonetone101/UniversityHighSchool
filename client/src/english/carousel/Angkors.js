@@ -12,16 +12,18 @@ class Angkors extends Component {
     }
 
     onFilterChange = (newFilter) => {
+        var elem = document.querySelector('.grid-container');
 
-          this.iso = new Isotope('#grid-container', {
+          this.iso = new Isotope(elem, {
             itemSelector: '.grid-item',
             layoutMode: "fitRows",
           });
-        if(newFilter === '*') {
-          this.iso.arrange({ filter: `*` });
-        } else {
-          this.iso.arrange({ filter: `.${newFilter}` });
-        }
+
+        // if(newFilter === '*') {
+        //   this.iso.arrange({ filter: `*` });
+        // } else {
+        //   this.iso.arrange({ filter: `.${newFilter}` });
+        // }
       }
 
     renderAnkors = () => {
@@ -49,7 +51,7 @@ class Angkors extends Component {
                 </div>
             </div>
 
-            <div className="row grid projects" id="grid-container">
+            <div className="row grid projects grid-container" >
                 <div className="col-sm-6 col-md-4 my-3 restorative" >
                   <div className="img-container grid-item">
                     <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
