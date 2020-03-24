@@ -73,11 +73,11 @@ class Angkors extends Component {
                     <img src="https://i.imgur.com/YYcwrfXm.png" className={this.state.resText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                     {
-                        this.state.resText (
+                        this.state.resText &&
                             <p className='col-md-6'>
                                 something
                             </p>
-                        )
+                        
                     }
                   </div>
                 </div>
@@ -86,11 +86,11 @@ class Angkors extends Component {
                   <div className="img-container ">
                     <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     {
-                        this.state.cbText (
+                        this.state.cbText &&
                             <p className='col-md-6'>
                                 nothing
                             </p>
-                        )
+                        
                     }                  </div>
                  
                 </div>
@@ -99,11 +99,11 @@ class Angkors extends Component {
                   <div className="img-container">
                     <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
                     {
-                        this.state.laText (
+                        this.state.laText &&
                             <p className='col-md-6'>
                                 anything
                             </p>
-                        )
+                        
                     }                  </div>
                 </div>
                 
