@@ -24,13 +24,14 @@ class Angkors extends Component {
             layoutMode: "fitRows"
           });
         }
+
         if(newFilter === '*') {
           this.iso.arrange({ filter: `*` });
         } else {
           this.iso.arrange({ filter: `.${newFilter}` });
         }
 
-        if(`.${newFilter}` === 'restorative') {
+        if(`.${newFilter}` === '.restorative') {
             this.setState({
                 resText: true,
                 laText: false,
@@ -49,7 +50,7 @@ class Angkors extends Component {
                 resText: false
             })
         }
-        else if (`.${newFilter}` === '*') {
+        else if (`.${newFilter}`) {
             this.setState({
                 laText: false,
                 cbText: false,
