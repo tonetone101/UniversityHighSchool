@@ -7,7 +7,7 @@ import {Animated} from 'react-animated-css'
 import { Card, Button } from 'react-bootstrap'
 import Header from '../header/Header'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 
 class Carol extends Component {
     state = {
@@ -84,7 +84,7 @@ class Carol extends Component {
             <div className='container' id='projects'>
                 <div className="row title mb-5">
                 <div className="col text-center">
-                  <h1 className="text-uppercase">Angkors</h1>
+                  <h1 className="text-uppercase">Anchors</h1>
                   <div className='icon'>
                     <FontAwesomeIcon  icon ={faAngkor} />
                   </div>                  
