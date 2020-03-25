@@ -88,45 +88,58 @@ class Angkors extends Component {
                 
                 <div className="col-sm-6 col-md-4 my-3 filter-item restorative" >
                   <div className="img-container row">
-                    <img src="https://i.imgur.com/YYcwrfXm.png" className={this.state.resText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
-                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
-                    {
-                        this.state.resText &&
-                            <p className='col-md-6' style={{color: 'black'}}>
-                                something
-                            </p>
-                        
-                    }
+                      <div className='col-md-6'>
+                        <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
+                        <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+                      </div>
+                    <div>
+                        {
+                            this.state.resText &&
+                                <p className='col-md-6' style={{color: 'black'}}>
+                                    something
+                                </p>
+                            
+                        }
+                    </div>
                   </div>
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item compatencyBased" >
                   <div className="img-container row">
-                    <img src="https://i.imgur.com/1mh5Gvhm.png" className={this.state.cbText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
-                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
-
-                    {
-                        this.state.cbText &&
-                            <p className='col-md-6' style={{color: 'black'}}>
-                                nothing
-                            </p>
-                        
-                    }                  </div>
+                    <div className='col-md-6'>
+                        <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image"/>
+                        <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+                    </div>
+                    <div className='col-md-6'>
+                        {
+                            this.state.cbText &&
+                                <p className='col-md-6' style={{color: 'black'}}>
+                                    nothing
+                                </p>
+                            
+                        }                  
+                    </div>
+                    </div>
                  
                 </div>
 
                 <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
                   <div className="img-container row">
-                    <img src="https://i.imgur.com/FPS8bBnm.png" className={this.state.laText ? classNames("img-fluid", "rounded", "project-image", "col-md-6") : "img-fluid", "rounded", "project-image"} />
-                    <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
-
-                    {
-                        this.state.laText &&
-                            <p className='col-md-6' style={{color: 'black'}}>
-                                anything
-                            </p>
-                        
-                    }                  </div>
+                    <div className='col-md-6'>
+                        <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
+                        <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+                    </div>
+                    
+                    <div className='col-md-6'>
+                        {
+                            this.state.laText &&
+                                <p className='col-md-6' style={{color: 'black'}}>
+                                    anything
+                                </p>
+                            
+                        }
+                    </div>                  
+                 </div>
                 </div>
                 
             </div>
