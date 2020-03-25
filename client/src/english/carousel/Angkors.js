@@ -123,11 +123,10 @@ class Angkors extends Component {
                  
                 </div>
 
-                <div className="col-sm-6 col-md-4 my-3 filter-item languageAcquisition" >
-                  <div className="img-container row">
-                    <div className='col-md-6'>
+                <div className="col-sm-6 col-md-4 my-3 filter-item row languageAcquisition" >
+                    <div className="img-container col-md-6">
                         <img src="https://i.imgur.com/FPS8bBnm.png" className="img-fluid rounded project-image" />
-                        <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
+                        <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>           
                     </div>
                     
                     <div className='col-md-6'>
@@ -138,8 +137,7 @@ class Angkors extends Component {
                                 </p>
                             
                         }
-                    </div>                  
-                 </div>
+                    </div>    
                 </div>
                 
             </div>
