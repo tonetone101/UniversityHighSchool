@@ -127,7 +127,7 @@ class EditCarousel extends Component {
     editCarouselForm = (missionStatement, caption1, caption2, caption3, caption4, caption5, caption6, link1, link2, link3, linkTitle1, linkTitle2, linkTitle3, doc1, doc2, doc3) => (
         <form className='container'>
               <div className="form-group">
-                <label className="text-muted">Restorative</label>
+                <label className="text-muted">Compentency Based</label>
                 <textarea
                     onChange={this.handleChange("caption1")}
                     type="text"
@@ -137,7 +137,7 @@ class EditCarousel extends Component {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Compatency Based</label>
+                <label className="text-muted">Restorative</label>
                 <textarea
                     style={{height:'100px'}}
                     onChange={this.handleChange("missionStatement")}
