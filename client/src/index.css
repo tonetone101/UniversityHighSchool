@@ -197,6 +197,7 @@ body {
 
 .img-container .achorText {
   font-weight: italic;
+  width: 500px;
 }
 
 .img-container:hover .project-image {
