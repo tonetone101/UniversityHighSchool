@@ -48,7 +48,7 @@ class Header extends React.Component {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto " className="col d-flex justify-content-around align-items-baseline">
-                    <DropdownButton id="dropdown-basic-button" title="translator"  >
+                    {/* <DropdownButton id="dropdown-basic-button" title="translator"  >
                                 <Dropdown.Item ><a onClick={this.translateSpanish}>Spanish</a>
                                 </Dropdown.Item>
                                 <Dropdown.Item ><a onClick={this.translateKhmer}>Cambodian</a>
@@ -58,7 +58,7 @@ class Header extends React.Component {
 
                                 <Dropdown.Item><a onClick={this.translatePort}>Portuguese</a></Dropdown.Item>
                             
-                    </DropdownButton>
+                    </DropdownButton> */}
 
                         
                            
