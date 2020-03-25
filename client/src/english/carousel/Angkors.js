@@ -3,7 +3,6 @@ import Isotope from 'isotope-layout/js/isotope'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faAnchor } from '@fortawesome/free-solid-svg-icons'
 import {Link } from 'react-router-dom'
-var classNames = require('classnames');
 
 class Angkors extends Component {
     constructor(props) {
@@ -60,6 +59,8 @@ class Angkors extends Component {
       }
 
     renderAnkors = () => {
+        const {achor} = this.props
+
         return (
             <div className='container' id='projects'>
                 <div className="row title mb-5">
@@ -96,7 +97,7 @@ class Angkors extends Component {
                         {
                             this.state.resText &&
                                 <p className='col-md-6' style={{color: 'black'}}>
-                                    something
+                                    {achor.missionStatement}
                                 </p>
                             
                         }
@@ -114,7 +115,7 @@ class Angkors extends Component {
                         {
                             this.state.cbText &&
                                 <p className='col-md-6' style={{color: 'black'}}>
-                                    nothing
+                                    {achor.caption1}
                                 </p>
                             
                         }                  
@@ -133,7 +134,7 @@ class Angkors extends Component {
                         {
                             this.state.laText &&
                                 <p className='col-md-6' style={{color: 'black'}}>
-                                    anything
+                                    {achor.caption2}
                                 </p>
                             
                         }

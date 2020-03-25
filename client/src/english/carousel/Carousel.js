@@ -316,21 +316,21 @@ class Carol extends Component {
                             </div>              
                         </div> */}
 
-                        {/* <div className='text-center' >
+                        <div className='text-center' >
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update Learning achor explanation</Link>
                                 )
                             }
 
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 2609 && (
-                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update for principle</Link>
+                                    <Link to={`/edit/carousel/${carousel._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update Learning achor explanation</Link>
                                 )
                             }
 
                            
-                        </div> */}
+                        </div>
                    
                     </div>
                                         
@@ -368,8 +368,8 @@ class Carol extends Component {
                             </div>
                            
                         </div>
-
-                        <Angkor />
+                        {/* achor section */}
+                        <Angkor achor={carousel} />
                         
                         {/* <div>
                             {this.renderAnnouncements(carousel)}
