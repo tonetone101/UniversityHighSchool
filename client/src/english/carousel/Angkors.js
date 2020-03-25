@@ -93,10 +93,10 @@ class Angkors extends Component {
                         <img src="https://i.imgur.com/YYcwrfXm.png" className="img-fluid rounded project-image" />
                         <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                       </div>
-                    <div>
+                    <div className='col-md-6 achorText'>
                         {
                             this.state.resText &&
-                                <p className='col-md-6' style={{color: 'black'}}>
+                                <p style={{color: 'black'}}>
                                     {achor.missionStatement}
                                 </p>
                             
@@ -111,10 +111,10 @@ class Angkors extends Component {
                         <img src="https://i.imgur.com/1mh5Gvhm.png" className="img-fluid rounded project-image"/>
                         <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>
                     </div>
-                    <div className='col-md-6'>
+                    <div className='col-md-6 achorText'>
                         {
                             this.state.cbText &&
-                                <p className='col-md-6' style={{color: 'black'}}>
+                                <p  style={{color: 'black'}}>
                                     {achor.caption1}
                                 </p>
                             
@@ -130,10 +130,10 @@ class Angkors extends Component {
                         <Link to='/' className="search-link"><FontAwesomeIcon  icon ={faSearch} /></Link>           
                     </div>
                     
-                    <div className='col-md-6'>
+                    <div className='col-md-6 achorText'>
                         {
                             this.state.laText &&
-                                <p className='col-md-6' style={{color: 'black'}}>
+                                <p  style={{color: 'black'}}>
                                     {achor.caption2}
                                 </p>
                             

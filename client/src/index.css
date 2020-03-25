@@ -195,6 +195,10 @@ body {
   opacity: 1;
 }
 
+.img-container .achorText {
+  font-weight: italic;
+}
+
 .img-container:hover .project-image {
   opacity: 0.3;
   transform: scale(1.3);
