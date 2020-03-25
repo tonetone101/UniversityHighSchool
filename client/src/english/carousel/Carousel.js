@@ -380,7 +380,7 @@ class Carol extends Component {
                             <div class="text-center row ml-5">
                                 <img className='col-md-6 mb-4' style={{height: '150px', marginTop: '10px'}} src={require("../../images/uhsBanner.png")} /> 
                                 <div className="col-md-6 d-flex justify-content-around align-items-baseline">
-                                    <div >
+                                    <div className='mt-5'>
                                         <p>1 Empire Plaza | Providence, RI 02903</p>
                                         <p>Phone: (401) 254- 4829 | somaly@uhschool.org</p>
                                         <h5 className="text-capitalize">
