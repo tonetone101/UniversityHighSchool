@@ -50,7 +50,7 @@ class About extends Component {
             <div className='container mt-5' style={{textIndent: '50px'}}>
                 <Card border='dark' style={{borderRadius: '15%'}}>
                     <Card.Body>
-                    <Card.Header className="font-italic mark">
+                    <Card.Header className="font-italic mark" style={{fontWeight: 'bold'}}>
                       About Us
                     </Card.Header >
                         <Card.Title></Card.Title>
