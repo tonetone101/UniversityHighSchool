@@ -64,7 +64,8 @@ class Faculty extends Component {
 
     }
 
-    renderFaculties = faculties => {
+    renderFaculties = () => {
+        const {faculties} = this.state
         return (
             <div  id='event' className='row container'>
                 {faculties.map((faculty, i) => {
@@ -141,7 +142,7 @@ class Faculty extends Component {
                     }
 
                     <div>
-                        {this.renderFaculties(faculties)}
+                        {this.renderFaculties()}
                     </div>
 
                 </div>
