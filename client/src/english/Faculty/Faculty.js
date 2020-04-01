@@ -64,10 +64,10 @@ class Faculty extends Component {
 
     }
 
-    renderFaculties = () => {
-        const {faculties} = this.state
+    renderFaculties = faculties => {
         return (
-                faculties.map((faculty, i) => {
+            <div  id='event' className='row container'>
+                {faculties.map((faculty, i) => {
                         const facultyPhoto = faculty._id
                         ? `/faculty/photo/${
                             faculty._id
@@ -96,8 +96,8 @@ class Faculty extends Component {
                             </Card>
                         </div>
                     );
-                })
-            
+                })}
+            </div>
         );
     };
 
@@ -141,7 +141,7 @@ class Faculty extends Component {
                     }
 
                     <div>
-                        {this.renderFaculties()}
+                        {this.renderFaculties(faculties)}
                     </div>
 
                 </div>
