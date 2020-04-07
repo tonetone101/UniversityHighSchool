@@ -271,7 +271,9 @@ class Carol extends Component {
     render() {
         const {carousel } = this.state
 
-        const uhsVideo = 'https://drive.google.com/file/d/1DmGcmLu_RUtge8SajCu1GSKbXxTCtsoN/view?ts=5e8caebe'
+        const uhsVideo = 'https://drive.google.com/file/d/1DmGcmLu_RUtge8SajCu1GSKbXxTCtsoN/preview?ts=sharing'
+
+                        // 'https://drive.google.com/file/d/1zkxOP_gez1IsVi7YPnH7DF5KjAZn7e8-/preview?usp=sharing'
 
         return (
             <div>
