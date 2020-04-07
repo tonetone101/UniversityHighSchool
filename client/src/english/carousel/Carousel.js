@@ -286,7 +286,7 @@ class Carol extends Component {
                                 </div>
                                 ) : (
                                     <div id='video' >
-                                        <iframe width="100%" height="630" src={uhsVideo}></iframe>
+                                        <iframe width="100%" height="630" src={uhsVideo} autoplay></iframe>
                                         
                                     </div>
                                     
