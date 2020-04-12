@@ -1,55 +1,53 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
-    background-color:white;
-  }
-  .heading {
-    font-weight: 700;
-  }
-  .subheading {
-    font-weight: 300;
-  }
+  font-family: "Titillium Web", sans-serif;
+  background-color: white;
+}
+.heading {
+  font-weight: 700;
+}
+.subheading {
+  font-weight: 300;
+}
 
-#topHeader{
+#topHeader {
   background-color: #0033ff;
   color: black;
 }
 
-#homeCards{
-  margin-top: -40px;
+#homeCards {
+  margin-top: -75px;
   color: white;
-  background-color:#B7B7B7;
-
+  background-color: #b7b7b7;
 }
 
-#academicCards{
+#academicCards {
   color: white;
-  background-color:#B7B7B7;
-
+  background-color: #b7b7b7;
 }
 
-#menu{
-  background-color:#B7B7B7;
+#menu {
+  background-color: #b7b7b7;
   height: 100px;
 }
 
 #carol {
-    background-color:rgb(0, 84, 255);
+  background-color: rgb(0, 84, 255);
 }
 
 #header {
-  background-color:#b7b7b7;
+  background-color: #b7b7b7;
 }
 
 #studentList {
-  background-color:#b7b7b7;
+  background-color: #b7b7b7;
 }
 
 #boardList {
-  background-color:#b7b7b7;
+  background-color: #b7b7b7;
 }
 
-#singleMeeting  {
-  background-color:#b7b7b7;
+#singleMeeting {
+  background-color: #b7b7b7;
 }
 
 #readStaff:hover {
@@ -97,13 +95,11 @@ body {
 }
 
 #homeCards #title {
-  background-color:rgb(0, 84, 255);
-
+  background-color: rgb(0, 84, 255);
 }
 
 #academicCards #title {
-  background-color:rgb(0, 84, 255);
-
+  background-color: rgb(0, 84, 255);
 }
 
 #homeCards #text {
@@ -120,14 +116,13 @@ body {
   border-radius: 0%;
 }
 
-.fade-appear-active
-.fade-enter-active {
+.fade-appear-active .fade-enter-active {
   opacity: 1;
   transition: opacity 300ms linear 150ms;
 }
 
 .fade-exit {
-  opacity: 1; 
+  opacity: 1;
 }
 
 .fade-exit-active {
@@ -138,23 +133,18 @@ body {
 #vision {
   background-color: #0033ff;
   height: 90vh;
-  clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%)
-
+  clip-path: polygon(0 20%, 100% 0%, 100% 85%, 0 100%);
 }
 
 #vision h3 {
   padding-top: 120px;
 }
 
-#video {
-  position: relative;
-}
-
 .title-underline {
   height: 5px;
   width: 300px;
   background: black;
-  margin: -28px auto 0 auto; 
+  margin: -28px auto 0 auto;
 }
 
 .icon {
@@ -166,21 +156,20 @@ body {
 }
 
 #footer {
-  background-color:#B7B7B7;
-  
+  background-color: #b7b7b7;
 }
 
 #thrive {
-  color: #FCD966;
+  color: #fcd966;
 }
 
-#projects button {
+#projects img {
   background: #0033ff;
   color: #f1fffa;
   transition: all 1s ease-in-out;
 }
 
-#projects button:hover {
+#projects img:hover {
   background: #242424;
 }
 
@@ -212,7 +201,8 @@ body {
   transform: translate(-50%, -50%);
   font-size: 4rem;
   color: #0033ff;
-  transition: margin 2s ease-in-out, color 0.5s ease-in-out, opacity 0.75s ease-in-out;
+  transition: margin 2s ease-in-out, color 0.5s ease-in-out,
+    opacity 0.75s ease-in-out;
   margin-top: -50%;
   opacity: 0;
 }
@@ -224,5 +214,98 @@ body {
 .img-container:hover .search-link {
   margin-top: 0;
   opacity: 1;
+}
 
+/* jumbotron animation */
+.jumbotron {
+  width: 30wh;
+  height: 30vh;
+  color: #fff;
+  /* to smoothly change the background color */
+  background: linear-gradient(-45deg, #f8e04b, #5ed9d7, #23a6d5, #d52323);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+
+/* .jumbotron h2 {
+    margin-top: -20px;
+} */
+
+@media only screen and (max-width: 600px) {
+  .jumbotron h2 {
+    margin-top: 10px;
+  }
+}
+
+#anchor-img:hover {
+  transform: scale(1.3);
+  transition: all 2s ease;
+  border-radius: 0%;
+}
+
+#aboutHeader {
+  font-size: 30px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-shadow: 4px 4px 4px black; */
+}
+#link a {
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .linked a {
+    color: white;
+  }
+  .linked {
+    background-color: #b7b7b7;
+    position: relative;
+    z-index: 1;
+    width: 210px;
+  }
 }

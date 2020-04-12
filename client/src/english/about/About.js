@@ -5,6 +5,7 @@ import {isAuthenticated} from '../../auth'
 import {Card} from 'react-bootstrap';
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
+import Layout from './Layout'
 
 class About extends Component {
     state = {
@@ -24,7 +25,7 @@ class About extends Component {
                 console.log(data.error)
             } else {
                 this.setState({about: data.find(d => {
-                    if (d._id == "5e22433d06576302afeda501") {
+                    if (d._id == "5e8e446fdbe0ea5a89b75411") {
                         return d
                     }
                 })
@@ -47,37 +48,53 @@ class About extends Component {
         : ''
 
         return (
-            <div className='container mt-5' style={{textIndent: '50px'}}>
-                <Card border='dark' style={{borderRadius: '15%'}}>
-                    <Card.Body>
-                    <Card.Header className="font-italic mark" style={{fontWeight: 'bold'}}>
-                      About Us
-                    </Card.Header >
-                        <Card.Title></Card.Title>
+            <div className='container' id='aboutContent' >
+               
+                    
+                        
+                        
+                        <div className='mt-4'>
+                            <h4 id='aboutHeader' style={{fontWeight: 'bold'}}>{about.header1}</h4>
+                        </div>
 
-                        <Card.Text>
+                        <div className='mt-4'>
                             {about.body}
-                        </Card.Text>
+                        </div>
 
-                        <Card.Text>
+                        <div className='mt-4'>
+                            <h4 id='aboutHeader' style={{fontWeight: 'bold'}}>{about.header2}</h4>
+                        </div>
+
+                        <div className='mt-4'>
                             {about.paragraph2}
-                        </Card.Text>
+                        </div>
 
-                        <Card.Text>
+                         <div className='mt-4'>
+                            <h4 id='aboutHeader' style={{fontWeight: 'bold'}}>{about.header3}</h4>
+                        </div>
+
+                        <div className='mt-4'>
                             {about.paragraph3}
-                        </Card.Text>
+                        </div>
 
-                        <Card.Text>
+                         <div className='mt-4'>
+                            <h4 id='aboutHeader' style={{fontWeight: 'bold'}}>{about.header4}</h4>
+                        </div>
+
+                        <div className='mt-4'>
                             {about.paragraph4}
-                        </Card.Text>
+                        </div>
 
-                        <Card.Text>
+                         <div className='mt-4' >
+                            <h4 id='aboutHeader' style={{fontWeight: 'bold'}}>{about.header5}</h4>
+                        </div>
+
+                        <div className='mt-4'>
                             {about.paragraph5}
-                        </Card.Text>
+                        </div>
 
-                    </Card.Body>
-                </Card>
-            </div>
+                    
+                </div>        
         );
     }
 
@@ -88,12 +105,15 @@ class About extends Component {
         return (
             <div>
                <Header history={this.props.history} />
+                <Layout  title="We BELIEVE"
+                        description="Productive behaviors are the catalyst that forges positive change!"
+                        className="container-fluid" >
                 <div className='row container'>
-                    <SideBar />
+                    <SideBar /> 
 
-                    <div className='col-md-8 text-center'>
+                    <div className='col-md-8'>
                         {!about ? (
-                                <div className='jumbotron text-center '>
+                                <div className='jumbotron '>
                                     <h2>Loading....</h2>
                                 </div>
                                 ) : (
@@ -105,12 +125,13 @@ class About extends Component {
                         <div className='text-center' >
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
-                                    <Link to={`/edit/about/${about._id}`} className='text-center btn btn-primary mt-4 mb-4'>Update</Link>
+                                    <Link to={`/edit/about/${about._id}`} className='btn btn-primary mt-4 mb-4'>Update</Link>
                                 )
                             }
                         </div>
                     </div>
                 </div>
+            </Layout>
             </div>
         )
     }

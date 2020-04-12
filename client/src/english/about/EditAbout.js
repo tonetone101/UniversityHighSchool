@@ -8,10 +8,15 @@ class EditAbout extends Component {
         super()
         this.state = { 
             id: '',
+            header1: '',
             body: "",
+            header2: '',
             paragraph2: '',
+            header3: '',
             paragraph3: '',
+            header4: '',
             paragraph4: '',
+            header5: '',
             paragraph5: '',
             redirectToHome: false,
             error: '',
@@ -27,10 +32,15 @@ class EditAbout extends Component {
             } else {
                 this.setState({
                     id: data._id, 
+                    header1: data.header1,
                     body: data.body, 
+                    header2: data.header2,
                     paragraph2: data.paragraph2,
+                    header3: data.header3,
                     paragraph3: data.paragraph3,
+                    header4: data.header4,
                     paragraph4: data.paragraph4,
+                    header5: data.header5,
                     paragraph5: data.paragraph5,
                     error: ''
                 })
@@ -79,10 +89,15 @@ class EditAbout extends Component {
                 else {
                     this.setState({
                         loading: false,
+                        header1: '',
                         about: "",
+                        header2: '',
                         paragraph2: '',
+                        header3: '',
                         paragraph3: '',
+                        header4: '',
                         paragraph4: '',
+                        header5: '',
                         paragraph5: '',
                         redirectToHome: true
                     });
@@ -91,8 +106,18 @@ class EditAbout extends Component {
         }
     };
 
-    editaboutForm = (body, paragraph2, paragraph3, paragraph4, paragraph5 ) => (
+    editaboutForm = (header1, body, header2, paragraph2, header3, paragraph3, header4, paragraph4, header5, paragraph5 ) => (
         <form className='container'>
+            <div className="form-group" >
+                <label className="text-muted">Header1</label>
+                <textarea
+                    onChange={this.handleChange("header1")}
+                    type="text"
+                    className="form-control"
+                    value={header1}
+                />
+            </div>
+
             <div className="form-group" >
                 <label className="text-muted">Paragraph1</label>
                 <textarea
@@ -100,6 +125,16 @@ class EditAbout extends Component {
                     type="text"
                     className="form-control"
                     value={body}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">Header2</label>
+                <textarea
+                    onChange={this.handleChange("header2")}
+                    type="text"
+                    className="form-control"
+                    value={header2}
                 />
             </div>
 
@@ -114,6 +149,16 @@ class EditAbout extends Component {
             </div>
 
             <div className="form-group" >
+                <label className="text-muted">Header3</label>
+                <textarea
+                    onChange={this.handleChange("header3")}
+                    type="text"
+                    className="form-control"
+                    value={header3}
+                />
+            </div>
+
+            <div className="form-group" >
                 <label className="text-muted">paragraph3</label>
                 <textarea
                     onChange={this.handleChange("paragraph3")}
@@ -123,6 +168,16 @@ class EditAbout extends Component {
                 />
             </div>
 
+           <div className="form-group" >
+                <label className="text-muted">Header4</label>
+                <textarea
+                    onChange={this.handleChange("header4")}
+                    type="text"
+                    className="form-control"
+                    value={header4}
+                />
+            </div> 
+
             <div className="form-group" >
                 <label className="text-muted">paragraph4</label>
                 <textarea
@@ -130,6 +185,16 @@ class EditAbout extends Component {
                     type="text"
                     className="form-control"
                     value={paragraph4}
+                />
+            </div>
+
+            <div className="form-group" >
+                <label className="text-muted">Header5</label>
+                <textarea
+                    onChange={this.handleChange("header5")}
+                    type="text"
+                    className="form-control"
+                    value={header5}
                 />
             </div>
 
@@ -154,10 +219,10 @@ class EditAbout extends Component {
 
 
     render() {
-        const {id, body, paragraph2, paragraph3, paragraph4, paragraph5, redirectToHome, error, loading} = this.state
+        const {header1, body, header2, paragraph2, header3, paragraph3, header4, paragraph4, header5, paragraph5, redirectToHome, error, loading} = this.state
 
         if (redirectToHome) {
-            return <Redirect to={`/about`} />;
+            return <Redirect to={`/abo`} />;
         }
 
         return (
@@ -177,7 +242,7 @@ class EditAbout extends Component {
                     }
 
 
-                        {this.editaboutForm(body, paragraph2, paragraph3, paragraph4, paragraph5)}
+                        {this.editaboutForm(header1, body, header2, paragraph2, header3, paragraph3, header4, paragraph4, header5, paragraph5)}
              
             </div>
         )

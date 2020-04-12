@@ -84,7 +84,7 @@ class EditPartners extends Component {
     editpartnersForm = (title, name, about) => (
         <form>
             <div className="form-group">
-                <label className="text-muted">partners Photo</label>
+                <label className="text-muted">Partner's Photo</label>
                 <input
                     onChange={this.handleChange("photo")}
                     type="file"

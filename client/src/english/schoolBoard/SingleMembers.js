@@ -35,7 +35,7 @@ class SingleschoolBoardMember extends Component {
     }
 
     deleteConfirm = () => {
-        let answer = window.confirm('Are you sure you want to delete your post?')
+        let answer = window.confirm('Are you sure you want to delete your member?')
         if(answer) {
             this.deleteschoolBoardMember()
         }
@@ -73,7 +73,7 @@ class SingleschoolBoardMember extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/schoolBoardMember`}
+                            to={`/boardmember`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -145,7 +145,7 @@ class SingleschoolBoardMember extends Component {
         const {schoolBoardMember, redirectToschoolBoardMember, redirectToSignIn} = this.state
         
         if(redirectToschoolBoardMember) {
-            return <Redirect to={`/schoolBoardMember`} />
+            return <Redirect to={`/boardmember`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }

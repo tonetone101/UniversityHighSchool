@@ -6,6 +6,10 @@ const isActive = (history, path) => {
   if (history.location.pathname === path) return {
     color: '#ff9900'
   } 
+
+  else if (history.location.pathname !== path) return {
+    color: 'white'
+  } 
 }
 
 class SideBar extends Component {
@@ -30,7 +34,7 @@ class SideBar extends Component {
         const {history} = this.props
 
         return (
-                <div className='col-md-4 column text-center mt-5'>
+                <div style={{backgroundColor: '#0033ff', opacity: '0.5', marginTop: '-30px'}} className='col-md-4 column text-center'>
                     <div className='mb-2'>
                         <Link style={isActive(history, '/part')} to='/part'>
                                 Our Partners
@@ -44,7 +48,7 @@ class SideBar extends Component {
                     </div>
 
                     <div className='mb-2'>
-                        <Link style={isActive(history, '/hr')} className='mt-4' to='/hr'>
+                        <Link style={isActive(history, '/hrd')} className='mt-4' to='/hrd'>
                                 Human Resource
                         </Link>
                     </div>

@@ -83,14 +83,12 @@ class Faculty extends Component {
                                 <Card.Text>
                                     {faculty.title.substring(0, 100)}
                                 </Card.Text>
-                                <Card.Text>
-                                    {faculty.about.substring(0, 100)}
-                                </Card.Text>
+                               
                                 <Link
                                         to={`/faculty/${faculty._id}`}
                                         className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
                                     >
-                                        Read more
+                                        Learn more
                                     </Link>
                             </Card.Body>
                             </Card>

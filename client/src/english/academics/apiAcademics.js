@@ -128,3 +128,13 @@ export const singleLink = (linkId) => {
         })
         .catch(err => console.log(err));
 };
+
+export const lister = () => {
+    return fetch(`/carousel`, {
+        method: "GET"
+    })
+        .then(response => {
+            return response.json();
+        })
+        .catch(err => console.log(err));
+};

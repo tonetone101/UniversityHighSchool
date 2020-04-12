@@ -141,7 +141,7 @@ class Edithr extends Component {
         const {id, title, url, docUrl, redirectTohr, error, loading} = this.state
 
         if (redirectTohr) {
-            return <Redirect to={`/hr/${id}`} />;
+            return <Redirect to={`/hrd`} />;
         }
 
         return (

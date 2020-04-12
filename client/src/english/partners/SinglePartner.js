@@ -83,7 +83,7 @@ class SinglePartners extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/partners`}
+                            to={`/part`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -155,7 +155,7 @@ class SinglePartners extends Component {
         const {partners, redirectToFaculties, redirectToSignIn} = this.state
 
         if(redirectToFaculties) {
-            return <Redirect to={`/partners`} />
+            return <Redirect to={`/part`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }

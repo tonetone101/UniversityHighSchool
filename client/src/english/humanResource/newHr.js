@@ -138,7 +138,7 @@ class Newhr extends Component {
         } = this.state;
 
         if (redirectToFaculties) {
-            return <Redirect to={`/hr`} />;
+            return <Redirect to={`/hrd`} />;
         }
 
         return (

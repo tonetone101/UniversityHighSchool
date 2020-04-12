@@ -4,6 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
+import Layout from '../about/Layout'
 
 class Partners extends Component {
     constructor() {
@@ -58,12 +59,12 @@ class Partners extends Component {
                     return (
                         <div  className='col-md-8 mb-5' key={i}>
                             <div className='row'>
-                                <div>
+                                <div className='col-3'>
                                     <img src={partnersPhoto} style={{height: '150px', width: '150px'}} />
                                     <h5>{partner.name.substring(0, 100)}</h5>
                                 </div>
 
-                                <div>
+                                <div className='col-5 ml-5'>
                                     <p>
                                         {partner.about}
                                     </p>
@@ -92,16 +93,17 @@ class Partners extends Component {
         return (
             <div>
                 <Header history={this.props.history} />
+                <Layout  title="Our PARTNERS"
+                        description="Productive behaviors are the catalyst that forges positive change!"
+                        className="container-fluid">
                 <div className="container row">
                     <SideBar />
 
                     <div className='col-md-8 text-center'>
-                            <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                            <div className='row mt-4 mb-3'>
                                 <h2 >
-                                   {!partners.length ? "Loading..." : " Our Partners"}
+                                   {!partners.length ? "Loading..." : ""}
                                 </h2>
-
-                                <hr/>
                             </div>
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
@@ -133,6 +135,7 @@ class Partners extends Component {
                         </div> 
                 
                 </div>
+</Layout>
             </div>
         );
     }

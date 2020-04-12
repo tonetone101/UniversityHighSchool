@@ -79,7 +79,7 @@ class Singlehr extends Component {
 
                     <div className='row'>
                         <Link
-                            to={`/hr`}
+                            to={`/hrd`}
                             className="btn btn-raised btn-primary btn-sm "
                             style={{marginLeft: '30px'}}
                         >
@@ -151,7 +151,7 @@ class Singlehr extends Component {
         const {hr, redirectToFaculties, redirectToSignIn} = this.state
 
         if(redirectToFaculties) {
-            return <Redirect to={`/hr`} />
+            return <Redirect to={`/hrd`} />
          } else if(redirectToSignIn) {
             return <Redirect to={`/signin`} />
          }

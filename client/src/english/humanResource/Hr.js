@@ -4,6 +4,8 @@ import { Link, withRouter } from "react-router-dom";
 import {isAuthenticated} from '../../auth'
 import Header from '../header/Header'
 import SideBar from '../sideBar/SideBar'
+import Layout from '../about/Layout'
+
 
 class Hr extends Component {
     constructor() {
@@ -125,17 +127,17 @@ class Hr extends Component {
         return (
             <div>
                 <Header history={this.props.history} />
+                    <Layout title="Welcome!"
+                        description="Our Human Resource Section"
+                        className="container-fluid">
                 <div className="container row">
                     <SideBar />
 
                     <div className='col-md-8 text-center'>
-                            <div className='row mt-4 mb-3' style={{borderBottom: 'solid black 1px'}}>
+                            <div className='row mt-4 mb-3'>
                                 <h2 >
-                                    Human Resource {' '}
-                                    {!hr.length ? "page is Loading..." : ""}
+                                    {!hr.length ? "Page is Loading..." : ""}
                                 </h2>
-
-                                <hr/>
                             </div>
                             {
                                 isAuthenticated() && isAuthenticated().user.code === 8290 && (
@@ -167,6 +169,7 @@ class Hr extends Component {
                         </div> 
                 
                 </div>
+</Layout>
             </div>
         );
     }

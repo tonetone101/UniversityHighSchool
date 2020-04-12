@@ -2,7 +2,15 @@ const mongoose = require('mongoose');
 const {ObjectId} = mongoose.Schema
 
 const aboutSchema = new mongoose.Schema({
+    header1: {
+        type: String,
+        
+    },
     body: {
+        type: String,
+        
+    },
+    header2: {
         type: String,
         
     },
@@ -10,11 +18,23 @@ const aboutSchema = new mongoose.Schema({
         type: String,
         
     },
+    header3: {
+        type: String,
+        
+    },
     paragraph3: {
         type: String,
         
     },
+    header4: {
+        type: String,
+        
+    },
     paragraph4: {
+        type: String,
+        
+    },
+    header5: {
         type: String,
         
     },
