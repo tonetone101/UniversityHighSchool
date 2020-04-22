@@ -6,12 +6,12 @@ import { isAuthenticated } from "../../auth";
 import Header from "../header/Header";
 import { Card, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
+import { faCheckSquare, faUniversity } from "@fortawesome/free-solid-svg-icons";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path)
     return {
-      color: "#ff9900"
+      color: "#ff9900",
     };
 };
 
@@ -25,7 +25,7 @@ class Academics extends Component {
       url: "",
       docUrl: "",
       redirectToacademics: false,
-      redirectToSignIn: false
+      redirectToSignIn: false,
     };
   }
 
@@ -34,23 +34,23 @@ class Academics extends Component {
   };
 
   loadacademics = () => {
-    list().then(data => {
+    list().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
         this.setState({
-          academics: data.find(d => {
+          academics: data.find((d) => {
             if (d._id == "5e59194d4465c2d4a3afa744") {
               return d;
             }
-          })
+          }),
         });
       }
     });
   };
 
   loadContent = () => {
-    listContent().then(data => {
+    listContent().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
@@ -69,7 +69,7 @@ class Academics extends Component {
     this.renderUser();
   }
 
-  renderContent = contents => {
+  renderContent = (contents) => {
     return (
       <div className="container">
         {contents.map((link, i) => {
@@ -87,7 +87,7 @@ class Academics extends Component {
               </div>
 
               <div className="col-md-6">
-                <img src={linkPhoto} height="500" width="500" />
+                <img id="acaImg" src={linkPhoto} height="500" width="500" />
               </div>
             </div>
           );
@@ -97,15 +97,6 @@ class Academics extends Component {
   };
 
   renderCards = () => {
-    const riserText =
-      "A RISER's main focus is to figure who they are as a learner, an individual, as part of a collective (family, community, etc). They will dive into their academic capacity, profession goals and interests. In addition develop the skills needed to build their intellectual capacity,";
-
-    const investigatorText =
-      "An INVESTIGATOR's main focus is about continuing to build upon the understandings gained from being a RISER and dive deeper and more rigorously into academics, interest, self and others through inquiry";
-
-    const navigatorText =
-      "A NAVIGATOR's main focus is to continue honing in and implementing the understandings gained from being a RISER and INVESTIGATOR. Navigators works to build the intellectual capacity of self and others. They have to demonstrate behaviors that productively impact the community and be ready to develop and implement a cohesive post-secondary plan.";
-
     return (
       <div className="row mb-5 mt-5" style={{ backgroundColor: "white" }}>
         <div className="col-sm-4">
@@ -115,7 +106,7 @@ class Academics extends Component {
                 variant="top"
                 id="imgCard"
                 style={{ height: "200px", width: "" }}
-                src={require("../../images/Risers.png")}
+                src={require("../../images/risers.png")}
               />
               <Card.Header
                 id="title"
@@ -134,7 +125,7 @@ class Academics extends Component {
                   Read more
                 </Link>
               </Card.Body>
-              {/* <Card.Header>                        
+              {/* <Card.Header>
                             <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/RISERLOGO.png")} />
                         </Card.Header> */}
             </Card>
@@ -144,7 +135,7 @@ class Academics extends Component {
         <div className="col-md-4">
           <Link to={`/ivg`}>
             <Card style={{ width: "18rem" }} id="academicCards">
-              {/* <Card.Header>                        
+              {/* <Card.Header>
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/invest.png")} />
                     </Card.Header> */}
 
@@ -177,7 +168,7 @@ class Academics extends Component {
         <div className="col-md-4">
           <Link to={`/nvg`}>
             <Card style={{ width: "18rem" }} id="academicCards">
-              {/* <Card.Header>                        
+              {/* <Card.Header>
                         <img id='imgCard' className='text-center' style={{height: '200px', width: '250px'}} src={require("../../images/navi.png")} />
                     </Card.Header> */}
 
@@ -226,20 +217,16 @@ class Academics extends Component {
       <div>
         <Header history={this.props.history} />
         <div>
-          {/* <h1 style={{fontWeight: 'bold'}} className='text-center'>Academics at University High School</h1>
-                     <h4 className='text-center'>
-                         It's more than just surviving it's about <h3 id='thrive'>Thriving!</h3>
-                     </h4> */}
           <div id="video">
             <iframe
               width="100%"
-              height="630"
+              height="430"
               src={uhsVideo}
               allow="autoplay"
             ></iframe>
           </div>
           <h1 style={{ fontWeight: "bold" }} className="text-center mt-5">
-            Academics at University High School
+            Learning Stages of University High School
           </h1>
           <h4 className="text-center">
             It's more than just surviving it's about{" "}
@@ -264,41 +251,6 @@ class Academics extends Component {
           ) : null}
 
           <div className="container mt-5">{this.renderContent(contents)}</div>
-
-          {/* <div id='title' className='row container'>
-                            <div className='col-md-4 column mt-5'>
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/rsr')} to='/rsr'>
-                                            Risers
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/ivg')} className='mt-4' to='/ivg'>
-                                           Investigators
-                                    </Link>
-                                </div>
-
-                                <div className='mb-2'>
-                                    <Link style={isActive(history, '/grade11')} className='mt-4' to='/grade11'>
-                                            Navigators
-                                    </Link>
-                                </div>
-                            </div>
-
-                            
-                            <div className='col-md-8 mt-4'>
-                                    <h3>Our Goal</h3>
-                                    <p>{academics.intro}</p>
-                                    <p>{academics.paragraph1}</p>
-                                    <p>{academics.paragraph2}</p>
-                                    <p>{academics.paragraph3}</p>
-                                    <p>{academics.paragraph4}</p>
-                                
-                            </div>
-                            
-                         
-                      </div> */}
         </div>
       </div>
     );

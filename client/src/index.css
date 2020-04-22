@@ -68,7 +68,7 @@ body {
 }
 
 #homeCards {
-  margin-top: -75px;
+  /* margin-top: -75px; */
   color: white;
   background-color: #b7b7b7;
 }
@@ -105,6 +105,17 @@ body {
 
 #vision h3 {
   padding-top: 120px;
+}
+
+#acaLink {
+  display: inline-block;
+  margin-top: 150px;
+}
+
+#acaLink:hover {
+  transform: scale(1.1);
+  transition: all 2s ease;
+  border-radius: 0%;
 }
 
 .title-underline {
@@ -148,6 +159,12 @@ body {
 #academicCards:hover #imgCard {
   transform: scale(1.1);
   transition: all 1s ease;
+  border-radius: 0%;
+}
+
+#acaImg:hover {
+  transform: scale(1.2);
+  transition: all 2s ease;
   border-radius: 0%;
 }
 
@@ -222,8 +239,18 @@ body {
   opacity: 1;
 }
 
+/* News */
+#newsJumboTron {
+  width: 50wh;
+  height: 50vh;
+  color: #fff;
+  background: url(./images/NewsBanner.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 /* jumbotron animation */
-.jumbotron {
+#layOut {
   width: 30wh;
   height: 30vh;
   color: #fff;
@@ -274,7 +301,7 @@ body {
 .btn,
 .jumbotron,
 .nav :hover {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 /* .jumbotron h2 {
@@ -325,4 +352,23 @@ body {
   transform: scale(1.3);
   transition: all 2s ease;
   border-radius: 0%;
+}
+
+/* for cell phone view */
+@media (max-width: 800px) {
+  #academicCards {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  #acaImg {
+    width: 300px;
+  }
+  #homeImg {
+    width: 300px;
+  }
+  #homeImage {
+    width: 300px;
+  }
 }
