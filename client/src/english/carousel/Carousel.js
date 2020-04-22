@@ -6,33 +6,32 @@ import { isAuthenticated } from "../../auth";
 import { Card } from "react-bootstrap";
 import Header from "../header/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
-import Angkor from "./Angkors";
+import { faCheckSquare, faUniversity } from "@fortawesome/free-solid-svg-icons";
 
 class Carol extends Component {
   state = {
     user: "",
     carousel: [],
-    redirectToSignin: false
+    redirectToSignin: false,
   };
 
   renderUser = () => {
     this.setState({
-      user: isAuthenticated().user
+      user: isAuthenticated().user,
     });
   };
 
   componentDidMount() {
-    list().then(data => {
+    list().then((data) => {
       if (data.error) {
         console.log(data.error);
       } else {
         this.setState({
-          carousel: data.find(d => {
+          carousel: data.find((d) => {
             if (d._id == "5e21c9ab9195bc7dc99dcfb3") {
               return d;
             }
-          })
+          }),
         });
       }
     });
@@ -44,193 +43,57 @@ class Carol extends Component {
     this.renderUser();
   }
 
-  renderCards = () => {
-    const riserText =
-      "A RISER's main focus is to figure who they are as a learner, an individual, as part of a collective (family, community, etc). They will dive into their academic capacity, profession goals and interests. In addition develop the skills needed to build their intellectual capacity,";
-
-    const investigatorText =
-      "An INVESTIGATOR's main focus is about continuing to build upon the understandings gained from being a RISER and dive deeper and more rigorously into academics, interest, self and others through inquiry";
-
-    const navigatorText =
-      "A NAVIGATOR's main focus is to continue honing in and implementing the understandings gained from being a RISER and INVESTIGATOR. Navigators works to build the intellectual capacity of self and others. They have to demonstrate behaviors that productively impact the community and be ready to develop and implement a cohesive post-secondary plan.";
-
+  renderNews = () => {
     return (
-      <div className="row mb-5 mt-5" style={{ backgroundColor: "white" }}>
-        <div className="col-sm-4">
-          <Link to={`/rsr`}>
-            <Card style={{ width: "18rem" }} id="homeCards">
-              <Card.Img
-                variant="top"
-                id="imgCard"
-                style={{ height: "200px", width: "" }}
-                src={require("../../images/Risers.png")}
-              />
-              <Card.Header
-                id="title"
-                className="font-italic mark mt-4"
-                style={{ fontWeight: "bold" }}
-              >
-                RISERS
-              </Card.Header>
+      <div className="text-center mt-5">
+        <Link to="nws">
+          <img
+            id="homeImg"
+            style={{ height: "400px", width: "400px" }}
+            src={require("../../images/NewsIcon.png")}
+          />
+          <figcaption className="lead">Click to read more</figcaption>
+        </Link>
+      </div>
+    );
+  };
 
-              <Card.Body id="body">
-                <Card.Text id="text">Click here to LEARN more...</Card.Text>
-                <Link
-                  to={`/rsr`}
-                  className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                >
-                  Read more
-                </Link>
-              </Card.Body>
-            </Card>
-          </Link>
-        </div>
+  renderMission = () => {
+    return (
+      <div id="vision">
+        <div className="container">
+          <div className="text-center">
+            <h3 style={{ fontWeight: "bold", color: "black" }}>
+              OUR MISSION AND VISION
+            </h3>
+            <div className="icon">
+              <FontAwesomeIcon icon={faCheckSquare} />
+            </div>
+            <div className="title-underline text-center"></div>
+          </div>
 
-        <div className="col-md-4">
-          <Link to={`/ivg`}>
-            <Card style={{ width: "18rem" }} id="homeCards">
-              <Card.Img
-                variant="top"
-                id="imgCard"
-                style={{ height: "200px", width: "" }}
-                src={require("../../images/Investigators.png")}
-              />
-              <Card.Header
-                id="title"
-                className="font-italic mark mt-4"
-                style={{ fontWeight: "bold" }}
-              >
-                INVESTIGATORS
-              </Card.Header>
-              <Card.Body id="body">
-                <Card.Text id="text">Click here to LEARN more...</Card.Text>
-                <Link
-                  to={`/ivg`}
-                  className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                >
-                  Read more
-                </Link>
-              </Card.Body>
-            </Card>
-          </Link>
-        </div>
-
-        <div className="col-md-4">
-          <Link to={`/nvg`}>
-            <Card style={{ width: "18rem" }} id="homeCards">
-              <Card.Img
-                variant="top"
-                id="imgCard"
-                style={{ height: "200px", width: "" }}
-                src={require("../../images/Navigators.png")}
-              />
-              <Card.Header
-                id="title"
-                className="font-italic mark mt-4"
-                style={{ fontWeight: "bold" }}
-              >
-                NAVIGATORS
-              </Card.Header>
-
-              <Card.Body id="body">
-                <Card.Text id="text">Click here to LEARN more...</Card.Text>
-                <Link
-                  to={`/nvg`}
-                  className="btn btn-raised btn-primary btn-sm mb-4 ml-5"
-                >
-                  Read more
-                </Link>
-              </Card.Body>
-            </Card>
-          </Link>
+          <div className="row text-center mt-5">
+            <img
+              id="homeImage"
+              style={{ height: "300px", width: "200px" }}
+              className="col-md-6"
+              src={require("../../images/uhsMission.png")}
+            />
+            <img
+              id="homeImage"
+              style={{ height: "300px", width: "200px" }}
+              className="col-md-6"
+              src={require("../../images/uhsVision.png")}
+            />
+          </div>
         </div>
       </div>
     );
   };
 
-  render() {
-    const { carousel } = this.state;
-
-    const uhsVideo =
-      "https://drive.google.com/file/d/1O6So7c58o-HuQwCVPAeY4Y_yNkLbz06Z/preview?ts=sharing";
-
+  renderFooter = () => {
     return (
       <div>
-        <Header history={this.props.history} />
-        <div>
-          <div style={{ backgroundColor: "white" }}>
-            {!carousel ? (
-              <div className="jumbotron text-center ">
-                <h2>Loading....</h2>
-              </div>
-            ) : (
-              <div id="video">
-                <iframe
-                  width="100%"
-                  height="630"
-                  src={uhsVideo}
-                  allow="autoplay"
-                ></iframe>
-              </div>
-            )}
-            <div className="container">{this.renderCards()}</div>
-          </div>
-        </div>
-
-        <div id="vision">
-          <div className="container goals">
-            <div className="text-center">
-              <h3 style={{ fontWeight: "bold", color: "black" }}>
-                OUR MISSION AND VISION
-              </h3>
-              <div className="icon">
-                <FontAwesomeIcon icon={faCheckSquare} />
-              </div>
-              <div className="title-underline text-center"></div>
-            </div>
-
-            <div className="row text-center mt-5">
-              <img
-                id="homeImage"
-                style={{ height: "300px", width: "200px" }}
-                className="col-md-6"
-                src={require("../../images/uhsMission.png")}
-              />
-              <img
-                id="homeImage"
-                style={{ height: "300px", width: "200px" }}
-                className="col-md-6"
-                src={require("../../images/uhsVision.png")}
-              />
-            </div>
-          </div>
-        </div>
-        {/* achor section */}
-        <Angkor achor={carousel} />
-        <div className="text-center mt-4">
-          {isAuthenticated() && isAuthenticated().user.code === 8290 && (
-            <Link
-              to={`/edit/carousel/${carousel._id}`}
-              className="text-center btn btn-primary mt-4 mb-4"
-            >
-              Update Learning achor explanation
-            </Link>
-          )}
-
-          {isAuthenticated() && isAuthenticated().user.code === 2609 && (
-            <Link
-              to={`/edit/carousel/${carousel._id}`}
-              className="text-center btn btn-primary mt-4 mb-4"
-            >
-              Update Learning achor explanation
-            </Link>
-          )}
-        </div>
-
-        {/* <div>
-                            {this.renderAnnouncements(carousel)}
-                        </div> */}
-
         <footer id="footer" className="mt-5">
           <div class="text-center row ml-5">
             <img
@@ -250,6 +113,91 @@ class Carol extends Component {
             </div>
           </div>
         </footer>
+      </div>
+    );
+  };
+
+  renderVideo = () => {
+    const uhsVideo =
+      "https://drive.google.com/file/d/1O6So7c58o-HuQwCVPAeY4Y_yNkLbz06Z/preview?ts=sharing";
+
+    return (
+      <div>
+        <iframe
+          width="100%"
+          height="430"
+          src={uhsVideo}
+          allow="autoplay"
+        ></iframe>
+      </div>
+    );
+  };
+
+  renderLearningStage = () => {
+    return (
+      <div>
+        <div className="container">
+          <div className="text-center">
+            <h3 style={{ fontWeight: "bold", color: "black" }}>
+              ACADEMICS AT UHS
+            </h3>
+            <div className="icon">
+              <FontAwesomeIcon icon={faUniversity} />
+            </div>
+            <div className="title-underline text-center"></div>
+          </div>
+
+          <div className="row text-center mt-5">
+            <Link className="col-md-6" to="aca">
+              <img
+                id="homeImage"
+                style={{ height: "500px", width: "500px" }}
+                src={require("../../images/LearningStage.png")}
+              />
+              <figcaption className="lead">Click to learn more</figcaption>
+            </Link>
+
+            <Link className="col-md-6" to="/achorpage">
+              <img
+                id="homeImage"
+                style={{ height: "500px", width: "500px" }}
+                src={require("../../images/anchors.png")}
+              />
+              <figcaption className="lead">Click to learn more</figcaption>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  render() {
+    const { carousel } = this.state;
+
+    return (
+      <div>
+        <Header history={this.props.history} />
+        <div>
+          <div style={{ backgroundColor: "white" }}>
+            {!carousel ? (
+              <div className="jumbotron text-center ">
+                <h2>Loading....</h2>
+              </div>
+            ) : (
+              <div>
+                {this.renderVideo()}
+                {this.renderNews()}
+              </div>
+            )}
+          </div>
+        </div>
+        {this.renderMission()}
+
+        {/* Learning stage */}
+        {this.renderLearningStage()}
+
+        {/* Footer */}
+        {this.renderFooter()}
       </div>
     );
   }
